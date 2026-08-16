@@ -113,3 +113,12 @@ html.locked body > footer{display:none}
 
 /* ============ 照見（反身鏡子） ============ */
 p.jian{color:#b0601c;font-weight:600;margin:0 0 14px;padding-left:0;border-left:none}
+
+/* ============ 框架 V4（表格／引用） ============ */
+article.framework h1{font-size:24px;margin:22px 0 8px}
+article.framework h2{font-size:19px;margin:18px 0 6px;border-bottom:1px solid var(--border);padding-bottom:4px}
+article.framework h3{font-size:16px;margin:14px 0 4px;color:var(--accent)}
+article.framework table{border-collapse:collapse;width:100%;margin:10px 0 16px;font-size:14px}
+article.framework th,article.framework td{border:1px solid var(--border);padding:6px 8px;text-align:left;vertical-align:top}
+article.framework th{background:var(--accent-soft, rgba(31,58,95,.08))}
+article.framework blockquote{border-left:3px solid var(--accent);padding:4px 12px;margin:8px 0;color:var(--muted);font-size:14px}
