@@ -110,3 +110,6 @@ html.locked body > footer{display:none}
 .auth-box button{background:#1f3a5f;color:#fff;border:none;padding:11px 24px;border-radius:8px;cursor:pointer;font-size:15px;font-weight:700}
 .auth-box button:hover{opacity:.9}
 .auth-box #err{color:#c0392b;font-size:13px;margin-top:8px;min-height:18px}
+
+/* ============ 照見（反身鏡子） ============ */
+p.jian{color:#b0601c;border-left:3px solid #e0a24a;padding-left:10px;margin:2px 0 14px;font-style:normal;font-weight:600}
