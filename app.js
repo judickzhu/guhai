@@ -17,3 +17,18 @@ function setSize(s){
   if(s!=='m') document.body.classList.add('size-'+s);
   try{ localStorage.setItem('fontsize', s); }catch(e){}
 }
+/* 全站搜尋 */
+function searchSite(kw){
+  kw=(kw||'').trim();
+  var box=document.getElementById('search-results');
+  if(!box) return;
+  if(kw.length<1){ box.innerHTML=''; box.style.display='none'; return; }
+  var hits=(window.SITE_SEARCH||[]).filter(function(x){return x.t.indexOf(kw)>=0;}).slice(0,12);
+  var pre=(typeof PREFIX!=='undefined')?PREFIX:'';
+  box.innerHTML=hits.length?hits.map(function(x){return '<a href="'+pre+x.u+'">'+x.t+'</a>';}).join(''):'<span class="none">無相符結果</span>';
+  box.style.display='block';
+}
+document.addEventListener('click',function(e){
+  var box=document.getElementById('search-results');
+  if(box && !e.target.closest('.search')) box.style.display='none';
+});

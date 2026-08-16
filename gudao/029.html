@@ -11,13 +11,19 @@
 <meta property="og:image" content="https://judickzhu.github.io/guhai/og.png">
 <meta property="og:url" content="https://judickzhu.github.io/guhai/gudao/029.html">
 <meta name="twitter:card" content="summary_large_image">
+<script>var PREFIX = "../";</script>
 <link rel="stylesheet" href="../style.css">
+<script src="../search-data.js" defer></script>
 <script src="../app.js" defer></script>
 </head>
 <body>
 <header>
   <div class="brand"><a href="../index.html">股海雙書</a></div>
   <nav><a href="../index.html">首頁</a><a href="../chapters/000.html">回目</a><a href="../phenomena.html">現象索引</a><a href="../checklist.html">自檢表</a><a href="../framework.html">框架</a><a href="../mapping.html">三層映射</a><a href="../acts.html">六幕</a><a href="../gudao/000.html" class=active>股道問答</a></nav>
+  <div class="search">
+    <input type="search" id="q" placeholder="搜尋 252 篇問答…" oninput="searchSite(this.value)" autocomplete="off">
+    <div id="search-results"></div>
+  </div>
   <div class="tools">
     <button onclick="setSize('s')" title="小字">A-</button>
     <button onclick="setSize('m')" title="中字">A</button>
