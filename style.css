@@ -1,49 +1,68 @@
+/* ============ 主題變數 ============ */
+:root{
+  --bg:#f4f2ec; --text:#2b2b2b; --card:#ffffff; --accent:#1f3a5f;
+  --accent-soft:#1f3a5f22; --muted:#888; --border:#dddddd;
+  --hdr-bg:#1f3a5f; --hdr-text:#ffffff; --hdr-border:#ffffff44;
+  --quote:#6b5636;
+}
+[data-theme="dark"]{
+  --bg:#14161b; --text:#d8dce2; --card:#1f2228; --accent:#7fb0ff;
+  --accent-soft:#7fb0ff33; --muted:#9aa0a8; --border:#33363d;
+  --hdr-bg:#0f1116; --hdr-text:#e6eaf0; --hdr-border:#ffffff22;
+  --quote:#d0b98a;
+}
+
 /* ============ 基礎 ============ */
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
-body{font-family:"PingFang TC","Noto Sans TC","Microsoft JhengHei",-apple-system,BlinkMacSystemFont,sans-serif;background:#f4f2ec;color:#2b2b2b;line-height:1.8;font-size:16px}
+body{font-family:"PingFang TC","Noto Sans TC","Microsoft JhengHei",-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:16px;transition:background .25s,color .25s}
+body.size-s{font-size:14px}
+body.size-l{font-size:18px}
 
 /* ============ 頁首 ============ */
-header{background:#1f3a5f;color:#fff;padding:12px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.brand a{color:#fff;font-size:20px;font-weight:700;text-decoration:none;white-space:nowrap}
+header{background:var(--hdr-bg);color:var(--hdr-text);padding:12px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand a{color:var(--hdr-text);font-size:20px;font-weight:700;text-decoration:none;white-space:nowrap}
 nav{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
-nav a{color:#fff;padding:6px 14px;border-radius:20px;text-decoration:none;font-size:14px;border:1px solid #ffffff44;white-space:nowrap;min-height:40px;display:inline-flex;align-items:center}
-nav a:hover,nav a.active{background:#fff;color:#1f3a5f;font-weight:700}
+nav a{color:var(--hdr-text);padding:6px 14px;border-radius:20px;text-decoration:none;font-size:14px;border:1px solid var(--hdr-border);white-space:nowrap;min-height:40px;display:inline-flex;align-items:center}
+nav a:hover,nav a.active{background:var(--hdr-text);color:var(--hdr-bg);font-weight:700}
+.tools{display:flex;gap:4px;align-items:center}
+.tools button{background:transparent;border:1px solid var(--hdr-border);color:var(--hdr-text);border-radius:8px;padding:5px 9px;cursor:pointer;font-size:13px;min-height:36px;min-width:34px}
+.tools button:hover{background:var(--hdr-text);color:var(--hdr-bg)}
 
 /* ============ 主內容 ============ */
 main{max-width:1000px;margin:24px auto;padding:0 20px}
-h1{color:#1f3a5f;border-bottom:2px solid #1f3a5f22;padding-bottom:8px;margin:20px 0 14px;font-size:clamp(22px,4.5vw,28px);line-height:1.4;overflow-wrap:break-word}
-h2{color:#1f3a5f;margin:22px 0 8px;font-size:clamp(18px,3.5vw,22px);line-height:1.4}
-h3{color:#1f3a5f;margin:16px 0 6px;font-size:18px}
+h1{color:var(--accent);border-bottom:2px solid var(--accent-soft);padding-bottom:8px;margin:20px 0 14px;font-size:clamp(22px,4.5vw,28px);line-height:1.4;overflow-wrap:break-word}
+h2{color:var(--accent);margin:22px 0 8px;font-size:clamp(18px,3.5vw,22px);line-height:1.4}
+h3{color:var(--accent);margin:16px 0 6px;font-size:18px}
 p{margin:8px 0;overflow-wrap:break-word}
-section{background:#fff;border-radius:10px;padding:16px 22px;margin:14px 0;box-shadow:0 1px 4px #0001}
+section{background:var(--card);border-radius:10px;padding:16px 22px;margin:14px 0;box-shadow:0 1px 4px #0002}
 ul,ol{padding-left:1.4em}
 li{margin:6px 0;overflow-wrap:break-word}
-a{color:#1f3a5f}
-.sub{color:#888;font-size:14px}
+a{color:var(--accent)}
+.sub{color:var(--muted);font-size:14px}
 
 /* ============ 卡片 ============ */
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin:16px 0}
-.card{background:#fff;border-radius:10px;padding:16px;text-decoration:none;color:#1f3a5f;box-shadow:0 1px 4px #0001;display:block}
+.card{background:var(--card);border-radius:10px;padding:16px;text-decoration:none;color:var(--accent);box-shadow:0 1px 4px #0002;display:block}
 .card b{display:block;font-size:18px;margin-bottom:4px}
-.card span{color:#888;font-size:13px}
+.card span{color:var(--muted);font-size:13px}
 
 /* ============ 目錄 ============ */
 .toc{columns:2;column-gap:24px}
 .toc li{break-inside:avoid;margin:4px 0}
-.toc a{color:#1f3a5f;text-decoration:none}
+.toc a{color:var(--accent);text-decoration:none}
 .toc a:hover{text-decoration:underline}
 
 /* ============ 翻頁 ============ */
-.pager{display:flex;justify-content:space-between;gap:8px;margin:20px 0;background:#fff;padding:12px;border-radius:10px;flex-wrap:wrap}
-.pager a{color:#1f3a5f;text-decoration:none;font-weight:700;padding:8px 10px;min-height:40px;display:inline-flex;align-items:center}
+.pager{display:flex;justify-content:space-between;gap:8px;margin:20px 0;background:var(--card);padding:12px;border-radius:10px;flex-wrap:wrap}
+.pager a{color:var(--accent);text-decoration:none;font-weight:700;padding:8px 10px;min-height:40px;display:inline-flex;align-items:center}
 
 /* ============ 自檢表 ============ */
-.chk li{background:#fafbfd;padding:10px 14px;border-radius:8px;margin:8px 0}
+.chk li{background:var(--card);padding:10px 14px;border-radius:8px;margin:8px 0;border:1px solid var(--border)}
 .chk input{transform:scale(1.2);margin-right:8px}
 
 /* ============ 頁尾 ============ */
-footer{text-align:center;color:#999;padding:20px;font-size:12px;border-top:1px solid #ddd;margin-top:30px}
+footer{text-align:center;color:var(--muted);padding:20px;font-size:12px;border-top:1px solid var(--border);margin-top:30px}
 footer p{margin:4px 0}
 
 /* ============ 響應式：平板 ============ */
@@ -56,17 +75,15 @@ footer p{margin:4px 0}
   .toc{columns:1}
   .pager a{flex:1;justify-content:center}
 }
-
-/* ============ 響應式：手機 ============ */
 @media(max-width:480px){
   body{font-size:15px}
+  body.size-s{font-size:13px}
+  body.size-l{font-size:17px}
   .brand a{font-size:18px}
   nav a{font-size:12px;padding:5px 8px;min-height:38px;border-radius:16px}
-  h1{font-size:22px}
   .cards{grid-template-columns:1fr 1fr;gap:8px}
   .card{padding:12px}
-  .card b{font-size:16px}
-  section{padding:12px 14px;border-radius:8px}
+  .section,section{padding:12px 14px;border-radius:8px}
   ul,ol{padding-left:1.1em}
   .pager{flex-direction:column}
   .pager a{width:100%;justify-content:center}
