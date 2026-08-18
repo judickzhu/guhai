@@ -160,3 +160,11 @@ p.switch a{display:inline-block;color:#e0a24a;border:1px solid #e0a24a;border-ra
 .booktabs{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
 .bt{padding:8px 16px;border-radius:18px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;font-size:14px}
 .bt.active{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:700}
+
+/* ============ 問問 ima 面板 ============ */
+#dchat-body{padding:18px;font-size:14px;line-height:1.7;overflow-y:auto}
+#dchat-body p{margin:8px 0}
+#dchat-cta{display:block;text-align:center;margin:16px 0;padding:12px 16px;border-radius:12px;background:linear-gradient(135deg,#00FF87,#00cc6c);color:#052E16;font-weight:700;text-decoration:none;font-size:15px}
+#dchat-cta:hover{opacity:.9}
+.dchat-alt{color:var(--muted);font-size:12.5px;text-align:center}
+.dchat-alt a{color:var(--accent)}
