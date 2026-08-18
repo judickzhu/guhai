@@ -40,6 +40,7 @@
 <div class="pager" id="kb-pager" style="display:none">
   <button onclick="prev()">← 上一頁</button>
   <span id="kb-pageinfo"></span>
+  <span class="goto">跳頁：<input type="number" id="kb-goto" min="1" value="1" style="width:60px"> <button onclick="jump()">GO</button></span>
   <button onclick="next()">下一頁 →</button>
 </div>
 <div id="kb-results"><p class="muted">載入知識庫中…</p></div>
@@ -74,7 +75,17 @@ function render(){
   document.getElementById('kb-pageinfo2').textContent = info;
   document.getElementById('kb-pager').style.display = 'flex';
   document.getElementById('kb-pager2').style.display = 'flex';
+  var g = document.getElementById('kb-goto'); if(g){ g.value = page; }
 }
+function jump(){
+  var g = document.getElementById('kb-goto');
+  var n = parseInt(g.value, 10);
+  if(!isNaN(n) && n >= 1){ page = n; render(); }
+  else { g.value = page; }
+}
+document.addEventListener('keydown', function(e){
+  if(e.target && e.target.id === 'kb-goto' && e.key === 'Enter'){ jump(); }
+});
 function prev(){ page--; render(); }
 function next(){ page++; render(); }
 function kbSearch(kw){ lastKw = (kw||'').trim(); page = 1; render(); }
