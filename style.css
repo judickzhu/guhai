@@ -157,3 +157,6 @@ p.switch a{display:inline-block;color:#e0a24a;border:1px solid #e0a24a;border-ra
 #dchat-inputrow{display:flex;gap:8px;padding:10px;border-top:1px solid var(--border,#1F1F23)}
 #dchat-inp{flex:1;padding:9px 13px;border-radius:20px;border:1px solid var(--border,#1F1F23);background:var(--bg,#09090A);color:var(--text,#e2e4ea);outline:none;font-size:14px}
 #dchat-inputrow button{width:42px;border-radius:50%;border:none;background:var(--accent,#6c8cff);color:#fff;font-size:16px;cursor:pointer}
+.booktabs{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.bt{padding:8px 16px;border-radius:18px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;font-size:14px}
+.bt.active{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:700}

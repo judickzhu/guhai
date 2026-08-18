@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>知識庫 · 一問一答翻頁閱讀</title>
-<meta name="description" content="2385 題 · 每頁 20 題翻頁閱讀">
+<meta name="description" content="2385 題 · 分書檢索">
 <meta property="og:title" content="知識庫 · 一問一答翻頁閱讀">
-<meta property="og:description" content="2385 題 · 每頁 20 題翻頁閱讀">
+<meta property="og:description" content="2385 題 · 分書檢索">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://judickzhu.github.io/guhai/og.png">
 <meta property="og:url" content="https://judickzhu.github.io/guhai/kb.html">
@@ -16,6 +16,7 @@
 <script src="search-data.js?v=3" defer></script>
 <script src="auth.js?v=3"></script>
 <script src="app.js?v=3" defer></script>
+<script src="dc-chat.js?v=3" defer></script>
 </head>
 <body>
 <header>
@@ -33,8 +34,13 @@
   </div>
 </header>
 <main><h1>知識庫 · 一問一答翻頁閱讀</h1>
-<p class="sub">《股路不归》1354 題 ＋ 《股道》1031 題 ＝ 2385 題 · 每頁 20 題 · 可搜題目／答案／照見／關鍵字</p>
-<div class="search" style="max-width:640px">
+<p class="sub">《股路不归》1354 題 ＋ 《股道》1031 題 ＝ 2385 題 · 可切換書本＋關鍵字檢索</p>
+<div class="booktabs">
+  <button class="bt active" data-b="" onclick="setBook('')">全部（2385）</button>
+  <button class="bt" data-b="股路不归" onclick="setBook('股路不归')">《股路不归》（1354）</button>
+  <button class="bt" data-b="股道" onclick="setBook('股道')">《股道》（1031）</button>
+</div>
+<div class="search" style="max-width:640px;margin-top:10px">
   <input type="search" id="kbq" placeholder="輸入關鍵字（如：沽空、止損、恐懼）過濾，留空＝全部…" oninput="kbSearch(this.value)" autocomplete="off">
 </div>
 <div class="pager" id="kb-pager" style="display:none">
@@ -51,11 +57,20 @@
 </div>
 <script>
 function escK(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
-var KB = [], page = 1, perPage = 20, lastKw = '';
-function items(){ return lastKw ? KB.filter(function(a){
-  return (a.q||'').indexOf(lastKw)>=0 || (a.a||'').indexOf(lastKw)>=0 || (a.reflection||'').indexOf(lastKw)>=0 ||
-         (a.title||'').indexOf(lastKw)>=0 || (a.keywords||[]).some(function(k){return k.indexOf(lastKw)>=0;});
-}) : KB; }
+var KB = [], page = 1, perPage = 20, lastKw = '', book = '';
+function items(){
+  var base = book ? KB.filter(function(a){ return a.part === book; }) : KB;
+  if(!lastKw) return base;
+  return base.filter(function(a){
+    return (a.q||'').indexOf(lastKw)>=0 || (a.a||'').indexOf(lastKw)>=0 || (a.reflection||'').indexOf(lastKw)>=0 ||
+           (a.title||'').indexOf(lastKw)>=0 || (a.keywords||[]).some(function(k){return k.indexOf(lastKw)>=0;});
+  });
+}
+function setBook(b){ book = b; page = 1; updateTabs(); render(); }
+function updateTabs(){
+  var els = document.querySelectorAll('.bt');
+  for(var i=0;i<els.length;i++){ els[i].className = 'bt' + (els[i].getAttribute('data-b')===book?' active':''); }
+}
 function render(){
   var all = items();
   var totalPages = Math.max(1, Math.ceil(all.length / perPage));
@@ -70,7 +85,8 @@ function render(){
         (a.reflection?'<p class="jian">照見　'+escK(a.reflection)+'</p>':'')+'</div>';
     }).join('');
   }
-  var info = '第 ' + page + ' / ' + totalPages + ' 頁（共 ' + all.length + ' 題，' + (lastKw?'過濾後':'全部') + '）';
+  var name = book ? '《'+book+'》' : '全部';
+  var info = '第 ' + page + ' / ' + totalPages + ' 頁（' + name + ' ' + all.length + ' 題' + (lastKw?'，過濾後':'') + '）';
   document.getElementById('kb-pageinfo').textContent = info;
   document.getElementById('kb-pageinfo2').textContent = info;
   document.getElementById('kb-pager').style.display = 'flex';
@@ -80,12 +96,9 @@ function render(){
 function jump(){
   var g = document.getElementById('kb-goto');
   var n = parseInt(g.value, 10);
-  if(!isNaN(n) && n >= 1){ page = n; render(); }
-  else { g.value = page; }
+  if(!isNaN(n) && n >= 1){ page = n; render(); } else { g.value = page; }
 }
-document.addEventListener('keydown', function(e){
-  if(e.target && e.target.id === 'kb-goto' && e.key === 'Enter'){ jump(); }
-});
+document.addEventListener('keydown', function(e){ if(e.target && e.target.id === 'kb-goto' && e.key === 'Enter'){ jump(); } });
 function prev(){ page--; render(); }
 function next(){ page++; render(); }
 function kbSearch(kw){ lastKw = (kw||'').trim(); page = 1; render(); }
