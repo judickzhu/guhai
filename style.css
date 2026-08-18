@@ -140,3 +140,20 @@ p.switch a{display:inline-block;color:#e0a24a;border:1px solid #e0a24a;border-ra
 .goto{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:13px}
 .goto input{width:60px;padding:6px 8px;border-radius:8px;border:1px solid var(--border);background:var(--bg);color:var(--text)}
 .goto button{padding:6px 12px;border-radius:8px;border:1px solid var(--accent);background:var(--accent-dim);color:var(--accent);cursor:pointer;font-weight:700}
+
+/* ============ 問答聊天窗 ============ */
+#dchat-fab{position:fixed;right:22px;bottom:22px;z-index:9998;width:58px;height:58px;border-radius:50%;border:none;background:linear-gradient(135deg,#00FF87,#00cc6c);color:#052E16;font-size:26px;cursor:pointer;box-shadow:0 6px 22px rgba(0,255,135,.4)}
+#dchat-panel{position:fixed;right:22px;bottom:92px;z-index:9999;width:360px;max-width:calc(100vw - 30px);height:520px;max-height:calc(100vh - 130px);background:var(--card,#131316);border:1px solid var(--border,#1F1F23);border-radius:16px;display:none;flex-direction:column;overflow:hidden;box-shadow:0 12px 44px rgba(0,0,0,.45)}
+#dchat-panel.open{display:flex}
+#dchat-head{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#0d1210;color:#fff;font-weight:700;border-bottom:1px solid var(--border,#1F1F23)}
+#dchat-quick{padding:8px 12px;display:flex;flex-wrap:wrap;gap:6px;border-bottom:1px solid var(--border,#1F1F23)}
+#dchat-quick button{font-size:12px;padding:5px 10px;border-radius:12px;border:1px solid var(--accent,#6c8cff);background:transparent;color:var(--accent,#6c8cff);cursor:pointer}
+#dchat-msgs{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:10px}
+.dmsg{display:flex}
+.dmsg.user{justify-content:flex-end}
+.dmsg-bubble{max-width:82%;padding:9px 13px;border-radius:14px;font-size:14px;line-height:1.55;white-space:pre-wrap;word-break:break-word}
+.dmsg.user .dmsg-bubble{background:var(--accent,#6c8cff);color:#fff;border-bottom-right-radius:3px}
+.dmsg.bot .dmsg-bubble{background:var(--bg-surface,#1c1c22);border:1px solid var(--border,#1F1F23);border-bottom-left-radius:3px}
+#dchat-inputrow{display:flex;gap:8px;padding:10px;border-top:1px solid var(--border,#1F1F23)}
+#dchat-inp{flex:1;padding:9px 13px;border-radius:20px;border:1px solid var(--border,#1F1F23);background:var(--bg,#09090A);color:var(--text,#e2e4ea);outline:none;font-size:14px}
+#dchat-inputrow button{width:42px;border-radius:50%;border:none;background:var(--accent,#6c8cff);color:#fff;font-size:16px;cursor:pointer}
