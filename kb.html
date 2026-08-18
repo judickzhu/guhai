@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>知識庫 · 全文檢索</title>
-<meta name="description" content="2385 題可檢索知識庫">
-<meta property="og:title" content="知識庫 · 全文檢索">
-<meta property="og:description" content="2385 題可檢索知識庫">
+<title>知識庫 · 一問一答全文檢索</title>
+<meta name="description" content="2385 題可檢索一問一答">
+<meta property="og:title" content="知識庫 · 一問一答全文檢索">
+<meta property="og:description" content="2385 題可檢索一問一答">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://judickzhu.github.io/guhai/og.png">
 <meta property="og:url" content="https://judickzhu.github.io/guhai/kb.html">
@@ -20,7 +20,7 @@
 <body>
 <header>
   <div class="brand"><a href="index.html">股海雙書</a></div>
-  <nav><a href="index.html">首頁</a><a href="chapters/000.html">股路不归問答</a><a href="phenomena.html">現象索引</a><a href="checklist.html">自檢表</a><a href="framework.html">框架</a><a href="mapping.html">三層映射</a><a href="acts.html">六幕</a><a href="gudao/000.html">股道問答</a><a href="dc-kb.html">DC知識庫</a><a class="switch" href="orig/index.html" title="切換到原版（尖問＋透答＋照見）">📖 原版</a></nav>
+  <nav><a href="index.html">首頁</a><a href="chapters/000.html">股路不归問答</a><a href="phenomena.html">現象索引</a><a href="checklist.html">自檢表</a><a href="framework.html">框架</a><a href="mapping.html">三層映射</a><a href="acts.html">六幕</a><a href="gudao/000.html">股道問答</a><a href="dc-kb.html">DC知識庫</a><a href="kb.html">知識庫檢索</a><a class="switch" href="orig/index.html" title="切換到原版（尖問＋透答＋照見）">📖 原版</a></nav>
   <div class="search">
     <input type="search" id="q" placeholder="搜尋 252 篇問答…" oninput="searchSite(this.value)" autocomplete="off">
     <div id="search-results"></div>
@@ -32,37 +32,44 @@
     <button onclick="toggleTheme()" title="夜間模式">◐</button>
   </div>
 </header>
-<main><h1>知識庫 · 全文檢索</h1>
+<main><h1>知識庫 · 一問一答全文檢索</h1>
 <p class="sub">《股路不归》1354 題 ＋ 《股道》1031 題 ＝ 2385 題 · 可搜題目／答案／照見／關鍵字</p>
 <div class="search" style="max-width:640px">
   <input type="search" id="kbq" placeholder="輸入關鍵字（如：沽空、止損、恐懼、圓弧底）…" oninput="kbSearch(this.value)" autocomplete="off">
 </div>
 <p class="muted" id="kb-count"></p>
-<div id="kb-results"><p class="muted">輸入關鍵字開始檢索（共 2385 題）</p></div>
+<div id="kb-results"></div>
 <script>
 function escK(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
-var KB = [];
-fetch('kb-books.json').then(function(r){return r.json();}).then(function(d){ KB = d.articles || []; })
-  .catch(function(){ document.getElementById('kb-results').innerHTML='<p class="none">知識庫載入失敗</p>'; });
-function kbSearch(kw){
-  kw = (kw||'').trim();
+var KB = [], shown = 0, lastKw = '';
+function render(items, header, more){
   var box = document.getElementById('kb-results');
-  var cnt = document.getElementById('kb-count');
-  if(kw.length < 1){ box.innerHTML = '<p class="muted">輸入關鍵字開始檢索（共 2385 題）</p>'; cnt.textContent=''; return; }
-  var hits = KB.filter(function(a){
+  document.getElementById('kb-count').textContent = header;
+  box.innerHTML = items.map(function(a){
+    return '<div class="kb-item"><p class="kb-h"><b>'+escK(a.title)+'</b>｜'+escK(a.part)+'</p>'+
+      '<p class="kb-q">'+escK(a.q)+'</p><p class="kb-a">'+escK(a.a)+'</p>'+
+      (a.reflection?'<p class="jian">照見　'+escK(a.reflection)+'</p>':'')+'</div>';
+  }).join('') + (more ? '<p style="text-align:center"><button onclick="kbMore()">顯示更多</button></p>' : '');
+}
+function kbMore(){
+  shown += 15;
+  if(!lastKw){ render(KB.slice(0, shown), '共 2385 題 · 顯示前 ' + shown + ' 題', shown < KB.length); }
+  else { var hits = search(lastKw); render(hits.slice(0, shown), hits.length + ' 題相符', shown < hits.length); }
+}
+function search(kw){
+  return KB.filter(function(a){
     return (a.q||'').indexOf(kw)>=0 || (a.a||'').indexOf(kw)>=0 || (a.reflection||'').indexOf(kw)>=0 ||
            (a.title||'').indexOf(kw)>=0 || (a.keywords||[]).some(function(k){return k.indexOf(kw)>=0;});
   });
-  cnt.textContent = hits.length + ' 題相符';
-  if(!hits.length){ box.innerHTML = '<p class="none">無相符結果</p>'; return; }
-  box.innerHTML = hits.slice(0,30).map(function(a){
-    return '<div class="kb-item"><p class="kb-h"><b>'+escK(a.title)+'</b>｜'+escK(a.part)+'</p>'+
-      '<p class="kb-q">'+escK(a.q)+'</p>'+
-      '<p class="kb-a">'+escK(a.a)+'</p>'+
-      (a.reflection?'<p class="jian">照見　'+escK(a.reflection)+'</p>':'')+
-      '</div>';
-  }).join('') + (hits.length>30 ? '<p class="muted">…還有 '+ (hits.length-30) +' 題，請用更精確的關鍵字</p>' : '');
 }
+function kbSearch(kw){
+  kw = (kw||'').trim(); lastKw = kw; shown = 15;
+  if(!kw){ render(KB.slice(0,15), '共 2385 題 · 顯示前 15 題', true); return; }
+  var hits = search(kw);
+  render(hits.slice(0,15), hits.length + ' 題相符', hits.length > 15);
+}
+fetch('kb-books.json').then(function(r){return r.json();}).then(function(d){ KB = d.articles || []; render(KB.slice(0,15), '共 '+(d.articles?d.articles.length:2385)+' 題 · 顯示前 15 題', true); })
+  .catch(function(){ document.getElementById('kb-results').innerHTML='<p class="none">知識庫載入失敗</p>'; });
 </script></main>
 <footer>
   <p>原著：王新平　·　整理：南嗥</p>
