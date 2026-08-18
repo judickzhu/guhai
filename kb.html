@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>知識庫 · 一問一答全文檢索</title>
-<meta name="description" content="2385 題可檢索一問一答">
-<meta property="og:title" content="知識庫 · 一問一答全文檢索">
-<meta property="og:description" content="2385 題可檢索一問一答">
+<title>知識庫 · 一問一答翻頁閱讀</title>
+<meta name="description" content="2385 題 · 每頁 20 題翻頁閱讀">
+<meta property="og:title" content="知識庫 · 一問一答翻頁閱讀">
+<meta property="og:description" content="2385 題 · 每頁 20 題翻頁閱讀">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://judickzhu.github.io/guhai/og.png">
 <meta property="og:url" content="https://judickzhu.github.io/guhai/kb.html">
@@ -32,43 +32,53 @@
     <button onclick="toggleTheme()" title="夜間模式">◐</button>
   </div>
 </header>
-<main><h1>知識庫 · 一問一答全文檢索</h1>
-<p class="sub">《股路不归》1354 題 ＋ 《股道》1031 題 ＝ 2385 題 · 可搜題目／答案／照見／關鍵字</p>
+<main><h1>知識庫 · 一問一答翻頁閱讀</h1>
+<p class="sub">《股路不归》1354 題 ＋ 《股道》1031 題 ＝ 2385 題 · 每頁 20 題 · 可搜題目／答案／照見／關鍵字</p>
 <div class="search" style="max-width:640px">
-  <input type="search" id="kbq" placeholder="輸入關鍵字（如：沽空、止損、恐懼、圓弧底）…" oninput="kbSearch(this.value)" autocomplete="off">
+  <input type="search" id="kbq" placeholder="輸入關鍵字（如：沽空、止損、恐懼）過濾，留空＝全部…" oninput="kbSearch(this.value)" autocomplete="off">
 </div>
-<p class="muted" id="kb-count"></p>
-<div id="kb-results"></div>
+<div class="pager" id="kb-pager" style="display:none">
+  <button onclick="prev()">← 上一頁</button>
+  <span id="kb-pageinfo"></span>
+  <button onclick="next()">下一頁 →</button>
+</div>
+<div id="kb-results"><p class="muted">載入知識庫中…</p></div>
+<div class="pager" id="kb-pager2" style="display:none">
+  <button onclick="prev()">← 上一頁</button>
+  <span id="kb-pageinfo2"></span>
+  <button onclick="next()">下一頁 →</button>
+</div>
 <script>
 function escK(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
-var KB = [], shown = 0, lastKw = '';
-function render(items, header, more){
+var KB = [], page = 1, perPage = 20, lastKw = '';
+function items(){ return lastKw ? KB.filter(function(a){
+  return (a.q||'').indexOf(lastKw)>=0 || (a.a||'').indexOf(lastKw)>=0 || (a.reflection||'').indexOf(lastKw)>=0 ||
+         (a.title||'').indexOf(lastKw)>=0 || (a.keywords||[]).some(function(k){return k.indexOf(lastKw)>=0;});
+}) : KB; }
+function render(){
+  var all = items();
+  var totalPages = Math.max(1, Math.ceil(all.length / perPage));
+  if(page < 1) page = 1; if(page > totalPages) page = totalPages;
+  var slice = all.slice((page-1)*perPage, page*perPage);
   var box = document.getElementById('kb-results');
-  document.getElementById('kb-count').textContent = header;
-  box.innerHTML = items.map(function(a){
-    return '<div class="kb-item"><p class="kb-h"><b>'+escK(a.title)+'</b>｜'+escK(a.part)+'</p>'+
-      '<p class="kb-q">'+escK(a.q)+'</p><p class="kb-a">'+escK(a.a)+'</p>'+
-      (a.reflection?'<p class="jian">照見　'+escK(a.reflection)+'</p>':'')+'</div>';
-  }).join('') + (more ? '<p style="text-align:center"><button onclick="kbMore()">顯示更多</button></p>' : '');
+  if(!slice.length){ box.innerHTML = '<p class="none">無相符結果</p>'; }
+  else {
+    box.innerHTML = slice.map(function(a){
+      return '<div class="kb-item"><p class="kb-h"><b>'+escK(a.title)+'</b>｜'+escK(a.part)+'</p>'+
+        '<p class="kb-q">'+escK(a.q)+'</p><p class="kb-a">'+escK(a.a)+'</p>'+
+        (a.reflection?'<p class="jian">照見　'+escK(a.reflection)+'</p>':'')+'</div>';
+    }).join('');
+  }
+  var info = '第 ' + page + ' / ' + totalPages + ' 頁（共 ' + all.length + ' 題，' + (lastKw?'過濾後':'全部') + '）';
+  document.getElementById('kb-pageinfo').textContent = info;
+  document.getElementById('kb-pageinfo2').textContent = info;
+  document.getElementById('kb-pager').style.display = 'flex';
+  document.getElementById('kb-pager2').style.display = 'flex';
 }
-function kbMore(){
-  shown += 15;
-  if(!lastKw){ render(KB.slice(0, shown), '共 2385 題 · 顯示前 ' + shown + ' 題', shown < KB.length); }
-  else { var hits = search(lastKw); render(hits.slice(0, shown), hits.length + ' 題相符', shown < hits.length); }
-}
-function search(kw){
-  return KB.filter(function(a){
-    return (a.q||'').indexOf(kw)>=0 || (a.a||'').indexOf(kw)>=0 || (a.reflection||'').indexOf(kw)>=0 ||
-           (a.title||'').indexOf(kw)>=0 || (a.keywords||[]).some(function(k){return k.indexOf(kw)>=0;});
-  });
-}
-function kbSearch(kw){
-  kw = (kw||'').trim(); lastKw = kw; shown = 15;
-  if(!kw){ render(KB.slice(0,15), '共 2385 題 · 顯示前 15 題', true); return; }
-  var hits = search(kw);
-  render(hits.slice(0,15), hits.length + ' 題相符', hits.length > 15);
-}
-fetch('kb-books.json').then(function(r){return r.json();}).then(function(d){ KB = d.articles || []; render(KB.slice(0,15), '共 '+(d.articles?d.articles.length:2385)+' 題 · 顯示前 15 題', true); })
+function prev(){ page--; render(); }
+function next(){ page++; render(); }
+function kbSearch(kw){ lastKw = (kw||'').trim(); page = 1; render(); }
+fetch('kb-books.json').then(function(r){return r.json();}).then(function(d){ KB = d.articles || []; render(); })
   .catch(function(){ document.getElementById('kb-results').innerHTML='<p class="none">知識庫載入失敗</p>'; });
 </script></main>
 <footer>
