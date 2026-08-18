@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>知識庫 · 全文檢索</title>
+<meta name="description" content="2385 題可檢索知識庫">
+<meta property="og:title" content="知識庫 · 全文檢索">
+<meta property="og:description" content="2385 題可檢索知識庫">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://judickzhu.github.io/guhai/og.png">
+<meta property="og:url" content="https://judickzhu.github.io/guhai/kb.html">
+<meta name="twitter:card" content="summary_large_image">
+<script>var PREFIX = "";</script>
+<link rel="stylesheet" href="style.css?v=3">
+<script src="search-data.js?v=3" defer></script>
+<script src="auth.js?v=3"></script>
+<script src="app.js?v=3" defer></script>
+</head>
+<body>
+<header>
+  <div class="brand"><a href="index.html">股海雙書</a></div>
+  <nav><a href="index.html">首頁</a><a href="chapters/000.html">股路不归問答</a><a href="phenomena.html">現象索引</a><a href="checklist.html">自檢表</a><a href="framework.html">框架</a><a href="mapping.html">三層映射</a><a href="acts.html">六幕</a><a href="gudao/000.html">股道問答</a><a href="dc-kb.html">DC知識庫</a><a class="switch" href="orig/index.html" title="切換到原版（尖問＋透答＋照見）">📖 原版</a></nav>
+  <div class="search">
+    <input type="search" id="q" placeholder="搜尋 252 篇問答…" oninput="searchSite(this.value)" autocomplete="off">
+    <div id="search-results"></div>
+  </div>
+  <div class="tools">
+    <button onclick="setSize('s')" title="小字">A-</button>
+    <button onclick="setSize('m')" title="中字">A</button>
+    <button onclick="setSize('l')" title="大字">A+</button>
+    <button onclick="toggleTheme()" title="夜間模式">◐</button>
+  </div>
+</header>
+<main><h1>知識庫 · 全文檢索</h1>
+<p class="sub">《股路不归》1354 題 ＋ 《股道》1031 題 ＝ 2385 題 · 可搜題目／答案／照見／關鍵字</p>
+<div class="search" style="max-width:640px">
+  <input type="search" id="kbq" placeholder="輸入關鍵字（如：沽空、止損、恐懼、圓弧底）…" oninput="kbSearch(this.value)" autocomplete="off">
+</div>
+<p class="muted" id="kb-count"></p>
+<div id="kb-results"><p class="muted">輸入關鍵字開始檢索（共 2385 題）</p></div>
+<script>
+function escK(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+var KB = [];
+fetch('kb-books.json').then(function(r){return r.json();}).then(function(d){ KB = d.articles || []; })
+  .catch(function(){ document.getElementById('kb-results').innerHTML='<p class="none">知識庫載入失敗</p>'; });
+function kbSearch(kw){
+  kw = (kw||'').trim();
+  var box = document.getElementById('kb-results');
+  var cnt = document.getElementById('kb-count');
+  if(kw.length < 1){ box.innerHTML = '<p class="muted">輸入關鍵字開始檢索（共 2385 題）</p>'; cnt.textContent=''; return; }
+  var hits = KB.filter(function(a){
+    return (a.q||'').indexOf(kw)>=0 || (a.a||'').indexOf(kw)>=0 || (a.reflection||'').indexOf(kw)>=0 ||
+           (a.title||'').indexOf(kw)>=0 || (a.keywords||[]).some(function(k){return k.indexOf(kw)>=0;});
+  });
+  cnt.textContent = hits.length + ' 題相符';
+  if(!hits.length){ box.innerHTML = '<p class="none">無相符結果</p>'; return; }
+  box.innerHTML = hits.slice(0,30).map(function(a){
+    return '<div class="kb-item"><p class="kb-h"><b>'+escK(a.title)+'</b>｜'+escK(a.part)+'</p>'+
+      '<p class="kb-q">'+escK(a.q)+'</p>'+
+      '<p class="kb-a">'+escK(a.a)+'</p>'+
+      (a.reflection?'<p class="jian">照見　'+escK(a.reflection)+'</p>':'')+
+      '</div>';
+  }).join('') + (hits.length>30 ? '<p class="muted">…還有 '+ (hits.length-30) +' 題，請用更精確的關鍵字</p>' : '');
+}
+</script></main>
+<footer>
+  <p>原著：王新平　·　整理：南嗥</p>
+  <p>免責與合規：本內容為對王新平《股路不归》《股道》的解讀與教學整理，非投資建議；書中承諾式表述無實證，僅供認識風險與紀律啟發。引用原文均逐字核對。投資有風險，入市須謹慎。</p>
+</footer>
+</body>
+</html>

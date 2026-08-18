@@ -131,3 +131,9 @@ article.framework blockquote{border-left:3px solid var(--accent);padding:4px 12p
 nav a.switch{color:#e0a24a;border:1px solid #e0a24a;border-radius:14px}
 nav a.switch:hover{background:#e0a24a;color:#052E16}
 p.switch a{display:inline-block;color:#e0a24a;border:1px solid #e0a24a;border-radius:14px;padding:6px 14px;text-decoration:none;font-weight:700}
+
+/* ============ 知識庫檢索 ============ */
+#kb-results .kb-item{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin:10px 0}
+.kb-h{color:var(--accent);font-size:14px;margin-bottom:6px}
+.kb-q{font-weight:700;margin:4px 0}
+.kb-a{margin:4px 0;color:var(--text)}
