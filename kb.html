@@ -78,7 +78,7 @@ function render(){
 function prev(){ page--; render(); }
 function next(){ page++; render(); }
 function kbSearch(kw){ lastKw = (kw||'').trim(); page = 1; render(); }
-fetch('kb-books.json').then(function(r){return r.json();}).then(function(d){ KB = d.articles || []; render(); })
+fetch('kb-books.json?v=2').then(function(r){return r.json();}).then(function(d){ KB = d.articles || []; render(); })
   .catch(function(){ document.getElementById('kb-results').innerHTML='<p class="none">知識庫載入失敗</p>'; });
 </script></main>
 <footer>
