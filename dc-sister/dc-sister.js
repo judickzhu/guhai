@@ -1042,6 +1042,10 @@
   }
 
   function suggestFollowups(match) {
+    // V2.1 連續對話：條目帶 next 欄位（下一句高概率）時，快捷按鈕精確指向下一句
+    if (match.qa && match.qa.next) {
+      return [match.qa.next];
+    }
     var pool = [];
     match.cat.qa.forEach(function (qa) {
       if (qa.id !== match.qa.id) pool.push(qa.q);
