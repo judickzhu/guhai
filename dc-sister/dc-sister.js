@@ -889,7 +889,7 @@
     var lower = toSimplified(text.toLowerCase());
 
     // 1) 转人工：直接本地回复（繁体输入也会被转简体后匹配）
-    if (/人工|客服|真人|联系|电话|telegram|电报/.test(lower) && /人工|客服|真人|找/.test(lower)) {
+    if (/找人工|转人工|轉人工|人工客服|真人客服|联系人工|聯繫人工|人工对接|人工對接|人工服务|人工服務|人工(技术|技術)?(客服|服務)|telegram|电报|電報|人工电话|人工電話/.test(lower)) {
       botReply(
         t("human_intro") + "\n" +
         "• Telegram：" + KB_MATCH.meta.humanContact.telegram.join("  /  ") + "\n" +
