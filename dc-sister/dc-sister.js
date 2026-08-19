@@ -117,6 +117,8 @@
     }
     if (trad > simp) return SCRIPT_TRADITIONAL;
     if (simp > trad) return SCRIPT_SIMPLIFIED;
+    // 繁簡同形為主的句子：傾向保持當前文字體系，避免繁體用戶被誤切到簡體
+    if (state && state.script === SCRIPT_TRADITIONAL) return SCRIPT_TRADITIONAL;
     return trad ? SCRIPT_TRADITIONAL : SCRIPT_SIMPLIFIED;
   }
 
@@ -971,28 +973,24 @@
       return true;
     };
 
-    // 本地书籍知识库兜底（强命中时优先按书籍核心观点，用更像 DC 姐姐的口吻回复）
+    // 本地书籍知识库兜底（僅當 KB 命中不足時才用，確保訓練體系回答不被覆蓋）
+    if (match && match.score >= 4) { if (replyKB()) return; }
     if (window.DCSisterBooks) {
       window.DCSisterBooks.load(function () {
         var hits = window.DCSisterBooks.search(text, 2);
         if (hits && hits.length) {
-          if (isStrongBookHit(text, hits[0])) {
-            replyFromBooks(hits);
-            return;
-          }
-          if (!match) {
-            replyFromBooks(hits);
-            return;
-          }
-        }
-        if (replyKB()) {
+          var bookStrong = isStrongBookHit(text, hits[0]);
+          if (bookStrong) { replyFromBooks(hits); return; }
+          if (match) { if (replyKB()) return; }
+          replyFromBooks(hits);
           return;
         }
+        if (match) { if (replyKB()) return; }
         defaultFallback(text);
       });
       return;
     }
-    if (replyKB()) return;
+    if (match) { if (replyKB()) return; }
     defaultFallback(text);
   }
 
