@@ -452,6 +452,9 @@
 
   function loadDSConfig() {
     try {
+      // key 僅在網站密碼解鎖後才載入（訪客看不到、用不了）
+      var authed = localStorage.getItem('guhai-auth') === '1';
+      if (!authed) { DS_KEY = ''; DS_ENABLED = false; return; }
       DS_KEY = localStorage.getItem('ds_key') || '';
       DS_ENABLED = localStorage.getItem('ds_enabled') === '1';
     } catch (e) { DS_KEY = ''; DS_ENABLED = false; }
@@ -515,10 +518,24 @@
       .catch(function (e) { onError(e); });
   }
 
-  // AI 設置面板：輸入 DeepSeek key + 開啟 AI 模式
+  // AI 設置面板：輸入 DeepSeek key + 開啟 AI 模式（僅網站密碼解鎖後可用）
   function openAISettings() {
     if (document.getElementById("dc-ai-modal")) { document.getElementById("dc-ai-modal").remove(); return; }
     loadDSConfig();
+    var authed = false;
+    try { authed = localStorage.getItem('guhai-auth') === '1'; } catch (e) {}
+    if (!authed) {
+      var lockModal = document.createElement("div");
+      lockModal.id = "dc-ai-modal";
+      lockModal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:999;display:flex;align-items:center;justify-content:center;";
+      lockModal.innerHTML = '<div style="background:#1c1c22;color:#eee;border:1px solid #333;border-radius:12px;padding:22px;width:300px;text-align:center;">' +
+        '<p style="font-size:14px;margin:0 0 8px;">🔒 AI 模式需網站解鎖後使用</p>' +
+        '<p style="font-size:12px;color:#999;margin:0 0 14px;">請先輸入網站密碼進入本站，再開啟 AI 模式。</p>' +
+        '<button id="dc-ai-close" style="padding:9px 18px;border-radius:6px;border:1px solid #444;background:transparent;color:#ccc;cursor:pointer;">知道了</button></div>';
+      document.body.appendChild(lockModal);
+      document.getElementById("dc-ai-close").addEventListener("click", function () { lockModal.remove(); });
+      return;
+    }
     var modal = document.createElement("div");
     modal.id = "dc-ai-modal";
     modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:999;display:flex;align-items:center;justify-content:center;";
