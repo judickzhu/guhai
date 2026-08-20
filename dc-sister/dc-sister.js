@@ -316,6 +316,28 @@
     return false;
   }
 
+  // V3.0 銷售邊界：看似該賣、實際不能賣的問題（不替決定/不承諾/不強推/不討價）
+  function matchSalesBoundary(query) {
+    var q = toSimplified(String(query || "").toLowerCase());
+    var salesWords = ["該不該買","该不该买","該不該用","该不该用","要不要買","要不要买","能不能打折","能打折","便宜點","便宜点","降價","降价","保證賺錢","保证赚钱","穩賺保證","稳赚保证","包賺","包赚","是不是等我掏錢","是不是等我掏钱","一直推銷","一直推销","很缺錢","很缺钱","送我","体验版","體驗版","買三年","买三年","直接告訴我","直接告诉我","告訴我買","告诉我买","現在買還是賣","现在买还是卖","該買還是賣","该买还是卖"];
+    var hit = false;
+    for (var i = 0; i < salesWords.length; i++) {
+      if (q.indexOf(salesWords[i]) >= 0) { hit = true; break; }
+    }
+    if (!hit) return null;
+    // 只在 sales 分類中匹配
+    var best = null, bestScore = 0;
+    KB_MATCH.categories.forEach(function (cat) {
+      if (cat.id !== "sales") return;
+      cat.qa.forEach(function (qa) {
+        var s = scoreQA(query, qa);
+        if (s > bestScore) { bestScore = s; best = { qa: qa, cat: cat, score: s }; }
+      });
+    });
+    if (!best || bestScore < 2) return null;
+    return best;
+  }
+
   // 只在事務分類（產品/收費/交易所/安裝/售後）中匹配
   function matchTransactional(query) {
     if (!isTransactionalQuery(query)) return null;
@@ -1136,6 +1158,15 @@
           localFallbackPath(text);
         }
       );
+      return;
+    }
+
+    // 0) 銷售邊界優先（V3.0：看似該賣、實際不能賣的問題——不替決定/不承諾/不強推）
+    var salesMatch = matchSalesBoundary(text);
+    if (salesMatch) {
+      botReply(displayText(salesMatch.qa.a), { delay: 400 + salesMatch.qa.a.length * 3, quick: suggestFollowups(salesMatch), deepBtn: text });
+      highlightKBItem(salesMatch.cat.id, salesMatch.qa.id);
+      state.lastCat = salesMatch.cat.id;
       return;
     }
 
