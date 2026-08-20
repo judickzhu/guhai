@@ -302,6 +302,34 @@
   var EMOTION_CATS = {
     fear: "es20", anxiety: "es20", greed: "es20", anger: "es20", doubt: "es20"
   };
+
+  // V3.0 事務引擎（A 引擎）：操作/銷售/功能問題直接答，不教育
+  // 操作詞觸發：問「怎麼/多少錢/支持哪/怎麼綁定」等事務問題時，直接查事務分類
+  function isTransactionalQuery(query) {
+    var q = toSimplified(String(query || "").toLowerCase());
+    var txWords = ["怎么安装","怎麼安裝","如何安装","如何安裝","怎么绑定","怎麼綁定","如何绑定","如何綁定","多少钱","多少錢","怎么收费","怎麼收費","如何收费","如何收費","年费","年費","价格","價格","贵","貴","支持哪个","支持哪個","支持什么","支持什麼","支持哪些","支持哪些","怎么用","怎麼用","如何使用","如何使用","怎么暂停","怎麼暫停","如何暂停","如何暫停","怎么停止","怎麼停止","如何停止","如何停止","怎么升级","怎麼升級","如何升级","如何升級","怎么联系","怎麼聯繫","如何联系","如何聯繫","客服","人工","试用","試用","安装","安裝","API","到期","續費","续费","升级","升級","绑定","綁定","暂停","暫停","币种","幣種","参数","參數","币种","授權","授权","部署","OKX","币安","binance","交易所"];
+    for (var i = 0; i < txWords.length; i++) {
+      if (q.indexOf(txWords[i]) >= 0) return true;
+    }
+    return false;
+  }
+
+  // 只在事務分類（產品/收費/交易所/安裝/售後）中匹配
+  function matchTransactional(query) {
+    if (!isTransactionalQuery(query)) return null;
+    var txCats = ["feature", "pricing", "exchange", "usage", "support"];
+    var best = null, bestScore = 0;
+    KB_MATCH.categories.forEach(function (cat) {
+      if (txCats.indexOf(cat.id) < 0) return;
+      cat.qa.forEach(function (qa) {
+        var s = scoreQA(query, qa);
+        if (s > bestScore) { bestScore = s; best = { qa: qa, cat: cat, score: s }; }
+      });
+    });
+    if (!best || bestScore < 3) return null;
+    return best;
+  }
+
   function matchEmotionFirst(query) {
     if (!query) return null;
     var q = toSimplified(String(query).toLowerCase());
@@ -1097,6 +1125,15 @@
           localFallbackPath(text);
         }
       );
+      return;
+    }
+
+    // 0) 事務引擎優先（V3.0 A 引擎）：操作/銷售/功能問題直接答，不經過認知/情緒層
+    var txMatch = matchTransactional(text);
+    if (txMatch) {
+      botReply(displayText(txMatch.qa.a), { delay: 400 + txMatch.qa.a.length * 3, quick: suggestFollowups(txMatch), deepBtn: text });
+      highlightKBItem(txMatch.cat.id, txMatch.qa.id);
+      state.lastCat = txMatch.cat.id;
       return;
     }
 
