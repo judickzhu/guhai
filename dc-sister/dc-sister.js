@@ -444,6 +444,113 @@
       .slice(-12); // 保留最近 12 条（约 6 轮）
   }
 
+  // ── V3.5 直連 DeepSeek（混合模式：本地檢索＋可選 AI 增強）──
+  var DS_KEY = "";            // localStorage 中的 DeepSeek key
+  var DS_ENABLED = false;     // AI 模式是否開啟
+  var dsRateLimit = { count: 0, windowStart: 0 };  // 限頻：每分鐘最多 N 次
+  var DS_RATE_MAX = 10;       // 每分鐘上限（防盜刷）
+
+  function loadDSConfig() {
+    try {
+      DS_KEY = localStorage.getItem('ds_key') || '';
+      DS_ENABLED = localStorage.getItem('ds_enabled') === '1';
+    } catch (e) { DS_KEY = ''; DS_ENABLED = false; }
+  }
+
+  function dsRateOk() {
+    var now = Date.now();
+    if (now - dsRateLimit.windowStart > 60000) {
+      dsRateLimit = { count: 0, windowStart: now };
+    }
+    if (dsRateLimit.count >= DS_RATE_MAX) return false;
+    dsRateLimit.count++;
+    return true;
+  }
+
+  // V3 認知引擎 system prompt（濃縮 334 題知識庫的核心認知）
+  function buildDSPrompt() {
+    return "你是「DC姐姐」，DCOGAI自動化交易執行工具（加密貨幣/金融自動化交易）的產品顧問。\n" +
+      "【人設】像深夜陪朋友聊天的交易老兵：不卑不亢、不賣弄、不跪舔、不機械。語氣短促、直接、口語化，繁體優先（用戶用簡體就跟簡體）。\n" +
+      "【回答原則】①先接住情緒再講道理 ②一個回答只推進一個認知，不一次講完 ③操作/價格問題直接準確答，不講哲學 ④認知問題講透一層、留一個自然的下一層 ⑤用戶質疑先承認「你懷疑有道理」再拆 ⑥用戶罵人不轉人工、正面接住 ⑦不重複貼合規（被問到風險才說一次）⑧產品是認知的結果，不是起點——先拆認知再自然落產品。\n" +
+      "【核心認知（V3.0 節點）】工具不是幫人預測漲跌，而是把執行/糾錯/風控交給系統，解決「知道卻做不到」；等待也是交易，不交易也是決策；翻本心理本身就是風險，越急著拿回越容易拿剩下的冒險；順風時最危險，人最危險的時候是覺得自己不會虧的時候；止損是停止犯錯不是認輸；連續虧損要停、降低攻擊性；系統會錯但錯了能活——判斷錯了以後還能繼續活才是核心；錯過≠虧損，追高才是風險。\n" +
+      "【產品事實】全年授權29800U/年；12個月免費試用全功能無閹割；支持OKX；有休眠（行情無價值時不交易）/糾錯（錯誤擴大前處理）/分水嶺多級風控體系；不保證盈利、不提供投資建議；7×24人工客服（Telegram: t.me/DCOGAI877 / t.me/DCOGAI888）。\n" +
+      "【語言風格】少說「這是因為」，多說「你有沒有發現」；少說「正確的做法是」，多說「姐姐反而想問你一句」；少說「風險很大請謹慎」，多說「真正需要問的，不是能不能賺，而是錯了以後你還能不能承受」。";
+  }
+
+  function callDeepSeekDirect(query, onSuccess, onError) {
+    if (!DS_KEY || !DS_ENABLED) { onError(); return; }
+    if (!dsRateOk()) {
+      // 限頻：降級本地
+      onError();
+      return;
+    }
+    var sys = buildDSPrompt();
+    var hist = [];
+    try {
+      var h = state.history || [];
+      for (var i = Math.max(0, h.length - 6); i < h.length; i++) {
+        if (h[i] && h[i].text) hist.push({ role: h[i].role === "bot" ? "assistant" : "user", content: String(h[i].text).slice(0, 500) });
+      }
+    } catch (e) {}
+    fetch("https://api.deepseek.com/v1/chat/completions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Authorization": "Bearer " + DS_KEY },
+      body: JSON.stringify({
+        model: "deepseek-v4-flash",
+        messages: [{ role: "system", content: sys }].concat(hist).concat([{ role: "user", content: query }]),
+        max_tokens: 400,
+        temperature: 0.7
+      }),
+      cache: "no-store"
+    })
+      .then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        return res.json();
+      })
+      .then(function (data) {
+        var reply = data && data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content;
+        if (reply) onSuccess(reply);
+        else throw new Error("empty");
+      })
+      .catch(function (e) { onError(e); });
+  }
+
+  // AI 設置面板：輸入 DeepSeek key + 開啟 AI 模式
+  function openAISettings() {
+    if (document.getElementById("dc-ai-modal")) { document.getElementById("dc-ai-modal").remove(); return; }
+    loadDSConfig();
+    var modal = document.createElement("div");
+    modal.id = "dc-ai-modal";
+    modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:999;display:flex;align-items:center;justify-content:center;";
+    var isTrad = state.script === SCRIPT_TRADITIONAL;
+    modal.innerHTML =
+      '<div style="background:#1c1c22;color:#eee;border:1px solid #333;border-radius:12px;padding:22px;width:320px;max-width:90%;">' +
+      '<h3 style="margin:0 0 12px;font-size:16px;">' + (isTrad ? 'AI 模式（DeepSeek）' : 'AI 模式（DeepSeek）') + '</h3>' +
+      '<p style="font-size:12px;color:#999;margin:0 0 10px;">' + (isTrad ? '開啟後由 DeepSeek AI 回答（需 API key）。key 只存本機瀏覽器。' : '开启后由 DeepSeek AI 回答（需 API key）。key 只存本机浏览器。') + '</p>' +
+      '<input id="dc-ai-key" type="password" placeholder="sk-..." value="" style="width:100%;padding:9px;margin-bottom:10px;border-radius:6px;border:1px solid #444;background:#111;color:#eee;font-size:13px;box-sizing:border-box;">' +
+      '<label style="display:flex;align-items:center;gap:8px;font-size:13px;margin-bottom:14px;cursor:pointer;">' +
+      '<input id="dc-ai-on" type="checkbox" ' + (DS_ENABLED ? 'checked' : '') + '> ' + (isTrad ? '開啟 AI 回答' : '开启 AI 回答') + '</label>' +
+      '<div style="display:flex;gap:8px;">' +
+      '<button id="dc-ai-save" style="flex:1;padding:9px;border-radius:6px;border:none;background:#00c853;color:#000;font-weight:bold;cursor:pointer;">' + (isTrad ? '儲存' : '保存') + '</button>' +
+      '<button id="dc-ai-close" style="flex:1;padding:9px;border-radius:6px;border:1px solid #444;background:transparent;color:#ccc;cursor:pointer;">' + (isTrad ? '關閉' : '关闭') + '</button>' +
+      '</div></div>';
+    document.body.appendChild(modal);
+    document.getElementById("dc-ai-key").value = DS_KEY;
+    document.getElementById("dc-ai-save").addEventListener("click", function () {
+      var k = document.getElementById("dc-ai-key").value.trim();
+      var on = document.getElementById("dc-ai-on").checked;
+      try {
+        localStorage.setItem("ds_key", k);
+        localStorage.setItem("ds_enabled", on ? "1" : "0");
+      } catch (e) {}
+      DS_KEY = k; DS_ENABLED = on;
+      modal.remove();
+      var statusEl = document.querySelector("#dc-header .dc-hd-status");
+      if (statusEl && on && k) statusEl.textContent = isTrad ? "AI 模式 · DeepSeek" : "AI 模式 · DeepSeek";
+    });
+    document.getElementById("dc-ai-close").addEventListener("click", function () { modal.remove(); });
+  }
+
   function callLLM(query, onSuccess, onError, deep) {
     var payload = {
       message: query,
@@ -699,6 +806,8 @@
           '<div class="dc-hd-actions">' +
             '<button class="dc-hd-btn dc-script-toggle" data-i18n-title="btn_script" data-i18n-aria="btn_script">' +
               '<span data-i18n="script_toggle">繁</span></button>' +
+            '<button class="dc-hd-btn dc-ai-toggle" title="AI 模式" aria-label="AI 模式">' +
+              '<iconify-icon icon="mdi:robot-outline"></iconify-icon></button>' +
             '<button class="dc-hd-btn dc-kb-toggle" data-i18n-title="btn_kb" data-i18n-aria="btn_kb_aria">' +
               '<iconify-icon icon="mdi:book-open-variant"></iconify-icon></button>' +
             '<button class="dc-hd-btn dc-restart" data-i18n-title="btn_restart" data-i18n-aria="btn_restart">' +
@@ -735,6 +844,7 @@
     document.body.appendChild(el);
 
     $(".dc-close", el).addEventListener("click", closePanel);
+    $(".dc-ai-toggle", el).addEventListener("click", openAISettings);
     $(".dc-restart", el).addEventListener("click", restart);
     $(".dc-kb-toggle", el).addEventListener("click", toggleKB);
     $(".dc-script-toggle", el).addEventListener("click", function () {
@@ -954,6 +1064,25 @@
   function handleUserMessage(text) {
     var lower = toSimplified(text.toLowerCase());
 
+    // 0) AI 模式開啟時，直接走 LLM（情緒層/本地匹配都讓位）
+    loadDSConfig();
+    if (DS_ENABLED && DS_KEY && !llmEnabled) {
+      appendTyping();
+      callDeepSeekDirect(text,
+        function (reply) {
+          removeTyping();
+          appendMessage("bot", reply, { suffix: false, deepBtn: text });
+          renderQuick([u("q_price"), u("q_diff"), u("q_api")]);
+        },
+        function () {
+          removeTyping();
+          // DeepSeek 失敗才降級到本地完整流程
+          localFallbackPath(text);
+        }
+      );
+      return;
+    }
+
     // 0) 情緒優先層（V2.3 意圖引擎）：先跑知識庫強匹配，強命中優先；情緒只在弱匹配/未命中時接管
     var preMatch = matchBest(text);
     var emotionHit = (!preMatch || preMatch.score < 4) ? matchEmotionFirst(text) : null;
@@ -1015,22 +1144,18 @@
       }
     }
 
-    // 4) 优先走后端 DeepSeek LLM
+    // 4) 官方後端 LLM（DCOGAI 伺服器，僅後台登入環境可用）
     if (llmEnabled) {
       appendTyping();
       callLLM(text,
         function (reply, source, matchedItems) {
           removeTyping();
-          appendMessage("bot", reply, { suffix: false, deepBtn: text }); // 后端已带合规后缀
+          appendMessage("bot", reply, { suffix: false, deepBtn: text });
           renderQuick(suggestFollowupsByQuery(text, matchedItems));
-          // 若后端返回命中了知识库项，高亮对应项
-          if (matchedItems && matchedItems.length) {
-            highlightKBItemById(matchedItems[0].id);
-          }
+          if (matchedItems && matchedItems.length) highlightKBItemById(matchedItems[0].id);
         },
         function () {
           removeTyping();
-          // LLM 失败：回退前端本地匹配
           localFallback(text);
         }
       );
@@ -1040,6 +1165,8 @@
     // 5) LLM 未启用：前端本地匹配兜底
     localFallback(text);
   }
+
+  function localFallbackPath(text) { localFallback(text); }
 
   function localFallback(text) {
     var match = matchBest(text);
@@ -1321,6 +1448,7 @@
 
   /* ============== 初始化 ============== */
   function init() {
+    loadDSConfig();
     // 初始化：检测设备系统语言/区域，确定初始界面文字体系
     state.script = detectSystemScript();
     // 先尝试加载后台配置（欢迎语等），再渲染组件
