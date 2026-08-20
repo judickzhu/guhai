@@ -291,11 +291,54 @@
     return score;
   }
 
+  // V2.3 情緒優先引擎：用戶情緒詞 → 優先匹配情緒狀態鏈（es20）與反向題
+  var EMOTION_WORDS = {
+    fear: ["亏麻","亏惨","睡不","失眠","害怕","恐惧","恐慌","爆仓","亏光","睡不着","怕了","绝望","崩溃","想哭"],
+    anxiety: ["焦虑","着急","急死","心慌","坐不住","难受","停不下来","忍不住","烦躁","压力大"],
+    greed: ["翻本","翻倍","回本","赚回","一把","梭哈","满仓","重仓","翻盘","快速赚"],
+    anger: ["骗子","骗人","割韭菜","傻逼","傻鸟","没用","废物","垃圾","滚","退钱","退款","曝光","投诉","智商税","坑"],
+    doubt: ["真的吗","靠谱","可信","是不是假","验证","凭什么","忽悠","吹牛","信你"]
+  };
+  var EMOTION_CATS = {
+    fear: "es20", anxiety: "es20", greed: "es20", anger: "es20", doubt: "es20"
+  };
+  function matchEmotionFirst(query) {
+    if (!query) return null;
+    var q = toSimplified(String(query).toLowerCase());
+    var best = null, bestScore = 0;
+    for (var e in EMOTION_WORDS) {
+      var hit = 0;
+      EMOTION_WORDS[e].forEach(function (w) {
+        if (q.indexOf(w) >= 0) hit++;
+      });
+      if (hit > bestScore) { bestScore = hit; best = e; }
+    }
+    if (bestScore === 0) return null;
+    // 在 es20 分類中找匹配（先按情緒詞直接查）
+    var esCat = null;
+    KB_MATCH.categories.forEach(function (c) { if (c.id === "es20") esCat = c; });
+    if (!esCat) return null;
+    // 用情緒詞 + 原文雙重打分
+    var localBest = null, localScore = 0;
+    esCat.qa.forEach(function (qa) {
+      var s = scoreQA(query, qa);
+      // 情緒詞加分
+      EMOTION_WORDS[best].forEach(function (w) {
+        if (toSimplified(qa.q.toLowerCase()).indexOf(w) >= 0) s += 1.5;
+      });
+      if (s > localScore) { localScore = s; localBest = { qa: qa, cat: esCat, score: s }; }
+    });
+    if (localBest && localScore >= 3) return localBest;
+    return null;
+  }
+
   function matchBest(query) {
     var best = null, bestScore = 0;
     KB_MATCH.categories.forEach(function (cat) {
       cat.qa.forEach(function (qa) {
         var s = scoreQA(query, qa);
+        // V2.3 上下文狀態：上一輪同分類話題延續時加權（真實對話是連貫的）
+        if (state.lastCat && cat.id === state.lastCat) s *= 1.25;
         if (s > bestScore) { bestScore = s; best = { qa: qa, cat: cat, score: s }; }
       });
     });
@@ -414,6 +457,7 @@
     opened: false,
     welcomed: false,
     tierDetected: null,
+    lastCat: null,  // V2.3 上下文：上一輪命中分類
     kbOpen: false,
     kbActiveCat: null,
     kbKeyword: "",
@@ -888,6 +932,15 @@
   function handleUserMessage(text) {
     var lower = toSimplified(text.toLowerCase());
 
+    // 0) 情緒優先層（V2.3 意圖引擎）：先判斷用戶此刻的狀態，再決定怎麼答
+    var emotionHit = matchEmotionFirst(text);
+    if (emotionHit) {
+      botReply(displayText(emotionHit.qa.a), { delay: 500 + emotionHit.qa.a.length * 4, quick: suggestFollowups(emotionHit), deepBtn: text });
+      highlightKBItem(emotionHit.cat.id, emotionHit.qa.id);
+      state.lastCat = emotionHit.cat.id;
+      return;
+    }
+
     // 1) 转人工：直接本地回复（繁体输入也会被转简体后匹配）
     if (/找人工|转人工|轉人工|人工客服|真人客服|联系人工|聯繫人工|人工对接|人工對接|人工服务|人工服務|人工(技术|技術)?(客服|服務)|telegram|电报|電報|人工电话|人工電話/.test(lower)) {
       botReply(
@@ -906,6 +959,7 @@
     if (localMatch) {
       botReply(displayText(localMatch.qa.a), { delay: 500 + localMatch.qa.a.length * 4, quick: suggestFollowups(localMatch), deepBtn: text });
       highlightKBItem(localMatch.cat.id, localMatch.qa.id);
+      state.lastCat = localMatch.cat.id;
       return;
     }
 
@@ -973,7 +1027,7 @@
       return true;
     };
 
-    // 本地书籍知识库兜底（僅當 KB 命中不足時才用，確保訓練體系回答不被覆蓋）
+    // 本地书籍知识库兜底（V2.3：僅書籍強命中或 KB 完全無匹配時用；弱命中走意圖澄清，避免答非所問）
     if (match && match.score >= 4) { if (replyKB()) return; }
     if (window.DCSisterBooks) {
       window.DCSisterBooks.load(function () {
@@ -981,9 +1035,6 @@
         if (hits && hits.length) {
           var bookStrong = isStrongBookHit(text, hits[0]);
           if (bookStrong) { replyFromBooks(hits); return; }
-          if (match) { if (replyKB()) return; }
-          replyFromBooks(hits);
-          return;
         }
         if (match) { if (replyKB()) return; }
         defaultFallback(text);
@@ -995,14 +1046,13 @@
   }
 
   function defaultFallback(text) {
+    // V2.3 優雅兜底：意圖澄清，不機械說「沒有匹配」
+    var clarify = state.script === SCRIPT_TRADITIONAL
+      ? "你問的這個問題，姐姐想先確認一下：你更關心的是它怎麼用，還是它到底值不值得用？\n\n告訴姐姐一句，我們就從那裏聊起。"
+      : "你问的这个问题，姐姐想先确认一下：你更关心的是它怎么用，还是它到底值不值得用？\n\n告诉姐姐一句，我们就从那里聊起。";
     botReply(
-      t("fb_head") + "\n" +
-      t("fb_q1") + "\n" +
-      t("fb_q2") + "\n" +
-      t("fb_q3") + "\n" +
-      t("fb_q4") + "\n\n" +
-      t("fb_tail"),
-      { delay: 700, quick: ["怎么收费？", "休眠是什么？", "API怎么绑定？", "找人工客服"] }
+      clarify,
+      { delay: 700, quick: ["怎么收费？", "休眠是什么？", "API怎么绑定？", "你们是不是割韭菜"] }
     );
   }
 
