@@ -296,7 +296,7 @@
     fear: ["亏麻","亏惨","睡不","失眠","害怕","恐惧","恐慌","爆仓","亏光","睡不着","怕了","绝望","崩溃","想哭"],
     anxiety: ["焦虑","着急","急死","心慌","坐不住","难受","停不下来","忍不住","烦躁","压力大"],
     greed: ["翻本","翻倍","回本","赚回","一把","梭哈","满仓","重仓","翻盘","快速赚"],
-    anger: ["骗子","骗人","割韭菜","傻逼","傻鸟","没用","废物","垃圾","滚","退钱","退款","曝光","投诉","智商税","坑"],
+    anger: ["骗子","骗人","割韭菜","傻逼","傻鸟","没用","废物","垃圾","滚","退钱","退款","曝光","投诉","智商税","坑","煞笔","有病","什么破","破軟體","破软件","就是個屁","什么鬼","惡心","恶心"],
     doubt: ["真的吗","靠谱","可信","是不是假","验证","凭什么","忽悠","吹牛","信你"]
   };
   var EMOTION_CATS = {
@@ -314,19 +314,41 @@
       if (hit > bestScore) { bestScore = hit; best = e; }
     }
     if (bestScore === 0) return null;
-    // 在 es20 分類中找匹配（先按情緒詞直接查）
-    var esCat = null;
-    KB_MATCH.categories.forEach(function (c) { if (c.id === "es20") esCat = c; });
-    if (!esCat) return null;
-    // 用情緒詞 + 原文雙重打分
+    // 純攻擊詞（垃圾/傻鳥/廢物/騙子…）直接命中衝突場景對應條目，不走相似度
+    var ANGER_DIRECT = {
+      "垃圾":"你們就是割韭菜！", "傻鳥":"你是個傻鳥！", "廢物":"你是個傻鳥！", "傻逼":"你是個傻鳥！",
+      "割韭菜":"你們就是割韭菜！", "騙子":"你們是不是騙人的？", "騙人":"你們是不是騙人的？",
+      "智商稅":"你們這就是在收智商稅。", "退錢":"我要退款！", "退款":"我要退款！",
+      "曝光":"我要曝光你們！", "滾":"你是個傻鳥！"
+    };
+    if (best === "anger") {
+      for (var aw in ANGER_DIRECT) {
+        if (q.indexOf(aw) >= 0) {
+          var hitCat = null;
+          KB_MATCH.categories.forEach(function (c) {
+            if (c.id === "conflict") c.qa.forEach(function (qa) {
+              if (qa.q === ANGER_DIRECT[aw]) hitCat = { qa: qa, cat: c, score: 10 };
+            });
+          });
+          if (hitCat) return hitCat;
+        }
+      }
+    }
+    // 在情緒狀態鏈(es20) + 衝突場景(conflict) + 攻擊場景中找匹配
+    var searchCats = [];
+    KB_MATCH.categories.forEach(function (c) {
+      if (c.id === "es20" || c.id === "conflict" || c.id === "v22") searchCats.push(c);
+    });
     var localBest = null, localScore = 0;
-    esCat.qa.forEach(function (qa) {
-      var s = scoreQA(query, qa);
-      // 情緒詞加分
-      EMOTION_WORDS[best].forEach(function (w) {
-        if (toSimplified(qa.q.toLowerCase()).indexOf(w) >= 0) s += 1.5;
+    searchCats.forEach(function (cat) {
+      cat.qa.forEach(function (qa) {
+        var s = scoreQA(query, qa);
+        // 情緒詞加分
+        EMOTION_WORDS[best].forEach(function (w) {
+          if (toSimplified(qa.q.toLowerCase()).indexOf(w) >= 0) s += 1.5;
+        });
+        if (s > localScore) { localScore = s; localBest = { qa: qa, cat: cat, score: s }; }
       });
-      if (s > localScore) { localScore = s; localBest = { qa: qa, cat: esCat, score: s }; }
     });
     if (localBest && localScore >= 3) return localBest;
     return null;
@@ -932,8 +954,9 @@
   function handleUserMessage(text) {
     var lower = toSimplified(text.toLowerCase());
 
-    // 0) 情緒優先層（V2.3 意圖引擎）：先判斷用戶此刻的狀態，再決定怎麼答
-    var emotionHit = matchEmotionFirst(text);
+    // 0) 情緒優先層（V2.3 意圖引擎）：先跑知識庫強匹配，強命中優先；情緒只在弱匹配/未命中時接管
+    var preMatch = matchBest(text);
+    var emotionHit = (!preMatch || preMatch.score < 4) ? matchEmotionFirst(text) : null;
     if (emotionHit) {
       botReply(displayText(emotionHit.qa.a), { delay: 500 + emotionHit.qa.a.length * 4, quick: suggestFollowups(emotionHit), deepBtn: text });
       highlightKBItem(emotionHit.cat.id, emotionHit.qa.id);
