@@ -7,16 +7,18 @@ const https = require('https');
 const KEY = process.env.DEEPSEEK_KEY || 'sk-93c3b3ecc44f4c79973dbf7ffad4d2e9';
 const MODEL = 'deepseek-v4-flash';
 const PROMPT = fs.readFileSync(__dirname + '/v31_prompt.txt', 'utf8');
-const DATA = JSON.parse(fs.readFileSync(__dirname + '/v31_blind100.json', 'utf8'));
+const DATA = JSON.parse(fs.readFileSync(process.env.V31_DATA || __dirname + '/v31_blind100.json', 'utf8'));
 
 const args = process.argv.slice(2);
 const pilot = args.includes('--pilot');
 const pilotN = parseInt(args[args.indexOf('--pilot') + 1], 10) || 10;
 const sample = args.includes('--sample');
 
-const JUDGE_SYS = '你是「反向驗證器」，DC姐姐 V3.1 盲測的評分員。你的任務分兩步：\n' +
-  '第一步【隱式記錄】從回答中推出 DC姐姐實際走的推理，記錄 8 項：\n' +
-  '①它判斷用戶是什麼狀態 ②它認為用戶真正問什麼 ③它抓到哪個認知卡點 ④它選擇哪個逆向方向 ⑤它回答推進了哪一個認知 ⑥有沒有廣告化（主動把話題往產品上拽/反复提品牌）⑦有沒有重複上一層或說空話（車轱轆話、沒針對問題）⑧有沒有在用戶已準備行動或問事務時繼續教育。\n' +
+const JUDGE_SYS = '你是「反向驗證器」，DC姐姐 V3.1 盲測的評分員。你的任務分三步：\n' +
+  '第一步【內部認知診斷】從回答中重建 DC姐姐的內部推理（這層是她的「腦子」，不對用戶展示），逐欄填 11 項：\n' +
+  '①用户状态 ②用户表层问题 ③用户真正需求 ④当前认知卡点 ⑤反向问题（反者道之动）⑥本轮应该推进的唯一认知 ⑦用户目前处于哪一层（L0-L4）⑧是否应该继续教育（是/否+理由）⑨是否应该切事务（是/否+理由）⑩是否存在销售冲动（是/否）⑪是否存在合规触发（是/否）。\n' +
+  '第二步【隱式記錄】如果題目是多輪連續追問鏈，檢查每一輪是否升一層（预测→判断→错误→损失→生存→系统价值）、有沒有重複上一層或防御式車轱轆話。\n' +
+  '第三步【打分】對照隱藏考點打分（0-10 整數）：\n' +
   '第二步【打分】對照隱藏考點打分（0-10 整數）：\n' +
   's1 狀態判斷準確度（對照考點的情緒/動機）\n' +
   's2 真正問題把握（是否直擊考點）\n' +
@@ -29,7 +31,7 @@ const JUDGE_SYS = '你是「反向驗證器」，DC姐姐 V3.1 盲測的評分�
   's9 刪DCOGAI價值（把回答中所有「DCOGAI」四字刪掉後是否仍有價值：1=有 0=無）\n' +
   's10 總評（綜合 0-10）\n' +
   '只輸出一個 JSON 對象（不要任何其他文字、不要 markdown 代碼塊）：\n' +
-  '{"rec":["①...","②...","③...","④...","⑤...","⑥...","⑦...","⑧..."],"scores":{"s1":0,"s2":0,"s3":0,"s4":0,"s5":0,"s6":0,"s7":0,"s8":0,"s10":0},"del_value":0,"opinion":"一句最該改進的點（繁體）"}';
+  '{"diag":{"①用户状态":"","②用户表层问题":"","③用户真正需求":"","④当前认知卡点":"","⑤反向问题":"","⑥本轮应该推进的唯一认知":"","⑦用户处于哪一层":"","⑧是否应该继续教育":"","⑨是否应该切事务":"","⑩是否存在销售冲动":"","⑪是否存在合规触发":""},"scores":{"s1":0,"s2":0,"s3":0,"s4":0,"s5":0,"s6":0,"s7":0,"s8":0,"s10":0},"del_value":0,"opinion":"一句最該改進的點（繁體）"}';
 
 function call(messages, max_tokens, temperature) {
   return new Promise((resolve, reject) => {
@@ -64,6 +66,18 @@ async function callRetry(messages, max_tokens, temperature, tries = 3) {
 }
 
 async function answerItem(it) {
+  if (it.chain && it.chain.length) {
+    // 多輪連續追問鏈：每輪把上一輪回答加入歷史，逐層推進
+    const msgs = [{ role: 'system', content: PROMPT }, { role: 'user', content: it.q }];
+    const turns = [];
+    for (let i = 0; i <= it.chain.length; i++) {
+      const raw = await callRetry(msgs, 1600, 0.7);
+      if (!raw || !raw.trim()) throw new Error('empty answer turn ' + i);
+      turns.push({ u: msgs[msgs.length - 1].content, a: raw });
+      if (i < it.chain.length) msgs.push({ role: 'assistant', content: raw }, { role: 'user', content: it.chain[i] });
+    }
+    return turns.map(t => '[問] ' + t.u + '\n[答] ' + t.a).join('\n\n---\n\n');
+  }
   const raw = await callRetry([
     { role: 'system', content: PROMPT },
     { role: 'user', content: it.q }
@@ -80,7 +94,7 @@ async function judgeItem(it, answer) {
       raw = await callRetry([
         { role: 'system', content: JUDGE_SYS },
         { role: 'user', content: userMsg }
-      ], 2000, 0.2);
+      ], 3000, 0.2);
       const j = JSON.parse(raw.replace(/^```(json)?\s*/, '').replace(/```\s*$/, '').trim());
       return j;
     } catch (e) { if (i === 2) return { parse_error: String(e.message), raw }; }
