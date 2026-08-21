@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DC姐姐 V3.1 盲測自測</title>
+<meta name="description" content="100 條無標準答案盲測：只給用戶原話，測 DC姐姐的自主認知推理">
+<meta property="og:title" content="DC姐姐 V3.1 盲測自測">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://judickzhu.github.io/guhai/og.png">
+<meta property="og:url" content="https://judickzhu.github.io/guhai/v31test.html">
+<script>var PREFIX = "";</script>
+<link rel="stylesheet" href="style.css?v=3">
+<script src="auth.js?v=3"></script>
+<link rel="stylesheet" href="dc-sister/dc-sister.css">
+<script src="dc-sister/iconify-icon.min.js"></script>
+<script src="dc-sister/kb-data.js"></script>
+<script src="dc-sister/zh-map.js"></script>
+<script src="dc-sister/kb-books.js"></script>
+<script src="dc-sister/dc-sister.js?v=18"></script>
+<style>
+  body { background:#141419; color:#e8e8ec; }
+  .v31-wrap { max-width:760px; margin:0 auto; padding:28px 18px 80px; }
+  .v31-title { font-size:20px; margin:0 0 4px; }
+  .v31-sub { color:#999; font-size:13px; margin:0 0 18px; }
+  .v31-card { background:#1c1c24; border:1px solid #2c2c36; border-radius:12px; padding:20px; margin-bottom:14px; }
+  .v31-qhead { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+  .v31-no { font-size:13px; color:#7cb8ff; font-weight:bold; }
+  .v31-q { font-size:16px; line-height:1.7; min-height:48px; }
+  .v31-btnrow { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
+  .v31-btn { padding:9px 16px; border-radius:8px; border:1px solid #444; background:#26262f; color:#eee; cursor:pointer; font-size:14px; }
+  .v31-btn:hover { background:#30303b; }
+  .v31-btn.primary { background:#00c853; color:#000; font-weight:bold; border:none; }
+  .v31-btn:disabled { opacity:.45; cursor:not-allowed; }
+  .v31-ans { white-space:pre-wrap; line-height:1.8; font-size:14px; color:#d8d8e0; border-top:1px dashed #333; margin-top:14px; padding-top:12px; display:none; }
+  .v31-point { background:#232a1a; border:1px solid #3a4a22; border-radius:10px; padding:14px; margin-top:12px; font-size:13px; color:#b8e08a; display:none; }
+  .v31-keyrow { display:flex; gap:8px; align-items:center; margin-bottom:14px; }
+  .v31-keyrow input { flex:1; padding:8px; border-radius:6px; border:1px solid #444; background:#111; color:#eee; font-size:13px; }
+  .v31-bar { height:6px; background:#26262f; border-radius:3px; overflow:hidden; margin-top:12px; }
+  .v31-bar i { display:block; height:100%; background:#00c853; width:0; transition:width .3s; }
+  .v31-status { font-size:12px; color:#888; margin-top:6px; min-height:16px; }
+  .v31-warn { color:#ffb74d; }
+  .v31-tag { font-size:12px; color:#7cb8ff; margin-top:8px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand"><a href="index.html">股海雙書</a></div>
+  <nav><a href="index.html">首頁</a><a href="chapters/000.html">股路不归問答</a><a href="phenomena.html">現象索引</a><a href="checklist.html">自檢表</a><a href="framework.html">框架</a><a href="mapping.html">三層映射</a><a href="acts.html">六幕</a><a href="gudao/000.html">股道問答</a><a href="dc-kb.html">DC知識庫</a><a href="kb.html">知識庫檢索</a><a class="switch" href="orig/index.html" title="切換到原版（尖問＋透答＋照見）">📖 原版</a></nav>
+</header>
+<main>
+<div class="v31-wrap">
+  <h1 class="v31-title">DC姐姐 V3.1 · 100 題盲測自測</h1>
+  <p class="v31-sub">每題只給用戶原話，不給分類、不給考點——測她在<b>沒見過的問題</b>上能不能沿著同一套思維（五問：表層→動機→卡點→反面→一答一認知）自己答對。答完可「顯示考點」對照。</p>
+
+  <div class="v31-keyrow">
+    <input type="password" id="v31-key" placeholder="DeepSeek API key（sk-...，只存本機瀏覽器）" autocomplete="off">
+    <button class="v31-btn" id="v31-keysave">儲存 key</button>
+  </div>
+
+  <div class="v31-card">
+    <div class="v31-qhead">
+      <span class="v31-no" id="v31-no">— / 100</span>
+      <span class="v31-tag" id="v31-prog">已答 0 題</span>
+    </div>
+    <div class="v31-q" id="v31-q">載入題庫中…</div>
+    <div class="v31-btnrow">
+      <button class="v31-btn primary" id="v31-ask">🤖 讓姐姐答</button>
+      <button class="v31-btn" id="v31-point" disabled>顯示考點</button>
+      <button class="v31-btn" id="v31-prev">上一題</button>
+      <button class="v31-btn" id="v31-next">下一題</button>
+      <button class="v31-btn" id="v31-rand">隨機</button>
+    </div>
+    <div class="v31-bar"><i id="v31-barfill"></i></div>
+    <div class="v31-status" id="v31-status"></div>
+    <div class="v31-ans" id="v31-ans"></div>
+    <div class="v31-point" id="v31-point-box"></div>
+  </div>
+</div>
+</main>
+<footer>
+  <p style="text-align:center;color:#666;font-size:12px;">盲測規則：AI 只給原話 · 隱藏考點僅供答完對照 · 刪名測試：刪掉 DCOGAI 四字答案還有沒有價值？有＝認知，沒有＝廣告</p>
+</footer>
+
+<script>
+(function () {
+  var items = [];       // {no,g,gname,q,point}
+  var idx = 0;
+  var answered = {};
+  var busy = false;
+
+  var $ = function (id) { return document.getElementById(id); };
+  function saveKey() {
+    var k = $('v31-key').value.trim();
+    if (!k) return;
+    try {
+      localStorage.setItem('ds_key', k);
+      localStorage.setItem('ds_enabled', '1');
+      $('v31-status').textContent = '✅ key 已存本機（AI 模式同步開啟）';
+    } catch (e) { $('v31-status').textContent = '存儲失敗：' + e.message; }
+  }
+  $('v31-keysave').addEventListener('click', saveKey);
+  $('v31-key').addEventListener('keydown', function (e) { if (e.key === 'Enter') saveKey(); });
+  try { $('v31-key').value = localStorage.getItem('ds_key') || ''; } catch (e) {}
+
+  fetch('v31_blind100.json', { cache: 'no-store' })
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      items = [];
+      (data.groups || []).forEach(function (g) {
+        (g.items || []).forEach(function (it) {
+          items.push({ no: it.no, g: g.g, gname: g.name, q: it.q, point: it.point || g.note || '' });
+        });
+      });
+      render();
+    })
+    .catch(function (e) { $('v31-q').textContent = '題庫載入失敗：' + e.message; });
+
+  function render() {
+    if (!items.length) return;
+    var it = items[idx];
+    $('v31-no').textContent = it.no + ' / 100';
+    $('v31-q').textContent = it.q;
+    $('v31-ans').style.display = 'none';
+    $('v31-point-box').style.display = 'none';
+    $('v31-point').disabled = false;
+    $('v31-ans').textContent = '';
+    $('v31-point-box').textContent = '';
+    $('v31-prog').textContent = '已答 ' + Object.keys(answered).length + ' 題';
+    $('v31-barfill').style.width = (Object.keys(answered).length / items.length * 100) + '%';
+    $('v31-status').textContent = answered[it.no] ? '✅ 本題已答過（可再答）' : '';
+  }
+
+  function ask() {
+    if (busy) return;
+    if (!items.length) return;
+    var it = items[idx];
+    var key = '';
+    try { key = localStorage.getItem('ds_key') || ''; } catch (e) {}
+    if (!key) { $('v31-status').textContent = '⚠️ 請先在上方輸入並儲存 DeepSeek key'; $('v31-key').focus(); return; }
+    busy = true;
+    $('v31-ask').disabled = true;
+    $('v31-status').textContent = '🤖 姐姐在想…（五問內部推理中）';
+    var sys = (window.DCSister && window.DCSister.prompt) ? window.DCSister.prompt() : '';
+    fetch('https://api.deepseek.com/v1/chat/completions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key },
+      body: JSON.stringify({
+        model: 'deepseek-v4-flash',
+        messages: [{ role: 'system', content: sys }, { role: 'user', content: it.q }],
+        max_tokens: 1600,
+        temperature: 0.7
+      }),
+      cache: 'no-store'
+    })
+      .then(function (res) {
+        if (res.status === 429) { $('v31-status').textContent = '⏳ 限頻中，12 秒後自動重試…'; setTimeout(ask, 12000); busy = false; return null; }
+        return res.json().then(function (j) {
+          if (!res.ok) throw new Error('HTTP ' + res.status + ' ' + JSON.stringify(j).slice(0, 120));
+          return j;
+        });
+      })
+      .then(function (j) {
+        if (!j) return;
+        var reply = j.choices && j.choices[0] && j.choices[0].message && j.choices[0].message.content;
+        if (!reply) throw new Error('空回覆');
+        $('v31-ans').textContent = reply;
+        $('v31-ans').style.display = 'block';
+        answered[it.no] = true;
+        $('v31-prog').textContent = '已答 ' + Object.keys(answered).length + ' 題';
+        $('v31-barfill').style.width = (Object.keys(answered).length / items.length * 100) + '%';
+        $('v31-status').textContent = '✅ 答完。對照一下：她抓到的是不是真正卡點？';
+        busy = false;
+        // 冷卻 6 秒再允許下一題（保護 key）
+        $('v31-ask').disabled = true;
+        var t = 6;
+        var timer = setInterval(function () {
+          t--;
+          $('v31-status').textContent = '✅ 答完。冷卻 ' + t + ' 秒後可再問…';
+          if (t <= 0) { clearInterval(timer); $('v31-ask').disabled = false; $('v31-status').textContent = '✅ 答完。對照一下：她抓到的是不是真正卡點？'; }
+        }, 1000);
+      })
+      .catch(function (e) {
+        $('v31-status').textContent = '⚠️ 出錯：' + e.message + '（稍後再試）';
+        busy = false;
+        $('v31-ask').disabled = false;
+      });
+  }
+
+  $('v31-ask').addEventListener('click', ask);
+  $('v31-prev').addEventListener('click', function () { if (idx > 0) { idx--; render(); } });
+  $('v31-next').addEventListener('click', function () { if (idx < items.length - 1) { idx++; render(); } });
+  $('v31-rand').addEventListener('click', function () { idx = Math.floor(Math.random() * items.length); render(); });
+  $('v31-point').addEventListener('click', function () {
+    if (!items.length) return;
+    var it = items[idx];
+    $('v31-point-box').innerHTML = '<b>G' + it.g + ' · ' + it.gname + '</b><br>' + (it.point || '（組提示：見題庫檔案）');
+    $('v31-point-box').style.display = 'block';
+    $('v31-point').disabled = true;
+  });
+})();
+</script>
+</body>
+</html>
