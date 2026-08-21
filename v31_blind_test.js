@@ -172,6 +172,24 @@ if (args.includes('--summary')) {
     console.log('updated ' + (process.env.V31_OUT || 'v31_blind_results.json'));
     summarize(saved);
   })();
+} else if (args.includes('--reanswer')) {
+  // 重新答題+評分（--reanswer 31,52）
+  (async () => {
+    const saved = JSON.parse(fs.readFileSync(process.env.V31_OUT || __dirname + '/v31_blind_results.json', 'utf8'));
+    const spec = args[args.indexOf('--reanswer') + 1];
+    const nos = new Set(spec.split(',').map(s => s.trim()));
+    const targets = saved.items.filter(it => nos.has(it.no));
+    console.log('[Reanswer] items:', targets.map(t => t.no).join(','));
+    for (const it of targets) {
+      const a = await answerItem({ q: it.q, chain: it.chain });
+      it.answer = a;
+      const j = await judgeItem({ g: it.g, no: it.no, q: it.q, point: it.point }, a);
+      it.judge = j;
+      console.log('  no ' + it.no + ' -> ' + (j.parse_error ? 'PARSE_ERR' : 's10=' + j.scores.s10 + ' del=' + j.del_value) + ' len=' + (a || '').length);
+    }
+    fs.writeFileSync(process.env.V31_OUT || __dirname + '/v31_blind_results.json', JSON.stringify(saved, null, 1));
+    summarize(saved);
+  })();
 } else {
   main();
 }
