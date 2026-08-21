@@ -132,7 +132,7 @@
   function render() {
     if (!items.length) return;
     var it = items[idx];
-    $('v31-no').textContent = it.no + ' / ' + items.length;
+    $('v31-no').textContent = (idx + 1) + ' / ' + items.length;
     $('v31-q').textContent = it.q;
     $('v31-ans').style.display = 'none';
     $('v31-point-box').style.display = 'none';
