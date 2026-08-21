@@ -618,7 +618,8 @@
       '<div style="display:flex;gap:8px;">' +
       '<button id="dc-ai-save" style="flex:1;padding:9px;border-radius:6px;border:none;background:#00c853;color:#000;font-weight:bold;cursor:pointer;">' + (isTrad ? '儲存' : '保存') + '</button>' +
       '<button id="dc-ai-close" style="flex:1;padding:9px;border-radius:6px;border:1px solid #444;background:transparent;color:#ccc;cursor:pointer;">' + (isTrad ? '關閉' : '关闭') + '</button>' +
-      '</div></div>';
+      '</div>' +
+      '<a href="v31test.html" style="display:block;text-align:center;margin-top:12px;font-size:12px;color:#7cb8ff;text-decoration:none;">🧪 100 題盲測自測（未知問題 · 無標準答案）</a></div>';
     document.body.appendChild(modal);
     document.getElementById("dc-ai-key").value = DS_KEY;
     document.getElementById("dc-ai-save").addEventListener("click", function () {
@@ -1566,6 +1567,7 @@
         open: openPanel,
         close: closePanel,
         restart: restart,
+        prompt: buildDSPrompt,
         ask: function (q) {
           openPanel();
           setTimeout(function () {
