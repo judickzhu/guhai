@@ -181,11 +181,16 @@ if (args.includes('--summary')) {
     const targets = saved.items.filter(it => nos.has(it.no));
     console.log('[Reanswer] items:', targets.map(t => t.no).join(','));
     for (const it of targets) {
-      const a = await answerItem({ q: it.q, chain: it.chain });
-      it.answer = a;
-      const j = await judgeItem({ g: it.g, no: it.no, q: it.q, point: it.point }, a);
-      it.judge = j;
-      console.log('  no ' + it.no + ' -> ' + (j.parse_error ? 'PARSE_ERR' : 's10=' + j.scores.s10 + ' del=' + j.del_value) + ' len=' + (a || '').length);
+      try {
+        const a = await answerItem({ q: it.q, chain: it.chain });
+        it.answer = a;
+        const j = await judgeItem({ g: it.g, no: it.no, q: it.q, point: it.point }, a);
+        it.judge = j;
+        console.log('  no ' + it.no + ' -> ' + (j.parse_error ? 'PARSE_ERR' : 's10=' + j.scores.s10 + ' del=' + j.del_value) + ' len=' + (a || '').length);
+      } catch (e) {
+        console.log('  no ' + it.no + ' -> FAILED: ' + e.message.slice(0, 40));
+      }
+      await new Promise(r => setTimeout(r, 1500));
     }
     fs.writeFileSync(process.env.V31_OUT || __dirname + '/v31_blind_results.json', JSON.stringify(saved, null, 1));
     summarize(saved);
