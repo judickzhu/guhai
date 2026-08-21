@@ -17,7 +17,7 @@
 <script src="dc-sister/kb-data.js"></script>
 <script src="dc-sister/zh-map.js"></script>
 <script src="dc-sister/kb-books.js"></script>
-<script src="dc-sister/dc-sister.js?v=18"></script>
+<script src="dc-sister/dc-sister.js?v=19"></script>
 <style>
   body { background:#141419; color:#e8e8ec; }
   .v31-wrap { max-width:760px; margin:0 auto; padding:28px 18px 80px; }
@@ -52,6 +52,12 @@
 <div class="v31-wrap">
   <h1 class="v31-title">DC姐姐 V3.1 · 100 題盲測自測</h1>
   <p class="v31-sub">每題只給用戶原話，不給分類、不給考點——測她在<b>沒見過的問題</b>上能不能沿著同一套思維（五問：表層→動機→卡點→反面→一答一認知）自己答對。答完可「顯示考點」對照。</p>
+  <div class="v31-keyrow">
+    <select id="v31-set" style="padding:8px;border-radius:6px;border:1px solid #444;background:#111;color:#eee;font-size:13px;">
+      <option value="v31_blind100.json">盲測 100 題（V3.1 主套件）</option>
+      <option value="v31b_blind30.json">盲測 30 題（V3.1 自主認知 ①—30）</option>
+    </select>
+  </div>
 
   <div class="v31-keyrow">
     <input type="password" id="v31-key" placeholder="DeepSeek API key（sk-...，只存本機瀏覽器）" autocomplete="off">
@@ -103,23 +109,29 @@
   $('v31-key').addEventListener('keydown', function (e) { if (e.key === 'Enter') saveKey(); });
   try { $('v31-key').value = localStorage.getItem('ds_key') || ''; } catch (e) {}
 
-  fetch('v31_blind100.json', { cache: 'no-store' })
-    .then(function (r) { return r.json(); })
-    .then(function (data) {
-      items = [];
-      (data.groups || []).forEach(function (g) {
-        (g.items || []).forEach(function (it) {
-          items.push({ no: it.no, g: g.g, gname: g.name, q: it.q, point: it.point || g.note || '' });
+  function loadSet() {
+    var file = $('v31-set').value;
+    items = []; idx = 0; answered = {};
+    $('v31-q').textContent = '載入題庫中…';
+    fetch(file, { cache: 'no-store' })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        (data.groups || []).forEach(function (g) {
+          (g.items || []).forEach(function (it) {
+            items.push({ no: it.no, g: g.g, gname: g.name, q: it.q, point: it.point || g.note || '' });
+          });
         });
-      });
-      render();
-    })
-    .catch(function (e) { $('v31-q').textContent = '題庫載入失敗：' + e.message; });
+        render();
+      })
+      .catch(function (e) { $('v31-q').textContent = '題庫載入失敗：' + e.message; });
+  }
+  $('v31-set').addEventListener('change', loadSet);
+  loadSet();
 
   function render() {
     if (!items.length) return;
     var it = items[idx];
-    $('v31-no').textContent = it.no + ' / 100';
+    $('v31-no').textContent = it.no + ' / ' + items.length;
     $('v31-q').textContent = it.q;
     $('v31-ans').style.display = 'none';
     $('v31-point-box').style.display = 'none';
