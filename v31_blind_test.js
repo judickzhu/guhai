@@ -132,18 +132,19 @@ async function main() {
     no: it.no, g: it.g, gname: it.gname, q: it.q, point: it.point,
     answer: it.answer, judge: it.judge
   })) };
-  fs.writeFileSync(__dirname + '/v31_blind_results.json', JSON.stringify(out, null, 1));
-  console.log('saved: v31_blind_results.json  (' + ((Date.now() - t0) / 1000).toFixed(0) + 's)');
+  const outPath = process.env.V31_OUT || __dirname + '/v31_blind_results.json';
+  fs.writeFileSync(outPath, JSON.stringify(out, null, 1));
+  console.log('saved: ' + outPath + '  (' + ((Date.now() - t0) / 1000).toFixed(0) + 's)');
   summarize(out);
 }
 
 if (args.includes('--summary')) {
-  const saved = JSON.parse(fs.readFileSync(__dirname + '/v31_blind_results.json', 'utf8'));
+  const saved = JSON.parse(fs.readFileSync(process.env.V31_OUT || __dirname + '/v31_blind_results.json', 'utf8'));
   summarize(saved);
 } else if (args.includes('--rejudge')) {
   // 補評：只對無效 judge 的題目重跑 Pass B（--rejudge 31,51 或 --rejudge all）
   (async () => {
-    const saved = JSON.parse(fs.readFileSync(__dirname + '/v31_blind_results.json', 'utf8'));
+    const saved = JSON.parse(fs.readFileSync(process.env.V31_OUT || __dirname + '/v31_blind_results.json', 'utf8'));
     const spec = args[args.indexOf('--rejudge') + 1];
     const nos = new Set(spec === 'all' ? saved.items.map(i => i.no) : spec.split(',').map(s => s.trim()));
     const targets = saved.items.filter(it => nos.has(it.no));
@@ -153,8 +154,8 @@ if (args.includes('--summary')) {
       it.judge = j;
       console.log('  no ' + it.no + ' -> ' + (j.parse_error ? 'PARSE_ERR' : 's10=' + j.scores.s10 + ' del=' + j.del_value));
     }
-    fs.writeFileSync(__dirname + '/v31_blind_results.json', JSON.stringify(saved, null, 1));
-    console.log('updated v31_blind_results.json');
+    fs.writeFileSync(process.env.V31_OUT || __dirname + '/v31_blind_results.json', JSON.stringify(saved, null, 1));
+    console.log('updated ' + (process.env.V31_OUT || 'v31_blind_results.json'));
     summarize(saved);
   })();
 } else {
