@@ -754,6 +754,7 @@
     tradKB: null,                // 繁体版知识库缓存（避免重复拉取/转换）
     englishKB: null,              // 英文版知识库缓存（a_en 預翻譯）
     lang: "zh",                   // V3.3 输出语言 zh/en（EN 按钮驱动）
+    scriptPinned: false,           // 用户手动固定文字体系（防输入自动切回）
     quick: [],                   // 当前快捷提问原始项（简体基准）
     welcomeEl: null,             // 欢迎语气泡元素
     welcomeRaw: ""               // 欢迎语简体原文
@@ -912,7 +913,8 @@
   }
 
   // 实时切换文字体系：更新 UI 文案、展示知识库、快捷提问与欢迎语
-  function applyScript(script) {
+  function applyScript(script, pinned) {
+    if (typeof pinned === "boolean") state.scriptPinned = pinned;
     if (script === state.script) return;
     state.script = script;
     state.lang = (script === SCRIPT_ENGLISH) ? "en" : "zh"; // V3.3：EN 驅動輸出語言
@@ -1027,7 +1029,7 @@
       // V3.3：三態循環 簡→繁→EN→簡
       var next = state.script === SCRIPT_SIMPLIFIED ? SCRIPT_TRADITIONAL
         : (state.script === SCRIPT_TRADITIONAL ? SCRIPT_ENGLISH : SCRIPT_SIMPLIFIED);
-      applyScript(next);
+      applyScript(next, true); // 手動固定：輸入時不再自動切回
     });
     $("#dc-send", el).addEventListener("click", onSend);
     var input = $("#dc-input", el);
@@ -1046,6 +1048,7 @@
       // 输入过程中实时检测文字体系并无缝切换
       clearTimeout(scriptDebounce);
       scriptDebounce = setTimeout(function () {
+        if (state.scriptPinned) return; // V3.3：手動固定（含 EN）時不自動切換
         var detected = detectScript(input.value);
         if (detected !== state.script) applyScript(detected);
       }, 300);
