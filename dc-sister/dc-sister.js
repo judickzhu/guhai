@@ -1269,7 +1269,7 @@
     // 0) 銷售邊界優先（V3.0：看似該賣、實際不能賣的問題——不替決定/不承諾/不強推）
     var salesMatch = matchSalesBoundary(text);
     if (salesMatch) {
-      botReply(displayText(answerOf(salesMatch.qa.a)), { delay: 400 + salesMatch.qa.a.length * 3, quick: suggestFollowups(salesMatch), deepBtn: text });
+      botReply(displayText(answerOf(salesMatch.qa)), { delay: 400 + salesMatch.qa.a.length * 3, quick: suggestFollowups(salesMatch), deepBtn: text });
       highlightKBItem(salesMatch.cat.id, salesMatch.qa.id);
       state.lastCat = salesMatch.cat.id;
       return;
@@ -1278,7 +1278,7 @@
     // 0) 事務引擎優先（V3.0 A 引擎）：操作/銷售/功能問題直接答，不經過認知/情緒層
     var txMatch = matchTransactional(text);
     if (txMatch) {
-      botReply(displayText(answerOf(txMatch.qa.a)), { delay: 400 + txMatch.qa.a.length * 3, quick: suggestFollowups(txMatch), deepBtn: text });
+      botReply(displayText(answerOf(txMatch.qa)), { delay: 400 + txMatch.qa.a.length * 3, quick: suggestFollowups(txMatch), deepBtn: text });
       highlightKBItem(txMatch.cat.id, txMatch.qa.id);
       state.lastCat = txMatch.cat.id;
       return;
@@ -1288,7 +1288,7 @@
     var preMatch = matchBest(text);
     var emotionHit = (!preMatch || preMatch.score < 4) ? matchEmotionFirst(text) : null;
     if (emotionHit) {
-      botReply(displayText(answerOf(emotionHit.qa.a)), { delay: 500 + emotionHit.qa.a.length * 4, quick: suggestFollowups(emotionHit), deepBtn: text });
+      botReply(displayText(answerOf(emotionHit.qa)), { delay: 500 + emotionHit.qa.a.length * 4, quick: suggestFollowups(emotionHit), deepBtn: text });
       highlightKBItem(emotionHit.cat.id, emotionHit.qa.id);
       state.lastCat = emotionHit.cat.id;
       return;
@@ -1310,7 +1310,7 @@
     // 2) 先尝试本地知识库匹配；命中则优先按知识库回复（覆盖黑名单硬拦截）
     var localMatch = matchBest(text);
     if (localMatch) {
-      botReply(displayText(answerOf(localMatch.qa.a)), { delay: 500 + localMatch.qa.a.length * 4, quick: suggestFollowups(localMatch), deepBtn: text });
+      botReply(displayText(answerOf(localMatch.qa)), { delay: 500 + localMatch.qa.a.length * 4, quick: suggestFollowups(localMatch), deepBtn: text });
       highlightKBItem(localMatch.cat.id, localMatch.qa.id);
       state.lastCat = localMatch.cat.id;
       return;
@@ -1373,7 +1373,7 @@
     var match = matchBest(text);
     var replyKB = function () {
       if (!match) return false;
-      botReply(displayText(answerOf(match.qa.a)), { delay: 500 + match.qa.a.length * 4, quick: suggestFollowups(match), deepBtn: text });
+      botReply(displayText(answerOf(match.qa)), { delay: 500 + match.qa.a.length * 4, quick: suggestFollowups(match), deepBtn: text });
       highlightKBItem(match.cat.id, match.qa.id);
       return true;
     };
@@ -1429,7 +1429,7 @@
         // 二次响应失败：回退到本地知识库的完整答案
         var m = matchBest(query);
         if (m) {
-          appendMessage("bot", displayText(answerOf(m.qa.a)), { suffix: true, deepReply: true });
+          appendMessage("bot", displayText(answerOf(m.qa)), { suffix: true, deepReply: true });
           btn.innerHTML = '<iconify-icon icon="mdi:check-bold"></iconify-icon>' + t("deep_done");
           highlightKBItem(m.cat.id, m.qa.id);
         } else {
