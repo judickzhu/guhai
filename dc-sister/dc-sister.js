@@ -19,6 +19,7 @@
 
   var KB = window.DCSisterKB;        // 展示用知识库（跟随当前文字体系，简/繁）
   var KB_MATCH = window.DCSisterKB;  // 匹配用知识库（始终简体，供检索/禁语/分层识别）
+  var KB_INDEX = null;               // 关键词倒排索引（V3.3 性能优化：提問時只算命中候選）
   if (!KB) {
     console.error("[DC姐姐] 知识库数据未加载 (kb-data.js)");
     return;
@@ -406,16 +407,65 @@
     return null;
   }
 
-  function matchBest(query) {
-    var best = null, bestScore = 0;
-    KB_MATCH.categories.forEach(function (cat) {
-      cat.qa.forEach(function (qa) {
-        var s = scoreQA(query, qa);
-        // V2.3 上下文狀態：上一輪同分類話題延續時加權（真實對話是連貫的）
-        if (state.lastCat && cat.id === state.lastCat) s *= 1.25;
-        if (s > bestScore) { bestScore = s; best = { qa: qa, cat: cat, score: s }; }
+  // V3.3 性能優化：關鍵詞倒排索引。知識庫 2868 題後，全量掃描每次提問 O(N) 卡頓；
+  // 索引後只對命中候選算分 O(候選)。索引鍵 = 每條的 keywords + qa.q 的 token（2-10 字）。
+  function buildKBIndex() {
+    var index = {};
+    KB_MATCH.categories.forEach(function (cat, ci) {
+      cat.qa.forEach(function (qa, qi) {
+        var ref = { cat: cat, qa: qa, ci: ci, qi: qi };
+        var addKey = function (k) {
+          if (!k) return;
+          k = toSimplified(String(k).toLowerCase());
+          if (k.length < 2 || k.length > 12) return;
+          (index[k] = index[k] || []).push(ref);
+        };
+        (qa.keywords || []).forEach(addKey);
+        tokenize(qa.q).forEach(addKey);
       });
     });
+    return index;
+  }
+
+  function matchBest(query) {
+    if (!KB_INDEX) KB_INDEX = buildKBIndex();
+    var best = null, bestScore = 0;
+    var seen = {};
+    var candidates = [];
+    var collect = function (key) {
+      var list = KB_INDEX[key];
+      if (!list) return;
+      for (var i = 0; i < list.length; i++) {
+        var ref = list[i];
+        var k = ref.ci + "|" + ref.qi;
+        if (!seen[k]) { seen[k] = true; candidates.push(ref); }
+      }
+    };
+    // 查詢 token + 2-10 字 n-gram 子串（覆蓋短語關鍵詞與片段匹配）
+    var qRaw = toSimplified(String(query || "").toLowerCase());
+    tokenize(qRaw).forEach(function (t) { if (t.length >= 2) collect(t); });
+    for (var st = 0; st < qRaw.length; st++) {
+      for (var len = 2; len <= 10 && st + len <= qRaw.length; len += 2) {
+        collect(qRaw.slice(st, st + len));
+      }
+    }
+    var scoreRef = function (ref) {
+      var s = scoreQA(query, ref.qa);
+      // V2.3 上下文狀態：上一輪同分類話題延續時加權（真實對話是連貫的）
+      if (state.lastCat && ref.cat.id === state.lastCat) s *= 1.25;
+      if (s > bestScore) { bestScore = s; best = { qa: ref.qa, cat: ref.cat, score: s }; }
+    };
+    for (var j = 0; j < candidates.length; j++) scoreRef(candidates[j]);
+    // 兜底：極少數完全無命中時退回全量掃描，保證與舊行為一致
+    if (!candidates.length) {
+      KB_MATCH.categories.forEach(function (cat) {
+        cat.qa.forEach(function (qa) {
+          var s = scoreQA(query, qa);
+          if (state.lastCat && cat.id === state.lastCat) s *= 1.25;
+          if (s > bestScore) { bestScore = s; best = { qa: qa, cat: cat, score: s }; }
+        });
+      });
+    }
     if (!best || bestScore < 2.5) return null;
     return best;
   }
@@ -785,6 +835,7 @@
       closing: remote.closing || KB_MATCH.closing
     };
     KB_MATCH = simpKB; // 匹配数据始终简体
+    KB_INDEX = buildKBIndex(); // V3.3：遠端知識庫到達後重建索引
     KB = simpKB;       // 展示数据先按简体，繁体时由 loadDisplayKB 异步替换
   }
 
@@ -1565,6 +1616,7 @@
   /* ============== 初始化 ============== */
   function init() {
     loadDSConfig();
+    KB_INDEX = buildKBIndex(); // V3.3：先建靜態知識庫索引，遠端到達後重建
     // 初始化：检测设备系统语言/区域，确定初始界面文字体系
     state.script = detectSystemScript();
     // 先尝试加载后台配置（欢迎语等），再渲染组件
