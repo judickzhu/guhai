@@ -1399,303 +1399,6 @@
    ]
   },
   {
-   "id": "cat3",
-   "name": "股路不歸",
-   "icon": "第一章  夢繞股海冬夜長",
-   "description": "一、重點提要 時代背景：1992 年的上海，中國股市仍屬早期，社會普遍把炒股視為「賭博」 主角設定：農村出身、大學畢業的年輕人，因「巧合」踏入股市兩年，仍未完全接受這個行當 核心矛盾：股市究竟是「賭博」還是可以安身立命的職業？虛擬經濟到底有沒有價值？ 心理狀態：迷茫、焦慮與疏離——住在酒店一年多、討厭職業微笑、擔心自己會步自殺股民的後塵 象徵伏筆：如石頭般無休止下墜的股價，暗示主角身處的市場與人生都在「下墜」的開端   。原文名句 「走入中國的股票市場可能是一種巧合，但是也正是這個巧合改變了我的命運。」 「你這樣『賭博』，怎麼找媳婦啊？」——父親 「虛擬經濟沒有效益，只有效用。」——老師 「我不知道我會不會也去自殺。」 「價格像誰從高處扔下的石頭一樣，無休止地在下跌。」",
-   "qa": [
-    {
-     "id": "c1",
-     "q": "故事發生在什麼時間、什麼地點？天氣給人什麼感覺？",
-     "a": "1992 年的上海。開頭一句「怎麼看這兒都不像冬天」營造反常氛圍——表面上不是寒冬，主角的心境卻已如嚴冬。",
-     "keywords": [
-      "1992",
-      "上海",
-      "冬天",
-      "反常氣氛",
-      "主角",
-      "嚴冬"
-     ],
-     "a_en": "Shanghai, 1992. The opening line “No matter how you look at it, this doesn't seem like winter” creates an unusual atmosphere—on the surface it's not a harsh winter, but the protagonist's state of mind is already like the dead of winter."
-    },
-    {
-     "id": "c2",
-     "q": "面對暴跌，主角心裡湧起什麼願望？他看到了什麼景象？",
-     "a": "他站在窗前，看見遠處的靜安寺，想像虔誠的佛教徒正在祈禱幸福生活；回頭再看狂跌的股市，想像散户無助、恐慌的眼神，心中湧起強烈願望——「去祈禱」",
-     "keywords": [
-      "股路不歸",
-      "無助心理",
-      "面對暴跌",
-      "湧起",
-      "願望",
-      "什麼景象",
-      "站在窗前",
-      "遠處",
-      "祈禱",
-      "恐慌的眼神"
-     ],
-     "a_en": "He stood by the window, saw Jing'an Temple in the distance, imagined devout Buddhists praying for a happy life; turned back to look at the plummeting stock market, imagined the helpless, panicked eyes of retail investors, and a strong desire surged in his heart—'go pray.'"
-    },
-    {
-     "id": "c3",
-     "q": "主角覺得最近的行情有什麼「怪」？",
-     "a": "他覺得整個走勢好像都是深圳那邊的人在操縱，而且股市的消息傳得特別快。",
-     "keywords": [
-      "股路不歸",
-      "行情有什麼怪",
-      "股市的消息",
-      "傳得特別快",
-      "人在操縱"
-     ],
-     "a_en": "He felt like the whole trend was being manipulated by those people in Shenzhen, and news in the stock market spread unbelievably fast."
-    },
-    {
-     "id": "c4",
-     "q": "主角做這一行多久了？他對這份「新行當」的感受如何？",
-     "a": "兩年。他覺得工作枯燥無味，整天只是價格的上上下下，甚至懷疑這樣賺的錢和辛辛苦苦幹力氣活賺的錢有什麼不一樣——對行業價值產生懷疑。\n\ngu z wu mei",
-     "keywords": [
-      "多久",
-      "感受",
-      "工作",
-      "枯燥無味",
-      "上上下下",
-      "行業價值",
-      "產生懷疑",
-      "辛辛苦苦"
-     ],
-     "a_en": "Two years. He feels the work is dull and meaningless—just prices going up and down all day. He even wonders whether the money he makes this way is any different from what he'd earn doing hard physical labor—he starts doubting the value of his industry.\n\ngu z wu mei"
-    },
-    {
-     "id": "c5",
-     "q": "老師對「虛擬經濟」的觀點是什麼？主角同意嗎？",
-     "a": "老師說：「虛擬經濟沒有效益，只有效用。」主角基本理解這個道理，卻補充了自己的看法：價格變動確實不創造社會價值，但起碼解決了很多就業問題——這是他與老師不同的地方。",
-     "keywords": [
-      "虛擬經濟",
-      "觀點",
-      "沒有收益",
-      "只有效用",
-      "社會價值",
-      "就業問題",
-      "價格變動",
-      "波動"
-     ],
-     "a_en": "The teacher said, \"The virtual economy has no real output, only utility.\" The protagonist basically gets it, but adds his own take: price changes may not create social value, but at least they solve a lot of employment problems—that's where he differs from his teacher."
-    },
-    {
-     "id": "c6",
-     "q": "報紙上的什麼消息讓主角苦惱？反映了他什麼心理？",
-     "a": "有人炒股賠錢之後自殺。主角忍不住想：「我不知道我會不會也去自殺。」反映股市巨大的心理壓力與他對未來的恐懼。",
-     "keywords": [
-      "消息",
-      "苦惱",
-      "什麼心理",
-      "賠錢之後",
-      "心理壓力",
-      "未來的恐懼"
-     ],
-     "a_en": "Someone who played the market lost money and killed themselves. The protagonist can't help but think, \"I don't know if I'd kill myself too.\" It shows the enormous psychological pressure of the stock market and his fear of what's ahead."
-    },
-    {
-     "id": "c7",
-     "q": "主角住在哪裡？住了多久？這說明什麼？",
-     "a": "他住在酒店裡已經一年多，沒有自己的家，「回家」只是回到一個只能稱之為住宿的地方——漂泊、疏離，缺乏歸屬感。",
-     "keywords": [
-      "酒店",
-      "住在哪裡",
-      "住了多久",
-      "說明什麼",
-      "自己的家",
-      "回家",
-      "漂泊",
-      "住宿的地方",
-      "缺乏歸屬感"
-     ],
-     "a_en": "He's been living in a hotel for over a year now—no real home. \"Going home\" just means going back to a place you'd only call a place to stay—drifting, cut off, without any sense of belonging."
-    },
-    {
-     "id": "c8",
-     "q": "主角對大堂經理的「職業微笑」有何看法？",
-     "a": "他討厭這種微笑，認為它把人和人之間的距離拉大了；他甚至惡毒地設想：假如每個賓館都設一名專門會哭的人，見了顧客一陣大哭會是什麼感覺？——表達他對虛偽社交的反感。",
-     "keywords": [
-      "職業微笑",
-      "大堂經理",
-      "人與人",
-      "距離拉大",
-      "什麼感覺",
-      "虛偽社交"
-     ],
-     "a_en": "He hates that smile—thinks it puts more distance between people. He even thinks viciously: what if every hotel hired a professional crier, and when a guest walks in, they burst into tears?—It shows his disgust with fake social etiquette."
-    },
-    {
-     "id": "c9",
-     "q": "路上發生了什麼小事？",
-     "a": "他闖了紅燈，差點和汽車撞在一起；開車的司機用上海話罵他，他聽不懂，估計是在罵他。",
-     "keywords": [
-      "紅燈",
-      "罵他",
-      "路上",
-      "什麼小事",
-      "撞車",
-      "聽不懂"
-     ],
-     "a_en": "He ran a red light and almost smashed into a car. The driver cursed at him in Shanghainese—he didn't understand, but guessing it was insults."
-    },
-    {
-     "id": "c10",
-     "q": "第一章結尾用什麼比喻形容股票的下跌？有何用意？",
-     "a": "「價格像誰從高處扔下的石頭一樣，無休止地在下跌。」用下墜的石頭比喻股價，暗示跌勢猛烈、無法阻擋，也象徵主角人生的不確定與下墜感。",
-     "keywords": [
-      "股票下跌",
-      "有何用意",
-      "扔下的石頭一樣",
-      "急速下跌",
-      "跌勢猛烈",
-      "無法阻擋",
-      "人生不確定"
-     ],
-     "a_en": "\"The price keeps falling endlessly, like a stone thrown from a height.\" Using a falling stone to describe the stock price implies a violent, unstoppable drop, and also symbolizes the protagonist's uncertainty and sense of falling through life."
-    }
-   ]
-  },
-  {
-   "id": "cat4",
-   "name": "股路不歸",
-   "icon": "第二章  股海滄桑見浮沉",
-   "description": "重點提要 行情走勢：開盤一度上漲，10 點後深圳主力出貨，散户恐慌拋盤「如山洪暴發」，難以收拾 無助心理：面對狂跌，主角湧起強烈願望「去祈禱」，並想像散户無助、恐慌的眼神 時代寫照：大哥大、BB 機與靜安寺，象徵 1990 年代初的上海；由 1987 年美國股災聯想此刻的人間百態 人性異化：對暈倒老太太無動於衷，強迫自己微笑反而弄巧成拙——股市讓人心冷 職業自省：幸災樂禍的念頭被職業道德否決；「《殺手無笑容》」點出職業投資者的冷酷本色",
-   "qa": [
-    {
-     "id": "c1",
-     "q": "開盤行情如何？轉折點發生在什麼時候？",
-     "a": "開盤時股價向上；10 點以後，深圳那邊開始有主力出貨，拋壓起初看不出來，隨後散户恐慌性拋盤一出來，「就像山洪暴發一樣」，下跌的場面難以收拾。",
-     "keywords": [
-      "開盤行情如何",
-      "轉折點時間",
-      "10點以後",
-      "主力出貨",
-      "拋壓起初",
-      "散戶恐慌性拋盤",
-      "山洪暴發",
-      "難以收拾"
-     ],
-     "a_en": "When the market opened, the price was moving up. After 10, the big players in Shenzhen started dumping their positions. At first, the selling pressure wasn't visible, but then retail panic selling kicked in—\"like a flash flood\"—the fallout was impossible to control."
-    },
-    {
-     "id": "c2",
-     "q": "面對暴跌，主角心裡湧起什麼願望？他看到了什麼景象？",
-     "a": "他站在窗前，看見遠處的靜安寺，想像虔誠的佛教徒正在祈禱幸福生活；回頭再看狂跌的股市，想像散户無助、恐慌的眼神，心中湧起強烈願望——「去祈禱」",
-     "keywords": [
-      "無助心理",
-      "面對暴跌",
-      "湧起",
-      "願望",
-      "什麼景象",
-      "站在窗前",
-      "遠處",
-      "祈禱",
-      "恐慌的眼神"
-     ],
-     "a_en": "He stood by the window, looked at Jing'an Temple in the distance, imagined devout Buddhists in there praying for a happy life; turned back to the stock market crashing hard, pictured the helpless, terrified eyes of the retail investors, and a strong urge rose up in his chest—'go pray.'"
-    },
-    {
-     "id": "c3",
-     "q": "主角覺得最近的行情有什麼「怪」？",
-     "a": "他覺得整個走勢好像都是深圳那邊的人在操縱，而且股市的消息傳得特別快。",
-     "keywords": [
-      "行情有什麼怪",
-      "股市的消息",
-      "傳得特別快",
-      "人在操縱"
-     ],
-     "a_en": "He felt like the whole market move was being controlled by people in Shenzhen, and stock market news spread crazy fast."
-    },
-    {
-     "id": "c4",
-     "q": "文中的「大哥大」和「BB 機」說明了什麼?",
-     "a": "這是 1990 年代初的時代象徵：人人幾乎都有一台磚頭大的「大哥大」，有身份的人還腰別 BB 機。主角起初覺得神奇，自己用過之後才明白，很多人之所以在大街上拉長天線大聲講電話，主要是想顯示身份——十字路口打電話，是因為那兒能看到的人多。",
-     "keywords": [
-      "大哥大",
-      "bb機",
-      "時代象徵",
-      "十字路口",
-      "人多",
-      "神奇"
-     ],
-     "a_en": "This was a symbol of the early 1990s: almost everyone had a brick-sized 'big brother' phone, and people with status also wore pagers on their belts. At first the protagonist thought it was amazing, but after using one himself, he got it—a lot of people walked around with their antennas out, talking loudly on the phone, mainly to show off their status. Calling at an intersection? Because that's where the most people could see you."
-    },
-    {
-     "id": "c5",
-     "q": "股票跌了多少？早盤進場的人處境如何？",
-     "a": "已經下跌 30 多塊錢；早上進去的人，如果出來得慢一點，十有八九是虧損了。",
-     "keywords": [
-      "跌了多少",
-      "早盤進場",
-      "處境如何",
-      "十有八九"
-     ],
-     "a_en": "It had already dropped over 30 yuan; people who went in in the morning, if they were slow to get out, nine times out of ten took a loss."
-    },
-    {
-     "id": "c6",
-     "q": "主角怎麼會聯想到 1987 年的美國股災？",
-     "a": "他沒有親身經歷過 1987 年的美國股災，但看到眼前人們的表情，猜想當年美國人民大概也就是這個樣子。",
-     "keywords": [
-      "美國股災",
-      "1987",
-      "人們的表情",
-      "這個樣子",
-      "眼前的"
-     ],
-     "a_en": "He'd never personally lived through the 1987 U.S. market crash, but looking at the faces around him now, he figured American folks back then probably looked exactly the same."
-    },
-    {
-     "id": "c7",
-     "q": "老太太暈倒的事件中，主角的反應說明了什麼？",
-     "a": "小麗說樓下有位老太太暈倒被送醫，主角冷冷地聽著、毫無反應，連自己都驚訝為何這樣無動於衷。他強迫自己找話說、對人笑，結果別人反而以為自己做錯了什麼，急忙解釋，讓他覺得「這種改變真是多此一舉，還不如不說話」——反映股市生涯讓他變得冷漠、疏離",
-     "keywords": [
-      "暈倒",
-      "主角的反應",
-      "被送醫",
-      "冷冷地聽著",
-      "毫無表情",
-      "無動於中",
-      "多此一舉",
-      "不說話",
-      "疏離"
-     ],
-     "a_en": "Xiao Li said an old lady downstairs had fainted and been taken to the hospital. The protagonist listened coldly, no reaction at all, and even he was surprised at how indifferent he was. He forced himself to make conversation, to smile at people—but instead they thought they'd done something wrong and rushed to apologize. That made him feel, 'this kind of change is really pointless, might as well stay quiet'—showing how his life in the stock market had turned him cold and distant."
-    },
-    {
-     "id": "c8",
-     "q": "昨天主角和領導爭執了什麼？事實證明誰對？",
-     "a": "昨天他為了「出貨」和領導爭執，今天暴跌證明了他是對的。但他沒有一絲高興，甚至惡毒地想：要是自己也沒出來，今天這樣沒命地跌，自己可能會笑；不過他隨即否定——那不是職業投資者的性格，也不符合行業的職業道德。",
-     "keywords": [
-      "爭執",
-      "出貨",
-      "職業投資者",
-      "職業道德",
-      "證明",
-      "誰對",
-      "沒有一絲高興"
-     ],
-     "a_en": "Yesterday he argued with his supervisor over 'unloading' shares, and today's crash proved he was right. But he felt not a shred of happiness. He even had a nasty thought: if he hadn't gotten out either, watching it fall this hard today, he might have been laughing. But he immediately rejected it—that's not the mindset of a professional investor, and it doesn't fit the industry's professional ethics."
-    },
-    {
-     "id": "c9",
-     "q": "章末「《殺手無笑容》」有什麼深意？",
-     "a": "主角忽然想起一部錄影《殺手無笑容》，與他對暈倒老太太無動於衷相呼應——暗示在殘酷的股市中，職業投資者必須心如鐵石，像「沒有笑容的殺手」一樣冷酷，點出職業炒股對人性的異化。",
-     "keywords": [
-      "殺手無笑容",
-      "有什麼深意",
-      "殘酷的股市",
-      "心如鐵石",
-      "一樣冷酷",
-      "人性的異化"
-     ],
-     "a_en": "The protagonist suddenly remembered a video, 'The Killer Without a Smile,' which echoed his indifference to the old lady who fainted—hinting that in the brutal stock market, a professional investor has to have a heart of stone, as cold as a 'killer without a smile,' pointing out how professional stock trading dehumanizes people."
-    }
-   ]
-  },
-  {
    "id": "reverse",
    "name": "反向思維訓練",
    "icon": "mdi:brain",
@@ -8557,7 +8260,7 @@
    "id": "gulu",
    "name": "股路不歸·DC問答",
    "icon": "mdi:book-open-variant",
-   "description": "《股路不歸》136 回 DC風問答全集（1354 題）",
+   "description": "《股路不歸》136 回 DC風問答全集（含章節問答）",
    "qa": [
     {
      "id": "gl0001",
@@ -25289,6 +24992,258 @@
       "還是在賣你"
      ],
      "a_en": "Chasing rallies and panic selling is a perfect picture of the crowd acting on greed and fear: buying high when prices rise, cutting losses when they fall. Big players use this instinct to shake out weak hands and accumulate shares. CCI is just there to mark buy and sell points for this human rhythm. Indicators are just mirrors—they reflect who you really are. And big players love people who look in mirrors the most."
+    },
+    {
+     "id": "c1",
+     "q": "故事發生在什麼時間、什麼地點？天氣給人什麼感覺？",
+     "a": "1992 年的上海。開頭一句「怎麼看這兒都不像冬天」營造反常氛圍——表面上不是寒冬，主角的心境卻已如嚴冬。",
+     "keywords": [
+      "1992",
+      "上海",
+      "冬天",
+      "反常氣氛",
+      "主角",
+      "嚴冬"
+     ],
+     "a_en": "Shanghai, 1992. The opening line “No matter how you look at it, this doesn't seem like winter” creates an unusual atmosphere—on the surface it's not a harsh winter, but the protagonist's state of mind is already like the dead of winter."
+    },
+    {
+     "id": "c2",
+     "q": "面對暴跌，主角心裡湧起什麼願望？他看到了什麼景象？",
+     "a": "他站在窗前，看見遠處的靜安寺，想像虔誠的佛教徒正在祈禱幸福生活；回頭再看狂跌的股市，想像散户無助、恐慌的眼神，心中湧起強烈願望——「去祈禱」",
+     "keywords": [
+      "股路不歸",
+      "無助心理",
+      "面對暴跌",
+      "湧起",
+      "願望",
+      "什麼景象",
+      "站在窗前",
+      "遠處",
+      "祈禱",
+      "恐慌的眼神"
+     ],
+     "a_en": "He stood by the window, saw Jing'an Temple in the distance, imagined devout Buddhists praying for a happy life; turned back to look at the plummeting stock market, imagined the helpless, panicked eyes of retail investors, and a strong desire surged in his heart—'go pray.'"
+    },
+    {
+     "id": "c3",
+     "q": "主角覺得最近的行情有什麼「怪」？",
+     "a": "他覺得整個走勢好像都是深圳那邊的人在操縱，而且股市的消息傳得特別快。",
+     "keywords": [
+      "股路不歸",
+      "行情有什麼怪",
+      "股市的消息",
+      "傳得特別快",
+      "人在操縱"
+     ],
+     "a_en": "He felt like the whole trend was being manipulated by those people in Shenzhen, and news in the stock market spread unbelievably fast."
+    },
+    {
+     "id": "c4",
+     "q": "主角做這一行多久了？他對這份「新行當」的感受如何？",
+     "a": "兩年。他覺得工作枯燥無味，整天只是價格的上上下下，甚至懷疑這樣賺的錢和辛辛苦苦幹力氣活賺的錢有什麼不一樣——對行業價值產生懷疑。\n\ngu z wu mei",
+     "keywords": [
+      "多久",
+      "感受",
+      "工作",
+      "枯燥無味",
+      "上上下下",
+      "行業價值",
+      "產生懷疑",
+      "辛辛苦苦"
+     ],
+     "a_en": "Two years. He feels the work is dull and meaningless—just prices going up and down all day. He even wonders whether the money he makes this way is any different from what he'd earn doing hard physical labor—he starts doubting the value of his industry.\n\ngu z wu mei"
+    },
+    {
+     "id": "c5",
+     "q": "老師對「虛擬經濟」的觀點是什麼？主角同意嗎？",
+     "a": "老師說：「虛擬經濟沒有效益，只有效用。」主角基本理解這個道理，卻補充了自己的看法：價格變動確實不創造社會價值，但起碼解決了很多就業問題——這是他與老師不同的地方。",
+     "keywords": [
+      "虛擬經濟",
+      "觀點",
+      "沒有收益",
+      "只有效用",
+      "社會價值",
+      "就業問題",
+      "價格變動",
+      "波動"
+     ],
+     "a_en": "The teacher said, \"The virtual economy has no real output, only utility.\" The protagonist basically gets it, but adds his own take: price changes may not create social value, but at least they solve a lot of employment problems—that's where he differs from his teacher."
+    },
+    {
+     "id": "c6",
+     "q": "報紙上的什麼消息讓主角苦惱？反映了他什麼心理？",
+     "a": "有人炒股賠錢之後自殺。主角忍不住想：「我不知道我會不會也去自殺。」反映股市巨大的心理壓力與他對未來的恐懼。",
+     "keywords": [
+      "消息",
+      "苦惱",
+      "什麼心理",
+      "賠錢之後",
+      "心理壓力",
+      "未來的恐懼"
+     ],
+     "a_en": "Someone who played the market lost money and killed themselves. The protagonist can't help but think, \"I don't know if I'd kill myself too.\" It shows the enormous psychological pressure of the stock market and his fear of what's ahead."
+    },
+    {
+     "id": "c7",
+     "q": "主角住在哪裡？住了多久？這說明什麼？",
+     "a": "他住在酒店裡已經一年多，沒有自己的家，「回家」只是回到一個只能稱之為住宿的地方——漂泊、疏離，缺乏歸屬感。",
+     "keywords": [
+      "酒店",
+      "住在哪裡",
+      "住了多久",
+      "說明什麼",
+      "自己的家",
+      "回家",
+      "漂泊",
+      "住宿的地方",
+      "缺乏歸屬感"
+     ],
+     "a_en": "He's been living in a hotel for over a year now—no real home. \"Going home\" just means going back to a place you'd only call a place to stay—drifting, cut off, without any sense of belonging."
+    },
+    {
+     "id": "c8",
+     "q": "主角對大堂經理的「職業微笑」有何看法？",
+     "a": "他討厭這種微笑，認為它把人和人之間的距離拉大了；他甚至惡毒地設想：假如每個賓館都設一名專門會哭的人，見了顧客一陣大哭會是什麼感覺？——表達他對虛偽社交的反感。",
+     "keywords": [
+      "職業微笑",
+      "大堂經理",
+      "人與人",
+      "距離拉大",
+      "什麼感覺",
+      "虛偽社交"
+     ],
+     "a_en": "He hates that smile—thinks it puts more distance between people. He even thinks viciously: what if every hotel hired a professional crier, and when a guest walks in, they burst into tears?—It shows his disgust with fake social etiquette."
+    },
+    {
+     "id": "c9",
+     "q": "路上發生了什麼小事？",
+     "a": "他闖了紅燈，差點和汽車撞在一起；開車的司機用上海話罵他，他聽不懂，估計是在罵他。",
+     "keywords": [
+      "紅燈",
+      "罵他",
+      "路上",
+      "什麼小事",
+      "撞車",
+      "聽不懂"
+     ],
+     "a_en": "He ran a red light and almost smashed into a car. The driver cursed at him in Shanghainese—he didn't understand, but guessing it was insults."
+    },
+    {
+     "id": "c10",
+     "q": "第一章結尾用什麼比喻形容股票的下跌？有何用意？",
+     "a": "「價格像誰從高處扔下的石頭一樣，無休止地在下跌。」用下墜的石頭比喻股價，暗示跌勢猛烈、無法阻擋，也象徵主角人生的不確定與下墜感。",
+     "keywords": [
+      "股票下跌",
+      "有何用意",
+      "扔下的石頭一樣",
+      "急速下跌",
+      "跌勢猛烈",
+      "無法阻擋",
+      "人生不確定"
+     ],
+     "a_en": "\"The price keeps falling endlessly, like a stone thrown from a height.\" Using a falling stone to describe the stock price implies a violent, unstoppable drop, and also symbolizes the protagonist's uncertainty and sense of falling through life."
+    },
+    {
+     "id": "c1",
+     "q": "開盤行情如何？轉折點發生在什麼時候？",
+     "a": "開盤時股價向上；10 點以後，深圳那邊開始有主力出貨，拋壓起初看不出來，隨後散户恐慌性拋盤一出來，「就像山洪暴發一樣」，下跌的場面難以收拾。",
+     "keywords": [
+      "開盤行情如何",
+      "轉折點時間",
+      "10點以後",
+      "主力出貨",
+      "拋壓起初",
+      "散戶恐慌性拋盤",
+      "山洪暴發",
+      "難以收拾"
+     ],
+     "a_en": "When the market opened, the price was moving up. After 10, the big players in Shenzhen started dumping their positions. At first, the selling pressure wasn't visible, but then retail panic selling kicked in—\"like a flash flood\"—the fallout was impossible to control."
+    },
+    {
+     "id": "c4",
+     "q": "文中的「大哥大」和「BB 機」說明了什麼?",
+     "a": "這是 1990 年代初的時代象徵：人人幾乎都有一台磚頭大的「大哥大」，有身份的人還腰別 BB 機。主角起初覺得神奇，自己用過之後才明白，很多人之所以在大街上拉長天線大聲講電話，主要是想顯示身份——十字路口打電話，是因為那兒能看到的人多。",
+     "keywords": [
+      "大哥大",
+      "bb機",
+      "時代象徵",
+      "十字路口",
+      "人多",
+      "神奇"
+     ],
+     "a_en": "This was a symbol of the early 1990s: almost everyone had a brick-sized 'big brother' phone, and people with status also wore pagers on their belts. At first the protagonist thought it was amazing, but after using one himself, he got it—a lot of people walked around with their antennas out, talking loudly on the phone, mainly to show off their status. Calling at an intersection? Because that's where the most people could see you."
+    },
+    {
+     "id": "c5",
+     "q": "股票跌了多少？早盤進場的人處境如何？",
+     "a": "已經下跌 30 多塊錢；早上進去的人，如果出來得慢一點，十有八九是虧損了。",
+     "keywords": [
+      "跌了多少",
+      "早盤進場",
+      "處境如何",
+      "十有八九"
+     ],
+     "a_en": "It had already dropped over 30 yuan; people who went in in the morning, if they were slow to get out, nine times out of ten took a loss."
+    },
+    {
+     "id": "c6",
+     "q": "主角怎麼會聯想到 1987 年的美國股災？",
+     "a": "他沒有親身經歷過 1987 年的美國股災，但看到眼前人們的表情，猜想當年美國人民大概也就是這個樣子。",
+     "keywords": [
+      "美國股災",
+      "1987",
+      "人們的表情",
+      "這個樣子",
+      "眼前的"
+     ],
+     "a_en": "He'd never personally lived through the 1987 U.S. market crash, but looking at the faces around him now, he figured American folks back then probably looked exactly the same."
+    },
+    {
+     "id": "c7",
+     "q": "老太太暈倒的事件中，主角的反應說明了什麼？",
+     "a": "小麗說樓下有位老太太暈倒被送醫，主角冷冷地聽著、毫無反應，連自己都驚訝為何這樣無動於衷。他強迫自己找話說、對人笑，結果別人反而以為自己做錯了什麼，急忙解釋，讓他覺得「這種改變真是多此一舉，還不如不說話」——反映股市生涯讓他變得冷漠、疏離",
+     "keywords": [
+      "暈倒",
+      "主角的反應",
+      "被送醫",
+      "冷冷地聽著",
+      "毫無表情",
+      "無動於中",
+      "多此一舉",
+      "不說話",
+      "疏離"
+     ],
+     "a_en": "Xiao Li said an old lady downstairs had fainted and been taken to the hospital. The protagonist listened coldly, no reaction at all, and even he was surprised at how indifferent he was. He forced himself to make conversation, to smile at people—but instead they thought they'd done something wrong and rushed to apologize. That made him feel, 'this kind of change is really pointless, might as well stay quiet'—showing how his life in the stock market had turned him cold and distant."
+    },
+    {
+     "id": "c8",
+     "q": "昨天主角和領導爭執了什麼？事實證明誰對？",
+     "a": "昨天他為了「出貨」和領導爭執，今天暴跌證明了他是對的。但他沒有一絲高興，甚至惡毒地想：要是自己也沒出來，今天這樣沒命地跌，自己可能會笑；不過他隨即否定——那不是職業投資者的性格，也不符合行業的職業道德。",
+     "keywords": [
+      "爭執",
+      "出貨",
+      "職業投資者",
+      "職業道德",
+      "證明",
+      "誰對",
+      "沒有一絲高興"
+     ],
+     "a_en": "Yesterday he argued with his supervisor over 'unloading' shares, and today's crash proved he was right. But he felt not a shred of happiness. He even had a nasty thought: if he hadn't gotten out either, watching it fall this hard today, he might have been laughing. But he immediately rejected it—that's not the mindset of a professional investor, and it doesn't fit the industry's professional ethics."
+    },
+    {
+     "id": "c9",
+     "q": "章末「《殺手無笑容》」有什麼深意？",
+     "a": "主角忽然想起一部錄影《殺手無笑容》，與他對暈倒老太太無動於衷相呼應——暗示在殘酷的股市中，職業投資者必須心如鐵石，像「沒有笑容的殺手」一樣冷酷，點出職業炒股對人性的異化。",
+     "keywords": [
+      "殺手無笑容",
+      "有什麼深意",
+      "殘酷的股市",
+      "心如鐵石",
+      "一樣冷酷",
+      "人性的異化"
+     ],
+     "a_en": "The protagonist suddenly remembered a video, 'The Killer Without a Smile,' which echoed his indifference to the old lady who fainted—hinting that in the brutal stock market, a professional investor has to have a heart of stone, as cold as a 'killer without a smile,' pointing out how professional stock trading dehumanizes people."
     }
    ]
   },
