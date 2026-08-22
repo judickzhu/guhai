@@ -28,6 +28,7 @@
   var SCRIPT = window.DCSisterScript || null; // zh-map.js 繁简映射数据
   var SCRIPT_SIMPLIFIED = "simplified";
   var SCRIPT_TRADITIONAL = "traditional";
+  var SCRIPT_ENGLISH = "english";
 
   var API_BASE = "/api/dc-sister";
   var llmEnabled = false;  // 后端 DeepSeek 是否可用
@@ -144,43 +145,50 @@
   // 将简体源文本转换为当前界面文字体系（用于渲染展示）
   function displayText(s) {
     if (!s) return s;
+    if (state.script === SCRIPT_ENGLISH) return s; // a_en/UI 英文原文直接返回
     if (state.script === SCRIPT_TRADITIONAL) return toTraditional(s);
     return toSimplified(s);
+  }
+  // V3.3 英文模式：取答案（a_en 預翻譯優先，切換零延遲，不做請求時現譯）
+  function answerOf(qa) {
+    if (!qa) return "";
+    if (state.lang === "en") return qa.a_en || qa.a || "";
+    return qa.a || "";
   }
 
   /* ============== UI 多语言文案（简/繁） ============== */
   var UI_TEXT = {
-    launcher_aria: { s: "打开 DC姐姐 · 产品顾问", t: "打開 DC姐姐 · 產品顧問" },
-    launcher_hint: { s: "有问题随时问我，DC姐姐在线 👋", t: "有問題隨時問我，DC姐姐在線 👋" },
-    header_name: { s: "DC姐姐 · 产品顾问", t: "DC姐姐 · 產品顧問" },
-    status_initial: { s: "在线 · 平均 3 秒响应", t: "在線 · 平均 3 秒響應" },
-    status_llm: { s: "在线 · 问答中", t: "在線 · 問答中" },
-    status_local: { s: "本地模式 · 知识库兜底", t: "本地模式 · 知識庫兜底" },
-    btn_kb: { s: "知识库", t: "知識庫" },
-    btn_kb_aria: { s: "打开知识库", t: "打開知識庫" },
-    btn_restart: { s: "重新开始", t: "重新開始" },
-    btn_close: { s: "关闭客服", t: "關閉客服" },
+    launcher_aria: { s: "打开 DC姐姐 · 产品顾问", t: "打開 DC姐姐 · 產品顧問" , e: "Open DC Sister · Product Advisor"},
+    launcher_hint: { s: "有问题随时问我，DC姐姐在线 👋", t: "有問題隨時問我，DC姐姐在線 👋" , e: "Need help? DC Sister is online 👋"},
+    header_name: { s: "DC姐姐 · 产品顾问", t: "DC姐姐 · 產品顧問" , e: "DC Sister · Product Advisor"},
+    status_initial: { s: "在线 · 平均 3 秒响应", t: "在線 · 平均 3 秒響應" , e: "Online · Avg. 3s response"},
+    status_llm: { s: "在线 · 问答中", t: "在線 · 問答中" , e: "Online · Answering"},
+    status_local: { s: "本地模式 · 知识库兜底", t: "本地模式 · 知識庫兜底" , e: "Local mode · KB fallback"},
+    btn_kb: { s: "知识库", t: "知識庫" , e: "Knowledge Base"},
+    btn_kb_aria: { s: "打开知识库", t: "打開知識庫" , e: "Open knowledge base"},
+    btn_restart: { s: "重新开始", t: "重新開始" , e: "Restart"},
+    btn_close: { s: "关闭客服", t: "關閉客服" , e: "Close assistant"},
     btn_script: { s: "切换简繁体", t: "切換簡繁體" },
-    input_placeholder: { s: "输入你的问题，例如：怎么收费？API怎么绑定？…", t: "輸入你的問題，例如：怎麼收費？API怎麼綁定？…" },
-    input_aria: { s: "输入消息", t: "輸入消息" },
-    send_aria: { s: "发送", t: "發送" },
+    input_placeholder: { s: "输入你的问题，例如：怎么收费？API怎么绑定？…", t: "輸入你的問題，例如：怎麼收費？API怎麼綁定？…" , e: "Type your question, e.g. pricing or API binding..."},
+    input_aria: { s: "输入消息", t: "輸入消息" , e: "Type message"},
+    send_aria: { s: "发送", t: "發送" , e: "Send"},
     avatar_me: { s: "我", t: "我" },
-    suffix_label: { s: "（合规后缀）", t: "（合規後綴）" },
-    deep_tag: { s: "深入了解 · 详细解读", t: "深入了解 · 詳細解讀" },
-    deep_btn: { s: "深入了解", t: "深入了解" },
+    suffix_label: { s: "（合规后缀）", t: "（合規後綴）" , e: "(Compliance notice)"},
+    deep_tag: { s: "深入了解 · 详细解读", t: "深入了解 · 詳細解讀" , e: "Deep dive · Detailed walkthrough"},
+    deep_btn: { s: "深入了解", t: "深入了解" , e: "Learn more"},
     deep_loading: { s: "展开中…", t: "展開中…" },
     deep_done: { s: "已展开", t: "已展開" },
     deep_err: { s: "抱歉，展开详细内容时网络出了点小状况，请稍后再试，或换个方式问我～", t: "抱歉，展開詳細內容時網絡出了點小狀況，請稍後再試，或換個方式問我～" },
-    kb_title: { s: "客服知识库", t: "客服知識庫" },
-    kb_search_ph: { s: "搜索关键词，例如：收费 / API / 休眠…", t: "搜索關鍵詞，例如：收費 / API / 休眠…" },
-    kb_all: { s: "全部", t: "全部" },
-    kb_count: { s: "条", t: "條" },
-    kb_empty: { s: "未找到相关内容，换个关键词试试 🙏", t: "未找到相關內容，換個關鍵詞試試 🙏" },
-    q_price: { s: "怎么收费？", t: "怎麼收費？" },
-    q_diff: { s: "和普通量化有什么区别？", t: "和普通量化有什麼區別？" },
-    q_api: { s: "API怎么绑定？安全吗？", t: "API怎麼綁定？安全嗎？" },
-    q_newbie: { s: "新手能用吗？", t: "新手能用嗎？" },
-    q_human: { s: "找人工客服", t: "找人工客服" },
+    kb_title: { s: "客服知识库", t: "客服知識庫" , e: "Knowledge Base"},
+    kb_search_ph: { s: "搜索关键词，例如：收费 / API / 休眠…", t: "搜索關鍵詞，例如：收費 / API / 休眠…" , e: "Search keywords, e.g. pricing / API / dormancy..."},
+    kb_all: { s: "全部", t: "全部" , e: "All"},
+    kb_count: { s: "条", t: "條" , e: "items"},
+    kb_empty: { s: "未找到相关内容，换个关键词试试 🙏", t: "未找到相關內容，換個關鍵詞試試 🙏" , e: "Nothing found. Try different keywords 🙏"},
+    q_price: { s: "怎么收费？", t: "怎麼收費？" , e: "How much does it cost?"},
+    q_diff: { s: "和普通量化有什么区别？", t: "和普通量化有什麼區別？" , e: "How is it different from ordinary quant?"},
+    q_api: { s: "API怎么绑定？安全吗？", t: "API怎麼綁定？安全嗎？" , e: "How do I bind the API? Is it safe?"},
+    q_newbie: { s: "新手能用吗？", t: "新手能用嗎？" , e: "Can a beginner use it?"},
+    q_human: { s: "找人工客服", t: "找人工客服" , e: "Contact human support"},
     human_intro: { s: "好的，已为你准备官方人工客服通道，7×24 小时全天候轮班值守：", t: "好的，已為你準備官方人工客服通道，7×24 小時全天候輪班值守：" },
     human_scope: { s: "• 服务范围：安装报错、API异常、参数调试、模型讲解、运行故障、授权咨询、机构定制、批量部署、日志复盘等", t: "• 服務範圍：安裝報錯、API異常、參數調試、模型講解、運行故障、授權諮詢、機構定制、批量部署、日誌複盤等" },
     human_remote: { s: "• 疑难问题支持一对一远程桌面协助", t: "• 疑難問題支援一對一遠程桌面協助" },
@@ -203,6 +211,7 @@
   function t(key) {
     var item = UI_TEXT[key];
     if (!item) return key;
+    if (state.script === SCRIPT_ENGLISH) return item.e || item.s || item.t;
     return state.script === SCRIPT_TRADITIONAL ? (item.t || item.s) : (item.s || item.t);
   }
   // 取简体基准文案（用于存储原始数据，渲染时再统一转换）
@@ -618,6 +627,7 @@
       return;
     }
     var sys = buildDSPrompt();
+    if (state.lang === "en") sys = sys + "\n【Language】All replies MUST be in natural English (keep the same warm, direct tone)."; // V3.3 英文模式
     var hist = [];
     try {
       var h = state.history || [];
@@ -742,6 +752,8 @@
     history: [], // {role, text}
     script: SCRIPT_SIMPLIFIED,   // 当前界面文字体系
     tradKB: null,                // 繁体版知识库缓存（避免重复拉取/转换）
+    englishKB: null,              // 英文版知识库缓存（a_en 預翻譯）
+    lang: "zh",                   // V3.3 输出语言 zh/en（EN 按钮驱动）
     quick: [],                   // 当前快捷提问原始项（简体基准）
     welcomeEl: null,             // 欢迎语气泡元素
     welcomeRaw: ""               // 欢迎语简体原文
@@ -752,7 +764,9 @@
     $all("[data-i18n]").forEach(function (el) {
       var key = el.getAttribute("data-i18n");
       if (key === "script_toggle") {
-        el.textContent = state.script === SCRIPT_TRADITIONAL ? "简" : "繁";
+        // V3.3 三態：顯示「下一個模式」的短標籤 簡→繁→EN→簡
+        el.textContent = state.script === SCRIPT_SIMPLIFIED ? "繁"
+          : (state.script === SCRIPT_TRADITIONAL ? "EN" : "简");
       } else {
         el.textContent = t(key);
       }
@@ -807,7 +821,7 @@
         icon: cat.icon,
         description: conv(cat.description || ""),
         qa: (cat.qa || []).map(function (qa) {
-          return { id: qa.id, q: conv(qa.q), a: conv(qa.a), keywords: qa.keywords || [] };
+          return { id: qa.id, q: conv(qa.q), a: (script === SCRIPT_ENGLISH ? (qa.a_en || qa.a) : conv(qa.a)), keywords: qa.keywords || [] };
         })
       };
     });
@@ -863,6 +877,13 @@
       if (cb) cb();
       return;
     }
+    if (state.script === SCRIPT_ENGLISH) {
+      // V3.3：英文展示知識庫（a_en 預翻譯優先，切換即時）
+      if (!state.englishKB) state.englishKB = convertKBToScript(KB_MATCH, SCRIPT_ENGLISH);
+      KB = state.englishKB;
+      if (cb) cb();
+      return;
+    }
     if (state.tradKB) {
       KB = state.tradKB;
       if (cb) cb();
@@ -894,6 +915,12 @@
   function applyScript(script) {
     if (script === state.script) return;
     state.script = script;
+    state.lang = (script === SCRIPT_ENGLISH) ? "en" : "zh"; // V3.3：EN 驅動輸出語言
+    var toggleBtn = $(".dc-script-toggle span");
+    if (toggleBtn) {
+      // 顯示下一個模式的短標籤：簡→繁→EN→簡
+      toggleBtn.textContent = script === SCRIPT_SIMPLIFIED ? "繁" : (script === SCRIPT_TRADITIONAL ? "EN" : "简");
+    }
     applyI18n();
     loadDisplayKB(function () {
       if (state.kbOpen) { renderKBIndex(); renderKBList(); }
@@ -997,7 +1024,10 @@
     $(".dc-restart", el).addEventListener("click", restart);
     $(".dc-kb-toggle", el).addEventListener("click", toggleKB);
     $(".dc-script-toggle", el).addEventListener("click", function () {
-      applyScript(state.script === SCRIPT_TRADITIONAL ? SCRIPT_SIMPLIFIED : SCRIPT_TRADITIONAL);
+      // V3.3：三態循環 簡→繁→EN→簡
+      var next = state.script === SCRIPT_SIMPLIFIED ? SCRIPT_TRADITIONAL
+        : (state.script === SCRIPT_TRADITIONAL ? SCRIPT_ENGLISH : SCRIPT_SIMPLIFIED);
+      applyScript(next);
     });
     $("#dc-send", el).addEventListener("click", onSend);
     var input = $("#dc-input", el);
@@ -1164,8 +1194,9 @@
   }
 
   /* ============== 欢迎语 ============== */
+  var EN_WELCOME = "Hi there 😊 I'm DC Sister, DCOGAI's product advisor.\n\nMost friends who come to me think they lost to the market — but more often they lost to not sticking to their rules.\n\nTrading isn't tiring because of chart-watching; it's tiring fighting your own emotions — greed, fear, the urge to chase losses.\nDCOGAI doesn't promise every trade wins, but it can help you hold your weaknesses in check: hand execution to rules, and keep your mind for life.\n\nTell me about yourself: ① Just starting out ② Have some experience ③ Want to know how DCOGAI differs from other tools\n\nReply with a number or ask anything — we'll start from what matters most to you. 😊 Take it easy, it'll be fine.";
   function sendWelcome() {
-    state.welcomeRaw = KB_MATCH.welcome.general || KB.welcome.general;
+    state.welcomeRaw = (state.lang === "en") ? EN_WELCOME : (KB_MATCH.welcome.general || KB.welcome.general);
     state.quick = [u("q_price"), u("q_diff"), u("q_api"), u("q_newbie"), u("q_human")];
     botReply(displayText(state.welcomeRaw), {
       delay: 420,
@@ -1235,7 +1266,7 @@
     // 0) 銷售邊界優先（V3.0：看似該賣、實際不能賣的問題——不替決定/不承諾/不強推）
     var salesMatch = matchSalesBoundary(text);
     if (salesMatch) {
-      botReply(displayText(salesMatch.qa.a), { delay: 400 + salesMatch.qa.a.length * 3, quick: suggestFollowups(salesMatch), deepBtn: text });
+      botReply(displayText(answerOf(salesMatch.qa.a)), { delay: 400 + salesMatch.qa.a.length * 3, quick: suggestFollowups(salesMatch), deepBtn: text });
       highlightKBItem(salesMatch.cat.id, salesMatch.qa.id);
       state.lastCat = salesMatch.cat.id;
       return;
@@ -1244,7 +1275,7 @@
     // 0) 事務引擎優先（V3.0 A 引擎）：操作/銷售/功能問題直接答，不經過認知/情緒層
     var txMatch = matchTransactional(text);
     if (txMatch) {
-      botReply(displayText(txMatch.qa.a), { delay: 400 + txMatch.qa.a.length * 3, quick: suggestFollowups(txMatch), deepBtn: text });
+      botReply(displayText(answerOf(txMatch.qa.a)), { delay: 400 + txMatch.qa.a.length * 3, quick: suggestFollowups(txMatch), deepBtn: text });
       highlightKBItem(txMatch.cat.id, txMatch.qa.id);
       state.lastCat = txMatch.cat.id;
       return;
@@ -1254,7 +1285,7 @@
     var preMatch = matchBest(text);
     var emotionHit = (!preMatch || preMatch.score < 4) ? matchEmotionFirst(text) : null;
     if (emotionHit) {
-      botReply(displayText(emotionHit.qa.a), { delay: 500 + emotionHit.qa.a.length * 4, quick: suggestFollowups(emotionHit), deepBtn: text });
+      botReply(displayText(answerOf(emotionHit.qa.a)), { delay: 500 + emotionHit.qa.a.length * 4, quick: suggestFollowups(emotionHit), deepBtn: text });
       highlightKBItem(emotionHit.cat.id, emotionHit.qa.id);
       state.lastCat = emotionHit.cat.id;
       return;
@@ -1276,7 +1307,7 @@
     // 2) 先尝试本地知识库匹配；命中则优先按知识库回复（覆盖黑名单硬拦截）
     var localMatch = matchBest(text);
     if (localMatch) {
-      botReply(displayText(localMatch.qa.a), { delay: 500 + localMatch.qa.a.length * 4, quick: suggestFollowups(localMatch), deepBtn: text });
+      botReply(displayText(answerOf(localMatch.qa.a)), { delay: 500 + localMatch.qa.a.length * 4, quick: suggestFollowups(localMatch), deepBtn: text });
       highlightKBItem(localMatch.cat.id, localMatch.qa.id);
       state.lastCat = localMatch.cat.id;
       return;
@@ -1339,7 +1370,7 @@
     var match = matchBest(text);
     var replyKB = function () {
       if (!match) return false;
-      botReply(displayText(match.qa.a), { delay: 500 + match.qa.a.length * 4, quick: suggestFollowups(match), deepBtn: text });
+      botReply(displayText(answerOf(match.qa.a)), { delay: 500 + match.qa.a.length * 4, quick: suggestFollowups(match), deepBtn: text });
       highlightKBItem(match.cat.id, match.qa.id);
       return true;
     };
@@ -1395,7 +1426,7 @@
         // 二次响应失败：回退到本地知识库的完整答案
         var m = matchBest(query);
         if (m) {
-          appendMessage("bot", displayText(m.qa.a), { suffix: true, deepReply: true });
+          appendMessage("bot", displayText(answerOf(m.qa.a)), { suffix: true, deepReply: true });
           btn.innerHTML = '<iconify-icon icon="mdi:check-bold"></iconify-icon>' + t("deep_done");
           highlightKBItem(m.cat.id, m.qa.id);
         } else {
@@ -1594,7 +1625,7 @@
     card.innerHTML =
       '<div class="dc-kd-tag"><iconify-icon icon="' + cat.icon + '"></iconify-icon> ' + escapeHtml(cat.name) + '</div>' +
       '<div class="dc-kd-q"><iconify-icon icon="mdi:comment-question-outline" style="color:#1a237e;margin-top:2px;"></iconify-icon><span>' + escapeHtml(qa.q) + '</span></div>' +
-      '<div class="dc-kd-a">' + escapeHtml(qa.a) + '</div>';
+      '<div class="dc-kd-a">' + escapeHtml(answerOf(qa)) + '</div>';
 
     var suffix = document.createElement("span");
     suffix.className = "dc-suffix";
