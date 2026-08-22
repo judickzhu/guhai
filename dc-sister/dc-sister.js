@@ -1050,7 +1050,7 @@
       scriptDebounce = setTimeout(function () {
         if (state.scriptPinned) return; // V3.3：手動固定（含 EN）時不自動切換
         var detected = detectScript(input.value);
-        if (detected !== state.script) applyScript(detected);
+        if (!state.scriptPinned && detected !== state.script) applyScript(detected);
       }, 300);
     });
     el.addEventListener("click", function (e) {
@@ -1232,9 +1232,9 @@
     var input = $("#dc-input");
     var text = (input.value || "").trim();
     if (!text) return;
-    // 实时检测：用户输入文字体系变化时，无缝切换整个界面
+    // 实时检测：用户输入文字体系变化时，无缝切换整个界面（V3.3：手動固定時不切）
     var detected = detectScript(text);
-    if (detected !== state.script) applyScript(detected);
+    if (!state.scriptPinned && detected !== state.script) applyScript(detected);
     appendMessage("user", text, { suffix: false });
     input.value = "";
     autoGrow(input);
@@ -1670,7 +1670,7 @@
           openPanel();
           setTimeout(function () {
             var detected = detectScript(q);
-            if (detected !== state.script) applyScript(detected);
+            if (!state.scriptPinned && detected !== state.script) applyScript(detected);
             appendMessage("user", q, { suffix: false });
             handleUserMessage(q);
           }, 400);
