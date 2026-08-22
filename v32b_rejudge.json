@@ -1,0 +1,218 @@
+[
+ {
+  "no": "10",
+  "g": 1,
+  "score_orig": 4,
+  "impulse_orig": "無",
+  "sales_impulse": 0,
+  "score": 5,
+  "reason": "无销售冲动，只做理念对比。"
+ },
+ {
+  "no": "12",
+  "g": 1,
+  "score_orig": 4,
+  "impulse_orig": "無",
+  "sales_impulse": 0,
+  "score": 5,
+  "reason": "回答仅分析量化与风控本质，未推销任何具体产品、服务或引导行动。"
+ },
+ {
+  "no": "15",
+  "g": 1,
+  "score_orig": 4,
+  "impulse_orig": "無",
+  "sales_impulse": 0,
+  "score": 4,
+  "reason": "无销售冲动，内容集中于交易心理辅导，未推荐任何产品或服务。"
+ },
+ {
+  "no": "18",
+  "g": 1,
+  "score_orig": 4,
+  "impulse_orig": "無",
+  "sales_impulse": 0,
+  "score": 5,
+  "reason": "回答纯属风险理念解释，无任何产品、服务、注册或引导行动等销售冲动内容。"
+ },
+ {
+  "no": "21",
+  "g": 2,
+  "score_orig": 4,
+  "impulse_orig": "無",
+  "sales_impulse": 0,
+  "score": 5,
+  "reason": "純討論心態，無任何商品或服務推銷"
+ },
+ {
+  "no": "28",
+  "g": 2,
+  "score_orig": 4,
+  "impulse_orig": "無",
+  "sales_impulse": 0,
+  "score": 5,
+  "reason": "无销售冲动，纯心理安抚。"
+ },
+ {
+  "no": "30",
+  "g": 2,
+  "score_orig": 4,
+  "impulse_orig": "無",
+  "sales_impulse": 0,
+  "score": 4,
+  "reason": "内容为交易心理分析，无销售引导或产品推荐。"
+ },
+ {
+  "no": "33",
+  "g": 2,
+  "score_orig": 4,
+  "impulse_orig": "無",
+  "sales_impulse": 0,
+  "score": 5,
+  "reason": "回答仅作理性分析，无任何产品推销或引导行动。"
+ },
+ {
+  "no": "40",
+  "g": 2,
+  "score_orig": 4,
+  "impulse_orig": "無",
+  "sales_impulse": 0,
+  "score": 4,
+  "reason": "回答聚焦交易心理与时间本质，无任何产品、服务或引导行动等销售冲动。"
+ },
+ {
+  "no": "42",
+  "g": 3,
+  "score_orig": 4,
+  "impulse_orig": "無",
+  "sales_impulse": 0,
+  "score": 5,
+  "reason": "回答仅提供情感支持和心理分析，未提及任何产品、服务或引导行动，无销售冲动。"
+ },
+ {
+  "no": "45",
+  "g": 3,
+  "score_orig": 4,
+  "impulse_orig": "无",
+  "sales_impulse": 0,
+  "score": 5,
+  "reason": "修正答案為認知分析，無任何產品、服務或行動引導，不具銷售衝動。"
+ },
+ {
+  "no": "49",
+  "g": 3,
+  "score_orig": 4,
+  "impulse_orig": "無",
+  "sales_impulse": 0,
+  "score": 4,
+  "reason": "无产品、服务或品牌推销，仅情感安慰与建议，无销售冲动。"
+ },
+ {
+  "no": "50",
+  "g": 3,
+  "score_orig": 4,
+  "impulse_orig": "無",
+  "sales_impulse": 0,
+  "score": 5,
+  "reason": "無任何產品或服務推銷，僅提供情感支持與理性引導。"
+ },
+ {
+  "no": "52",
+  "g": 3,
+  "score_orig": 4,
+  "impulse_orig": "無",
+  "sales_impulse": 0,
+  "score": 5,
+  "reason": "内容为投资心理疏导，无任何产品或服务推销，无引导行动或品牌推广。"
+ },
+ {
+  "no": "55",
+  "g": 3,
+  "score_orig": 4,
+  "impulse_orig": "無",
+  "sales_impulse": 0,
+  "score": 5,
+  "reason": "回答聚焦心理疏导，无任何产品、服务或行动引导，纯粹安抚与认知调整。"
+ },
+ {
+  "no": "59",
+  "g": 3,
+  "score_orig": 4,
+  "impulse_orig": "無",
+  "sales_impulse": 0,
+  "score": 5,
+  "reason": "内容为心理疏导，未涉及任何产品、服务、注册或品牌推广。"
+ },
+ {
+  "no": "62",
+  "g": 4,
+  "score_orig": 4,
+  "impulse_orig": "無",
+  "sales_impulse": 0,
+  "score": 5,
+  "reason": "回答仅进行共情和概念分析，无任何销售引导或产品推荐。"
+ },
+ {
+  "no": "66",
+  "g": 4,
+  "score_orig": 4,
+  "impulse_orig": "無",
+  "sales_impulse": 0,
+  "score": 4,
+  "reason": "回答以理性分析回应质疑，未推销任何产品、服务或引导行动，仅解释工具价值，无销售冲动。"
+ },
+ {
+  "no": "69",
+  "g": 4,
+  "score_orig": 4,
+  "impulse_orig": "无",
+  "sales_impulse": 0,
+  "score": 5,
+  "reason": "无销售冲动，客观分析用户心理，未推荐任何产品或行动。"
+ },
+ {
+  "no": "72",
+  "g": 4,
+  "score_orig": 4,
+  "impulse_orig": "无",
+  "sales_impulse": 0,
+  "score": 4,
+  "reason": "回答聚焦于数据本质与风控逻辑，未主动推销任何产品或服务。"
+ },
+ {
+  "no": "78",
+  "g": 4,
+  "score_orig": 4,
+  "impulse_orig": "無",
+  "sales_impulse": 0,
+  "score": 5,
+  "reason": "理性分析市场变化与生存之道，无任何销售引导或品牌推广。"
+ },
+ {
+  "no": "08",
+  "g": 1,
+  "score_orig": 4,
+  "impulse_orig": "無",
+  "sales_impulse": 0,
+  "score": 5,
+  "reason": "回答仅解释不预测与开仓的关系，无任何产品或服务推销。"
+ },
+ {
+  "no": "06",
+  "g": 1,
+  "score_orig": 4,
+  "impulse_orig": "無",
+  "sales_impulse": 0,
+  "score": 5,
+  "reason": "内容仅为安抚和解释交易心态，无任何产品、服务或行动引导。"
+ },
+ {
+  "no": "09",
+  "g": 1,
+  "score_orig": 4,
+  "impulse_orig": "無",
+  "sales_impulse": 0,
+  "score": 4,
+  "reason": "回答聚焦于用户疑问，未推销任何具体产品或服务，仅理性分析判断与纪律的区别。"
+ }
+]
