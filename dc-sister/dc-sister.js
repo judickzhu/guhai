@@ -24,6 +24,8 @@
   // （防止「來這裡的目的是什麼」誤命中硬碟題「的是什麼」這類答非所問）
   // V3.3 書籍題解分類（優先產品/系統回答，書籍題解降權為次選）
   var BOOK_CATS = { "股路不歸·DC問答": 1, "股道·DC問答": 1 };
+  // V3.3 語氣詞尾綴規則：以 嗎/呢/吧 等結尾的 keyword 是問句通用尾綴，不進索引/不計分
+  function isParticleSuffix(k) { return /[嗎呢吧呀哦啦]$/.test(String(k)); }
   var KB_STOPWORDS = {
     "還是":1,"为什么":1,"我":1,"你的":1,"錯":1,"錯的":1,"虧":1,"賺":1,"錢":1,"你們":1,"的人":1,"的時候":1,"的時刻":1,
     "是什麼時候":1,"是什麼":1,"怎麼":1,"一個":1,"你信嗎":1,"同樣是":1,"你是":1,"過嗎":1,"你見過":1,"你能從":1,
@@ -289,7 +291,7 @@
       for (var i = 0; i < qa.keywords.length; i++) {
         var kw = toSimplified(String(qa.keywords[i]).toLowerCase());
         if (!kw) continue;
-        if (KB_STOPWORDS[kw]) continue;  // V3.3 泛化詞命中不計分
+        if (KB_STOPWORDS[kw] || isParticleSuffix(kw)) continue;  // V3.3 泛化詞/語氣尾綴不計分
         if (q.indexOf(kw) >= 0) {
           score += 2 + Math.min(kw.length, 6) * 0.4;
         }
@@ -440,7 +442,7 @@
           if (!k) return;
           k = toSimplified(String(k).toLowerCase());
           if (k.length < 2 || k.length > 12) return;
-          if (KB_STOPWORDS[k]) return;  // V3.3 泛化詞不進索引（不拉候選）
+          if (KB_STOPWORDS[k] || isParticleSuffix(k)) return;  // V3.3 泛化詞/語氣尾綴不進索引
           (index[k] = index[k] || []).push(ref);
         };
         (qa.keywords || []).forEach(addKey);
