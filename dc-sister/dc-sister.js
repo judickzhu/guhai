@@ -655,7 +655,10 @@
       return;
     }
     var sys = buildDSPrompt();
-    if (state.lang === "en") sys = sys + "\n【Language】All replies MUST be in natural English (keep the same warm, direct tone)."; // V3.3 英文模式
+    if (state.lang === "en") {
+      // V3.4 英文模式強化：指令移到開頭 + 硬性自檢（防止被長 prompt 稀釋）
+      sys = "【Language·HARD】All replies MUST be written entirely in English. Every sentence, every word, every punctuation must be English. Absolutely NO Chinese characters allowed. Do NOT quote or repeat Chinese phrases. Self-check before output: if your reply contains any Chinese character, rewrite it fully in English. Keep the same warm, direct, sister-like tone.\n\n" + sys;
+    }
     // V3.0 認知路徑：帶入上一輪認知狀態（有的話）
     if (state.cog && state.cog.pos) {
       sys = sys + "\n【上一輪認知狀態】位置:" + state.cog.pos + " 已理解:" + (state.cog.understood || "") + " 下一最佳:" + (state.cog.next || "") + " 引擎:" + (state.cog.engine || "cognitive") + "——若用戶話題未變，從下一最佳認知繼續，不重頭講；若話題已變，重新判斷。";
@@ -672,7 +675,7 @@
       headers: { "Content-Type": "application/json", "Authorization": "Bearer " + DS_KEY },
       body: JSON.stringify({
         model: "deepseek-v4-flash",
-        messages: [{ role: "system", content: sys }].concat(hist).concat([{ role: "user", content: query }]),
+        messages: [{ role: "system", content: sys }].concat(hist).concat([{ role: "user", content: (state.lang === "en" ? "[Please reply entirely in English. No Chinese characters.] " : "") + query }]),
         max_tokens: 1600,
         temperature: 0.7
       }),
