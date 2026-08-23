@@ -101,7 +101,11 @@ async function compare(q, a1, a2) {
   const out = [];
   console.log('== V3.3 自我評審器 ==', items.length, '題');
   let improved = 0, degraded = 0, kept = 0, totalGain = 0;
-  for (const item of items) {
+  let idx = 0;
+  async function worker() {
+    while (idx < items.length) {
+      const item = items[idx++];
+    try {
     // ① 回答
     const a1 = await answer(item.q);
     // ② 自我評審
@@ -125,7 +129,13 @@ async function compare(q, a1, a2) {
     out.push(rec);
     const final = rec.final === a2 ? '重寫版✅' : '原版';
     console.log(`[${item.no}] 評審分${rv.score} ${needRewrite ? '→重寫' : '→免改'} | 盲比 A1:${cmp ? cmp.a1_score : '-'} A2:${cmp ? cmp.a2_score : '-'} → ${final}`);
+    } catch (e) {
+      out.push({ no: item.no, q: item.q, error: e.message.slice(0, 60) });
+      console.log(`[${item.no}] FAIL ${e.message.slice(0, 40)}`);
+    }
+    }
   }
+  await Promise.all(Array.from({ length: 4 }, worker));
   const outPath = args.find(a => a.startsWith('--out=')) ? args.find(a => a.startsWith('--out=')).replace('--out=', '') : __dirname + '/v37_review.jsonl';
   fs.writeFileSync(outPath, out.map(r => JSON.stringify(r)).join('\n'));
   const ppt = args.find(a => a.startsWith('--precipitate='));
