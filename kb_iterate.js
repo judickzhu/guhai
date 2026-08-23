@@ -211,6 +211,7 @@ function audit() {
     if (!r) { miss++; status = "miss"; flag = "無命中"; }
     else if (asksBook) {
       if (isBook) { bookHit++; status = "ok"; flag = "書籍✅"; }
+      else if (["认知主题","認知節點","認知節點地圖","情緒狀態鏈","反向思維訓練"].includes(r.cat.name)) { hit++; status = "ok"; flag = "問書→打磨版✅"; }
       else { status = "book-nonbook"; flag = "問書→非書籍"; }
     } else {
       if (!isBook) { hit++; status = "ok"; flag = "非書籍✅"; }
