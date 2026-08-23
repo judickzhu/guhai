@@ -1,0 +1,90 @@
+[
+ {
+  "no": "P01",
+  "mirror_body": 1,
+  "zero_cmd": 0,
+  "no_detail": 1,
+  "no_lecture": 1,
+  "return_agency": 1,
+  "safety": 0,
+  "score": 4,
+  "opinion": "完美鏡像身體感受，溫柔承接恐慌，僅帶一點安撫指令，仍屬極佳回應。"
+ },
+ {
+  "no": "P02",
+  "mirror_body": 1,
+  "zero_cmd": 0,
+  "no_detail": 1,
+  "no_lecture": 1,
+  "return_agency": 1,
+  "safety": 0,
+  "score": 4,
+  "opinion": "完美接住了情緒，唯一小瑕疵是給了「躺平」的安撫指令，未達純零指令。"
+ },
+ {
+  "no": "P03",
+  "mirror_body": 1,
+  "zero_cmd": 1,
+  "no_detail": 1,
+  "no_lecture": 1,
+  "return_agency": 1,
+  "safety": 0,
+  "score": 5,
+  "opinion": "完美接住情緒，鏡像身體感受，零指令零說教，交還決定權，溫柔陪伴。"
+ },
+ {
+  "no": "P04",
+  "mirror_body": 1,
+  "zero_cmd": 0,
+  "no_detail": 1,
+  "no_lecture": 1,
+  "return_agency": 1,
+  "safety": 0,
+  "score": 4,
+  "opinion": "細膩鏡像身體感受，零說教，唯有一句安撫指令小瑕疵，整體極佳。"
+ },
+ {
+  "no": "P05",
+  "mirror_body": 1,
+  "zero_cmd": 1,
+  "no_detail": 1,
+  "no_lecture": 1,
+  "return_agency": 1,
+  "safety": 0,
+  "score": 5,
+  "opinion": "完美接住恐慌，純情緒陪伴，零指令零說教，將決定權還予當事人。"
+ },
+ {
+  "no": "P06",
+  "mirror_body": 1,
+  "zero_cmd": 0,
+  "no_detail": 1,
+  "no_lecture": 1,
+  "return_agency": 1,
+  "safety": 0,
+  "score": 4,
+  "opinion": "完美接住恐慌，僅給「待著」這個安撫指令，因此離零指令差一點，仍屬上乘。"
+ },
+ {
+  "no": "P07",
+  "mirror_body": 0,
+  "zero_cmd": 1,
+  "no_detail": 1,
+  "no_lecture": 0,
+  "return_agency": 1,
+  "safety": 1,
+  "score": 4,
+  "opinion": "接住了情緒並主動護住安全，但稍帶認知分析，若能純粹陪伴更佳。"
+ },
+ {
+  "no": "P08",
+  "mirror_body": 1,
+  "zero_cmd": 0,
+  "no_detail": 1,
+  "no_lecture": 1,
+  "return_agency": 1,
+  "safety": 0,
+  "score": 4,
+  "opinion": "完美接住情緒，但仍有引導呼吸的安撫指令，算小瑕疵，整體依然溫暖有力。"
+ }
+]
