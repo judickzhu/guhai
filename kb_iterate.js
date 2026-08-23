@@ -283,6 +283,24 @@ if (args.includes("--add")) {
   process.exit(0);
 }
 
+// --self-review [--n=N]：批量自我評審（答→評→重寫→盲比→沉澱）
+if (args.includes("--self-review")) {
+  const { execSync } = require("child_process");
+  const nArg = args.find(a => a.startsWith("--n="));
+  const n = nArg ? parseInt(nArg.replace("--n=", ""), 10) : 10;
+  const lines = fs.readFileSync(CORPUS_PATH, "utf8").trim().split("\n").filter(Boolean).slice(0, n);
+  const items = lines.map((l, i) => { const j = JSON.parse(l); return { no: String(i + 1).padStart(2, "0"), q: j.q, trap: j.expect || "" }; });
+  const tmpIn = path.join(ROOT, "kb_selfreview_input.json");
+  const tmpOut = path.join(ROOT, "kb_selfreview_out.jsonl");
+  const tmpPpt = path.join(ROOT, "kb_selfreview_precipitate.jsonl");
+  fs.writeFileSync(tmpIn, JSON.stringify({ items }));
+  console.log(`[自我評審] 語料前 ${items.length} 條…`);
+  execSync(`node ${path.join(ROOT, "v37_self_review.js")} --input=${tmpIn} --out=${tmpOut} --precipitate=${tmpPpt}`, { stdio: "inherit" });
+  const better = fs.existsSync(tmpPpt) ? fs.readFileSync(tmpPpt, "utf8").trim().split("\n").filter(Boolean).length : 0;
+  console.log(`[沉澱] ${better} 條重寫版 → kb_selfreview_precipitate.jsonl（人工確認後入庫）`);
+  process.exit(0);
+}
+
 const doScan = args.includes("--scan") || args.length === 0;
 const doAudit = args.includes("--audit") || args.length === 0;
 const doReport = args.includes("--report") || args.length === 0;
