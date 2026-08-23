@@ -308,6 +308,23 @@ if (args.includes("--monitor")) {
   if (weak.length) { console.log('\n--- 疑似答非所問（弱命中）---'); weak.slice(-10).forEach(l => console.log(`  [${new Date(l.ts).toLocaleTimeString()}] "${l.q}" → ${l.cat}「${l.hit}」(${l.score}分)`)); }
   if (books.length) { console.log('\n--- 書籍兜底（需人工確認是否答非所問）---'); books.slice(-10).forEach(l => console.log(`  "${l.q}" → ${l.cat}「${l.hit}」(${l.score}分)`)); }
   if (repeated.length) { console.log('\n--- 重複提問（可能沒答好）---'); repeated.slice(0, 10).forEach(([q, n]) => console.log(`  "${q}" ×${n}`)); }
+  if (low.length) {
+    console.log('\n--- 低分命中(4-5分，疑似答非所問需確認)---');
+    low.slice(-10).forEach(l => console.log(`  "${l.q}" → ${l.cat}「${l.hit}」(${l.score}分)`));
+  }
+  // ⑤ 語義檢查提示：查詢與命中題目的字面重疊低 → 疑似答非所問（重疊率<0.15 且分數<6）
+  const overlapLow = log.filter(l => {
+    if (l.score >= 6) return false;
+    const qSet = new Set(l.q.replace(/[^一-鿿]/g, '').split(''));
+    const hSet = new Set(l.hit.replace(/[^一-鿿]/g, '').split(''));
+    let inter = 0; qSet.forEach(c => { if (hSet.has(c)) inter++; });
+    const ratio = qSet.size ? inter / qSet.size : 0;
+    return ratio < 0.15;
+  });
+  if (overlapLow.length) {
+    console.log('\n--- 字面重疊低（強疑似答非所問）---');
+    overlapLow.slice(-10).forEach(l => console.log(`  "${l.q}" → ${l.cat}「${l.hit}」(${l.score}分)`));
+  }
   process.exit(0);
 }
 
