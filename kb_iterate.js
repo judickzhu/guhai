@@ -44,6 +44,7 @@ function tokenize(text) {
 }
 
 // ── 停用詞表（與 dc-sister.js 同步） ──
+function isParticleSuffix(k) { return /[嗎呢吧呀哦啦]$/.test(String(k)); }
 const KB_STOPWORDS = {
   "還是":1,"为什么":1,"我":1,"你的":1,"錯":1,"錯的":1,"虧":1,"賺":1,"錢":1,"你們":1,"的人":1,"的時候":1,"的時刻":1,
   "是什麼時候":1,"是什麼":1,"怎麼":1,"一個":1,"你信嗎":1,"同樣是":1,"你是":1,"過嗎":1,"你見過":1,"你能從":1,
@@ -66,7 +67,7 @@ function buildIndex() {
         if (!k) return;
         k = toSimplified(String(k).toLowerCase());
         if (k.length < 2 || k.length > 12) return;
-        if (KB_STOPWORDS[k]) return;
+        if (KB_STOPWORDS[k] || isParticleSuffix(k)) return;
         (index[k] = index[k] || []).push(ref);
       };
       (qa.keywords || []).forEach(addKey);
@@ -79,7 +80,7 @@ function scoreQA(query, qa) {
   if (qa.keywords && qa.keywords.length) {
     for (const k of qa.keywords) {
       const kw = toSimplified(String(k).toLowerCase()); if (!kw) continue;
-      if (KB_STOPWORDS[kw]) continue;
+      if (KB_STOPWORDS[kw] || isParticleSuffix(kw)) continue;
       if (q.indexOf(kw) >= 0) score += 2 + Math.min(kw.length, 6) * 0.4;
     }
   }
