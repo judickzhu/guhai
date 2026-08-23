@@ -20,6 +20,16 @@
   var KB = window.DCSisterKB;        // 展示用知识库（跟随当前文字体系，简/繁）
   var KB_MATCH = window.DCSisterKB;  // 匹配用知识库（始终简体，供检索/禁语/分层识别）
   var KB_INDEX = null;               // 关键词倒排索引（V3.3 性能优化：提問時只算命中候選）
+  // V3.3 泛化詞停用表：共用≥5題但屬語法詞/疑問碎片/書籍引導語的 keyword
+  // （防止「來這裡的目的是什麼」誤命中硬碟題「的是什麼」這類答非所問）
+  var KB_STOPWORDS = {
+    "還是":1,"为什么":1,"我":1,"你的":1,"錯":1,"錯的":1,"虧":1,"賺":1,"錢":1,"你們":1,"的人":1,"的時候":1,"的時刻":1,
+    "是什麼時候":1,"是什麼":1,"怎麼":1,"一個":1,"你信嗎":1,"同樣是":1,"你是":1,"過嗎":1,"你見過":1,"你能從":1,
+    "四個字":1,"你有沒有想過":1,"你上一次":1,"你有沒有":1,"你有沒有發現":1,"你有沒有想過，你":1,
+    "再等等":1,"的念頭":1,"你對":1,"兩個字":1,"你看到":1,"你的第一反應是":1,"作者說":1,
+    "你知道嗎":1,"你覺得":1,"你上一次因為":1,"有沒有想過":1,"三個字":1,"你聽得進去嗎":1,"而不是":1,
+    "這句話":1,"——這句話":1,"主角的":1,"你買股票時":1,"说的是什么":1,"的是什麼":1,"的是什么":1,"怎麼辦":1,"該怎麼辦":1,"怎么办":1,"是不是":1,"真的":1,"其實":1,"其实":1,"就是":1,"那個":1,"這個":1,"这个":1,"那个":1
+  };
   if (!KB) {
     console.error("[DC姐姐] 知识库数据未加载 (kb-data.js)");
     return;
@@ -277,6 +287,7 @@
       for (var i = 0; i < qa.keywords.length; i++) {
         var kw = toSimplified(String(qa.keywords[i]).toLowerCase());
         if (!kw) continue;
+        if (KB_STOPWORDS[kw]) continue;  // V3.3 泛化詞命中不計分
         if (q.indexOf(kw) >= 0) {
           score += 2 + Math.min(kw.length, 6) * 0.4;
         }
@@ -427,6 +438,7 @@
           if (!k) return;
           k = toSimplified(String(k).toLowerCase());
           if (k.length < 2 || k.length > 12) return;
+          if (KB_STOPWORDS[k]) return;  // V3.3 泛化詞不進索引（不拉候選）
           (index[k] = index[k] || []).push(ref);
         };
         (qa.keywords || []).forEach(addKey);
@@ -454,7 +466,7 @@
     var qRaw = toSimplified(String(query || "").toLowerCase());
     tokenize(qRaw).forEach(function (t) { if (t.length >= 2) collect(t); });
     for (var st = 0; st < qRaw.length; st++) {
-      for (var len = 2; len <= 10 && st + len <= qRaw.length; len += 2) {
+      for (var len = 2; len <= 10 && st + len <= qRaw.length; len += 1) {
         collect(qRaw.slice(st, st + len));
       }
     }
