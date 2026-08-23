@@ -22,6 +22,9 @@
   var KB_INDEX = null;               // 关键词倒排索引（V3.3 性能优化：提問時只算命中候選）
   // V3.3 泛化詞停用表：共用≥5題但屬語法詞/疑問碎片/書籍引導語的 keyword
   // （防止「來這裡的目的是什麼」誤命中硬碟題「的是什麼」這類答非所問）
+  // V3.3 書籍題解分類（優先產品/系統回答，書籍題解降權為次選）
+  var BOOK_CATS = { "股路不歸·DC問答": 1, "股道·DC問答": 1 };
+  var BOOK_PENALTY = 0.65;  // 書籍題解降權係數
   var KB_STOPWORDS = {
     "還是":1,"为什么":1,"我":1,"你的":1,"錯":1,"錯的":1,"虧":1,"賺":1,"錢":1,"你們":1,"的人":1,"的時候":1,"的時刻":1,
     "是什麼時候":1,"是什麼":1,"怎麼":1,"一個":1,"你信嗎":1,"同樣是":1,"你是":1,"過嗎":1,"你見過":1,"你能從":1,
@@ -472,6 +475,8 @@
     }
     var scoreRef = function (ref) {
       var s = scoreQA(query, ref.qa);
+      // V3.3 書籍題解降權：產品/系統回答優先，書籍題解次選（除非用戶明顯問書）
+      if (BOOK_CATS[ref.cat.name]) s *= BOOK_PENALTY;
       // V2.3 上下文狀態：上一輪同分類話題延續時加權（真實對話是連貫的）
       if (state.lastCat && ref.cat.id === state.lastCat) s *= 1.25;
       if (s > bestScore) { bestScore = s; best = { qa: ref.qa, cat: ref.cat, score: s }; }
@@ -482,6 +487,7 @@
       KB_MATCH.categories.forEach(function (cat) {
         cat.qa.forEach(function (qa) {
           var s = scoreQA(query, qa);
+          if (BOOK_CATS[cat.name]) s *= BOOK_PENALTY;
           if (state.lastCat && cat.id === state.lastCat) s *= 1.25;
           if (s > bestScore) { bestScore = s; best = { qa: qa, cat: cat, score: s }; }
         });
