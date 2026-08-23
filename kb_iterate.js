@@ -284,6 +284,33 @@ if (args.includes("--add")) {
   process.exit(0);
 }
 
+// --monitor [--file=qa_log.json]：分析問答日誌，揪出疑似答非所問
+if (args.includes("--monitor")) {
+  const mf = args.find(a => a.startsWith('--file='));
+  const logPath = mf ? mf.replace('--file=', '') : path.join(ROOT, 'qa_log.json');
+  if (!fs.existsSync(logPath)) {
+    console.log('日誌不存在: ' + logPath + '\n（用 ego-browser 從網站 localStorage 導出 qa_log 後再跑）');
+    process.exit(0);
+  }
+  const log = JSON.parse(fs.readFileSync(logPath, 'utf8'));
+  console.log('=== 答非所問監控 === 日誌 ' + log.length + ' 條');
+  // ① 弱命中（分數<4）
+  const weak = log.filter(l => l.weak);
+  // ② 書籍兜底（book=true）
+  const books = log.filter(l => l.book);
+  // ③ 重複提問（同 q 出現 ≥2 次 = 用戶可能沒得到答案）
+  const qCount = {};
+  log.forEach(l => { qCount[l.q] = (qCount[l.q] || 0) + 1; });
+  const repeated = Object.entries(qCount).filter(([q, n]) => n >= 2);
+  // ④ 低分命中（<5 分，含非弱命中）
+  const low = log.filter(l => l.score < 5 && !l.weak);
+  console.log(`\n弱命中(<4分): ${weak.length} | 書籍兜底: ${books.length} | 低分(4-5): ${low.length} | 重複提問: ${repeated.length} 組`);
+  if (weak.length) { console.log('\n--- 疑似答非所問（弱命中）---'); weak.slice(-10).forEach(l => console.log(`  [${new Date(l.ts).toLocaleTimeString()}] "${l.q}" → ${l.cat}「${l.hit}」(${l.score}分)`)); }
+  if (books.length) { console.log('\n--- 書籍兜底（需人工確認是否答非所問）---'); books.slice(-10).forEach(l => console.log(`  "${l.q}" → ${l.cat}「${l.hit}」(${l.score}分)`)); }
+  if (repeated.length) { console.log('\n--- 重複提問（可能沒答好）---'); repeated.slice(0, 10).forEach(([q, n]) => console.log(`  "${q}" ×${n}`)); }
+  process.exit(0);
+}
+
 // --self-review [--n=N]：批量自我評審（答→評→重寫→盲比→沉澱）
 if (args.includes("--self-review")) {
   const { execSync } = require("child_process");

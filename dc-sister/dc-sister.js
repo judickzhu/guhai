@@ -334,6 +334,8 @@
     var q = toSimplified(String(query || "").toLowerCase());
     // 質疑句排除：商業模式質疑（是不是靠XX賺錢/憑什麼值/圖什麼）是認知問題，不是事務問題
     if (/是不是靠|是不是靠.*賺|憑什麼值|圖什麼|靠什麼賺錢|怎麼賺|怎麼賺錢|靠用戶|靠我們|靠你/.test(q)) return false;
+    // V3.4 認知質疑排除：為什麼/為何/憑什麼開頭的查詢是認知題（「為什麼設置參數」≠「怎麼設置參數」），不走事務引擎
+    if (/為什麼|為何|憑什麼|为什么|为何|凭什么/.test(q)) return false;
     var txWords = ["怎么安装","怎麼安裝","如何安装","如何安裝","怎么绑定","怎麼綁定","如何绑定","如何綁定","多少钱","多少錢","怎么收费","怎麼收費","如何收费","如何收費","年费","年費","价格","價格","贵","貴","支持哪个","支持哪個","支持什么","支持什麼","支持哪些","支持哪些","怎么用","怎麼用","如何使用","如何使用","怎么暂停","怎麼暫停","如何暂停","如何暫停","怎么停止","怎麼停止","如何停止","如何停止","怎么升级","怎麼升級","如何升级","如何升級","怎么联系","怎麼聯繫","如何联系","如何聯繫","找客服","找人工","人工客服","试用","試用","安装","安裝","API","到期","續費","续费","升级","升級","绑定","綁定","暂停","暫停","币种","幣種","参数","參數","币种","授權","授权","部署","OKX","币安","binance","交易所"];
     for (var i = 0; i < txWords.length; i++) {
       if (q.indexOf(txWords[i]) >= 0) return true;
@@ -502,10 +504,13 @@
         });
       });
     }
-    // 優先非書籍題；非書籍題無命中時書籍題兜底；都無命中返回 null
-    if (bestScore >= 2.5) return best;
-    if (bestBookScore >= 2.5) return bestBook;
-    return best || bestBook || null;
+    // V3.4 答非所問防護：
+    // ①非書籍題優先（≥2.5 直接返回，帶 confidence 標記弱命中）
+    // ②書籍兜底提高門檻至 4.0——3.x 分的書籍題多是 n-gram 噪音搶答（如「離鄉」題被「歸零了嗎」命中）
+    // ③返回帶 score，調用方可據此決定是否降級/提示
+    if (bestScore >= 2.5) return { qa: best.qa, cat: best.cat, score: bestScore, weak: bestScore < 4 };
+    if (bestBookScore >= 4.0) return { qa: bestBook.qa, cat: bestBook.cat, score: bestBookScore, weak: false, book: true };
+    return best ? { qa: best.qa, cat: best.cat, score: bestScore, weak: true } : (bestBook && bestBookScore >= 2.5 ? { qa: bestBook.qa, cat: bestBook.cat, score: bestBookScore, weak: true, book: true } : null);
   }
 
   function normalizeBookQuery(text) {
@@ -1356,7 +1361,16 @@
     // 2) 先尝试本地知识库匹配；命中则优先按知识库回复（覆盖黑名单硬拦截）
     var localMatch = matchBest(text);
     if (localMatch) {
-      botReply(displayText(answerOf(localMatch.qa)), { delay: 500 + localMatch.qa.a.length * 4, quick: suggestFollowups(localMatch), deepBtn: text });
+      // V3.4 問答日誌（答非所問監控）：記錄查詢/命中/分數/弱命中/書籍兜底
+      try {
+        var log = JSON.parse(localStorage.getItem("qa_log") || "[]");
+        log.push({ ts: Date.now(), q: text.slice(0, 60), cat: localMatch.cat.name, hit: localMatch.qa.q.slice(0, 40), score: Math.round(localMatch.score * 10) / 10, weak: !!localMatch.weak, book: !!localMatch.book });
+        if (log.length > 200) log = log.slice(-200);
+        localStorage.setItem("qa_log", JSON.stringify(log));
+      } catch (e) {}
+      // V3.4 弱命中降級：分數<4 且非書籍 → 標記為「疑似答非所問」提示（不攔截，僅降低置信度）
+      var weakNote = localMatch.weak ? "\n\n（姐姐這個回答可能沒完全對上你的問題，你可以再問得具體一點）" : "";
+      botReply(displayText(answerOf(localMatch.qa)) + weakNote, { delay: 500 + localMatch.qa.a.length * 4, quick: suggestFollowups(localMatch), deepBtn: text });
       highlightKBItem(localMatch.cat.id, localMatch.qa.id);
       state.lastCat = localMatch.cat.id;
       return;
