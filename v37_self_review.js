@@ -6,8 +6,9 @@ const fs = require('fs');
 const https = require('https');
 
 const KEY = process.env.DEEPSEEK_KEY || 'sk-93c3b3ecc44f4c79973dbf7ffad4d2e9';
-const PROMPT = fs.readFileSync(__dirname + '/网站/v31_prompt.txt', 'utf8');
-const DATA = JSON.parse(fs.readFileSync(__dirname + '/网站/v36_trap20.json', 'utf8'));
+const BASE = __dirname.endsWith('网站') ? __dirname : __dirname + '/网站';
+const PROMPT = fs.readFileSync(BASE + '/v31_prompt.txt', 'utf8');
+const DATA = JSON.parse(fs.readFileSync(BASE + '/v36_trap20.json', 'utf8'));
 
 function call(messages, max_tokens = 2000, temperature = 0.7) {
   return new Promise((resolve, reject) => {
@@ -44,7 +45,7 @@ async function answer(q) {
 }
 
 // ② 自我評審（7問 + 質量分）
-const REVIEW_SYS = '你是「DC姐姐自我評審器」。對回答做嚴格自我評審。輸出 JSON：{"score":0-10,"issues":["紅燈問題列表"],"check1_接住用戶":true/false,"check2_狀態識別":true/false,"check3_認知卡點":true/false,"check4_層級正確":true/false,"check5_情緒處理":true/false,"check6_無過度銷售":true/false,"check7_收尾正確":true/false,"review_note":"一句話評審結論"}';
+const REVIEW_SYS = '你是「DC姐姐自我評審器」。對回答做嚴格自我評審。【合規檢查】若回答編造具體數字/實盤數據/收益承諾 → score 直接 ≤3 並在 issues 標註「編造數據違規」。輸出 JSON：{"score":0-10,"issues":["紅燈問題列表"],"check1_接住用戶":true/false,"check2_狀態識別":true/false,"check3_認知卡點":true/false,"check4_層級正確":true/false,"check5_情緒處理":true/false,"check6_無過度銷售":true/false,"check7_收尾正確":true/false,"review_note":"一句話評審結論"}';
 async function review(q, a) {
   const raw = await retry([{ role: 'system', content: REVIEW_SYS }, { role: 'user', content: `題目：${q}\n回答：${a}` }], 1500, 0.2);
   const m = raw.match(/\{[\s\S]*\}/);
@@ -52,7 +53,7 @@ async function review(q, a) {
 }
 
 // ③ 自動重寫
-const REWRITE_SYS = '你是「DC姐姐改寫器」。基於評審指出的問題，重寫答案（保留 DC姐姐人設：短促/直接/口語化/不卑不亢）。只輸出重寫後的回答，不要任何解釋。';
+const REWRITE_SYS = '你是「DC姐姐改寫器」。基於評審指出的問題，重寫答案（保留 DC姐姐人設：短促/直接/口語化/不卑不亢）。【合規紅線】禁止編造任何具體數字/實盤數據/收益/勝率/回撤（用戶要數據時，正確做法是拒絕編造+給可驗證途徑：觀摩戶/交易流水/自己觀察）；禁止承諾收益。只輸出重寫後的回答，不要任何解釋。';
 async function rewrite(q, a, reviewNote) {
   return retry([{ role: 'system', content: REWRITE_SYS }, { role: 'user', content: `題目：${q}\n原回答：${a}\n評審問題：${reviewNote}\n\n請重寫。` }], 1600, 0.5);
 }
@@ -78,10 +79,21 @@ async function compare(q, a1, a2) {
 (async () => {
   const args = process.argv.slice(2);
   let items = DATA.items;
+  const inputArg = args.find(a => a.startsWith('--input='));
+  if (inputArg) {
+    const p = inputArg.replace('--input=', '');
+    const raw = fs.readFileSync(p, 'utf8');
+    if (p.endsWith('.jsonl')) {
+      items = raw.trim().split('\n').filter(Boolean).map(l => { const j = JSON.parse(l); return { no: j.no || j.q.slice(0, 4), q: j.q, trap: j.trap || '' }; });
+    } else {
+      const j = JSON.parse(raw);
+      items = (j.items || []).map(it => ({ no: it.no, q: it.q, trap: it.trap || '' }));
+    }
+  }
   const nosArg = args.find(a => a.startsWith('--nos='));
   if (nosArg) {
     const nos = new Set(nosArg.replace('--nos=', '').split(','));
-    items = items.filter(i => nos.has(i.no));
+    items = items.filter(i => nos.has(String(i.no)));
   }
   const sampleArg = args.find(a => a.startsWith('--sample='));
   if (sampleArg) items = items.slice(0, parseInt(sampleArg.replace('--sample=', ''), 10));
@@ -114,6 +126,14 @@ async function compare(q, a1, a2) {
     const final = rec.final === a2 ? '重寫版✅' : '原版';
     console.log(`[${item.no}] 評審分${rv.score} ${needRewrite ? '→重寫' : '→免改'} | 盲比 A1:${cmp ? cmp.a1_score : '-'} A2:${cmp ? cmp.a2_score : '-'} → ${final}`);
   }
-  fs.writeFileSync(__dirname + '/v37_review.jsonl', out.map(r => JSON.stringify(r)).join('\n'));
+  const outPath = args.find(a => a.startsWith('--out=')) ? args.find(a => a.startsWith('--out=')).replace('--out=', '') : __dirname + '/v37_review.jsonl';
+  fs.writeFileSync(outPath, out.map(r => JSON.stringify(r)).join('\n'));
+  const ppt = args.find(a => a.startsWith('--precipitate='));
+  if (ppt) {
+    const pptPath = ppt.replace('--precipitate=', '');
+    const better = out.filter(r => r.compare && r.compare.better === 'a2');
+    fs.writeFileSync(pptPath, better.map(r => JSON.stringify({ no: r.no, q: r.q, a1_score: r.compare.a1_score, a2_score: r.compare.a2_score, better_answer: r.a2, review_note: r.review.review_note })).join('\n'));
+    console.log('沉澱重寫版 ' + better.length + ' 條 → ' + pptPath);
+  }
   console.log(`\n=== 完成 ===\n改進(重寫勝): ${improved} | 保持原版: ${degraded + kept} | 總分提升: ${totalGain.toFixed(1)}`);
 })();
