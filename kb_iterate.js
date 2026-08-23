@@ -134,8 +134,11 @@ function scan() {
   }));
   const PROD_TERMS = new Set(["休眠","風控","止損","糾錯","預測","倉位","系統","翻本","連虧","穩賺","重倉","死扛","回本","錯過","等待","割韭菜","連續虧損","勝率","扛單","29800","CCI","低買高賣","化繁為簡","錯過行情","便宜","值","價格","數據","安全","報仇"]);
   const stopSet = new Set([...Object.keys(KB_STOPWORDS), ...Object.keys(KB_STOPWORDS).map(toSimplified)]);
+  // 話題詞特徵：含交易領域字 → 共用多但該保留，不算泛化
+  const TOPIC_CHARS = "錢虧賺倉單盤損利盈跌漲買賣交系統貨幣金本息價";
+  const isTopicWord = (k) => { for (const ch of k) { if (TOPIC_CHARS.includes(ch)) return true; } return false; };
   const generic = Object.entries(kwUsage)
-    .filter(([k, n]) => n >= 5 && !stopSet.has(k) && !stopSet.has(toSimplified(k)) && !PROD_TERMS.has(k))
+    .filter(([k, n]) => n >= 5 && !stopSet.has(k) && !stopSet.has(toSimplified(k)) && !PROD_TERMS.has(k) && !isTopicWord(k))
     .sort((a, b) => b[1] - a[1]);
   if (generic.length) {
     issues.push({
@@ -176,12 +179,16 @@ function scan() {
     });
   }
   // C. 太短 keyword（≤2字，除產品專業詞）
-  const PROD_WORDS = ["休眠","風控","止損","糾錯","預測","倉位","系統","翻本","連虧","穩賺","重倉","死扛","回本","錯過","等待","割韭菜","风控","止损","纠错","系统","翻本","连亏","稳赚","重仓","死扛","回本","错过","等待","震荡","横盘","信号","体系","功能","区别","对比","止盈","止损线","仓位","离场","深套","减仓","扛单","深套"];
+  const PROD_WORDS = ["休眠","風控","止損","糾錯","預測","倉位","系統","翻本","連虧","穩賺","重倉","死扛","回本","錯過","等待","割韭菜","风控","止损","纠错","系统","翻本","连亏","稳赚","重仓","死扛","回本","错过","等待","震荡","横盘","信号","体系","功能","区别","对比","止盈","止损线","仓位","离场","深套","减仓","扛单","深套","不亏","少亏","套牢","满仓","空仓","清仓","做单","下单","挂单","止盈","风控"];
+  // 只報語法虛詞（的/了/嗎/都…）被當 keyword 用的——真正該進停用表的
+  const FUNC_WORDS = "的了吧嗎呢啊都也就還在沒有會能要想是不很真更最太又再只才該被把給從向對到與及或但並這那";
   const shortKw = [];
+  const seenKw = new Set();
   kb.categories.forEach(c => (c.qa || []).forEach(it => {
     (it.keywords || []).forEach(k => {
       const simp = toSimplified(k).replace(/\s/g, "");
-      if (simp.length <= 2 && !PROD_WORDS.includes(simp) && !PROD_WORDS.includes(k)) {
+      if (simp.length <= 2 && [...simp].every(ch => FUNC_WORDS.includes(ch)) && !KB_STOPWORDS[k] && !stopSet.has(simp) && !seenKw.has(simp)) {
+        seenKw.add(simp);
         shortKw.push({ cat: c.name, kw: k, q: it.q.slice(0, 20) });
       }
     });
