@@ -1548,10 +1548,10 @@
       },
       function () {
         removeTyping();
-        // 二次响应失败：回退到本地知识库的完整答案
+        // 二次响应失败：回退到本地知识库的完整答案（附提示，避免与首次完全重复）
         var m = matchBest(query);
         if (m) {
-          appendMessage("bot", displayText(answerOf(m.qa)), { suffix: true, deepReply: true });
+          appendMessage("bot", displayText(answerOf(m.qa)) + "\n\n（姐姐的深入了解暫時不可用，這是整理後的完整版——想聊更深，可以繼續問。）", { suffix: true, deepReply: true });
           btn.innerHTML = '<iconify-icon icon="mdi:check-bold"></iconify-icon>' + t("deep_done");
           highlightKBItem(m.cat.id, m.qa.id);
         } else {
