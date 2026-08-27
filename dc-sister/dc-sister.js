@@ -708,6 +708,43 @@
       .catch(function (e) { onError(e); });
   }
 
+  // V3.4 深入了解（AI 直連詳解版）：max_tokens 更大 + 詳解指令，生成比上一輪更深層的內容
+  function callDeepSeekDeep(query, onSuccess, onError) {
+    if (!DS_KEY || !DS_ENABLED) { onError(); return; }
+    if (!dsRateOk()) { onError(); return; }
+    var sys = buildDSPrompt();
+    if (state.lang === "en") {
+      sys = "【Language·HARD】All replies MUST be written entirely in English. Absolutely NO Chinese characters allowed. Self-check before output: if your reply contains any Chinese character, rewrite it fully in English.\n\n" + sys;
+    }
+    var hist = [];
+    try {
+      var h = state.history || [];
+      for (var i = Math.max(0, h.length - 6); i < h.length; i++) {
+        if (h[i] && h[i].text) hist.push({ role: h[i].role === "bot" ? "assistant" : "user", content: String(h[i].text).slice(0, 500) });
+      }
+    } catch (e) {}
+    // 深入了解指令：要求四維度展開、比上輪更深、禁止重複
+    var deepQuery = "【深入了解請求】請對剛才這個問題做更深入的解讀。不要重複你上一輪說過的話。\n從四個維度展開：\n① 背景與原理（這個問題背後的底層邏輯）\n② 細節與機制（具體怎麼運作、怎麼落地）\n③ 延伸與場景（適用在哪些情況、對用戶意味著什麼）\n④ 常見疑問與提示（用戶容易誤解的點、務實建議）\n用 DC姐姐 的口吻（短促/直接/口語化/不卑不亢），比上一輪更深一層，禁止銷售話術。\n\n問題：\n" + query;
+    fetch("https://api.deepseek.com/v1/chat/completions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Authorization": "Bearer " + DS_KEY },
+      body: JSON.stringify({
+        model: "deepseek-v4-flash",
+        messages: [{ role: "system", content: sys }].concat(hist).concat([{ role: "user", content: (state.lang === "en" ? "[Please reply entirely in English. No Chinese characters.] " : "") + deepQuery }]),
+        max_tokens: 3000,
+        temperature: 0.6
+      }),
+      cache: "no-store"
+    })
+      .then(function (res) { if (!res.ok) throw new Error("HTTP " + res.status); return res.json(); })
+      .then(function (data) {
+        var reply = data && data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content;
+        if (reply) { reply = reply.replace(/\n?\[COG\|[^\]]*\]/, ""); onSuccess(reply); }
+        else throw new Error("empty");
+      })
+      .catch(function (e) { onError(e); });
+  }
+
   // AI 設置面板：輸入 DeepSeek key + 開啟 AI 模式（僅網站密碼解鎖後可用）
   function openAISettings() {
     if (document.getElementById("dc-ai-modal")) { document.getElementById("dc-ai-modal").remove(); return; }
@@ -1475,6 +1512,31 @@
     btn.innerHTML = '<iconify-icon icon="mdi:loading" style="animation:dc-spin 1s linear infinite;"></iconify-icon>' + t("deep_loading");
     appendTyping();
 
+    // V3.4 深入了解優先走 AI 直連（網站在 GitHub Pages 無後端 API，callLLM 必失敗 → 回退本地=重複首次答案）
+    if (DS_KEY && DS_ENABLED && dsRateOk()) {
+      callDeepSeekDeep(query,
+        function (reply) {
+          removeTyping();
+          appendMessage("bot", reply, { suffix: false, deepReply: true });
+          btn.innerHTML = '<iconify-icon icon="mdi:check-bold"></iconify-icon>' + t("deep_done");
+        },
+        function () {
+          // AI deep 失敗：回退本地知識庫（附提示，避免與首次完全重複）
+          removeTyping();
+          var m = matchBest(query);
+          if (m) {
+            appendMessage("bot", displayText(answerOf(m.qa)) + "\n\n（姐姐的深入了解暫時不可用，這是整理後的完整版——想聊更深，可以繼續問。）", { suffix: true, deepReply: true });
+            btn.innerHTML = '<iconify-icon icon="mdi:check-bold"></iconify-icon>' + t("deep_done");
+            highlightKBItem(m.cat.id, m.qa.id);
+          } else {
+            btn.disabled = false;
+            btn.innerHTML = '<iconify-icon icon="mdi:arrow-down-bold-circle-outline"></iconify-icon>' + t("deep_btn");
+            appendMessage("bot", t("deep_err"), { suffix: true });
+          }
+        }
+      );
+      return;
+    }
     callLLM(query,
       function (reply, source, matchedItems) {
         removeTyping();
