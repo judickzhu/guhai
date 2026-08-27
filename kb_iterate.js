@@ -328,6 +328,23 @@ if (args.includes("--monitor")) {
   process.exit(0);
 }
 
+// --cog [--n=N]：跑 V3.1 認知能力測試（10 維度，測「該怎麼動作」）
+if (args.includes("--cog")) {
+  const { execSync } = require("child_process");
+  const out = path.join(ROOT, "v41_cog_results.jsonl");
+  execSync(`node ${path.join(ROOT, "v41_cog_test.js")}`, { stdio: "inherit" });
+  if (fs.existsSync(out)) {
+    try {
+      const lines = fs.readFileSync(out, "utf8").trim().split("\n").filter(Boolean);
+      let total = 0, pass = 0;
+      const fails = [];
+      lines.forEach(l => { const d = JSON.parse(l); (d.items || []).forEach(it => { total++; if (it.v && it.v.ok === 1) pass++; else if (it.v) fails.push(it.no + ':' + (it.v.action || '?')); }); });
+      console.log(`\n[認知能力] ${pass}/${total} (${(pass / total * 100).toFixed(1)}%) 失敗: ${fails.join(' ') || '無'}`);
+    } catch (e) {}
+  }
+  process.exit(0);
+}
+
 // --self-review [--n=N]：批量自我評審（答→評→重寫→盲比→沉澱）
 if (args.includes("--self-review")) {
   const { execSync } = require("child_process");
