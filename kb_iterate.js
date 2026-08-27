@@ -328,6 +328,13 @@ if (args.includes("--monitor")) {
   process.exit(0);
 }
 
+// --emotion：跑 V3.1 情緒知識題（8 維度 24 題，情緒六型處理）
+if (args.includes("--emotion")) {
+  const { execSync } = require("child_process");
+  execSync(`node ${path.join(ROOT, "v42_emotion_test.js")}`, { stdio: "inherit" });
+  process.exit(0);
+}
+
 // --cog [--n=N]：跑 V3.1 認知能力測試（10 維度，測「該怎麼動作」）
 if (args.includes("--cog")) {
   const { execSync } = require("child_process");
