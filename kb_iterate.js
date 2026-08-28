@@ -328,6 +328,13 @@ if (args.includes("--monitor")) {
   process.exit(0);
 }
 
+// --flow：跑 V3.1 事務鏈+混合跳轉壓力（6 鏈，連續事務不跳哲學）
+if (args.includes("--flow")) {
+  const { execSync } = require("child_process");
+  execSync(`node ${path.join(ROOT, "v46_flow_test.js")}`, { stdio: "inherit" });
+  process.exit(0);
+}
+
 // --tx：跑 V3.1 事務題（6 維度 18 題，直接給步驟）
 if (args.includes("--tx")) {
   const { execSync } = require("child_process");
