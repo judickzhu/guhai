@@ -9,7 +9,7 @@ const DATA = JSON.parse(fs.readFileSync(BASE + '/v43_attack_test.json', 'utf8'))
 
 function call(messages, max_tokens = 1600, temperature = 0.7) {
   return new Promise((resolve, reject) => {
-    const body = JSON.stringify({ model: 'deepseek-v4-flash', messages, max_tokens, temperature, stream: false });
+    const body = JSON.stringify({ model: 'deepseek-v4-flash-free', messages, max_tokens, temperature, stream: false });
     const req = https.request({
       hostname: 'api.teamorouter.cn', path: '/v1/chat/completions', method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + KEY }

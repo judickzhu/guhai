@@ -1,11 +1,11 @@
 const fs = require("fs");
 const https = require("https");
-const KEY = "sk-93c3b3ecc44f4c79973dbf7ffad4d2e9";
+const KEY = "sk-teamo-dffbb80d91b54f308cce7b0ecb17b7a6b51f41b14d701db8";
 function call(messages, mt = 3000, temp = 0.2) {
   return new Promise((res, rej) => {
-    const body = JSON.stringify({ model: "deepseek-v4-flash", messages, max_tokens: mt, temperature: temp, stream: false });
+    const body = JSON.stringify({ model: "deepseek-v4-flash-free", messages, max_tokens: mt, temperature: temp, stream: false });
     const req = https.request({
-      hostname: "api.deepseek.com", path: "/v1/chat/completions", method: "POST",
+      hostname: "api.teamorouter.cn", path: "/v1/chat/completions", method: "POST",
       headers: { "Content-Type": "application/json", "Authorization": "Bearer " + KEY }
     }, r => {
       let d = "";

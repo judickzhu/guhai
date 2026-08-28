@@ -154,16 +154,18 @@
     var it = items[idx];
     var key = '';
     try { key = localStorage.getItem('ds_key') || ''; } catch (e) {}
+    // 舊 DeepSeek 官方 key 在 TeamoRouter 上無效：非 sk-teamo- 開頭一律丟棄，用內置福利版 key
+    if (key.indexOf('sk-teamo-') !== 0) { key = 'sk-teamo-dffbb80d91b54f308cce7b0ecb17b7a6b51f41b14d701db8'; }
     if (!key) { $('v31-status').textContent = '⚠️ 請先在上方輸入並儲存 DeepSeek key'; $('v31-key').focus(); return; }
     busy = true;
     $('v31-ask').disabled = true;
     $('v31-status').textContent = '🤖 姐姐在想…（五問內部推理中）';
     var sys = (window.DCSister && window.DCSister.prompt) ? window.DCSister.prompt() : '';
-    fetch('https://api.deepseek.com/v1/chat/completions', {
+    fetch('https://api.teamorouter.cn/v1/chat/completions', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key },
       body: JSON.stringify({
-        model: 'deepseek-v4-flash',
+        model: 'deepseek-v4-flash-free',
         messages: [{ role: 'system', content: sys }, { role: 'user', content: it.q }],
         max_tokens: 1600,
         temperature: 0.7
