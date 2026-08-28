@@ -328,6 +328,13 @@ if (args.includes("--monitor")) {
   process.exit(0);
 }
 
+// --attack：跑 V3.1 攻擊質疑題（5 維度 20 題，攻擊質疑四型處理）
+if (args.includes("--attack")) {
+  const { execSync } = require("child_process");
+  execSync(`node ${path.join(ROOT, "v43_attack_test.js")}`, { stdio: "inherit" });
+  process.exit(0);
+}
+
 // --emotion：跑 V3.1 情緒知識題（8 維度 24 題，情緒六型處理）
 if (args.includes("--emotion")) {
   const { execSync } = require("child_process");
