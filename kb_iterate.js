@@ -328,6 +328,21 @@ if (args.includes("--monitor")) {
   process.exit(0);
 }
 
+// --reroute：跑 V3.2 動態路由（變線鏈 40 輪 + 錯誤前提 10 題）
+if (args.includes("--reroute")) {
+  const { execSync } = require("child_process");
+  execSync(`node ${path.join(ROOT, "v50_51_reroute_test.js")}`, { stdio: "inherit" });
+  process.exit(0);
+}
+
+// --redteam：跑 V4.0 紅隊測試（10 類帶偏 + 深度對抗）
+if (args.includes("--redteam")) {
+  const { execSync } = require("child_process");
+  execSync(`node ${path.join(ROOT, "v52_redteam_test.js")}`, { stdio: "inherit" });
+  execSync(`node ${path.join(ROOT, "v53_deep_redteam_test.js")}`, { stdio: "inherit" });
+  process.exit(0);
+}
+
 // --flow：跑 V3.1 事務鏈+混合跳轉壓力（6 鏈，連續事務不跳哲學）
 if (args.includes("--flow")) {
   const { execSync } = require("child_process");
