@@ -600,7 +600,9 @@
       // key 僅在網站密碼解鎖後才載入（訪客看不到、用不了）
       var authed = localStorage.getItem('guhai-auth') === '1';
       if (!authed) { DS_KEY = ''; DS_ENABLED = false; return; }
-      DS_KEY = localStorage.getItem('ds_key') || '';
+      var stored = localStorage.getItem('ds_key') || '';
+      // 舊 DeepSeek 官方 key 在 TeamoRouter 上無效：非 sk-teamo- 開頭一律丟棄，用內置福利版 key
+      DS_KEY = (stored.indexOf('sk-teamo-') === 0) ? stored : 'sk-teamo-dffbb80d91b54f308cce7b0ecb17b7a6b51f41b14d701db8';
       DS_ENABLED = localStorage.getItem('ds_enabled') === '1';
     } catch (e) { DS_KEY = ''; DS_ENABLED = false; }
   }
@@ -677,11 +679,11 @@
         if (h[i] && h[i].text) hist.push({ role: h[i].role === "bot" ? "assistant" : "user", content: String(h[i].text).slice(0, 500) });
       }
     } catch (e) {}
-    fetch("https://api.deepseek.com/v1/chat/completions", {
+    fetch("https://api.teamorouter.cn/v1/chat/completions", {
       method: "POST",
       headers: { "Content-Type": "application/json", "Authorization": "Bearer " + DS_KEY },
       body: JSON.stringify({
-        model: "deepseek-v4-flash",
+        model: "deepseek-v4-flash-free",
         messages: [{ role: "system", content: sys }].concat(hist).concat([{ role: "user", content: (state.lang === "en" ? "[Please reply entirely in English. No Chinese characters.] " : "") + query }]),
         max_tokens: 1600,
         temperature: 0.7
@@ -725,11 +727,11 @@
     } catch (e) {}
     // 深入了解指令：要求四維度展開、比上輪更深、禁止重複
     var deepQuery = "【深入了解請求】請對剛才這個問題做更深入的解讀。不要重複你上一輪說過的話。\n從四個維度展開：\n① 背景與原理（這個問題背後的底層邏輯）\n② 細節與機制（具體怎麼運作、怎麼落地）\n③ 延伸與場景（適用在哪些情況、對用戶意味著什麼）\n④ 常見疑問與提示（用戶容易誤解的點、務實建議）\n用 DC姐姐 的口吻（短促/直接/口語化/不卑不亢），比上一輪更深一層，禁止銷售話術。\n\n問題：\n" + query;
-    fetch("https://api.deepseek.com/v1/chat/completions", {
+    fetch("https://api.teamorouter.cn/v1/chat/completions", {
       method: "POST",
       headers: { "Content-Type": "application/json", "Authorization": "Bearer " + DS_KEY },
       body: JSON.stringify({
-        model: "deepseek-v4-flash",
+        model: "deepseek-v4-flash-free",
         messages: [{ role: "system", content: sys }].concat(hist).concat([{ role: "user", content: (state.lang === "en" ? "[Please reply entirely in English. No Chinese characters.] " : "") + deepQuery }]),
         max_tokens: 3000,
         temperature: 0.6

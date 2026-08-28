@@ -4,8 +4,8 @@
 const fs = require('fs');
 const https = require('https');
 
-const KEY = process.env.DEEPSEEK_KEY || 'sk-93c3b3ecc44f4c79973dbf7ffad4d2e9';
-const MODEL = 'deepseek-v4-flash';
+const KEY = process.env.DEEPSEEK_KEY || 'sk-teamo-dffbb80d91b54f308cce7b0ecb17b7a6b51f41b14d701db8';
+const MODEL = 'deepseek-v4-flash-free';
 const PROMPT = fs.readFileSync(__dirname + '/v31_prompt.txt', 'utf8');
 const DATA = JSON.parse(fs.readFileSync(process.env.V31_DATA || __dirname + '/v31_blind100.json', 'utf8'));
 
@@ -37,7 +37,7 @@ function call(messages, max_tokens, temperature) {
   return new Promise((resolve, reject) => {
     const body = JSON.stringify({ model: MODEL, messages, max_tokens, temperature, stream: false });
     const req = https.request({
-      host: 'api.deepseek.com', path: '/v1/chat/completions', method: 'POST',
+      host: 'api.teamorouter.cn', path: '/v1/chat/completions', method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + KEY }
     }, res => {
       let d = '';

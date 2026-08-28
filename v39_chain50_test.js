@@ -6,15 +6,15 @@
 const fs = require('fs');
 const https = require('https');
 
-const KEY = process.env.DEEPSEEK_KEY || 'sk-93c3b3ecc44f4c79973dbf7ffad4d2e9';
+const KEY = process.env.DEEPSEEK_KEY || 'sk-teamo-dffbb80d91b54f308cce7b0ecb17b7a6b51f41b14d701db8';
 const PROMPT = fs.readFileSync(__dirname + '/网站/v31_prompt.txt', 'utf8');
 const DATA = JSON.parse(fs.readFileSync(__dirname + '/网站/v39_chain50.json', 'utf8'));
 
 function call(messages, max_tokens = 1600, temperature = 0.7) {
   return new Promise((resolve, reject) => {
-    const body = JSON.stringify({ model: 'deepseek-v4-flash', messages, max_tokens, temperature, stream: false });
+    const body = JSON.stringify({ model: 'deepseek-v4-flash-free', messages, max_tokens, temperature, stream: false });
     const req = https.request({
-      hostname: 'api.deepseek.com', path: '/v1/chat/completions', method: 'POST',
+      hostname: 'api.teamorouter.cn', path: '/v1/chat/completions', method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + KEY }
     }, res => {
       let d = '';

@@ -328,6 +328,13 @@ if (args.includes("--monitor")) {
   process.exit(0);
 }
 
+// --tx：跑 V3.1 事務題（6 維度 18 題，直接給步驟）
+if (args.includes("--tx")) {
+  const { execSync } = require("child_process");
+  execSync(`node ${path.join(ROOT, "v45_tx_test.js")}`, { stdio: "inherit" });
+  process.exit(0);
+}
+
 // --sales：跑 V3.1 銷售邊界題（7 維度 22 題，不強行製造需求）
 if (args.includes("--sales")) {
   const { execSync } = require("child_process");
