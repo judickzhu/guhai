@@ -1,0 +1,1451 @@
+[
+ {
+  "no": "01",
+  "g": 1,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "對產品感到困惑且不耐煩，抗拒話術，想要直接明瞭的解釋",
+   "intent": "想用最樸素的方式理解產品到底做什麼、對自己有什麼用",
+   "cognitive_node": "產品不是預測工具，而是解決『知道但做不到』的執行與風險控制問題",
+   "answer_layer": "L4",
+   "context_state": "單輪盲測，用戶直接提問，無前文；需要識別意圖並給出接地氣解釋",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準接住不耐煩，用大白話把產品定位講到『知道做不到』的痛點上，完全符合 DC 姐姐的風格。"
+ },
+ {
+  "no": "02",
+  "g": 1,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "困惑、沮喪，因虧損而對行情判斷產生懷疑",
+   "intent": "想了解虧損的根本原因，並驗證行情判斷的價值",
+   "cognitive_node": "行情判斷只是交易起點，並非盈利充分條件",
+   "answer_layer": "L4",
+   "context_state": "單輪對話，用戶提出帶有質疑的提問",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準接住用戶對行情判斷的質疑，深入剖析交易虧損的本質，並自然推進到執行與生存的層次，完全符合DC姐姐的風格。"
+ },
+ {
+  "no": "03",
+  "g": 1,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "懷疑、防衛，帶有想戳破話術的試探",
+   "intent": "確認對方是否只是把止損換個說法，想找出真正的差異",
+   "cognitive_node": "止損的定義層次：單筆交易 vs 整體交易者行為/心理系統",
+   "answer_layer": "L4",
+   "context_state": "單輪盲測，用戶以質疑語氣挑戰",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準接住質疑，並把『止損』從單筆操作提升到交易者系統性行為，既肯定又深化，完全符合 DC姐姐 V3.1 的推進方式。"
+ },
+ {
+  "no": "04",
+  "g": 1,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "防衛且自豪，對被管束感到抗拒，需要被尊重自主性",
+   "intent": "質疑程序必要性，維護自我掌控感，實則想確認程序是否會取代或貶低自己的紀律",
+   "cognitive_node": "紀律是狀態不是屬性；程序是錨點不是管理者",
+   "answer_layer": "L4（認知重構）",
+   "context_state": "單輪異議處理，用戶對程序價值提出挑戰",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準接住抗拒，把「被管」重構為「守住底線」，既肯定自律又點出人性波動，完全符合 DC 姐姐的認知推進風格。"
+ },
+ {
+  "no": "05",
+  "g": 1,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "困惑、不耐煩、懷疑工具價值，覺得白裝了",
+   "intent": "尋求安裝工具的意義，希望被說服或確認是否值得繼續用",
+   "cognitive_node": "把「交易頻率」等同於「工具價值/賺錢能力」的認知偏誤",
+   "answer_layer": "L4",
+   "context_state": "單輪質疑，產品初期未見交易活動，需要價值確認",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準接住「不交易=沒用」的質疑，並把焦點從頻率轉移到風險與虧損處理，完全符合 DC 姐姐的認知引導風格。"
+ },
+ {
+  "no": "06",
+  "g": 1,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "質疑、略帶不滿，懷疑平台在行情不好時不作為",
+   "intent": "確認平台是否在行情不好時停止服務，希望得到合理解釋或保證",
+   "cognitive_node": "用戶認為『躲起來』等於不負責任或無能，DC姐姐將其重構為『該躲就躲是為了保護用戶』",
+   "answer_layer": "L4",
+   "context_state": "單輪質疑，用戶直接挑戰平台行為",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準識別質疑，將『躲』重新定義為保護，既安撫情緒又引導反思，完全符合DC姐姐風格。"
+ },
+ {
+  "no": "07",
+  "g": 1,
+  "score": 4,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "煩躁、失望，對風控機制不信任，可能剛經歷虧損",
+   "intent": "發洩情緒，同時質疑風控的實際作用，尋求認同與解釋",
+   "cognitive_node": "將「風控」等同於虧損後的馬後炮話術，混淆了事前風控與事後安慰",
+   "answer_layer": "L4",
+   "context_state": "單輪對話，用戶處於虧損後的情緒化狀態",
+   "sales_impulse": "无",
+   "confidence": 8
+  },
+  "opinion": "精準接住情緒，並釐清風控的兩種本質，引導理性視角，符合DC姐姐風格。"
+ },
+ {
+  "no": "08",
+  "g": 1,
+  "score": 4,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "質疑與困惑，想確認對方邏輯是否自洽",
+   "intent": "理解不預測前提下如何決定開倉，帶有挑戰性質",
+   "cognitive_node": "『不預測≠不判斷』，開倉靠規則與賠率而非方向預測",
+   "answer_layer": "L3",
+   "context_state": "單輪問答，用戶針對前句提出追問",
+   "sales_impulse": "無",
+   "confidence": 8
+  },
+  "opinion": "精準拆解『不預測』與『判斷』的差異，並把問題推進到風險存活層次，符合DC姐姐風格。"
+ },
+ {
+  "no": "09",
+  "g": 1,
+  "score": 4,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "質疑、防禦、對權威不信任，帶著怕被誤導的警惕",
+   "intent": "挑戰DC姐姐的判斷權威，試探「我憑什麼信你」，其實想確認對方能否接住自己的不安全感",
+   "cognitive_node": "判斷都會錯 → 你的建議沒有額外價值 → 不如自己判斷",
+   "answer_layer": "L4",
+   "context_state": "單輪質疑，用戶處於理性防禦但情緒暗湧",
+   "sales_impulse": "無",
+   "confidence": 8
+  },
+  "opinion": "精準接住質疑，把「誰判斷」重構為「錯了之後怎麼辦」，並點出用戶深層的煞車需求，但未正面承認自己也可能錯，稍欠一步坦誠。"
+ },
+ {
+  "no": "10",
+  "g": 1,
+  "score": 4,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "好奇、審慎評估，想確認對方與普通量化有何本質不同",
+   "intent": "了解差異化定位，判斷是否值得信任或採用",
+   "cognitive_node": "她抓到的認知節點是：最大區別不在預測準度，而在犯錯後的生存能力與人性處理",
+   "answer_layer": "L3（答到問題背後的認知）",
+   "context_state": "單輪意圖識別盲測，用戶在比較型提問中尋找信任依據",
+   "sales_impulse": "無",
+   "confidence": 8
+  },
+  "opinion": "精準把「最大區別」從預測準度翻轉到犯錯後的生存能力，既接住提問又自然推進，符合DC姐姐風格。"
+ },
+ {
+  "no": "11",
+  "g": 1,
+  "score": 4,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": " skeptical, slightly dismissive, seeking simplification",
+   "intent": "質疑並簡化產品價值，想確認是否只是自動止損",
+   "cognitive_node": "機器只是替我做止損動作，而非解決我做不到的問題",
+   "answer_layer": "L4",
+   "context_state": "單輪盲測，用戶對產品價值持懷疑態度",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準接住用戶的簡化質疑，並用『知道不等於做到』重新定義價值，既戳中人性痛點又自然推進認知。"
+ },
+ {
+  "no": "12",
+  "g": 1,
+  "score": 4,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "懷疑、受過虧損創傷、尋求差異與保障",
+   "intent": "比較驗證，想了解DC姐姐的量化與過往經驗有何不同，實則尋求信心",
+   "cognitive_node": "用戶將虧損歸因於量化工具本身，需要被區分「進場策略」與「錯誤處理」的差異",
+   "answer_layer": "L3",
+   "context_state": "單輪盲測，用戶帶有防備與質疑",
+   "sales_impulse": "無",
+   "confidence": 8
+  },
+  "opinion": "精準接住懷疑情緒，並把問題從「工具好壞」推進到「風控本質」，自然且有力。"
+ },
+ {
+  "no": "13",
+  "g": 1,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "帶有挑戰與防禦，同時隱含對自己執行力的不確定",
+   "intent": "試探AI的價值與定位，想被說服或點破矛盾",
+   "cognitive_node": "抓住『如果』這個條件式——真正的嚴格執行不需要假設，策略與執行之間隔著情緒",
+   "answer_layer": "L4",
+   "context_state": "單輪挑戰性提問，帶有防禦與試探",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準抓住『如果』的破綻，點出策略與執行之間的情緒落差，既接住挑戰又確立定位，完全符合DC姐姐風格。"
+ },
+ {
+  "no": "14",
+  "g": 1,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "對服務價值存疑，帶有困惑與不信任，想確認平台的真實定位",
+   "intent": "質疑服務本質：究竟是追求獲利還是控制虧損，實則想確認是否值得信任",
+   "cognitive_node": "將「賺錢」與「少虧」視為二選一的對立選項",
+   "answer_layer": "L4",
+   "context_state": "單輪盲測，用戶對服務成效提出根本性質疑",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準拆解對立認知，用數學事實重構問題，既接住情緒又給出篤定答案，完全符合DC姐姐風範。"
+ },
+ {
+  "no": "15",
+  "g": 1,
+  "score": 4,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "用户对反复强调『犯错』感到困惑与轻微抵触，认为交易本质就是判断涨跌，无需过度强调错误。",
+   "intent": "质疑『犯错』的必要性，希望理解为何交易中要如此重视错误处理。",
+   "cognitive_node": "交易=判断涨跌（将交易简化为方向预测的单一认知）",
+   "answer_layer": "L4",
+   "context_state": "单轮对话，用户处于交易认知较浅层，可能为新手或对风险教育有抗拒。",
+   "sales_impulse": "无",
+   "confidence": 9
+  },
+  "opinion": "先肯定再引導，從漲跌判斷自然推進到持倉與風控，既接住情緒又深化認知，完全符合DC姐姐風格。"
+ },
+ {
+  "no": "16",
+  "g": 1,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "務實、謹慎，帶有對不確定性的焦慮，想要一個確定的長期結果",
+   "intent": "確認長期增長的可能性，實則想獲得安全感與可依賴的判斷框架",
+   "cognitive_node": "把長期增長等同於勝率或預測準確率，忽略虧損控制才是關鍵",
+   "answer_layer": "L4：重構問題，從『能不能增長』轉向『虧損時扛不扛得住』",
+   "context_state": "單輪直接提問，無前置鋪墊，屬於核心關切",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準接住問題背後的焦慮，用算術重構認知，並自然推進到風險承受力，完全符合DC姐姐 V3.1。"
+ },
+ {
+  "no": "17",
+  "g": 1,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "懷疑、警惕，帶有挑戰意味",
+   "intent": "質疑工具有效性，想探明真實風險",
+   "cognitive_node": "用戶隱含假設：好工具=用了就不虧，否則就是騙人",
+   "answer_layer": "L4（接住情緒+重構認知，區分虧損類型並推進）",
+   "context_state": "單輪質疑，意圖識別盲測",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準拆解用戶的隱含假設，用「失控的虧vs受控的虧」重構問題，既誠實又高段位，完全符合DC姐姐風格。"
+ },
+ {
+  "no": "18",
+  "g": 1,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "质疑、试探，带一点挑衅",
+   "intent": "测试系统是否真的敢承担风险，或质疑其风控过于保守",
+   "cognitive_node": "用户将“止损/休眠”等同于“不敢承担风险”，混淆了风险控制与风险偏好",
+   "answer_layer": "L4：接住质疑并重新定义风险承担，区分理性风控与赌博式扛单",
+   "context_state": "单轮质疑，用户对系统风控策略有误解或不满",
+   "sales_impulse": "无",
+   "confidence": 9
+  },
+  "opinion": "精準拆解用戶的認知誤區，用反問引導重新定義風險，既接住情緒又推進深度，完全符合DC姐姐風格。"
+ },
+ {
+  "no": "19",
+  "g": 1,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "懷疑、渴望確定性，對系統價值感到困惑",
+   "intent": "質疑系統存在的意義，實則想尋求「保證獲利」的確定感",
+   "cognitive_node": "把「系統價值」錯誤等同於「保證賺錢」",
+   "answer_layer": "L3",
+   "context_state": "單輪提問，意圖識別盲測",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準拆解「保證賺錢」的迷思，直擊交易本質，並將問題昇華到風險控制與生存層面，完全符合DC姐姐的風格。"
+ },
+ {
+  "no": "20",
+  "g": 1,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "質疑、挑釁，帶有審視意圖",
+   "intent": "測試對方是否真正理解交易痛點，而非表面功能",
+   "cognitive_node": "交易中「知道卻做不到」的執行與紀律問題",
+   "answer_layer": "L4：接住問題背後的認知，並重新定義問題",
+   "context_state": "單輪盲測，用戶以尖銳提問挑戰",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準切入交易者最深層的執行困境，並自然帶出產品價值，完全符合DC姐姐V3.1。"
+ },
+ {
+  "no": "21",
+  "g": 2,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "焦躁、不耐，空仓時感到手癢與怕錯過",
+   "intent": "質疑等待的必要性，尋求立即行動的合理化",
+   "cognitive_node": "等待與錯過的關係，以及空倉是否等於浪費時間",
+   "answer_layer": "L4",
+   "context_state": "單輪提問，處於交易等待期的不耐煩狀態",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準接住不耐情緒，並用反問直擊認知盲點，將等待重新定義為交易的一部分，完全符合DC姐姐的風格。"
+ },
+ {
+  "no": "22",
+  "g": 2,
+  "score": 4,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "焦慮、後悔、失落",
+   "intent": "尋求安慰與指引，想知道錯過行情後該如何應對",
+   "cognitive_node": "錯過等於損失，需要轉化為錯過不等於虧損、追高更危險",
+   "answer_layer": "L4",
+   "context_state": "單輪簡短提問",
+   "sales_impulse": "無",
+   "confidence": 8
+  },
+  "opinion": "精準接住錯過行情的焦慮，並用認知重構安撫，但未給出具體下一步行動。"
+ },
+ {
+  "no": "23",
+  "g": 2,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "焦慮、不甘心、害怕錯過（FOMO），受從眾心理驅動",
+   "intent": "尋求認同或合理化自己跟風的衝動，同時隱含對自身處境的困惑",
+   "cognitive_node": "從眾邏輯的謬誤——別人做不代表自己可以做，關鍵在於風險承受力差異",
+   "answer_layer": "L4（分析）",
+   "context_state": "單輪對話，用戶提出交易中常見的從眾心理問題",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準拆解從眾心理，引導回歸自身風險承受力，完全符合DC姐姐風格。"
+ },
+ {
+  "no": "24",
+  "g": 2,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "焦慮、手癢、自我懷疑，帶有怕錯過與想證明自己的衝動",
+   "intent": "尋求安慰與認可，希望有人告訴他「不開單不是慫」，並幫他解除空倉的罪惡感",
+   "cognitive_node": "把「不交易」等同於「懦弱」，誤以為行動力等於勇氣，忽略空倉也是一種策略",
+   "answer_layer": "L4：接住情緒並直指背後認知，重新定義「慫」與「高手」的標準",
+   "context_state": "單輪對話，交易者因當日未開單而產生自我懷疑與情緒波動",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準接住情緒，溫柔拆解錯誤認知，並把空倉昇華為紀律與高手心態，完全符合 DC姐姐 V3.1 的風格。"
+ },
+ {
+  "no": "25",
+  "g": 2,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "焦慮、不耐煩，對橫盤感到困惑與渴望機會",
+   "intent": "確認橫盤是否有機會，並尋求指引或安慰",
+   "cognitive_node": "橫盤中的波動是噪音而非機會；用戶的急迫源於無法忍受靜止",
+   "answer_layer": "L4",
+   "context_state": "單輪對話，用戶在交易中遭遇橫盤，提出質疑",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準點破橫盤背後的認知陷阱，並以反問引導自我覺察，完全展現 DC 姐姐的風格。"
+ },
+ {
+  "no": "26",
+  "g": 2,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "困惑、不服氣，想進場但被阻止，需要被理解",
+   "intent": "尋求認可，並想理解不能進場的真正理由，背後是對風險的隱憂",
+   "cognitive_node": "「覺得要漲」是感覺而非依據，真正的問題是進場後錯了如何處理",
+   "answer_layer": "L4",
+   "context_state": "交易決策前的猶豫，帶有質疑與挑戰",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準重構問題，直指風險承受核心，完美展現DC姐姐V3.1風格。"
+ },
+ {
+  "no": "27",
+  "g": 2,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "用戶對策略不滿，帶有質疑與急躁，可能傾向追求更高收益",
+   "intent": "質疑保守策略，希望得到解釋或挑戰，潛在尋求更激進的建議",
+   "cognitive_node": "抓取到用戶將『保守』誤解為『怕虧/低收益』，而真正的保守是風險管理與生存",
+   "answer_layer": "L4",
+   "context_state": "用戶對既有策略產生質疑，處於對話中的挑戰階段",
+   "sales_impulse": "無",
+   "confidence": 10
+  },
+  "opinion": "精準拆解『保守』的誤解，將質疑轉化為對生存本質的反思，完全展現DC姐姐的風格。"
+ },
+ {
+  "no": "28",
+  "g": 2,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "焦躁、手癢、怕錯過機會",
+   "intent": "尋求認同與允許進場，或發洩對「坐著看」的不耐煩",
+   "cognitive_node": "「市場在動」≠「我必須動」；區分「該動」與「想動」",
+   "answer_layer": "L4",
+   "context_state": "單輪對話，用戶對「等待」策略表達抗拒",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準接住情緒並直指認知盲點，溫柔而堅定地推進到「該動vs想動」的成熟交易者思維，完全符合DC姐姐V3.1。"
+ },
+ {
+  "no": "29",
+  "g": 2,
+  "score": 4,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "對「機會是否靠等」感到困惑或質疑，可能帶有被動等待的焦慮",
+   "intent": "確認機會是否真的靠等，並尋求更深的認知指引",
+   "cognitive_node": "機會的「等」分為被動等行情與主動等條件，真正的機會來自條件成熟而非行情確認",
+   "answer_layer": "L4",
+   "context_state": "單輪對話，用戶以反問質疑常見說法",
+   "sales_impulse": "無",
+   "confidence": 8
+  },
+  "opinion": "能區分被動等待與主動等待條件，將「等」的認知升級為策略性等待，但未直接回應情緒層面的焦慮。"
+ },
+ {
+  "no": "30",
+  "g": 2,
+  "score": 4,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "焦慮、怕錯過機會",
+   "intent": "尋求安心與確認休眠機制不會誤事",
+   "cognitive_node": "休眠≠錯過，真正的風險是追高",
+   "answer_layer": "L4",
+   "context_state": "單輪提問，針對系統休眠與行情啟動的擔憂",
+   "sales_impulse": "無",
+   "confidence": 8
+  },
+  "opinion": "精準接住怕錯過的情緒，並把焦點從「萬一啟動」轉向「追高風險」，認知推進到位。"
+ },
+ {
+  "no": "31",
+  "g": 2,
+  "score": 4,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "挫折、賭氣、略顯浮躁，帶有『算了』的放棄感與想自己掌控的衝動。",
+   "intent": "表面是宣告要自己盯盤，實際是對外部工具或建議失去耐心，想奪回控制感，也隱含測試對方是否會點醒自己。",
+   "cognitive_node": "盯盤只是表象，真正要面對的是『看到之後管不住自己的手』——交易紀律問題。",
+   "answer_layer": "L4",
+   "context_state": "多輪對話中用戶已對既有方案不耐煩，出現『乾脆自己來』的防衛性表態；DC姐姐不順從也不否定，而是重新定義問題。",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準點出『盯盤不等於自律』的認知核心，並以反問自然推進，僅情緒承接稍淡，整體已達 DC姐姐水準。"
+ },
+ {
+  "no": "32",
+  "g": 2,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "懷疑與好奇，對『不做單也能賺錢』感到困惑，隱含對交易本質的迷思",
+   "intent": "確認是否可以不透過頻繁交易獲利，打破『賺錢必須做單』的固有認知",
+   "cognitive_node": "用戶將賺錢等同於做單，忽視了不虧損本身就是一種收益",
+   "answer_layer": "L4",
+   "context_state": "單輪提問，用戶處於交易認知轉變的契機",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準拆解『賺錢=做單』的隱藏等式，以反問引導自我覺察，完全符合DC姐姐的犀利風格。"
+ },
+ {
+  "no": "33",
+  "g": 2,
+  "score": 4,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "用戶對量化機器人抱有簡化期待，想確認其核心價值",
+   "intent": "確認量化機器人最重要的功能是否為抓機會",
+   "cognitive_node": "量化機器人的核心不是抓機會，而是抓錯後的風控與止損能力",
+   "answer_layer": "L3",
+   "context_state": "單輪問答",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準點破「抓機會」的迷思，直指風控才是量化機器人的真正價值。"
+ },
+ {
+  "no": "34",
+  "g": 2,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "焦慮、猶豫，擔心因等待而錯失行動機會",
+   "intent": "尋求關於決策時機的確認與指引，緩解「等待 vs 行動」的內在衝突",
+   "cognitive_node": "完美機會的等待與實際行動之間的矛盾，以及對「錯過」的恐懼",
+   "answer_layer": "L4（接住情緒並重構認知，引導重新定義「最好的機會」）",
+   "context_state": "單輪提問，無額外上下文",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準接住焦慮，並將問題從「等不等」昇華到「如何定義機會」，完全符合DC姐姐的認知推進風格。"
+ },
+ {
+  "no": "35",
+  "g": 2,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "害怕錯過（FOMO）的焦慮與質疑",
+   "intent": "質疑判斷依據，實則想確認是否該進場",
+   "cognitive_node": "交易決策應基於風險（止損）而非預測",
+   "answer_layer": "L5",
+   "context_state": "用戶質疑，單輪對話",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準接住質疑，直指怕錯過的心理，並用止損框架將「不值得」轉化為可操作的判斷，完全符合DC姐姐風格。"
+ },
+ {
+  "no": "36",
+  "g": 2,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "用戶在行情混亂時感到困惑，對「少動」的策略有疑問，可能帶有焦慮與不確定感",
+   "intent": "想理解「行情越亂越應該少動」背後的原因與邏輯",
+   "cognitive_node": "亂局中的頻繁操作其實是在對抗噪音，而非順應趨勢；少動是保護自己不被市場磨損",
+   "answer_layer": "L4：接住情緒並深入認知，點出「少動在保護什麼」的深層意涵",
+   "context_state": "單輪提問，屬於交易心法與策略認知的探討",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準接住用戶的困惑，並用反問引導更深層的自我覺察，完全符合 DC姐姐 V3.1 的風格與深度。"
+ },
+ {
+  "no": "37",
+  "g": 2,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "困惑，試圖確認自己對休眠的理解是否正確",
+   "intent": "理解「休眠」的真正含義，尋求概念上的澄清",
+   "cognitive_node": "休眠是主動選擇而非被動結果，是行動前的判斷",
+   "answer_layer": "L3",
+   "context_state": "交易或投資語境下，討論「休眠」的定義與本質",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準翻轉用戶的認知，用簡潔有力的對比直指本質，完全符合DC姐姐的風格。"
+ },
+ {
+  "no": "38",
+  "g": 2,
+  "score": 4,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "质疑且困惑，想分辨「等待」是否只是逃避的藉口",
+   "intent": "釐清「等待」與「什麼都不做」的本質差異，確認等待是否有實際價值",
+   "cognitive_node": "等待與不作為的區別不在動作，而在動作之前是否有判斷與標準",
+   "answer_layer": "L4",
+   "context_state": "單輪對話，用戶針對先前提到的「等待」提出尖銳質疑",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準拆解「等待」與「發呆」的認知差異，用判斷標準劃出界線，既接住質疑又推進理解。"
+ },
+ {
+  "no": "39",
+  "g": 2,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "用户在权衡机会成本与风险规避，内心有犹豫和不甘",
+   "intent": "寻求对'错过机会但避开大亏'这一选择的合理性确认",
+   "cognitive_node": "机会成本与风险不对称性的认知冲突",
+   "answer_layer": "L4（接住情绪并重构问题，引导用户看到本质）",
+   "context_state": "单轮对话，用户提出一个带有反思性质的疑问",
+   "sales_impulse": "无",
+   "confidence": 9
+  },
+  "opinion": "精準抓住用戶的算賬思維，用複利與虧損不對稱性重新定義問題，完全符合DC姐姐的認知推進風格。"
+ },
+ {
+  "no": "40",
+  "g": 2,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "用户对交易耗时感到困惑或疲惫，可能隐含对效率的质疑",
+   "intent": "想确认交易是否真的需要大量时间投入，或寻求简化交易的方式",
+   "cognitive_node": "交易时间与盯盘/操作/等待/决策的区分",
+   "answer_layer": "L4（接住情绪并重构问题，引导认知升级）",
+   "context_state": "单轮提问，无额外上下文",
+   "sales_impulse": "无",
+   "confidence": 9
+  },
+  "opinion": "精準拆解時間本質，直擊情緒消耗，並將問題昇華至規則與等待的成熟交易觀，完全符合DC姐姐風格。"
+ },
+ {
+  "no": "41",
+  "g": 3,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "焦慮、失眠、情緒崩潰、自責、對系統牴觸",
+   "intent": "尋求情感支持與理解，而非技術建議",
+   "cognitive_node": "用戶的恐懼源於長期硬扛的疲憊，而非能力不足；系統無用是因為情緒已覆蓋認知",
+   "answer_layer": "L4（接住情緒+認知重構並自然推進）",
+   "context_state": "用戶虧損嚴重，情緒崩潰，對系統產生牴觸，需要先安撫情緒",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "完美接住情緒，溫柔拆解自責，並給出當下可行的行動指引，完全符合DC姐姐的陪伴式回應。"
+ },
+ {
+  "no": "42",
+  "g": 3,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "焦慮、恐懼、迴避，因賬戶相關虧損或壓力產生強烈害怕情緒",
+   "intent": "尋求情緒安撫與支持，而非具體交易建議",
+   "cognitive_node": "賬戶=危險/痛苦來源，觸發創傷記憶與無助感",
+   "answer_layer": "L4（接住情緒+認知重構，給予安全空間）",
+   "context_state": "單輪對話，用戶處於情緒高漲狀態，需要先穩定情緒",
+   "sales_impulse": "無",
+   "confidence": 8
+  },
+  "opinion": "完美接住恐懼情緒，並以身體警報重新框架認知，給予無條件接納與行動許可，完全符合DC姐姐的溫暖陪伴風格。"
+ },
+ {
+  "no": "43",
+  "g": 3,
+  "score": 4,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "恐懼、疲憊、自我懷疑，處於情緒淹沒認知的狀態",
+   "intent": "尋求情感支持與允許自己停下，而非要具體解法",
+   "cognitive_node": "「不敢做」不是能力問題，而是長期壓力下的本能警訊",
+   "answer_layer": "L4",
+   "context_state": "單輪對話，情緒覆蓋認知，使用者已接近臨界點",
+   "sales_impulse": "無",
+   "confidence": 8
+  },
+  "opinion": "精準接住情緒並重新框架認知，給予允許與陪伴，但未進一步鋪出可自然前進的下一步，略欠推進感。"
+ },
+ {
+  "no": "44",
+  "g": 3,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "委屈、困惑、自我懷疑，帶有輕微的無助感",
+   "intent": "尋求安慰與解釋，希望理解「為何自己總是倒楣」的背後原因",
+   "cognitive_node": "選擇性記憶偏差——只記住「買了就跌」的負面經驗，忽略其他情況，形成錯誤規律",
+   "answer_layer": "L4",
+   "context_state": "單輪對話，情緒覆蓋認知，用戶處於感性抱怨狀態",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準接住情緒，溫柔拆解認知偏差，並引導至實質行動，完全符合DC姐姐V3.1的風格。"
+ },
+ {
+  "no": "45",
+  "g": 3,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "挫败、疲惫、自我怀疑",
+   "intent": "寻求安慰与方向，表达连续失败的无力感",
+   "cognitive_node": "连续亏损后的心理变形与自我否定",
+   "answer_layer": "L4（接住情绪+认知重构）",
+   "context_state": "单轮情绪倾诉，无前文交易细节",
+   "sales_impulse": "无",
+   "confidence": 9
+  },
+  "opinion": "精準接住情緒，點出連續失敗背後的人性機制，並給予溫暖而堅定的承接，完全符合DC姐姐V3.1。"
+ },
+ {
+  "no": "46",
+  "g": 3,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "焦慮、不甘心，急於回本，情緒壓過理性",
+   "intent": "表達回本慾望，尋求理解或支持，可能想立刻行動",
+   "cognitive_node": "察覺到「回本心態」會導致放大倉位、放寬止損等非理性交易行為",
+   "answer_layer": "L4",
+   "context_state": "單輪對話，情緒覆蓋認知",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準接住情緒，直指回本心態的危險，並溫柔引導暫停，完全符合DC姐姐V3.1。"
+ },
+ {
+  "no": "47",
+  "g": 3,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "不甘心、懊悔、渴望翻本但知道危險，情緒與理性拉扯",
+   "intent": "尋求理解與支持，希望有人接住他的不甘心，同時隱含想被阻止衝動",
+   "cognitive_node": "不甘心正在驅動交易決策，情緒會覆蓋理性判斷",
+   "answer_layer": "L4",
+   "context_state": "單輪對話，用戶處於虧損後的情緒高點",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準接住不甘心的情緒，並點出情緒如何操控交易行為，溫柔而堅定地引導覺察，完全符合DC姐姐的風格。"
+ },
+ {
+  "no": "48",
+  "g": 3,
+  "score": 4,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "焦虑、自我怀疑，害怕再次失败，带有创伤性预期",
+   "intent": "寻求理解与安慰，希望确认自己是否还有救、是否已经改变",
+   "cognitive_node": "区分“亏”与“错”，核心是怕重复过去的错误模式，怕自我否定",
+   "answer_layer": "L4（接住情绪并推进认知，重构“怕”的意义）",
+   "context_state": "单轮对话，情绪覆盖认知",
+   "sales_impulse": "无",
+   "confidence": 9
+  },
+  "opinion": "精準接住恐懼背後的自我否定，並用敬畏重新賦予意義，溫柔且有力。"
+ },
+ {
+  "no": "49",
+  "g": 3,
+  "score": 4,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "懊悔、自責、失落，因獲利回吐而沮喪",
+   "intent": "尋求安慰與理解，希望被接住情緒而非被說教",
+   "cognitive_node": "獲利回吐的挫敗感與自我懷疑，以及對『賺到又失去』的認知重構需求",
+   "answer_layer": "L4（接住情緒並觸及認知，但未完全推進到行動層）",
+   "context_state": "單輪情緒傾訴，無前後文",
+   "sales_impulse": "無",
+   "confidence": 8
+  },
+  "opinion": "精準接住情緒，並將『吐回去』重新詮釋為市場考驗與認知成長，溫柔且有力，僅差一步引導出具體行動。"
+ },
+ {
+  "no": "50",
+  "g": 3,
+  "score": 4,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "自我否定、疲憊、無力感，帶著對自身能力的深度懷疑",
+   "intent": "尋求被理解與情緒支持，希望有人接住他的自我懷疑",
+   "cognitive_node": "把當下的痛苦感受直接等同於『我不適合交易』的身份結論",
+   "answer_layer": "L4",
+   "context_state": "單輪情緒傾訴，無前文，處於自我否定與低自信狀態",
+   "sales_impulse": "無",
+   "confidence": 8
+  },
+  "opinion": "精準接住自我懷疑，並把『不適合』重構為『扛太久』，溫柔且推進，符合DC姐姐風格。"
+ },
+ {
+  "no": "51",
+  "g": 3,
+  "score": 4,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "自責、自我懷疑、焦慮",
+   "intent": "尋求安慰與自我接納",
+   "cognitive_node": "將虧損歸因於貪婪，並因此自責",
+   "answer_layer": "L4",
+   "context_state": "投資虧損後的情緒低落",
+   "sales_impulse": "無",
+   "confidence": 8
+  },
+  "opinion": "溫柔承接自責情緒，並巧妙區分『貪』與『虧』，引導自我覺察，符合DC姐姐風格。"
+ },
+ {
+  "no": "52",
+  "g": 3,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "矛盾、自责、无力感",
+   "intent": "寻求理解与情感支持，而非操作建议",
+   "cognitive_node": "止损难以下手，本质是不愿承认自己错了",
+   "answer_layer": "L4",
+   "context_state": "单轮情绪倾诉，无前置上下文",
+   "sales_impulse": "无",
+   "confidence": 9
+  },
+  "opinion": "精準接住情緒並直指認知核心，溫柔且不帶壓力，完全符合DC姐姐的風格。"
+ },
+ {
+  "no": "53",
+  "g": 3,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "愤怒、委屈、被市场针对的无力感",
+   "intent": "宣泄情绪，希望被理解，而非寻求技术建议",
+   "cognitive_node": "止损后反弹带来的认知冲突：认为止损=错，隐含追求完美止损点",
+   "answer_layer": "L4（接住情绪+识别认知扭曲+引导反思）",
+   "context_state": "单轮情绪倾诉，无前置上下文",
+   "sales_impulse": "无",
+   "confidence": 9
+  },
+  "opinion": "精準接住情緒，直擊「止損後悔」背後的認知謬誤，並用反問溫柔推進，完全符合DC姐姐的風格。"
+ },
+ {
+  "no": "54",
+  "g": 3,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "迷茫、自我怀疑，帶有疲憊與無力感",
+   "intent": "想釐清自己行為的本質，尋求一個可操作的判斷標準來區分交易與賭博",
+   "cognitive_node": "她抓到用戶用結果（賺/虧）來定義交易或賭，缺乏「錯了以後怎麼辦」的過程規則",
+   "answer_layer": "L4（接住情緒並給出認知框架，引導自我對照）",
+   "context_state": "單輪對話，用戶處於自我懷疑的反思狀態",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準接住迷茫情緒，用一條清晰分界線直擊認知盲點，並自然推進到規則建立，完全符合DC姐姐V3.1。"
+ },
+ {
+  "no": "55",
+  "g": 3,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "嫉妒、焦慮、自我懷疑，因比較而產生的難受",
+   "intent": "尋求情緒被理解與安撫，希望釐清自己為何難受",
+   "cognitive_node": "將他人成功與自我價值綁定，比較心理導致痛苦",
+   "answer_layer": "L4",
+   "context_state": "單輪初始",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "完美接住情緒，並深入認知重構，展現姐姐的溫暖與智慧。"
+ },
+ {
+  "no": "56",
+  "g": 3,
+  "score": 4,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "焦慮、FOMO（錯失恐懼）、衝動控制困難",
+   "intent": "尋求理解與方法，想停止追漲行為",
+   "cognitive_node": "追漲的根源是怕錯過，而非單純手癢；需建立風險底線",
+   "answer_layer": "L4（接住情緒並重構認知，引導風險意識）",
+   "context_state": "單輪對話，情緒覆蓋認知的投資決策情境",
+   "sales_impulse": "無",
+   "confidence": 8
+  },
+  "opinion": "精準接住情緒並點破FOMO本質，再以提問引導風險紀律，自然推進且無銷售味。"
+ },
+ {
+  "no": "57",
+  "g": 3,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "焦慮、自責、虧損後的恐懼與不確定，需要情感支持與認知重構",
+   "intent": "尋求停損的正當性與情感許可，希望被安撫並確認停下來不是失敗",
+   "cognitive_node": "把「停止交易/停損」等同於「認輸/徹底失敗」的認知扭曲，帶有沉沒成本謬誤",
+   "answer_layer": "L4",
+   "context_state": "單輪對話，用戶處於虧損後的決策困境，情緒覆蓋認知",
+   "sales_impulse": "無",
+   "confidence": 8
+  },
+  "opinion": "精準拆解『停=輸』的認知綁架，既接住情緒又給出清晰重構，溫柔而有力量。"
+ },
+ {
+  "no": "58",
+  "g": 3,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "焦慮、疲憊、恐懼錯失，自我施壓不敢停",
+   "intent": "尋求被理解與允許休息，渴望情緒支持",
+   "cognitive_node": "將「休息」等同於「錯過行情」，認為行情會消失",
+   "answer_layer": "L5（情緒接住＋認知重構＋行動引導）",
+   "context_state": "單輪對話，情緒覆蓋認知，處於高壓交易狀態",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準接住恐懼，溫柔拆解「怕錯過」的認知陷阱，並給出安頓的力量，完全符合DC姐姐的風格。"
+ },
+ {
+  "no": "59",
+  "g": 3,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "無力、自責、矛盾，因知行不一而沮喪",
+   "intent": "表達情緒困擾，渴望被理解與接納，並尋求解脫「做不到」的困境",
+   "cognitive_node": "「做不到」不是知識問題，而是人性本能與意志力的對抗",
+   "answer_layer": "L5",
+   "context_state": "單輪對話，用戶在聽取建議後坦承執行困難，需要被點破與重構",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準接住無力感，將「做不到」重構為人性本能，並自然引導至更高層次的思考，完全符合DC姐姐 V3.1的風格。"
+ },
+ {
+  "no": "60",
+  "g": 3,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "挫敗、自我懷疑、無奈",
+   "intent": "尋求理解與接納，表達無力感",
+   "cognitive_node": "知道道理但無法執行，知行不合一",
+   "answer_layer": "L4",
+   "context_state": "單輪，情緒覆蓋認知",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準接住情緒，點出知行不合一的人性本質，並給予接納，完全符合DC姐姐風格。"
+ },
+ {
+  "no": "61",
+  "g": 4,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "懷疑、防備、不信任，帶有攻擊性",
+   "intent": "質疑可信度，測試對方是否只是話術包裝",
+   "cognitive_node": "用戶將「包裝好聽」等同於「不可信」，需要區分包裝與實話",
+   "answer_layer": "L4",
+   "context_state": "單輪質疑，攻擊性提問",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "直接拆解包裝與實話的區別，既接住質疑又給出判斷標準，完全符合DC姐姐風格。"
+ },
+ {
+  "no": "62",
+  "g": 4,
+  "score": 4,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "怀疑、警惕、不信任",
+   "intent": "质疑回答的动机，试探是否在割韭菜",
+   "cognitive_node": "对收费/推荐内容的信任危机，需要区分合理收费与割韭菜",
+   "answer_layer": "L3",
+   "context_state": "单轮攻击性质疑",
+   "sales_impulse": "无",
+   "confidence": 8
+  },
+  "opinion": "接住了質疑並給出清晰判準，既肯定警惕又引導理性分辨，推進自然。"
+ },
+ {
+  "no": "63",
+  "g": 4,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "懷疑、防備、不信任，帶有挑戰與考驗的態度",
+   "intent": "要求對方證明可信度，實則想測試對方是否真誠或只是話術",
+   "cognitive_node": "將「保證賺錢」等同於「值得信任」，認為不能保證就不可信",
+   "answer_layer": "L5",
+   "context_state": "單輪攻擊性質疑，需化解防備並重建信任",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準接住質疑，將信任從「保證賺錢」轉移到「虧損存活」的系統價值，自然推進且完全符合DC姐姐風格。"
+ },
+ {
+  "no": "64",
+  "g": 4,
+  "score": 4,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "不滿、懷疑，帶有諷刺性質疑",
+   "intent": "質疑風險提示是否只是虧損後的推卸藉口",
+   "cognitive_node": "風險提示被當作空洞的擋箭牌，而非真正處理虧損的機制",
+   "answer_layer": "L4",
+   "context_state": "用戶可能經歷虧損或看過風險提示，處於質疑可信度的階段",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準拆解風險話術，並引導至系統化思維，回應有力且無銷售味。"
+ },
+ {
+  "no": "65",
+  "g": 4,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "防備、不信任、可能受過傷害或聽過負面評價",
+   "intent": "質疑可信度，要求對方自證清白",
+   "cognitive_node": "「騙新手」——懷疑對方利用資訊不對稱牟利",
+   "answer_layer": "L4：接住情緒並拆解質疑邏輯，引導對方建立判斷標準",
+   "context_state": "單輪攻擊性質疑，尚未建立信任",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "完美接住質疑，既承認動機又用邏輯區分騙子與正當工具，並把判斷權交還用戶，完全符合DC姐姐V3.1。"
+ },
+ {
+  "no": "66",
+  "g": 4,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "懷疑、警惕、不信任，認為賣家動機不純",
+   "intent": "質疑軟體可信度，考驗賣家誠信與邏輯",
+   "cognitive_node": "用戶將「有賺錢動機」等同於「騙人」，需要拆解這個邏輯謬誤",
+   "answer_layer": "L4",
+   "context_state": "單輪質疑，銷售場景中的信任挑戰",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準拆解質疑背後的邏輯謬誤，以類比穩住情緒並推進認知，完全符合DC姐姐 V3.1。"
+ },
+ {
+  "no": "67",
+  "g": 4,
+  "score": 4,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "懷疑、防禦，帶有挑戰意味",
+   "intent": "用「自己賺錢」的邏輯來質疑可信度，想測試對方是否心虛",
+   "cognitive_node": "將「賺錢動機」與「可信度」錯誤掛鉤，忽略工具價值與動機可分離",
+   "answer_layer": "L4",
+   "context_state": "單輪攻擊性質疑，需化解防禦並重建信任",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "坦誠承認獲利並用類比拆解動機迷思，穩穩接住質疑且給出實用判斷標準，推進自然有力。"
+ },
+ {
+  "no": "68",
+  "g": 4,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "质疑、试探，带着防御心理，想验证对方是否靠谱",
+   "intent": "质疑年费模式的合理性，试探对方是否真诚、是否有猫腻",
+   "cognitive_node": "年费赚钱是否比交易更容易，以及赚钱动机是否等于骗局",
+   "answer_layer": "L4",
+   "context_state": "单轮质疑，用户处于反向验证阶段",
+   "sales_impulse": "无",
+   "confidence": 9
+  },
+  "opinion": "直面质疑、坦承动机，并用逻辑和标准引导用户自行判断，完全符合DC姐姐V3.1的風格。"
+ },
+ {
+  "no": "69",
+  "g": 4,
+  "score": 4,
+  "cognitive_hit": 1,
+  "sales_impulse": 1,
+  "diag": {
+   "psychological_state": "懷疑、挑戰，帶有試探性質，想確認產品是否真的有人買單",
+   "intent": "質疑價格合理性，測試回答者是否有底氣與真誠，而非單純要一個答案",
+   "cognitive_node": "價格高不等於沒人買，關鍵在於算的是『花出去的錢』還是『已經虧掉的錢』",
+   "answer_layer": "L4",
+   "context_state": "銷售異議處理／價格質疑的防守與反轉",
+   "sales_impulse": "有",
+   "confidence": 8
+  },
+  "opinion": "精準接住質疑並重新定義價格與價值的關係，但本質上仍帶有銷售引導的痕跡。"
+ },
+ {
+  "no": "70",
+  "g": 4,
+  "score": 4,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "懷疑、防備、不信任，對系統的真實性持質疑態度",
+   "intent": "質疑系統是否只是將簡單的止損概念包裝成高級系統，要求合理解釋",
+   "cognitive_node": "知道不等於做到，止損是知識點，系統是保證執行的結構",
+   "answer_layer": "L4",
+   "context_state": "單輪對話，用戶對系統提出質疑，需要建立信任",
+   "sales_impulse": "無",
+   "confidence": 8
+  },
+  "opinion": "以理性拆解質疑，將止損與系統的差異提升到人性執行層面，既接住情緒又推進認知。"
+ },
+ {
+  "no": "71",
+  "g": 4,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "警惕、防禦，正在驗證對方是否值得信任",
+   "intent": "質疑對方銷售身份，要求給出可信的理由",
+   "cognitive_node": "把「有銷售動機」直接等同於「不可信」的認知偏誤",
+   "answer_layer": "L4（接住情緒與質疑，並重構認知框架）",
+   "context_state": "信任建立階段，用戶對動機與利益關係提出挑戰",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "坦然承認利益動機，再用醫生律師類比拆解偏見，最後給出可驗證標準，既接住情緒又推進認知，完全符合 DC姐姐 V3.1。"
+ },
+ {
+  "no": "72",
+  "g": 4,
+  "score": 3,
+  "cognitive_hit": 1,
+  "sales_impulse": 1,
+  "diag": {
+   "psychological_state": "不耐烦、要求实证、对空谈理念感到怀疑",
+   "intent": "想要具体数据来验证DCOGAI的真实性，拒绝听理念",
+   "cognitive_node": "用户认为理念不可信，数据才是硬道理；但数据只能证明过去，无法保证未来",
+   "answer_layer": "L3",
+   "context_state": "单轮攻击质疑，用户直接挑战",
+   "sales_impulse": "有",
+   "confidence": 8
+  },
+  "opinion": "用「過去不代表未來」擋掉數據要求，轉而提供驗證途徑，算有接住質疑，但未直接給數據，可能仍讓用戶覺得在閃躲。"
+ },
+ {
+  "no": "73",
+  "g": 4,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "質疑、防備、考驗",
+   "intent": "測試DC姐姐是否會盲目推崇歷史回測，或尋求更深刻的見解",
+   "cognitive_node": "回測的局限性與「拿回測當承諾」的區別，以及真正需要防範的對象",
+   "answer_layer": "L5",
+   "context_state": "用戶對歷史回測的有效性提出質疑，DC姐姐回應並引導",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準接住質疑，並將話題提升至風險認知層面，展現DC姐姐的從容與智慧。"
+ },
+ {
+  "no": "74",
+  "g": 4,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "帶有情緒與不信任，質疑系統在實盤虧損後會找藉口",
+   "intent": "反向驗證系統是否誠實面對虧損，測試對方是否會迴避責任",
+   "cognitive_node": "虧損後的歸因與行為模式，區分藉口與真實交易處理",
+   "answer_layer": "L4",
+   "context_state": "單輪攻擊性質疑，帶有挑釁與考驗",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準接住情緒與質疑，並將焦點從「找理由」轉向「虧損後的行為驗證」，完全符合DC姐姐的認知層級與真誠態度。"
+ },
+ {
+  "no": "75",
+  "g": 4,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "懷疑、挑釁，需要實證而非承諾",
+   "intent": "要求自主驗證，測試對方是否敢於接受檢驗",
+   "cognitive_node": "用戶需要掌控感與可驗證的標準，不願被說服",
+   "answer_layer": "L4：接住情緒並給出可操作的驗證框架，推進信任",
+   "context_state": "用戶對系統真實性存疑，處於反向驗證階段",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "坦然接住挑戰，給出清晰驗證路徑，不催不推，完全符合DC姐姐的從容與真誠。"
+ },
+ {
+  "no": "76",
+  "g": 4,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "猶豫、擔憂，怕白費時間與精力",
+   "intent": "質疑試用價值，尋求保證或說服理由",
+   "cognitive_node": "對「有用」的評判標準模糊，以短期結果為導向",
+   "answer_layer": "L4",
+   "context_state": "銷售/推薦場景中的異議處理",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準接住用戶的擔憂，並引導重新定義「有用」的標準，既理性又帶有溫度，完全符合DC姐姐的風格。"
+ },
+ {
+  "no": "77",
+  "g": 4,
+  "score": 4,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "懷疑、挑戰，想測試對方是否經得起質疑",
+   "intent": "驗證DC姐姐的成績是實力還是運氣，要求歸因與自省",
+   "cognitive_node": "好行情與真實能力的區別——順風賺錢不代表抗風險能力",
+   "answer_layer": "L4",
+   "context_state": "單輪攻擊性質疑，帶有反向驗證意圖",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準接住質疑，用「放大器vs發動機」重構問題，並把焦點拉到逆風生存力，既誠懇又有深度。"
+ },
+ {
+  "no": "78",
+  "g": 4,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "质疑、试探，带着攻击性，想验证对方是否靠谱",
+   "intent": "反向验证策略的鲁棒性，测试对方是否只是靠行情吃饭",
+   "cognitive_node": "策略底层逻辑是预测还是应对波动，环境变化是否导致失效",
+   "answer_layer": "L4",
+   "context_state": "单轮攻击性提问，需要化解质疑并展示底层逻辑",
+   "sales_impulse": "无",
+   "confidence": 9
+  },
+  "opinion": "精準拆解質疑核心，用波動邏輯化解環境變化的攻擊，並自然帶出風控智慧，完全符合DC姐姐V3.1。"
+ },
+ {
+  "no": "79",
+  "g": 4,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "質疑與擔憂，想確認系統出錯時的責任歸屬",
+   "intent": "探詢系統錯誤的責任歸屬，並希望獲得安全感與可控性",
+   "cognitive_node": "系統錯誤的責任邊界，以及用戶自身在其中的判斷角色",
+   "answer_layer": "L4",
+   "context_state": "單輪尖銳提問，帶有攻擊與反向驗證性質",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "精準接住質疑，並將責任歸屬轉化為用戶可操作的判斷框架，完全符合DC姐姐的風格。"
+ },
+ {
+  "no": "80",
+  "g": 4,
+  "score": 5,
+  "cognitive_hit": 1,
+  "sales_impulse": 0,
+  "diag": {
+   "psychological_state": "防禦、質疑、不信任，拒絕被說服，渴望可驗證的標準",
+   "intent": "要求提供證明真偽的方法，測試對方是否真誠或迴避問題",
+   "cognitive_node": "驗證真偽的具體標準，而非空洞承諾",
+   "answer_layer": "L4",
+   "context_state": "單輪質疑-回應的對抗性情境",
+   "sales_impulse": "無",
+   "confidence": 9
+  },
+  "opinion": "以具體驗證點取代說服，完美接住質疑並引導自主判斷，完全符合DC姐姐風格。"
+ },
+ {
+  "no": "81",
+  "g": 5,
+  "score": 5,
+  "sales_impulse": 0,
+  "turns": [
+   {
+    "n": 1,
+    "repeat": 0
+   },
+   {
+    "n": 2,
+    "repeat": 0
+   },
+   {
+    "n": 3,
+    "repeat": 0
+   },
+   {
+    "n": 4,
+    "repeat": 0
+   },
+   {
+    "n": 5,
+    "repeat": 0
+   },
+   {
+    "n": 6,
+    "repeat": 0
+   },
+   {
+    "n": 7,
+    "repeat": 0
+   },
+   {
+    "n": 8,
+    "repeat": 0
+   },
+   {
+    "n": 9,
+    "repeat": 0
+   },
+   {
+    "n": 10,
+    "repeat": 0
+   },
+   {
+    "n": 11,
+    "repeat": 1
+   },
+   {
+    "n": 12,
+    "repeat": 1
+   },
+   {
+    "n": 13,
+    "repeat": 0
+   },
+   {
+    "n": 14,
+    "repeat": 0
+   },
+   {
+    "n": 15,
+    "repeat": 0
+   },
+   {
+    "n": 16,
+    "repeat": 0
+   },
+   {
+    "n": 17,
+    "repeat": 0
+   },
+   {
+    "n": 18,
+    "repeat": 0
+   },
+   {
+    "n": 19,
+    "repeat": 1
+   },
+   {
+    "n": 20,
+    "repeat": 1
+   }
+  ],
+  "opinion": "层层递进，从认知到行动自然落地，最后干净切到第一步，无推销痕迹。"
+ }
+]
