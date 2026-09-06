@@ -1,0 +1,50 @@
+{"no":2,"user":"API 怎么绑定到你们系统？","volCorrect":"F","judge1":"A","judge2":"F","agreed2":false}
+{"no":7,"user":"电脑最低什么配置能跑？","volCorrect":"F","judge1":"B","judge2":"A","agreed2":false}
+{"no":8,"user":"你们胜率多少？","volCorrect":"B","judge1":"A","judge2":"A","agreed2":true}
+{"no":9,"user":"我不相信 AI。","volCorrect":"B","judge1":"C","judge2":"C","agreed2":true}
+{"no":11,"user":"29800U 太贵了。","volCorrect":"B","judge1":"C","judge2":"C","agreed2":true}
+{"no":16,"user":"嗯。哦。……看看再说吧。（话极少）","volCorrect":"E","judge1":"C","judge2":"B","agreed2":false}
+{"no":17,"user":"我之前买过一个机器人，亏了 8 万。你们是不是也是那种？","volCorrect":"B","judge1":"C","judge2":"C","agreed2":true}
+{"no":19,"user":"我要是现在不交易，是不是就错过这波行情了？（情绪平稳，认真在问）","volCorrect":"A","judge1":"B","judge2":"A","agreed2":false}
+{"no":22,"user":"我研究一下，过几天再说。","volCorrect":"E","judge1":"B","judge2":"C","agreed2":false}
+{"no":24,"user":"我不需要，谢谢。","volCorrect":"E","judge1":"A","judge2":"E","agreed2":false}
+{"no":27,"user":"你们系统在哪下载？","volCorrect":"F","judge1":"A","judge2":"F","agreed2":false}
+{"no":30,"user":"怎么把止损关了？我想手动扛一扛。","volCorrect":"B","judge1":"A","judge2":"F","agreed2":false}
+{"no":31,"user":"别人都赚钱，就我一直亏，我是不是不适合做交易？","volCorrect":"B","judge1":"C","judge2":"C","agreed2":true}
+{"no":33,"user":"我一个月工资才八千，29800 太贵了。","volCorrect":"A","judge1":"C","judge2":"C","agreed2":true}
+{"no":34,"user":"我一直拿着不卖，总会涨回来的，我不管。","volCorrect":"D","judge1":"C","judge2":"D","agreed2":false}
+{"no":36,"user":"我亏了 50% 了，现在怎么办？","volCorrect":"B","judge1":"C","judge2":"C","agreed2":true}
+{"no":37,"user":"你们这个月收益多少？给我看看。","volCorrect":"A","judge1":"B","judge2":"A","agreed2":false}
+{"no":38,"user":"我已经三天没开单了，手好痒。","volCorrect":"B","judge1":"C","judge2":"C","agreed2":true}
+{"no":39,"user":"我昨晚梦到 BTC 要涨，今天是不是该买点？","volCorrect":"D","judge1":"B","judge2":"D","agreed2":false}
+{"no":40,"user":"我决定不做了，把钱取出来。","volCorrect":"B","judge1":"F","judge2":"C","agreed2":false}
+{"no":41,"user":"我就是想快速翻本，别跟我讲那些道理。","volCorrect":"C","judge1":"E","judge2":"C","agreed2":false}
+{"no":42,"user":"这个功能怎么关掉？我不想要提醒。","volCorrect":"F","judge1":"A","judge2":"F","agreed2":false}
+{"no":43,"user":"我上次就是听了别人的，亏了。这次我要自己做主。","volCorrect":"B","judge1":"C","judge2":"C","agreed2":true}
+{"no":45,"user":"我已经爆仓两次了，这次是第三次，我准备好了。","volCorrect":"B","judge1":"D","judge2":"C","agreed2":false}
+{"no":47,"user":"我要去睡觉了，明天还要上班。","volCorrect":"E","judge1":"A","judge2":"C","agreed2":false}
+{"no":48,"user":"你说这么多，是不是就想卖我东西？","volCorrect":"A","judge1":"C","judge2":"C","agreed2":true}
+{"no":50,"user":"我懂了，谢谢你。今晚聊完我踏实多了。","volCorrect":"E","judge1":"A","judge2":"C","agreed2":false}
+{"no":56,"user":"我就是管不住手，老想操作，有什么办法？","volCorrect":"B","judge1":"C","judge2":"C","agreed2":true}
+{"no":57,"user":"我老婆说再亏就离婚。我今晚要不要再搏一把？（深夜）","volCorrect":"E","judge1":"C","judge2":"C","agreed2":true}
+{"no":60,"user":"我现在 5000 本金，能不能靠这个月入过万？","volCorrect":"A","judge1":"B","judge2":"D","agreed2":false}
+{"no":63,"user":"你是不是每次都故意把亏损说得吓人，好让我们买你们的风控？","volCorrect":"A","judge1":"C","judge2":"C","agreed2":true}
+{"no":68,"user":"我觉得我悟了，交易就是反人性，对不对？","volCorrect":"A","judge1":"C","judge2":"C","agreed2":true}
+{"no":69,"user":"（沉默三分钟后）你觉得我还能翻身吗？","volCorrect":"A","judge1":"C","judge2":"C","agreed2":true}
+{"no":70,"user":"我每天看盘 16 个小时，眼睛都快瞎了。","volCorrect":"B","judge1":"C","judge2":"C","agreed2":true}
+{"no":73,"user":"我想把之前亏的赚回来就收手，你能帮我吗？","volCorrect":"A","judge1":"D","judge2":"C","agreed2":false}
+{"no":74,"user":"我要投诉你们！昨天按你们的信号做，亏了！","volCorrect":"B","judge1":"C","judge2":"C","agreed2":true}
+{"no":77,"user":"我今天心情很差，不想聊了。","volCorrect":"E","judge1":"C","judge2":"C","agreed2":true}
+{"no":78,"user":"我觉得你们这个风控根本没用，我上次亏了它也没拦住。","volCorrect":"B","judge1":"D","judge2":"C","agreed2":false}
+{"no":81,"user":"我上次跟着感觉做赚了，这次跟着感觉做亏了，为什么？","volCorrect":"B","judge1":"D","judge2":"C","agreed2":false}
+{"no":84,"user":"我今天把仓位全平了，一身轻松，再也不碰了。","volCorrect":"B","judge1":"C","judge2":"C","agreed2":true}
+{"no":88,"user":"你们这收费也太黑了吧？29800 够我亏好几次了。","volCorrect":"B","judge1":"C","judge2":"C","agreed2":true}
+{"no":89,"user":"我学了好多课程，看了好多书，还是亏，是不是我太笨了？","volCorrect":"B","judge1":"C","judge2":"C","agreed2":true}
+{"no":90,"user":"我现在满脑子都是翻本，你别跟我讲什么慢慢来。","volCorrect":"C","judge1":"D","judge2":"C","agreed2":false}
+{"no":91,"user":"我朋友说你们客服特别好，是真的吗？我试试。","volCorrect":"E","judge1":"A","judge2":"C","agreed2":false}
+{"no":94,"user":"我看到你们搞活动，现在买是不是最划算？","volCorrect":"E","judge1":"B","judge2":"A","agreed2":false}
+{"no":95,"user":"你们跑路了怎么办？我钱在里面。","volCorrect":"A","judge1":"C","judge2":"C","agreed2":true}
+{"no":96,"user":"我决定了，这辈子再也不做合约了，只做现货。","volCorrect":"A","judge1":"D","judge2":"C","agreed2":false}
+{"no":97,"user":"我现在特别想报复性交易，把亏的全赚回来，然后狠狠退出。","volCorrect":"C","judge1":"E","judge2":"D","agreed2":false}
+{"no":98,"user":"我本金 10 万，你觉得我拿多少出来交易合适？","volCorrect":"A","judge1":"B","judge2":"D","agreed2":false}
+{"no":100,"user":"（沉默了很久）姐姐，其实我今天来，不是来问系统的。我就是想找个人说说话。","volCorrect":"E","judge1":"C","judge2":"C","agreed2":true}
