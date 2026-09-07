@@ -328,6 +328,28 @@ if (args.includes("--monitor")) {
   process.exit(0);
 }
 
+// --full：完整迭代閉環（掃描+抽查+認知+情緒+攻擊+銷售+事務+紅隊+動態路由）
+if (args.includes("--full")) {
+  const { execSync } = require("child_process");
+  const steps = [
+    ["掃描+抽查", `node ${path.join(ROOT, "kb_iterate.js")} --scan --audit --report`],
+    ["認知能力", `node ${path.join(ROOT, "v41_cog_test.js")}`],
+    ["情緒知識", `node ${path.join(ROOT, "v42_emotion_test.js")}`],
+    ["攻擊質疑", `node ${path.join(ROOT, "v43_attack_test.js")}`],
+    ["銷售邊界", `node ${path.join(ROOT, "v44_sales_test.js")}`],
+    ["事務題", `node ${path.join(ROOT, "v45_tx_test.js")}`],
+    ["動態路由", `node ${path.join(ROOT, "v50_51_reroute_test.js")}`],
+    ["紅隊測試", `node ${path.join(ROOT, "v52_redteam_test.js")}`],
+  ];
+  console.log("== 完整迭代閉環 ==");
+  for (const [name, cmd] of steps) {
+    console.log(`\n▶ ${name}…`);
+    try { execSync(cmd, { stdio: "inherit", timeout: 600000 }); } catch (e) { console.log(`  ⚠️ ${name} 失敗: ${e.message.slice(0, 60)}`); }
+  }
+  console.log("\n== 完整迭代閉環完成 ==");
+  process.exit(0);
+}
+
 // --reroute：跑 V3.2 動態路由（變線鏈 40 輪 + 錯誤前提 10 題）
 if (args.includes("--reroute")) {
   const { execSync } = require("child_process");
