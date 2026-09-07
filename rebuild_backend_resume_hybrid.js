@@ -53,7 +53,16 @@ async function postOne(catId, it) {
   return false
 }
 
+async function snapshot() {
+  // 重建前自動快照：dump 後台全量（防止重建意外丟失後台獨有數據）
+  try {
+    const { execSync } = require('child_process')
+    execSync('node ' + __dirname + '/backend_snapshot.js', { env: process.env, stdio: 'inherit' })
+    console.log('快照完成 ✅')
+  } catch (e) { console.warn('快照失敗（繼續重建）: ' + e.message) }
+}
 async function main() {
+  await snapshot()
   console.log('resume start')
   let done = 0, rebuilt = 0
   for (const sc of SITE) {
