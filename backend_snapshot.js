@@ -35,5 +35,14 @@ async function main() {
   fs.writeFileSync(outPath, JSON.stringify(slim, null, 1), 'utf8')
   console.log(`快照完成: ${cats.length} 分類 / ${tot} 題 → ${name}`)
   console.log(`大小: ${(fs.statSync(outPath).size / 1024 / 1024).toFixed(2)} MB`)
+  // 快照自動清理：只保留最近 N 份（默認 5，可 KEEP_SNAPSHOTS 覆蓋）
+  const keep = parseInt(process.env.KEEP_SNAPSHOTS || '5', 10)
+  const dir = path.dirname(outPath)
+  const snaps = fs.readdirSync(dir).filter(f => f.startsWith('backend_snapshot_') && f.endsWith('.json')).sort()
+  const excess = snaps.length - keep
+  if (excess > 0) {
+    for (const f of snaps.slice(0, excess)) { fs.unlinkSync(path.join(dir, f)); console.log(`清理舊快照: ${f}`) }
+  }
+  console.log(`保留最近 ${Math.min(snaps.length, keep)} 份快照`)
 }
 main().catch(e => { console.error('FATAL ' + e.message); process.exit(1) })
