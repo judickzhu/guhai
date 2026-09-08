@@ -86,6 +86,26 @@
     return "第" + n + "回嘅人物點評槽位仲係空嘅——呢欄係留畀你自己逐人點評嘅。填法：喺 honglou_char_review.json 寫 {" + n + ": [[\"人物\", \"一句點評\"], ...]}，再重跑生成器，子嗥就識答你。";
   }
 
+  // ── 詩詞解讀聯動：問「第X回詩詞解讀」→ 讀提問者填寫嘅 honglou_poem_review ──
+  function poemAnswer(query) {
+    var q = String(query || "");
+    var hasPoem = q.indexOf("詩詞") >= 0 || q.indexOf("诗词") >= 0
+      || q.indexOf("詩句") >= 0 || q.indexOf("诗句") >= 0
+      || (q.indexOf("詩") >= 0 && q.indexOf("解") >= 0)
+      || (q.indexOf("诗") >= 0 && q.indexOf("解") >= 0);
+    if (!hasPoem) return null;
+    var m = q.match(/第\s*([零一二三四五六七八九十百\d]{1,6})\s*回/);
+    if (!m) return null;
+    var n = cnNum(m[1]);
+    if (!n) return null;
+    var pr = (KB.poemReview || {})[String(n)];
+    if (pr && pr.length) {
+      var lines = pr.map(function (r) { return "· " + r[0] + " — " + r[1]; }).join("\n");
+      return "第" + n + "回詩詞解讀（提問者自填）：\n" + lines;
+    }
+    return "第" + n + "回嘅詩詞解讀槽位仲係空嘅——呢欄係留畀你自己解讀本回詩詞嘅。填法：喺 honglou_poem_review.json 寫 {" + n + ": [[\"詩詞題目或原句\", \"解讀\"], ...]}，再重跑生成器，子嗥就識答你。";
+  }
+
   // 兜底回覆
   function fallback(query) {
     var meta = KB.meta || {};
@@ -117,8 +137,11 @@
     input.value = '';
     var hit = match(q);
     var rv = reviewAnswer(q);
+    var pv = poemAnswer(q);
     if (rv) {
       bubble(disp(rv), 'ai');
+    } else if (pv) {
+      bubble(disp(pv), 'ai');
     } else if (hit) {
       var a = hit.qa.a + (hit.qa.ref ? '\n\n（出處：' + hit.qa.ref + '）' : '');
       bubble(disp(a), 'ai');
