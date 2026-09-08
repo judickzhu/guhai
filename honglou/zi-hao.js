@@ -143,8 +143,22 @@
     } else if (pv) {
       bubble(disp(pv), 'ai');
     } else if (hit) {
-      var a = hit.qa.a + (hit.qa.ref ? '\n\n（出處：' + hit.qa.ref + '）' : '');
+      var a = hit.qa.a;
       bubble(disp(a), 'ai');
+      if (hit.qa.ref) {
+        var pre = (typeof PREFIX !== 'undefined') ? PREFIX : '';
+        var url = pre + hit.qa.ref;
+        var link = document.createElement('a');
+        link.className = 'zh-ref';
+        link.href = url;
+        link.textContent = '➤ 出處：' + hit.qa.ref;
+        link.target = '_top';
+        var wrap = document.createElement('div');
+        wrap.className = 'zh-msg ai';
+        wrap.appendChild(link);
+        body.appendChild(wrap);
+        body.scrollTop = body.scrollHeight;
+      }
       if (hit.qa.hint) bubble(disp(hit.qa.hint), 'hint');
     } else {
       bubble(disp(fallback(q)), 'ai');
