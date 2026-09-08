@@ -57,6 +57,35 @@
     return best && bestScore >= 2 ? best : null;
   }
 
+  // ── 人物點評聯動：問「第X回人物點評」→ 讀提問者填寫嘅 honglou_char_review ──
+  var CN_DIG = { "零": 0, "一": 1, "二": 2, "三": 3, "四": 4, "五": 5, "六": 6, "七": 7, "八": 8, "九": 9 };
+  function cnNum(s) {
+    s = String(s).trim();
+    if (/^\d+$/.test(s)) { var n = parseInt(s, 10); return n >= 1 && n <= 120 ? n : null; }
+    if (s === "十") return 10;
+    if (s.indexOf("一百二十") >= 0) return 120;
+    var m = s.match(/一百零?([一二三四五六七八九])?/);
+    if (m) return 100 + (m[1] ? CN_DIG[m[1]] : 0);
+    var m2 = s.match(/^([一二三四五六七八九])?十([一二三四五六七八九])?$/);
+    if (m2) return (m2[1] ? CN_DIG[m2[1]] : 1) * 10 + (m2[2] ? CN_DIG[m2[2]] : 0);
+    if (s.length === 1 && CN_DIG[s] !== undefined) return CN_DIG[s];
+    return null;
+  }
+  function reviewAnswer(query) {
+    var q = String(query || "");
+    if (q.indexOf("點評") < 0 && q.indexOf("点评") < 0) return null;
+    var m = q.match(/第\s*([零一二三四五六七八九十百\d]{1,6})\s*回/);
+    if (!m) return null;
+    var n = cnNum(m[1]);
+    if (!n) return null;
+    var review = (KB.charReview || {})[String(n)];
+    if (review && review.length) {
+      var lines = review.map(function (r) { return "· " + r[0] + " — " + r[1]; }).join("\n");
+      return "第" + n + "回人物點評（提問者自填）：\n" + lines;
+    }
+    return "第" + n + "回嘅人物點評槽位仲係空嘅——呢欄係留畀你自己逐人點評嘅。填法：喺 honglou_char_review.json 寫 {" + n + ": [[\"人物\", \"一句點評\"], ...]}，再重跑生成器，子嗥就識答你。";
+  }
+
   // 兜底回覆
   function fallback(query) {
     var meta = KB.meta || {};
@@ -87,7 +116,10 @@
     bubble(disp(q), 'me');
     input.value = '';
     var hit = match(q);
-    if (hit) {
+    var rv = reviewAnswer(q);
+    if (rv) {
+      bubble(disp(rv), 'ai');
+    } else if (hit) {
       var a = hit.qa.a + (hit.qa.ref ? '\n\n（出處：' + hit.qa.ref + '）' : '');
       bubble(disp(a), 'ai');
       if (hit.qa.hint) bubble(disp(hit.qa.hint), 'hint');
