@@ -113,3 +113,7 @@ ul.chars b{color:var(--accent);margin-right:6px}
   color:var(--ink);font-size:.95em}
 #zh-foot button{border:none;background:var(--accent);color:#fff;border-radius:8px;padding:0 14px;cursor:pointer}
 #zh-foot button:hover{opacity:.9}
+.zonggang-poem{white-space:pre-wrap;text-align:center;
+  background:var(--tagbg);border:1px solid var(--line);padding:18px 22px;border-radius:10px;margin:14px 0;
+  font-family:"Songti SC","STSong","Noto Serif CJK SC","SimSun",serif;font-size:1.08em;line-height:2;
+  letter-spacing:.04em}
