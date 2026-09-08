@@ -84,3 +84,7 @@ ul.dec li{margin:8px 0}
 footer{max-width:1000px;margin:0 auto;padding:20px 18px 60px;color:var(--sub);font-size:.85em;
   border-top:1px solid var(--line)}
 @media(max-width:640px){.tools input{max-width:200px}}
+ul.chars{list-style:none;padding:0}
+ul.chars li{background:var(--card);border:1px solid var(--line);border-radius:8px;
+  padding:8px 12px;margin:6px 0;line-height:1.7}
+ul.chars b{color:var(--accent);margin-right:6px}
