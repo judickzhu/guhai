@@ -119,3 +119,9 @@ ul.chars b{color:var(--accent);margin-right:6px}
   letter-spacing:.04em}
 .zh-ref{color:var(--accent);text-decoration:underline;font-size:.88em;cursor:pointer}
 .zh-ref:hover{opacity:.85}
+.mp-item{margin:14px 0;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.mp-head{display:flex;justify-content:space-between;align-items:center;padding:8px 14px;
+  background:var(--tagbg);border-bottom:1px solid var(--line)}
+.mp-head b{color:var(--accent);font-size:1.05em}
+.mp-head .r{color:var(--sub);font-size:.85em}
+.mp-item table th{width:120px;background:var(--card);color:var(--accent2);white-space:nowrap}
