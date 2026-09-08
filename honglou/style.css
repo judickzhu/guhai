@@ -88,3 +88,28 @@ ul.chars{list-style:none;padding:0}
 ul.chars li{background:var(--card);border:1px solid var(--line);border-radius:8px;
   padding:8px 12px;margin:6px 0;line-height:1.7}
 ul.chars b{color:var(--accent);margin-right:6px}
+
+/* 子嗥 · 對話窗 */
+#zh-root{position:fixed;right:18px;bottom:18px;z-index:999;font-size:15px}
+#zh-fab{width:56px;height:56px;border-radius:50%;border:none;background:var(--accent);color:#fff;
+  font-size:24px;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(60,40,10,.35);
+  font-family:inherit;display:flex;align-items:center;justify-content:center}
+#zh-fab:hover{transform:scale(1.05)}
+#zh-panel{display:none;position:fixed;right:18px;bottom:84px;width:min(360px,calc(100vw - 36px));
+  height:min(520px,calc(100vh - 120px));background:var(--card);border:1px solid var(--line);
+  border-radius:14px;box-shadow:0 8px 30px rgba(60,40,10,.3);flex-direction:column;overflow:hidden}
+#zh-root.open #zh-panel{display:flex}
+#zh-head{background:var(--accent);color:#fff;padding:10px 14px;font-weight:700;display:flex;
+  justify-content:space-between;align-items:center}
+#zh-head .zh-hd-tools{display:flex;gap:6px}
+#zh-head button{background:none;border:none;color:#fff;font-size:14px;cursor:pointer;padding:2px 6px}
+#zh-body{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.zh-msg{max-width:88%;padding:8px 12px;border-radius:12px;line-height:1.6;white-space:pre-wrap;word-break:break-word}
+.zh-msg.me{align-self:flex-end;background:var(--accent);color:#fff;border-bottom-right-radius:3px}
+.zh-msg.ai{align-self:flex-start;background:var(--bg);border:1px solid var(--line);border-bottom-left-radius:3px}
+.zh-msg.hint{align-self:center;background:var(--tagbg);color:var(--tag);font-size:.85em;padding:4px 10px}
+#zh-foot{display:flex;gap:6px;padding:10px;border-top:1px solid var(--line)}
+#zh-foot input{flex:1;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);
+  color:var(--ink);font-size:.95em}
+#zh-foot button{border:none;background:var(--accent);color:#fff;border-radius:8px;padding:0 14px;cursor:pointer}
+#zh-foot button:hover{opacity:.9}
