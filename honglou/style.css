@@ -129,3 +129,9 @@ ul.chars b{color:var(--accent);margin-right:6px}
   border-radius:8px;padding:16px 18px;line-height:2.2;letter-spacing:.06em;
   font-family:"Noto Serif TC","Songti TC","STSong",serif;font-size:1.05em;white-space:pre-wrap}
 html[data-theme="dark"] .yuanwen{background:var(--card)}
+.sansheng{margin:14px 0;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.ss-row{display:flex;gap:14px;align-items:baseline;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--card)}
+.ss-row:last-child{border-bottom:none}
+.ss-row b{color:var(--accent);font-size:1.05em;min-width:5em;flex-shrink:0}
+.ss-row span{color:var(--ink)}
+html[data-theme="dark"] .ss-row{background:var(--card)}

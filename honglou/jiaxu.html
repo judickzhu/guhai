@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>甲戌本·脂硯齋重評石頭記（彩色影印）｜一起讀紅樓白話</title>
+<meta name="description" content="脂砚斋重评石头记甲戌本彩色影印本 482 页在线翻页阅读">
+<link rel="stylesheet" href="style.css">
+<style>
+#jx-toolbar{position:sticky;top:0;z-index:40;background:var(--card);border-bottom:2px solid var(--accent);
+  padding:8px 14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;box-shadow:var(--shadow)}
+#jx-toolbar b{color:var(--accent)}
+#jx-page{display:block;max-width:100%;margin:12px auto;border:1px solid var(--line);box-shadow:var(--shadow);background:#fff}
+#jx-nav{display:flex;justify-content:center;align-items:center;gap:10px;padding:10px;flex-wrap:wrap}
+#jx-nav input{width:70px;text-align:center;padding:4px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
+.jx-btn{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:6px;padding:6px 14px;cursor:pointer;font-size:.95em}
+.jx-btn:hover{border-color:var(--accent);color:var(--accent)}
+#jx-info{color:var(--sub);font-size:.9em}
+</style>
+</head><body>
+<div id="jx-toolbar"><a class="brand" href="index.html">一起讀紅樓白話</a><b>甲戌本·脂硯齋重評石頭記</b><span id="jx-info" style="margin-left:auto"></span></div>
+<main style="max-width:900px">
+<p class="lead">脂硯齋重評石頭記（甲戌本）彩色影印本 · 482 頁 · 原始無標點 · 影印如原書。
+<a href="脂砚斋重评石头记_甲戌本_彩色影印.epub" style="margin-left:8px">⬇ 下載 EPUB 電子書（41MB）</a></p>
+<div id="jx-nav">
+  <button class="jx-btn" onclick="go(-1)">← 上頁</button>
+  <span>第 <input id="jx-num" type="number" min="1" max="482" value="1" onchange="goTo(this.value)"> / 482 頁</span>
+  <button class="jx-btn" onclick="go(1)">下頁 →</button>
+  <button class="jx-btn" onclick="goTo(1)">首頁</button>
+  <button class="jx-btn" onclick="goTo(482)">末頁</button>
+</div>
+<img id="jx-page" src="jiaxu/pages/pg-001.jpg" alt="第1頁">
+<div id="jx-nav" style="margin-bottom:30px">
+  <button class="jx-btn" onclick="go(-1)">← 上頁</button>
+  <button class="jx-btn" onclick="go(1)">下頁 →</button>
+</div>
+</main>
+<script>
+var TOTAL=482;
+var img=document.getElementById('jx-page');
+var num=document.getElementById('jx-num');
+function show(n){
+  if(n<1)n=1; if(n>TOTAL)n=TOTAL;
+  img.src='jiaxu/pages/pg-'+String(n).padStart(3,'0')+'.jpg';
+  num.value=n;
+  document.getElementById('jx-info').textContent='第 '+n+' / 482 頁';
+  document.title='甲戌本 第'+n+'頁｜一起讀紅樓白話';
+}
+function go(d){ show(parseInt(num.value||1)+d); }
+function goTo(n){ show(parseInt(n||1)); }
+document.addEventListener('keydown',function(e){
+  if(e.key==='ArrowLeft')go(-1);
+  if(e.key==='ArrowRight')go(1);
+});
+show(1);
+</script>
+</body></html>
