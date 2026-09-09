@@ -125,3 +125,7 @@ ul.chars b{color:var(--accent);margin-right:6px}
 .mp-head b{color:var(--accent);font-size:1.05em}
 .mp-head .r{color:var(--sub);font-size:.85em}
 .mp-item table th{width:120px;background:var(--card);color:var(--accent2);white-space:nowrap}
+.yuanwen{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--accent2);
+  border-radius:8px;padding:16px 18px;line-height:2.2;letter-spacing:.06em;
+  font-family:"Noto Serif TC","Songti TC","STSong",serif;font-size:1.05em;white-space:pre-wrap}
+html[data-theme="dark"] .yuanwen{background:var(--card)}
