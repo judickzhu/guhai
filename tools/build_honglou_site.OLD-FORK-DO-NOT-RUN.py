@@ -1,3 +1,6 @@
+# ⚠️ 已退役（2026-09-10）：這是舊分叉，站名/導航/頁面均過時。
+#   主站唯一真源為根目錄 build_honglou_site.py（寫 index/framework/characters/mapping/pingyu/shixi/qa/funding + 121章）。
+#   本檔僅留作歷史參考，請勿執行。
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -60,8 +63,8 @@ REPO = os.path.dirname(ROOT)                        # repo 根（guhai/，即站
 OUT  = os.path.join(REPO, "honglou")                # 輸出：站點 honglou/
 
 def _f(name):
-    """數據檔定位：先 tools/（權威），再 repo 根（兼容舊位置）。"""
-    for d in (ROOT, REPO):
+    """數據檔定位：先 tools/（權威），再 repo 根，再 repo 上層（兼容 honglou_yuanwen.json 在網站根上層）。"""
+    for d in (ROOT, REPO, os.path.dirname(REPO)):
         p = os.path.join(d, name)
         if os.path.exists(p):
             return p
@@ -71,6 +74,7 @@ MEN  = _f("honglou_mentions.json")
 DLG  = _f("honglou_dialogue_clean.json")
 CHR  = _f("honglou_char_review.json")   # 人物點評（提問者自填位）
 POEM = _f("honglou_poem_review.json")   # 詩詞解讀（提問者自填位）
+CHARS_ARCH = _f("honglou_characters.json")  # 人物檔案（今日新增對話，可增量）
 
 # ---------------- 120 回数据：回目（程乙本通行）+ 幕 ----------------
 # 幕：1-5 一 · 6-18 二 · 19-36 三 · 37-54 四 · 55-69 五 · 70-80 六 · 81-98 七 · 99-110 八 · 111-120 九
@@ -262,6 +266,17 @@ try:
 except Exception:
     POEM_REVIEW = {}
 
+# 底本原文（無標點，含脂批）：逐字保留，不經 T() 轉繁
+try:
+    YUAN = json.load(open(_f("honglou_yuanwen.json"), encoding="utf-8"))
+    try:
+        CHARS_ARCH_DATA = json.load(open(CHARS_ARCH, encoding="utf-8"))
+    except Exception:
+        CHARS_ARCH_DATA = {}
+except Exception:
+    YUAN = {}
+YUAN_RAW = {}   # token -> 未轉換的原始 HTML（保逐字傳統原文）
+
 def has_material(n):
     if n in CURATED: return True
     if str(n) in DLG_DATA and (DLG_DATA[str(n)]["user"] or DLG_DATA[str(n)]["ai"]): return True
@@ -355,6 +370,16 @@ def hui_card(n):
     rows.append(f'<p class="crumbs">第 {CN[act-1]} 幕（{ACT_TITLES[act][0]}）'
                 f' · <span class="st st-{status}">{"● 已有解碼素材" if status=="has" else "○ 待解碼"}</span></p>')
     rows.append(f'<h1>第{n}回</h1><p class="subtitle">{esc(up)}　{esc(low)}</p>')
+    # 底本原文（無標點，含脂批；逐字保留，不經 T() 轉繁）
+    yt = YUAN.get(str(n))
+    if isinstance(yt, str) and yt.strip():
+        tok = f"@@YUANWEN_{n}@@"
+        YUAN_RAW[tok] = f'<p class="yuan">{esc(yt)}</p>'
+        rows.append(f'<section class="yuanwen"><h2>原文（無標點）</h2>{tok}'
+                    '<p class="note">底本原文（無標點，含脂批）；庚辰／甲戌／蒙本混用，逐字保留。</p></section>')
+    else:
+        rows.append('<section class="yuanwen fillme"><h2>原文（無標點）</h2>'
+                    '<p class="placeholder">【底本暫缺】本回底本（蒙本 99–100）現有分冊「蒙本 91–100」實收至第 98 回，99–100 尚無帶文字層來源，待補傳完整底本後重跑填補。</p></section>')
     # 解码轨素材
     dec = CURATED.get(n) or auto_snippets(n)
     if dec:
@@ -428,6 +453,11 @@ def index_body():
 <section id="acts"><h2>全書九幕（總坐標）</h2><div class="actgrid">{"".join(act_links)}</div></section>
 <section><h2>已解碼回目（素材入口）</h2><p class="chips">{covered_chips}</p>
 <p class="note">章回後期（81–120 回）素材稀少，屬正常——總綱原以「前 80 回解碼」為重，後 40 回多為補錄段，待後續對話增補。</p></section>
+<section><h2>底本資源（下載）</h2>
+<div class="cards">
+  <a class="card" href="dc-honglou-base-120.pdf" download><b>紅樓夢底本合集 · 120 回</b><i>庚辰＋甲戌＋蒙本 17 分冊合併 · 帶書籤 · 56MB · 118/120 回原文（99–100 待補）</i></a>
+</div>
+<p class="note">底本依「前 80 回庚辰／甲戌為主、後 40 回蒙本」混本拼接；原文（無標點）逐字保留，不二次轉繁。99–100 回底本暫缺——現有「蒙本 91–100」分冊實收 91–98 回，全源尚無 99–100 帶文字層底本，待補傳後重跑填補。</p></section>
 '''
 
 # ---------------- 框架页 ----------------
@@ -489,6 +519,16 @@ CHAR_ROWS = [
 ]
 def characters_body():
     trs = "".join(f'<tr><td>{esc(a)}</td><td>{esc(b)}</td><td class="dim">{esc(c)}</td></tr>' for a,b,c in CHAR_ROWS)
+    arch_rows = ""
+    for name, d in CHARS_ARCH_DATA.items():
+        if name == "_说明" or name == "_手法": continue
+        arch_rows += (f'<div class="arch"><div class="arch-head"><b>{esc(name)}</b>'
+                      f'<span class="hist">{esc(d.get("qing",""))}</span></div>'
+                      f'<p><em>書内：</em>{esc(d.get("book",""))}</p>'
+                      f'<p><em>反寫/暗線：</em>{esc(d.get("fanzhuan",""))}</p>'
+                      f'<p class="dim">{esc(d.get("note",""))}</p></div>')
+    shoufa = CHARS_ARCH_DATA.get("_手法", {})
+    sf_rows = "".join(f'<li><b>{esc(k)}</b> — {esc(v)}</li>' for k, v in shoufa.items())
     return f'''
 <h1>人物對標速查</h1>
 <p class="lead">下表為提問者索隱體系的人物─歷史對位（<strong>個人讀法，非共識</strong>）。
@@ -501,6 +541,11 @@ def characters_body():
 <li>鳳姐＝孝莊／康熙／老八 複合體</li>
 <li>妙玉／空空道人＝順治（過來人／局外高人）</li>
 </ul></section>
+<section><h2>人物檔案（今日新增對話·逐步補）</h2>
+{arch_rows}
+<h3>手法</h3>
+<ul class="plain">{sf_rows}</ul>
+</section>
 '''
 
 # ---------------- 目录页（000） ----------------
@@ -621,7 +666,11 @@ def main():
     def w(rel, txt):
         fp = os.path.join(OUT, rel)
         os.makedirs(os.path.dirname(fp), exist_ok=True)
-        open(fp, "w", encoding="utf-8").write(T(txt))
+        out = T(txt)
+        for tok, raw in YUAN_RAW.items():   # 原文逐字保留：T() 後還原未轉換 HTML
+            if tok in out:
+                out = out.replace(tok, raw)
+        open(fp, "w", encoding="utf-8").write(out)
 
     # 靜態資產：原樣複製，不過 T()（JS/CSS 內的簡繁觸發詞須保留簡體，否則簡體輸入匹配唔到）
     ASSETS = os.path.join(ROOT, "assets")
@@ -630,6 +679,13 @@ def main():
             if fn.startswith("."):
                 continue
             shutil.copyfile(os.path.join(ASSETS, fn), os.path.join(OUT, fn))
+    # 底本合集 PDF（下載資源）：ASCII 名避開 T() 簡繁轉換把中文檔名轉壞
+    _pdf_src = os.path.expanduser("~/Downloads/电子书ipa/红楼梦底本合集_120回.pdf")
+    if os.path.exists(_pdf_src):
+        shutil.copyfile(_pdf_src, os.path.join(OUT, "dc-honglou-base-120.pdf"))
+        print("copied base-text pdf -> dc-honglou-base-120.pdf")
+    else:
+        print("WARN: 底本合集 PDF 源不存在:", _pdf_src)
 
     w("index.html", page("紅樓解讀 · 首頁", "紅樓夢逐回解讀框架與索隱解碼目錄", index_body(), "首頁"))
     w("framework.html", page("解讀框架", "四條秩序規則與每回九字段模板", framework_body(), "解讀框架"))

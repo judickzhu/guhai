@@ -117,3 +117,10 @@ ul.chars b{color:var(--accent);margin-right:6px}
   background:var(--tagbg);border:1px solid var(--line);padding:18px 22px;border-radius:10px;margin:14px 0;
   font-family:"Songti SC","STSong","Noto Serif CJK SC","SimSun",serif;font-size:1.08em;line-height:2;
   letter-spacing:.04em}
+/* 底本原文（無標點，含脂批） */
+.yuanwen{background:var(--card);border:1px solid var(--line);border-radius:10px;
+  padding:14px 18px;margin:14px 0;box-shadow:var(--shadow)}
+.yuanwen h2{border-left-color:var(--accent)}
+p.yuan{margin:.4em 0 0;line-height:2.05;letter-spacing:.01em;word-break:break-all;
+  text-align:justify;font-size:1.02em;color:var(--ink)}
+html[data-theme="dark"] .yuanwen{background:var(--card)}
