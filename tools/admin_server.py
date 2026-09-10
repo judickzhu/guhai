@@ -59,28 +59,34 @@ PAGE = """<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="utf-8">
 <button onclick="addManual()">貼入（status=待審）</button></div>
 <div class="card"><button onclick="rebuild()">🔁 重跑生成器 + git 提交推送（上線）</button>
 <button class="ghost" onclick="refresh()">↻ 刷新</button></div>
-<script>
-let E=[];
+<script>let E=[];
 async function j(url,opt){const r=await fetch(url,opt);return r.json();}
 function card(e,i){
- const cls=e.status==='已審'?'card done':'card pend';
- const tag=e.status==='已審'?'<span class="tag tag-g">已審</span>':'<span class="tag tag-w">待審</span>';
- return `<div class="${cls}"><b>${e.q||'(無問題)'}</b> ${tag}
- <p>${(e.a||'').replace(/</g,'&lt;')}</p>
- <p class="dim">ref:${e.ref||'-'} ｜ 來源:${e.source||'-'} ｜ ${e.date||'-'}</p>
- ${e.status==='已審'?'':'<button onclick="rv(${i},\\'approve\\')">✓ 通過（已審）</button><button class="ghost" onclick="rv(${i},\\'reject\\')">✗ 駁回</button>'}</div>`;
+  const cls=e.status==='已審'?'card done':'card pend';
+  const tag=e.status==='已審'?'<span class="tag tag-g">已審</span>':'<span class="tag tag-w">待審</span>';
+  const btns=(e.status==='已審')?'':('<button data-i="'+i+'" data-a="approve">✓ 通過（已審）</button><button class="ghost" data-i="'+i+'" data-a="reject">✗ 駁回</button>');
+  const txt=(e.a||'').replace(/</g,'&lt;');
+  return '<div class="'+cls+'"><b>'+(e.q||'(無問題)')+'</b> '+tag+
+    '<p>'+txt+'</p>'+
+    '<p class="dim">ref:'+(e.ref||'-')+' ｜ 來源:'+(e.source||'-')+' ｜ '+(e.date||'-')+'</p>'+
+    btns+'</div>';
 }
 function render(){
- document.getElementById('pend').innerHTML=E.filter(x=>x.status!=='已審').map(card).join('')||'<p class="dim">無待審</p>';
- document.getElementById('done').innerHTML=E.filter(x=>x.status==='已審').map(card).join('')||'<p class="dim">無已審</p>';
- const h=[...document.querySelectorAll('h2')];h[0].innerHTML='待審（'+E.filter(x=>x.status!=='已審').length+'）';h[1].innerHTML='已審（'+E.filter(x=>x.status==='已審').length+'）';
+  document.getElementById('pend').innerHTML=E.filter(x=>x.status!=='已審').map(card).join('')||'<p class="dim">無待審</p>';
+  document.getElementById('done').innerHTML=E.filter(x=>x.status==='已審').map(card).join('')||'<p class="dim">無已審</p>';
+  const hs=document.querySelectorAll('h2');
+  hs[0].textContent='待審（'+E.filter(x=>x.status!=='已審').length+'）';
+  hs[1].textContent='已審（'+E.filter(x=>x.status==='已審').length+'）';
 }
 async function refresh(){const r=await j('/api/list');E=r.entries;render();}
-async function rv(i,act){const r=await j('/api/review',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({index:i,action:act})});msg(r.ok||r.err);refresh();}
+async function act(btn){const i=parseInt(btn.dataset.i,10),a=btn.dataset.a;
+  const r=await j('/api/review',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({index:i,action:a})});
+  msg(r.ok||r.err);refresh();}
 async function addManual(){const v=document.getElementById('in').value.trim();if(!v){msg('請貼入 JSON');return;}
- const r=await j('/api/manual',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({raw:v})});msg(r.ok||r.err);document.getElementById('in').value='';refresh();}
+  const r=await j('/api/manual',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({raw:v})});msg(r.ok||r.err);document.getElementById('in').value='';refresh();}
 async function rebuild(){const r=await j('/api/rebuild',{method:'POST'});msg(r.ok||r.err);refresh();}
 function msg(s){const m=document.getElementById('msg');m.textContent=s;m.style.display='block';m.style.background=s.startsWith('✓')?'#cde8cd':'#f3d9a4';setTimeout(()=>m.style.display='none',6000);}
+document.addEventListener('click',function(ev){var b=ev.target.closest('button[data-a]');if(b)act(b);});
 refresh();
 </script></body></html>"""
 
