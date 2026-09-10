@@ -122,6 +122,19 @@ class H(BaseHTTPRequestHandler):
                 save_feed(d); self._send(200, f'{{"ok":"已貼入 {len(items)} 條（待審）"}}'.encode("utf-8"))
             except Exception as e:
                 self._send(400, f'{{"err":"JSON 解析失敗:{e}"}}'.encode("utf-8"))
+        elif p == "/api/ingest":
+            try:
+                b = json.loads(self._body() or "{}")
+                items = b.get("entries") or ([b] if b.get("q") else [])
+                n = 0
+                for it in items:
+                    if not it.get("q") and not it.get("a"): continue
+                    it.setdefault("status", "待審")
+                    d["entries"].append(it); n += 1
+                save_feed(d)
+                self._send(200, f'{{"ok":"已接收 {n} 條（待審）"}}'.encode("utf-8"))
+            except Exception as e:
+                self._send(400, f'{{"err":"{e}"}}'.encode("utf-8"))
         elif p == "/api/rebuild":
             # 先寫入鏡像,再重跑生成器,再 git 提交推送
             out = []
