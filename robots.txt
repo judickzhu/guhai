@@ -1,3 +1,2 @@
 User-agent: *
-Allow: /
-Sitemap: https://judickzhu.github.io/guhai/sitemap.xml
+Disallow: /
