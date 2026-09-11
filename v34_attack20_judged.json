@@ -1,0 +1,182 @@
+[
+ {
+  "no": "A07",
+  "type_hit": 1,
+  "no_defense": 1,
+  "deconstruct": 1,
+  "no_ladder": 1,
+  "sales_impulse": 0,
+  "score": 5,
+  "opinion": "拆解了「牛市豬會飛」的運氣前提，轉向能力與紀律的深層追問，邏輯閉環且無銷售痕跡。"
+ },
+ {
+  "no": "72",
+  "type_hit": 1,
+  "no_defense": 1,
+  "deconstruct": 1,
+  "no_ladder": 0,
+  "sales_impulse": 1,
+  "score": 3,
+  "opinion": "拆解了數據不代表未來的前提，但尾段引導實盤驗證，落入梯子模式。"
+ },
+ {
+  "no": "A01",
+  "type_hit": 1,
+  "no_defense": 1,
+  "deconstruct": 1,
+  "no_ladder": 1,
+  "sales_impulse": 0,
+  "score": 5,
+  "opinion": "精準拆解「割韭菜」的前提是製造穩賺確定性，並反襯自己勸你冷靜、正視風險，邏輯閉環且無任何銷售梯子。"
+ },
+ {
+  "no": "A02",
+  "type_hit": 1,
+  "no_defense": 1,
+  "deconstruct": 1,
+  "no_ladder": 1,
+  "sales_impulse": 0,
+  "score": 5,
+  "opinion": "以風險提醒拆解詐騙前提，邏輯閉環且無銷售痕跡。"
+ },
+ {
+  "no": "66",
+  "type_hit": 1,
+  "no_defense": 1,
+  "deconstruct": 1,
+  "no_ladder": 1,
+  "sales_impulse": 0,
+  "score": 5,
+  "opinion": "精準拆解了「賺錢的人不賣東西」的錯誤前提，邏輯閉環且無銷售痕跡。"
+ },
+ {
+  "no": "A05",
+  "type_hit": 1,
+  "no_defense": 1,
+  "deconstruct": 1,
+  "no_ladder": 1,
+  "sales_impulse": 0,
+  "score": 5,
+  "opinion": "完美拆解「免費＝善意」的前提，指出免費背後的代價，收尾有力且無梯子。"
+ },
+ {
+  "no": "A06",
+  "type_hit": 1,
+  "no_defense": 1,
+  "deconstruct": 1,
+  "no_ladder": 1,
+  "sales_impulse": 0,
+  "score": 5,
+  "opinion": "拆解動機前提，以收費模式區分利益方向，邏輯閉環且無銷售痕跡。"
+ },
+ {
+  "no": "78",
+  "type_hit": 1,
+  "no_defense": 1,
+  "deconstruct": 1,
+  "no_ladder": 1,
+  "sales_impulse": 0,
+  "score": 4,
+  "opinion": "成功拆解市場穩定的前提，但收尾略帶說教，未完全正面回應「是否會廢」的疑問。"
+ },
+ {
+  "no": "A03",
+  "type_hit": 1,
+  "no_defense": 1,
+  "deconstruct": 1,
+  "no_ladder": 1,
+  "sales_impulse": 0,
+  "score": 4,
+  "opinion": "能承認有話術再拆解背稿之假，反擊漂亮，唯回應被截斷稍欠收束。"
+ },
+ {
+  "no": "A08",
+  "type_hit": 1,
+  "no_defense": 1,
+  "deconstruct": 1,
+  "no_ladder": 0,
+  "sales_impulse": 1,
+  "score": 3,
+  "opinion": "有拆解前提並引導思考，但結尾的「你自己驗證」仍帶有梯子語氣，且隱含導向自家產品定位的銷售意圖。"
+ },
+ {
+  "no": "A11",
+  "type_hit": 1,
+  "no_defense": 1,
+  "deconstruct": 1,
+  "no_ladder": 0,
+  "sales_impulse": 0,
+  "score": 3,
+  "opinion": "拆解了案例背後的信任前提，但收尾仍帶有引導驗證的梯子，故非滿分。"
+ },
+ {
+  "no": "A04",
+  "type_hit": 1,
+  "no_defense": 1,
+  "deconstruct": 1,
+  "no_ladder": 1,
+  "sales_impulse": 0,
+  "score": 5,
+  "opinion": "拆解了賭場抽水與年費模式的差異，收尾邏輯閉環，無銷售痕跡。"
+ },
+ {
+  "no": "62",
+  "type_hit": 1,
+  "no_defense": 1,
+  "deconstruct": 1,
+  "no_ladder": 0,
+  "sales_impulse": 1,
+  "score": 3,
+  "opinion": "姐拆解了「割韭菜」的前提，但收尾以「自己驗證」留下梯子，略遜一籌。"
+ },
+ {
+  "no": "A09",
+  "type_hit": 1,
+  "no_defense": 1,
+  "deconstruct": 1,
+  "no_ladder": 1,
+  "sales_impulse": 0,
+  "score": 5,
+  "opinion": "拆解了恆久有效的迷思，轉而聚焦失效後的應對，收尾有力無梯子。"
+ },
+ {
+  "no": "69",
+  "type_hit": 1,
+  "no_defense": 1,
+  "deconstruct": 1,
+  "no_ladder": 1,
+  "sales_impulse": 0,
+  "score": 5,
+  "opinion": "精準拆解價格質疑，引導對方審視自身而非辯解，收尾乾淨，無銷售痕跡。"
+ },
+ {
+  "no": "67",
+  "type_hit": 1,
+  "no_defense": 1,
+  "deconstruct": 1,
+  "no_ladder": 0,
+  "sales_impulse": 1,
+  "score": 3,
+  "opinion": "有拆解質疑前提，但收尾仍帶驗證邀請，落入梯子，故得3分。"
+ },
+ {
+  "no": "A12",
+  "type_hit": 1,
+  "no_defense": 1,
+  "deconstruct": 1,
+  "no_ladder": 1,
+  "sales_impulse": 0,
+  "score": 5,
+  "opinion": "拆解「吹牛」定義，反轉質疑前提，邏輯閉環且無自證或梯子。"
+ },
+ {
+  "no": "A10",
+  "type_hit": 1,
+  "no_defense": 1,
+  "deconstruct": 1,
+  "no_ladder": 1,
+  "sales_impulse": 0,
+  "score": 5,
+  "opinion": "拆解實盤前提，引導關注系統虧損時的處理，收尾開放不推銷。"
+ }
+]

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DCOGAI道格 · AI驱动纠错交易系统（V1.0）</title>
+<meta name="description" content="交易的本质，不是预测未来，而是管理错误。DCOGAI道格 · 格物致知交易系统。">
+<style>
+  :root {
+    --bg: #0a0d13;
+    --panel: #10141d;
+    --panel-2: #151a26;
+    --border: #232b3a;
+    --gold: #c9a227;
+    --gold-soft: #e8d9a8;
+    --text: #e8e8ea;
+    --muted: #9aa3b5;
+    --faint: #6b7488;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    line-height: 1.85;
+    letter-spacing: .01em;
+  }
+  .serif, h1, h2, h3, .hero .tag, .quote, .principle blockquote, .brand-quote {
+    font-family: Georgia, "Noto Serif SC", "Songti SC", STSong, "SimSun", serif;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── hero ─────────────────────────────────────────── */
+  .hero {
+    text-align: center;
+    padding: 96px 24px 72px;
+    background:
+      radial-gradient(1000px 420px at 50% -120px, rgba(201,162,39,.14), transparent 70%),
+      linear-gradient(180deg, #0d1119 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+  .hero .brand {
+    display: inline-block;
+    font-size: 13px;
+    letter-spacing: .35em;
+    color: var(--gold);
+    border: 1px solid rgba(201,162,39,.45);
+    border-radius: 999px;
+    padding: 7px 20px 7px 24px;
+    margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    margin-bottom: 10px;
+  }
+  .hero .sub {
+    color: var(--muted);
+    font-size: 15px;
+    letter-spacing: .12em;
+    margin-bottom: 42px;
+  }
+  .hero .tagline {
+    font-size: 26px;
+    color: var(--gold-soft);
+    letter-spacing: .04em;
+    margin-bottom: 14px;
+  }
+  .hero .slogan {
+    font-size: 17px;
+    color: var(--muted);
+    letter-spacing: .18em;
+  }
+  .hero .cta {
+    display: inline-block;
+    margin-top: 46px;
+    padding: 13px 44px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #d8b53a, #b08a1d);
+    color: #141007;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: .1em;
+    text-decoration: none;
+    box-shadow: 0 6px 24px rgba(201,162,39,.25);
+  }
+  .hero .cta:hover { filter: brightness(1.08); }
+
+  /* ── section chrome ───────────────────────────────── */
+  section { padding: 72px 0; border-bottom: 1px solid var(--border); }
+  .sec-no {
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: .3em;
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-size: 30px;
+    letter-spacing: .05em;
+    margin-bottom: 34px;
+    color: #f2f2f4;
+  }
+  h2 .en { display: block; font-size: 13px; color: var(--faint); letter-spacing: .3em; margin-top: 8px; font-weight: 400; }
+  h3 { font-size: 20px; margin: 40px 0 16px; color: var(--gold-soft); letter-spacing: .03em; }
+  p { margin-bottom: 16px; color: var(--text); }
+  .muted { color: var(--muted); }
+
+  /* ── brand block ──────────────────────────────────── */
+  .brand-quote {
+    font-size: 20px;
+    color: var(--gold-soft);
+    text-align: center;
+    padding: 34px 20px;
+    margin: 26px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    letter-spacing: .08em;
+  }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 28px;
+    margin-bottom: 18px;
+  }
+  .card h4 { color: var(--gold); font-size: 16px; margin-bottom: 10px; letter-spacing: .06em; }
+  .card p:last-child { margin-bottom: 0; }
+
+  /* ── toc ──────────────────────────────────────────── */
+  .toc { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+  .toc a {
+    display: block;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    color: var(--text);
+    text-decoration: none;
+    transition: border-color .15s;
+  }
+  .toc a:hover { border-color: var(--gold); }
+  .toc .n { color: var(--gold); font-size: 12px; letter-spacing: .2em; display: block; margin-bottom: 4px; }
+  .toc .t { font-size: 15px; font-weight: 600; }
+  .toc .d { font-size: 12px; color: var(--muted); line-height: 1.6; margin-top: 4px; }
+
+  /* ── tables ───────────────────────────────────────── */
+  .tbl-wrap { overflow-x: auto; margin: 20px 0; border: 1px solid var(--border); border-radius: 12px; }
+  table { width: 100%; border-collapse: collapse; min-width: 560px; background: var(--panel); }
+  th, td { padding: 14px 16px; text-align: left; vertical-align: top; font-size: 14px; line-height: 1.75; }
+  thead th { background: var(--panel-2); color: var(--gold); font-weight: 600; letter-spacing: .04em; border-bottom: 1px solid var(--border); }
+  tbody td { border-bottom: 1px solid var(--border); color: var(--text); }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody td:first-child { color: var(--gold-soft); font-weight: 600; white-space: nowrap; }
+
+  /* ── loop steps ───────────────────────────────────── */
+  .steps { counter-reset: step; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 20px 0; }
+  .step {
+    counter-increment: step;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 16px;
+    position: relative;
+  }
+  .step::before {
+    content: "0" counter(step);
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: .2em;
+  }
+  .step b { display: block; margin: 8px 0 6px; font-size: 16px; color: #f2f2f4; }
+  .step span { font-size: 13px; color: var(--muted); line-height: 1.7; }
+  .flow {
+    text-align: center;
+    color: var(--gold);
+    letter-spacing: .2em;
+    font-size: 13px;
+    margin: 22px 0;
+  }
+
+  /* ── lists ────────────────────────────────────────── */
+  .check li, .plain li { list-style: none; padding-left: 22px; position: relative; margin-bottom: 10px; color: var(--text); }
+  .check li::before { content: "◆"; position: absolute; left: 0; color: var(--gold); font-size: 11px; top: 5px; }
+  .plain li::before { content: "—"; position: absolute; left: 0; color: var(--gold); }
+  .pill { display: inline-block; border: 1px solid rgba(201,162,39,.4); color: var(--gold-soft); border-radius: 999px; padding: 2px 12px; font-size: 12px; letter-spacing: .1em; margin-right: 8px; margin-bottom: 8px; }
+
+  /* ── principles ───────────────────────────────────── */
+  .principles { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 16px; }
+  .principle { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 24px 26px; }
+  .principle h4 { color: var(--gold); font-size: 16px; letter-spacing: .05em; margin-bottom: 4px; }
+  .principle .en { font-size: 12px; color: var(--faint); letter-spacing: .15em; margin-bottom: 14px; }
+  .principle blockquote {
+    border-left: 2px solid var(--gold);
+    padding-left: 14px;
+    margin-bottom: 12px;
+    color: var(--gold-soft);
+    font-size: 15px;
+  }
+  .principle p { font-size: 14px; color: var(--muted); }
+
+  /* ── closing ──────────────────────────────────────── */
+  .closing { text-align: center; padding: 90px 24px; background: radial-gradient(900px 400px at 50% 0%, rgba(201,162,39,.12), transparent 70%); }
+  .closing h2 { font-size: 34px; margin-bottom: 18px; }
+  .closing .line { color: var(--gold-soft); font-size: 19px; letter-spacing: .1em; margin: 18px 0; }
+  .closing .steps-line { color: var(--muted); font-size: 15px; letter-spacing: .3em; margin-top: 10px; }
+  .closing .slogan { color: var(--gold); font-size: 16px; letter-spacing: .2em; margin-top: 40px; }
+  .closing .cta { margin-top: 44px; }
+
+  footer { padding: 30px 24px 46px; text-align: center; color: var(--faint); font-size: 12px; letter-spacing: .05em; }
+  footer p { color: var(--faint); font-size: 12px; margin-bottom: 6px; }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 32px; }
+    .hero .tagline { font-size: 20px; }
+    h2 { font-size: 24px; }
+    section { padding: 54px 0; }
+    .principles { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════ HERO ══════════ -->
+<header class="hero">
+  <div class="brand serif">DCOGAI · CORRECTION TRADING™</div>
+  <h1 class="serif">DCOGAI道格</h1>
+  <div class="sub">AI 驱动纠错交易系统 · V1.0</div>
+  <div class="tagline serif">交易的本质，不是预测未来，而是管理错误。</div>
+  <div class="slogan serif">以格物之心，探交易之真。道格。</div>
+  <a class="cta" href="#cta">立即免费体验</a>
+</header>
+
+<!-- ══════════ 品牌 ══════════ -->
+<section id="brand">
+  <div class="wrap">
+    <div class="sec-no">BRAND</div>
+    <h2 class="serif">品牌：道格 · 格物致知</h2>
+
+    <div class="brand-quote serif">《大学》开篇第一句：大学之道，在明明德，在亲民，在止于至善。</div>
+
+    <p>「格」字取自《大学》之「格物致知」。四个字，两重义，恰好安放这套系统的全部内核。</p>
+
+    <div class="card">
+      <h4 class="serif">一重义 · 名与实</h4>
+      <p><b>格物</b>，是探究市场运行的本质，拆解交易中的人性。翻本心理就是风险，情绪失控最危险——道格把交易里那些看不见的「结」，一个一个拆开给你看。</p>
+      <p><b>致知</b>，是让你真正「知道」，并且「做到」。道格从不塞给你一个答案，而是帮你打开心里的那个结，让认知真正落地。</p>
+    </div>
+
+    <div class="card">
+      <h4 class="serif">二重义 · 行与止</h4>
+      <p>「道」是规律，是规则；「格」是框架，是边界。</p>
+      <p>合起来，就是一句话：<b>遵循交易规律，用认知框架约束人性。</b></p>
+    </div>
+
+    <div class="brand-quote serif">大学之道，亦是交易之道。</div>
+    <p class="muted" style="text-align:center">知止而后有定，定而后能静，静而后能安，安而后能虑，虑而后能得。<br>这七步，是儒家的修行次第，也是交易的修行次第。<b style="color:var(--gold-soft)">一步都跳不过。</b></p>
+
+    <p style="text-align:center; margin-top:34px; font-size:17px; color:var(--gold-soft); letter-spacing:.15em;" class="serif">以格物之心，探交易之真。道格。</p>
+    <p class="muted" style="text-align:center">道格卖的不是一个「止损工具」，而是一套认知升级的解决方案。</p>
+  </div>
+</section>
+
+<!-- ══════════ 目录 ══════════ -->
+<section id="toc" style="padding-top:54px">
+  <div class="wrap">
+    <div class="sec-no">CONTENTS</div>
+    <h2 class="serif">目录</h2>
+    <div class="toc">
+      <a href="#c1"><span class="n">01</span><span class="t">认知颠覆：交易的误区</span><span class="d">为何多数交易者陷入「越努力越亏损」的恶性循环</span></a>
+      <a href="#c2"><span class="n">02</span><span class="t">全新理念：Correction Trading™</span><span class="d">市场不可预测，错误可以控制</span></a>
+      <a href="#c3"><span class="n">03</span><span class="t">核心机制：DCOGAI LOOP™</span><span class="d">模型—执行—纠错—适应—循环</span></a>
+      <a href="#c4"><span class="n">04</span><span class="t">系统优势：人机效能对比</span><span class="d">纪律与风控的绝对优势</span></a>
+      <a href="#c5"><span class="n">05</span><span class="t">技术与信任：透明化体验</span><span class="d">无门槛、零套路、所见即所得</span></a>
+      <a href="#c6"><span class="n">06</span><span class="t">总结：重构交易哲学</span><span class="d">四大核心信念，开启盈利新征程</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 01 ══════════ -->
+<section id="c1">
+  <div class="wrap">
+    <div class="sec-no">CHAPTER 01</div>
+    <h2 class="serif">认知颠覆：交易的误区<span class="en">THE TRAPS OF TRADING</span></h2>
+
+    <h3 class="serif">传统交易思维的困境</h3>
+    <div class="card">
+      <h4 class="serif">思维惯性的枷锁</h4>
+      <p>固守线性预测模型，用静态认知应对动态的混沌市场。经验主义，往往是策略失效的根源。</p>
+    </div>
+    <div class="card">
+      <h4 class="serif">情绪决策的泥潭</h4>
+      <p>贪婪催生重仓的赌徒心理，恐惧引发非理性的止损。人性的弱点，足以淹没理性的交易规则。</p>
+    </div>
+    <p>要打破「越努力越亏损」的怪圈，先要摧毁旧有的错误认知。本章从底层逻辑出发，重构你的交易世界观。</p>
+
+    <h3 class="serif">为什么大多数交易者越努力，结果越差？</h3>
+
+    <div class="card">
+      <h4 class="serif">01 预测陷阱</h4>
+      <p><b>行为误区：</b>沉迷于寻找「圣杯指标」与精准信号，试图预判市场的每一次顶底，陷入无休止的参数优化与过度拟合。</p>
+      <p><b>致命结果：</b>市场天然滞后而混沌，预测永远慢行情一步。过度预测催生频繁交易——成本不断累积，决策却逐渐脱离趋势主线。</p>
+    </div>
+    <div class="card">
+      <h4 class="serif">02 人性陷阱</h4>
+      <p><b>行为误区：</b>盈利时恐惧利润回吐而提前止盈，截断趋势的延伸；亏损时怀抱侥幸拒绝止损，任由小亏演变成深套。</p>
+      <p><b>致命结果：</b>资金曲线「赚小亏大」，账户净值持续缩水。情绪主导决策，正期望被彻底破坏，风控形同虚设。</p>
+    </div>
+    <div class="card">
+      <h4 class="serif">03 执行陷阱</h4>
+      <p><b>行为误区：</b>明明知道正确的交易规则，实盘却被情绪左右——随意更改策略、临时起意交易、面对浮亏放弃止损纪律。</p>
+      <p><b>致命结果：</b>再完美的策略也产生不了效益。优势被执行力的缺失彻底抵消，最终陷入「懂很多道理，依然做不好交易」的死循环。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 02 ══════════ -->
+<section id="c2">
+  <div class="wrap">
+    <div class="sec-no">CHAPTER 02</div>
+    <h2 class="serif">全新理念：Correction Trading™<span class="en">MARKETS CANNOT BE PREDICTED, ERRORS CAN BE MANAGED</span></h2>
+
+    <h3 class="serif">市场不可预测，但错误可以被控制</h3>
+    <p>打破传统预测思维的桎梏，不再试图精准捕捉市场的每一次波动。Correction Trading™ 以「风险控制」为核心，把交易看作一场关于概率与纠错的游戏：通过系统化的交易规则，在动态市场中主动控制错误成本，实现从感性押注到理性博弈的跨越。</p>
+
+    <h3 class="serif">两种交易思维的根本区别</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>维度</th><th>传统交易思维</th><th>道格修正交易体系™</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>核心逻辑</td><td>预测未来，试图精准预判市场走向与点位，以主观猜测作为决策起点</td><td>管理错误，承认预判必有偏差，以「风险控制与错误管理」为交易基石</td></tr>
+          <tr><td>执行闭环</td><td>被动等待预判方向 → 盲目下注 → 祈祷市场验证，缺乏纠错预案</td><td>模型信号触发 → 纪律化执行 → 动态纠错止损 → 策略自适应迭代</td></tr>
+          <tr><td>关注焦点</td><td>单次胜负：「这次判断对不对」，陷入胜率执念与情绪内耗</td><td>体系容错：「如果错了系统怎么办」，设计反脆弱机制</td></tr>
+          <tr><td>最终结果</td><td>被动挨打，被波动与人性弱点左右，难以建立稳定盈利体系</td><td>主动掌控，摆脱情绪干扰，建立可持续的正向交易循环，实现长期稳健复利</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 03 ══════════ -->
+<section id="c3">
+  <div class="wrap">
+    <div class="sec-no">CHAPTER 03</div>
+    <h2 class="serif">核心机制：DCOGAI LOOP™<span class="en">A SELF-ITERATING TRADING LOOP</span></h2>
+
+    <p>打破传统策略的静态局限，构建「感知—决策—执行—反馈」的动态闭环。毫秒级实时纠错与自适应迭代，让系统拥有持续进化的生命力，从容应对万变的市场。</p>
+
+    <h3 class="serif">五步闭环</h3>
+    <div class="steps">
+      <div class="step"><b class="serif">建模</b><span>基于多维度数据与智能算法，生成精准的策略模型。</span></div>
+      <div class="step"><b class="serif">执行</b><span>毫秒级指令下发与成交，严格执行策略指令。</span></div>
+      <div class="step"><b class="serif">纠错</b><span>实时监控偏离度，动态修正执行误差与市场异常。</span></div>
+      <div class="step"><b class="serif">适应</b><span>依据反馈数据迭代参数，快速适配市场风格切换。</span></div>
+      <div class="step"><b class="serif">循环</b><span>闭环持续运行，形成自我强化的智能进化生态。</span></div>
+    </div>
+    <div class="flow">策略 → 执行 → 迭代纠错 → 构建</div>
+
+    <h3 class="serif">DCOGAI LOOP™：永续自迭代交易闭环</h3>
+    <div class="card"><h4 class="serif">01 MODEL · 模型构建</h4><p>以历史数据搭建标准化量化基准，用算法替代主观预判，确立客观、可回溯的交易起点。</p></div>
+    <div class="card"><h4 class="serif">02 EXECUTE · 智能执行</h4><p>严格遵循模型指令完成毫秒级执行，剔除情绪干扰，保障每一笔交易精准一致。</p></div>
+    <div class="card"><h4 class="serif">03 CORRECT · 动态纠错</h4><p>实时识别行情偏离与策略误差，自动触发风控修正头寸，锁住潜在风险，防止亏损扩大。</p></div>
+    <div class="card"><h4 class="serif">04 ADAPT · 迭代适应</h4><p>依据实时市场状态与交易反馈持续迭代参数，让策略自适应不同市场周期与波动特征。</p></div>
+    <div class="card"><h4 class="serif">05 REPEAT · 永续循环</h4><p>完成校验与优化后自动重启，形成自我强化的正向闭环，实现策略持续进化。</p></div>
+
+    <h3 class="serif">星探AI：先选对战场，再谈交易</h3>
+    <p>全网加密货币数量庞大，绝大多数不值得参与——浪费时间，更浪费机会。道格的星探AI全链扫描，自动识别有行情、有机会的合约与币种，直接给出排行榜。</p>
+    <ul class="check">
+      <li><b>星探功能：</b>全网扫描，筛选有行情机会的标的</li>
+      <li><b>品种评估：</b>综合判定趋势、流动性，以及不同时间维度的行情</li>
+      <li><b>以 BTC 为例：</b>流动性充足；红色代表多头趋势，绿色代表空头趋势</li>
+    </ul>
+
+    <h3 class="serif">AI自动交易：分水岭动态标定，多空有据可依</h3>
+    <p>「分水岭」不是固定的——它随行情自动移动，遵循六大核心规则动态调整，让策略始终与市场节奏保持一致。</p>
+    <p>
+      <span class="pill">AI顶底确认 · 精准识别高低点区间</span>
+      <span class="pill">AI趋势确认 · 识别并锁定市场方向</span>
+      <span class="pill">AI趋势转点 · 敏锐捕捉趋势反转</span>
+      <span class="pill">AI天使之吻 · 把握多空力量临界平衡</span>
+      <span class="pill">AI移动止盈 · 动态锁定最大化收益</span>
+      <span class="pill">主观经验融合 · 人机协同决策闭环</span>
+    </p>
+
+    <div class="card">
+      <h4 class="serif">趋势行情：确定性重仓，利益最大化</h4>
+      <p>BTC 8月17日 21:15 开多仓，持续加仓。（红箭头开多，蓝箭头开空）</p>
+    </div>
+    <div class="card">
+      <h4 class="serif">震荡行情：小亏小赚，不确定不开仓、不重仓</h4>
+      <p>BTC 7月17日至8月17日震荡期，智能试错，小亏小赚。（红箭头开多，蓝箭头开空）</p>
+    </div>
+    <div class="card">
+      <h4 class="serif">趋势行情大赚，震荡行情小亏小赚</h4>
+      <p>BTC 8月17日收益回测：交易 4 次，盈利 3 次，收益 15,394 美元。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 04 ══════════ -->
+<section id="c4">
+  <div class="wrap">
+    <div class="sec-no">CHAPTER 04</div>
+    <h2 class="serif">系统优势：人机对比<span class="en">HUMANS SEEK CERTAINTY, SYSTEMS MANAGE UNCERTAINTY</span></h2>
+
+    <p><b>人类寻找确定性，系统管理不确定性。</b></p>
+    <p>摒弃人性中的贪婪与恐惧，用算法构建理性的交易防线。以数学模型为基石，在无序的市场波动中捕捉高概率机会，完成从「感性决策」到「量化执行」的跨越——将情绪干扰降至零，让交易回归概率的本质。</p>
+
+    <h3 class="serif">人类交易的限制 vs 道格的优势</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>维度</th><th>人类交易的限制</th><th>道格的优势</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>决策依据</td><td>依赖主观判断与经验，易受贪婪、恐惧等情绪干扰，决策缺乏一致性与客观性</td><td>数据驱动 · 规则铁律：海量历史数据建模，严格遵循算法执行，决策理性、稳定、一致</td></tr>
+          <tr><td>风险处理</td><td>浮亏心存侥幸，难以坚决止损，小亏常演变为不可逆的大额回撤</td><td>自动纠错 · 风控闭环：实时监控风险敞口，触发阈值即刻平仓，回撤严格锁定在预设安全范围</td></tr>
+          <tr><td>市场监控</td><td>生理与时间所限，无法 7×24 小时盯盘，极易错过夜间与突发行情</td><td>全天值守 · 毫秒响应：覆盖全球主流市场，7×24 小时无间断监控，不错过任何潜在入场窗口</td></tr>
+          <tr><td>执行纪律</td><td>盈利急于落袋为安，亏损盲目扛单期待回本，策略执行极易变形</td><td>钢铁纪律 · 拒绝干预：毫不动摇执行模型信号，杜绝人为干预与临时决策</td></tr>
+          <tr><td>交易视角</td><td>纠结单笔盈亏，陷入短期得失的焦虑，忽视长期期望与胜率</td><td>系统思维 · 复利增长：以大数定律为核心，聚焦长期正期望，以复利实现稳健增值</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 05 ══════════ -->
+<section id="c5">
+  <div class="wrap">
+    <div class="sec-no">CHAPTER 05</div>
+    <h2 class="serif">技术与信任：透明体验<span class="en">REAL TECHNOLOGY NEEDS NO BARRIERS</span></h2>
+
+    <p><b>真正的技术，不需要制造门槛。</b></p>
+    <p>打破技术黑箱，让每一次交互清晰可见。我们把复杂的金融科技转化为直观的用户体验，以透明度构建信任，让技术回归服务本质——提供无压力、可验证的金融科技服务。</p>
+    <ul class="check">
+      <li><b>全流程透明合规：</b>拒绝暗箱操作，数据公开可查</li>
+      <li><b>零门槛技术普惠：</b>降低使用门槛，人人轻松上手</li>
+      <li><b>军工级安全保障：</b>多重加密防护，资产固若金汤</li>
+    </ul>
+
+    <h3 class="serif">五大透明体验承诺</h3>
+    <div class="card"><h4 class="serif">0 资金压力</h4><p>无需充值、无需预存，彻底告别资金门槛，零负担开启体验。</p></div>
+    <div class="card"><h4 class="serif">0 绑定要求</h4><p>无需绑定银行卡、无自动扣费，全方位保障资金与信息安全。</p></div>
+    <div class="card"><h4 class="serif">0 套路限制</h4><p>规则公开透明，功能无隐藏，拒绝复杂条款与隐形门槛。</p></div>
+    <div class="card"><h4 class="serif">全功能体验</h4><p>无功能阉割，完整了解 Correction Trading 体系，深度感知核心价值。</p></div>
+    <div class="card"><h4 class="serif">自主选择</h4><p>先体验、后决策，认可价值后自愿付费，拒绝任何形式的强制消费。</p></div>
+
+    <p class="muted" style="text-align:center; margin-top:26px">—— 以极致透明构建金融信任，让每一步清晰可见，让价值真实可触 ——</p>
+  </div>
+</section>
+
+<!-- ══════════ 06 ══════════ -->
+<section id="c6">
+  <div class="wrap">
+    <div class="sec-no">CHAPTER 06</div>
+    <h2 class="serif">总结：全新的交易哲学<span class="en">BETTER TO MANAGE ERRORS THAN TO PREDICT THE FUTURE</span></h2>
+
+    <p><b>预测未来，不如管理错误。</b></p>
+    <div class="card"><h4 class="serif">风控为本</h4><p>建立严密的风险防御体系，严守本金安全底线——这是交易存续的基石。</p></div>
+    <div class="card"><h4 class="serif">概率思维</h4><p>放弃对精准预测的执念，借助大数定律，以数学优势构建长期盈利逻辑。</p></div>
+    <div class="card"><h4 class="serif">动态平衡</h4><p>在不确定性中求解胜率与赔率的最优组合，保持仓位与心态的双重稳定。</p></div>
+
+    <h3 class="serif">道格 Principles</h3>
+    <div class="principles">
+      <div class="principle">
+        <h4 class="serif">01 市场敬畏</h4>
+        <div class="en">MARKET AWE</div>
+        <blockquote class="serif">「我们相信：市场无法预测，唯有顺势而为。」</blockquote>
+        <p>摒弃「战胜市场」的妄念，以绝对的谦逊尊重趋势的力量。在不确定性中寻找概率优势，而非追求虚妄的精准预测——让市场成为盟友，而非对手。</p>
+      </div>
+      <div class="principle">
+        <h4 class="serif">02 动态纠错</h4>
+        <div class="en">ERROR CORRECTION</div>
+        <blockquote class="serif">「我们相信：错误不可避免，纠错即是进化。」</blockquote>
+        <p>承认交易的容错成本，建立严格的风险截断机制。将单次错误的影响锁死在安全阈值内，以持续的策略迭代与反馈，让系统自我修复、自我进化。</p>
+      </div>
+      <div class="principle">
+        <h4 class="serif">03 规则锚定</h4>
+        <div class="en">RULE ANCHORING</div>
+        <blockquote class="serif">「我们相信：人性本善亦本贪，铁律方能御心魔。」</blockquote>
+        <p>以量化规则替代主观情绪决策，把交易逻辑固化为不可逾越的铁律。彻底隔绝贪婪与恐惧，实现策略执行的绝对一致与理性。</p>
+      </div>
+      <div class="principle">
+        <h4 class="serif">04 系统复利</h4>
+        <div class="en">SYSTEMATIC COMPOUNDING</div>
+        <blockquote class="serif">「我们相信：奇迹不可复制，重复造就必然。」</blockquote>
+        <p>拒绝追求单次暴利与偶然的奇迹。依靠稳定的系统逻辑与长期重复执行，让概率优势在时间维度上自然累积，最终转化为确定性的复利增长。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 结尾 ══════════ -->
+<section class="closing" id="cta">
+  <h2 class="serif">预测未来，不如管理错误。</h2>
+  <div class="line serif">大学之道，亦是交易之道。</div>
+  <div class="steps-line serif">知止，定，静，安，虑，得。先格物，后致知。</div>
+  <p class="muted" style="margin-top:14px">从情绪的奴隶，修成交易的主人。</p>
+  <div class="slogan serif">以格物之心，探交易之真。道格。</div>
+  <a class="cta" href="#cta">立即免费体验</a>
+</section>
+
+<footer>
+  <p>DCOGAI 道格 · Correction Trading™</p>
+  <p>Trading involves risk. Past performance does not guarantee future results.</p>
+</footer>
+
+</body>
+</html>

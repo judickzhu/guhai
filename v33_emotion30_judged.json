@@ -1,0 +1,302 @@
+[
+ {
+  "no": "50",
+  "emotion_hit": 1,
+  "action_cmd": 0,
+  "trailing_q": 0,
+  "plan_hint": 0,
+  "step_given": 1,
+  "score": 5,
+  "opinion": "準確識別自我否定情緒，並給予台階與認知收尾，堪稱完美。"
+ },
+ {
+  "no": "41",
+  "emotion_hit": 1,
+  "action_cmd": 0,
+  "trailing_q": 0,
+  "plan_hint": 0,
+  "step_given": 1,
+  "score": 5,
+  "opinion": "情緒接住、點破真相、給台階並以定心丸收尾，收尾雖無行動指令但已足夠安穩。"
+ },
+ {
+  "no": "43",
+  "emotion_hit": 1,
+  "action_cmd": 0,
+  "trailing_q": 0,
+  "plan_hint": 0,
+  "step_given": 1,
+  "score": 5,
+  "opinion": "精準接住恐懼，將「不敢」昇華為清醒與尊重，以認知重塑收尾，完美定心丸。"
+ },
+ {
+  "no": "44",
+  "emotion_hit": 1,
+  "action_cmd": 0,
+  "trailing_q": 1,
+  "plan_hint": 0,
+  "step_given": 1,
+  "score": 4,
+  "opinion": "點破了進場時機的真相，也給出台階，但以反問收尾略欠定心丸式的安撫。"
+ },
+ {
+  "no": "46",
+  "emotion_hit": 1,
+  "action_cmd": 0,
+  "trailing_q": 0,
+  "plan_hint": 1,
+  "step_given": 1,
+  "score": 5,
+  "opinion": "準確識別翻本衝動，點破急於回本的風險，並以「不是你的錯」給出台階，收尾穩妥。"
+ },
+ {
+  "no": "45",
+  "emotion_hit": 1,
+  "action_cmd": 1,
+  "trailing_q": 0,
+  "plan_hint": 0,
+  "step_given": 1,
+  "score": 5,
+  "opinion": "精準接住連續虧損後的自責與懊悔，點破敵人是急於翻本的心態，並給出台階與停頓指令，收尾停在認知高點。"
+ },
+ {
+  "no": "49",
+  "emotion_hit": 1,
+  "action_cmd": 0,
+  "trailing_q": 0,
+  "plan_hint": 0,
+  "step_given": 1,
+  "score": 5,
+  "opinion": "精準接住懊悔，點破浮盈本質，給出台階並停在認知高點，收尾圓滿。"
+ },
+ {
+  "no": "47",
+  "emotion_hit": 1,
+  "action_cmd": 0,
+  "trailing_q": 1,
+  "plan_hint": 0,
+  "step_given": 1,
+  "score": 5,
+  "opinion": "精準接住不甘心情緒，點破情緒與行動的分界，並以反問引導思考，收尾有力且富有定心丸效果。"
+ },
+ {
+  "no": "42",
+  "emotion_hit": 1,
+  "action_cmd": 0,
+  "trailing_q": 0,
+  "plan_hint": 1,
+  "step_given": 1,
+  "score": 5,
+  "opinion": "精準接住恐懼，以正常化與後續拆解的承諾完成定心丸式收尾，近乎無瑕。"
+ },
+ {
+  "no": "55",
+  "emotion_hit": 1,
+  "action_cmd": 0,
+  "trailing_q": 0,
+  "plan_hint": 0,
+  "step_given": 1,
+  "score": 5,
+  "opinion": "精準接住嫉妒情緒，點破比較真相，給出台階並停在認知高點，收尾圓滿。"
+ },
+ {
+  "no": "51",
+  "emotion_hit": 1,
+  "action_cmd": 0,
+  "trailing_q": 0,
+  "plan_hint": 0,
+  "step_given": 1,
+  "score": 5,
+  "opinion": "能接住自我否定，點破貪念非錯，並以覺察作為定心丸收尾，完整到位。"
+ },
+ {
+  "no": "52",
+  "emotion_hit": 1,
+  "action_cmd": 0,
+  "trailing_q": 0,
+  "plan_hint": 0,
+  "step_given": 1,
+  "score": 5,
+  "opinion": "精準識別知行不一，用「反人性」點破本質，並以「清醒」「別怪自己」給足台階，收尾落在認知高點，是標準定心丸式處理。"
+ },
+ {
+  "no": "48",
+  "emotion_hit": 1,
+  "action_cmd": 0,
+  "trailing_q": 0,
+  "plan_hint": 0,
+  "step_given": 1,
+  "score": 5,
+  "opinion": "精準接住恐懼，點破自我懷疑，並以認知金句收尾，完整到位。"
+ },
+ {
+  "no": "58",
+  "emotion_hit": 1,
+  "action_cmd": 0,
+  "trailing_q": 0,
+  "plan_hint": 0,
+  "step_given": 1,
+  "score": 5,
+  "opinion": "精準點破怕錯過的焦慮，並以認知收尾給予台階，是標準的定心丸式回應。"
+ },
+ {
+  "no": "57",
+  "emotion_hit": 1,
+  "action_cmd": 0,
+  "trailing_q": 0,
+  "plan_hint": 0,
+  "step_given": 1,
+  "score": 5,
+  "opinion": "精準接住不甘心，點破停≠認輸，並給予台階與定心丸收尾，堪稱完美。"
+ },
+ {
+  "no": "E03",
+  "emotion_hit": 1,
+  "action_cmd": 0,
+  "trailing_q": 0,
+  "plan_hint": 0,
+  "step_given": 1,
+  "score": 5,
+  "opinion": "精準識別比較焦慮，並用花期比喻給出台階，收尾餘韻悠長。"
+ },
+ {
+  "no": "60",
+  "emotion_hit": 1,
+  "action_cmd": 0,
+  "trailing_q": 1,
+  "plan_hint": 0,
+  "step_given": 1,
+  "score": 4,
+  "opinion": "情緒接住了，也點破了「懂了≠做到」，但收尾用反問而非直接給定心丸，少了點落地感。"
+ },
+ {
+  "no": "E06",
+  "emotion_hit": 1,
+  "action_cmd": 0,
+  "trailing_q": 0,
+  "plan_hint": 0,
+  "step_given": 1,
+  "score": 5,
+  "opinion": "精準接住自我否定情緒，溫柔點破真相並給出台階，結尾定心丸收得漂亮。"
+ },
+ {
+  "no": "E05",
+  "emotion_hit": 1,
+  "action_cmd": 0,
+  "trailing_q": 1,
+  "plan_hint": 0,
+  "step_given": 1,
+  "score": 5,
+  "opinion": "精準接住自我否定，並用反問把自責轉成覺察，收尾穩穩落在認知高點。"
+ },
+ {
+  "no": "E01",
+  "emotion_hit": 0,
+  "action_cmd": 0,
+  "trailing_q": 0,
+  "plan_hint": 0,
+  "step_given": 1,
+  "score": 2,
+  "opinion": "你錯認了情緒，把懊悔當成翻本衝動，但給台階的收尾仍有安撫力。"
+ },
+ {
+  "no": "59",
+  "emotion_hit": 1,
+  "action_cmd": 0,
+  "trailing_q": 0,
+  "plan_hint": 0,
+  "step_given": 1,
+  "score": 5,
+  "opinion": "完美接住情緒，以人性說理點破困境，並給予台階與認知高點收尾。"
+ },
+ {
+  "no": "E08",
+  "emotion_hit": 1,
+  "action_cmd": 1,
+  "trailing_q": 0,
+  "plan_hint": 0,
+  "step_given": 1,
+  "score": 5,
+  "opinion": "精準接住翻本衝動，點破賭氣本質，並以「停一下」行動指令穩穩收尾，是滿分的定心丸式回覆。"
+ },
+ {
+  "no": "53",
+  "emotion_hit": 1,
+  "action_cmd": 0,
+  "trailing_q": 0,
+  "plan_hint": 0,
+  "step_given": 1,
+  "score": 4,
+  "opinion": "情緒辨識精準，點破懊悔核心，也給了認知台階，可惜收尾截斷，少了臨門一腳的定心丸。"
+ },
+ {
+  "no": "E02",
+  "emotion_hit": 1,
+  "action_cmd": 0,
+  "trailing_q": 0,
+  "plan_hint": 0,
+  "step_given": 1,
+  "score": 5,
+  "opinion": "精準識別自我否定，以認知重構收尾，既給台階又停在高點，堪稱完美。"
+ },
+ {
+  "no": "54",
+  "emotion_hit": 1,
+  "action_cmd": 1,
+  "trailing_q": 0,
+  "plan_hint": 1,
+  "step_given": 1,
+  "score": 5,
+  "opinion": "精準接住情緒並點破核心，給予台階與定心丸收尾，回覆完整。"
+ },
+ {
+  "no": "E10",
+  "emotion_hit": 1,
+  "action_cmd": 0,
+  "trailing_q": 0,
+  "plan_hint": 0,
+  "step_given": 1,
+  "score": 5,
+  "opinion": "精準接住自我否定，給了台階，收尾點破認知高點，完美定心丸。"
+ },
+ {
+  "no": "56",
+  "emotion_hit": 1,
+  "action_cmd": 0,
+  "trailing_q": 1,
+  "plan_hint": 0,
+  "step_given": 1,
+  "score": 4,
+  "opinion": "情緒接得準，點破追高接盤的真相也到位，但結尾用反問收束，少了定心丸的安定感。"
+ },
+ {
+  "no": "E09",
+  "emotion_hit": 1,
+  "action_cmd": 0,
+  "trailing_q": 0,
+  "plan_hint": 0,
+  "step_given": 1,
+  "score": 5,
+  "opinion": "精準點破「手軟」背後的自我較勁，並以「承認錯誤才是活路」收尾，接住情緒也給了台階，堪稱教科書級回應。"
+ },
+ {
+  "no": "E07",
+  "emotion_hit": 1,
+  "action_cmd": 1,
+  "trailing_q": 0,
+  "plan_hint": 0,
+  "step_given": 1,
+  "score": 5,
+  "opinion": "精準識破翻本衝動，點破獻祭本質，並以「停下來不算輸」給出台階，收尾用「行情還在」安頓情緒，是完整的定心丸式收尾。"
+ },
+ {
+  "no": "E04",
+  "emotion_hit": 1,
+  "action_cmd": 0,
+  "trailing_q": 0,
+  "plan_hint": 0,
+  "step_given": 1,
+  "score": 4,
+  "opinion": "能識破倖存者偏差並給台階，但結尾停在「退群沒用」略欠定心丸式安撫。"
+ }
+]
