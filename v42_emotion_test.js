@@ -3,15 +3,15 @@
 const fs = require('fs');
 const https = require('https');
 const KEY = process.env.DEEPSEEK_KEY || 'sk-teamo-dffbb80d91b54f308cce7b0ecb17b7a6b51f41b14d701db8';
-const BASE = __dirname.endsWith('网站') ? __dirname : __dirname + '/网站';
+const BASE = __dirname;
 const PROMPT = fs.readFileSync(BASE + '/v31_prompt.txt', 'utf8');
 const DATA = JSON.parse(fs.readFileSync(BASE + '/v42_emotion_test.json', 'utf8'));
 
 function call(messages, max_tokens = 1600, temperature = 0.7) {
   return new Promise((resolve, reject) => {
-    const body = JSON.stringify({ model: 'deepseek-v4-flash-free', messages, max_tokens, temperature, stream: false });
+    const body = JSON.stringify({ model: (process.env.USE_SILICONFLOW === '1' ? 'deepseek-ai/DeepSeek-V4-Flash' : 'deepseek-v4-flash-free'), messages, max_tokens, temperature, stream: false });
     const req = https.request({
-      hostname: 'api.teamorouter.cn', path: '/v1/chat/completions', method: 'POST',
+      hostname: (process.env.USE_SILICONFLOW === '1' ? 'api.siliconflow.cn' : 'api.teamorouter.cn'), path: '/v1/chat/completions', method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + KEY }
     }, res => {
       let d = '';

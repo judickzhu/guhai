@@ -3,7 +3,7 @@
 const fs = require('fs');
 const https = require('https');
 const KEY = process.env.DEEPSEEK_KEY || 'sk-teamo-dffbb80d91b54f308cce7b0ecb17b7a6b51f41b14d701db8';
-const BASE = __dirname.endsWith('网站') ? __dirname : __dirname + '/网站';
+const BASE = __dirname;
 const PROMPT = fs.readFileSync(BASE + '/v31_prompt.txt', 'utf8');
 const REROUTE = JSON.parse(fs.readFileSync(BASE + '/v50_reroute.json', 'utf8'));
 const WRONG = JSON.parse(fs.readFileSync(BASE + '/v51_wrongpremise.json', 'utf8'));

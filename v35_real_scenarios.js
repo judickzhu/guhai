@@ -6,7 +6,7 @@ const fs = require('fs');
 const https = require('https');
 
 const KEY = process.env.DEEPSEEK_KEY || 'sk-teamo-dffbb80d91b54f308cce7b0ecb17b7a6b51f41b14d701db8';
-const PROMPT = fs.readFileSync(__dirname + '/网站/v31_prompt.txt', 'utf8');
+const PROMPT = fs.readFileSync(__dirname + '/v31_prompt.txt', 'utf8');
 
 const SCENARIOS = [
   // 跳層：直接問 L6 問題（用戶跳過前面認知）
@@ -61,7 +61,7 @@ const SCENARIOS = [
 
 function call(messages, max_tokens = 2000, temperature = 0.7) {
   return new Promise((resolve, reject) => {
-    const body = JSON.stringify({ model: 'deepseek-v4-flash-free', messages, max_tokens, temperature, stream: false });
+    const body = JSON.stringify({ model: (process.env.USE_SILICONFLOW === '1' ? 'deepseek-ai/DeepSeek-V4-Flash' : 'deepseek-v4-flash-free'), messages, max_tokens, temperature, stream: false });
     const req = https.request({
       hostname: 'api.teamorouter.cn', path: '/v1/chat/completions', method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + KEY }

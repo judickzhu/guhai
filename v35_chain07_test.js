@@ -5,7 +5,7 @@ const fs = require('fs');
 const https = require('https');
 
 const KEY = process.env.DEEPSEEK_KEY || 'sk-teamo-dffbb80d91b54f308cce7b0ecb17b7a6b51f41b14d701db8';
-const PROMPT = fs.readFileSync(__dirname + '/网站/v31_prompt.txt', 'utf8');
+const PROMPT = fs.readFileSync(__dirname + '/v31_prompt.txt', 'utf8');
 
 const CHAIN = [
   { u: '震荡不是很好做吗？', keywords: ['掃', '扫', '挨打', '失血', '機會', '机会', '波動'], forbid: [], engine: 'cognitive' },
@@ -22,7 +22,7 @@ const CHAIN = [
 
 function call(messages, max_tokens = 2400, temperature = 0.7) {
   return new Promise((resolve, reject) => {
-    const body = JSON.stringify({ model: 'deepseek-v4-flash-free', messages, max_tokens, temperature, stream: false });
+    const body = JSON.stringify({ model: (process.env.USE_SILICONFLOW === '1' ? 'deepseek-ai/DeepSeek-V4-Flash' : 'deepseek-v4-flash-free'), messages, max_tokens, temperature, stream: false });
     const req = https.request({
       hostname: 'api.teamorouter.cn', path: '/v1/chat/completions', method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + KEY }
