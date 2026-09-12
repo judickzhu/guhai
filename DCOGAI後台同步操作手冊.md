@@ -57,6 +57,16 @@
    ```
    （輸出即 token，拷入下步環境變數）
 
+3. **同步前先驗證 token 有效**（2026-09 教訓）：
+   ```bash
+   # token 過期 → API 返回 401「Could not validate credentials」→ 會誤判「後台 0 題」！
+   # 同步前先跑一次 GET 確認：
+   curl -s -H "Authorization: Bearer $ADMIN_TOKEN" https://s.dcogai.com/api/admin/kb | head -c 100
+   # 若返回 {"detail":"Could not validate credentials"} → token 失效，重新登入拿新 token
+   # 若返回分類數據 → token 有效，可同步
+   ```
+   **判斷標準**：`{"detail":"Could not validate credentials"}` = token 失效（不是後台清空）；看到分類 JSON 才算有效。admin_token 有效期約 1-2 天，長期同步前務必刷新。
+
 ---
 
 ## 三、同步執行
