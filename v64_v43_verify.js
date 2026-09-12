@@ -41,14 +41,18 @@ function parseAnswerKey() {
       const uid = blocks[i]
       const body = blocks[i + 1] || ''
       const turns = []
-      const turnBlocks = body.split(/### R(\d+)\n/)
-      for (let j = 1; j < turnBlocks.length; j += 2) {
-        const rn = turnBlocks[j]
-        const tb = turnBlocks[j + 1] || ''
-        const q = (tb.match(/用戶原話：(.+)/) || [])[1] || ''
-        const target = (tb.match(/本輪唯一目標：(.+)/) || [])[1] || ''
-        const ans = (tb.match(/標準答案要點：(.+)/) || [])[1] || ''
-        if (q) turns.push({ rn: parseInt(rn), q: q.trim(), target: target.trim(), ans: ans.trim() })
+      // 逐行掃描：### R 開新輪，字段行填充
+      let cur = null
+      for (const line of body.split('\n')) {
+        const rm = line.match(/^### R(\d+)/)
+        if (rm) { cur = { rn: parseInt(rm[1]), q: '', target: '', ans: '' }; turns.push(cur); continue }
+        if (!cur) continue
+        const qm = line.match(/用戶原話：(.*)/) || line.match(/用戶原话：(.*)/)
+        if (qm) { cur.q = qm[1].trim(); continue }
+        const tm = line.match(/本輪唯一目標：(.*)/) || line.match(/本輪唯一目标：(.*)/)
+        if (tm) { cur.target = tm[1].trim(); continue }
+        const am = line.match(/標準答案要點：(.*)/) || line.match(/標準答案要点：(.*)/)
+        if (am) { cur.ans = am[1].trim(); continue }
       }
       if (turns.length) users.push({ uid, turns })
     }
