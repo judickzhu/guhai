@@ -59,8 +59,8 @@ function parseAnswerKey() {
   }
   return users
 }
-const JUDGE = `你是「V4.3 狀態機評審」。給出：用戶本輪原話、答案鑰的「唯一目標」與「標準答案要點」、DC 實際回答。
-判斷 DC 是否達成唯一目標 + 對齊標準答案。輸出 JSON：{"hit":0或1(達成目標),"align":0或1(對齊要點),"score":0-5,"note":"一句話"}`
+const JUDGE = `你是「V4.3 狀態機評審」。給出：用戶本輪原話、答案鑰的「唯一目標」與「標準答案要點」（要點=方向參考，非逐字要求）、DC 實際回答。
+判斷：DC 是否達成「唯一目標」？——看行為方向（接住情緒/拆認知/給驗證/給SOP/停住），只要達成目標就算 hit=1；「標準答案要點」僅作方向參考，DC 用不同措辭/更深切入都算對齊。輸出 JSON：{"hit":0或1(達成目標),"align":0或1(方向對齊),"score":0-5,"note":"一句話"}`
 async function judgeTurn(q, target, ans, dc) {
   const raw = await cr([{ role: 'system', content: JUDGE }, { role: 'user', content: JSON.stringify({ 用戶原話: q, 唯一目標: target, 標準答案要點: ans, DC實際回答: dc.slice(0, 300) }, null, 1) }])
   const m = raw.match(/\{[\s\S]*\}/)
