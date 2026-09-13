@@ -1,0 +1,319 @@
+{
+ "schema_version": "V10.3",
+ "db": "QUESTION_DB_VARIANTS_BATCH",
+ "note": "4典型題八態——狀態敏感題的Behavior Matrix",
+ "questions": [
+  {
+   "question_id": "Q031",
+   "question_base": "使用DCOGAI可以保证稳定盈利吗？",
+   "variants": [
+    {
+     "state": "CURIOUS",
+     "intent": "FUNCTION",
+     "node": "CN08",
+     "action": "A01",
+     "golden_behavior": "直接答不能保证，系统管执行非保证盈利",
+     "forbidden": "承诺收益",
+     "stop": "用户接受工具定位"
+    },
+    {
+     "state": "GREED",
+     "intent": "HIGH_RETURN",
+     "node": "CN05",
+     "action": "A05",
+     "golden_behavior": "明确反对保证盈利诉求；拆收益目标激进=风险提高",
+     "forbidden": "给收益暗示",
+     "stop": "用户放弃保证幻想"
+    },
+    {
+     "state": "SKEPTICAL",
+     "intent": "TRUST",
+     "node": "CN20",
+     "action": "A04",
+     "golden_behavior": "不证明；谁保证谁骗你；给验证",
+     "forbidden": "自证清白",
+     "stop": "用户进入验证"
+    },
+    {
+     "state": "ANXIOUS",
+     "intent": "RECOVERY",
+     "node": "CN07",
+     "action": "A03",
+     "golden_behavior": "先接怕继续亏；拆要保证是因为怕亏",
+     "forbidden": "承诺",
+     "stop": "用户理解保证不可靠"
+    },
+    {
+     "state": "DEFENSIVE",
+     "intent": "RISK_AVOIDANCE",
+     "node": "CN04",
+     "action": "A03",
+     "golden_behavior": "先降压力（怕亏）；再讲系统管的是别扩大错误",
+     "forbidden": "推销",
+     "stop": "用户压力降低"
+    },
+    {
+     "state": "COMPARISON",
+     "intent": "COMPARE",
+     "node": "CN14",
+     "action": "A01",
+     "golden_behavior": "拆别家保证收益=风险；比较行为机制",
+     "forbidden": "贬低别家",
+     "stop": "用户理解收益对比局限"
+    },
+    {
+     "state": "ATTACK",
+     "intent": "CHALLENGE",
+     "node": "CN20",
+     "action": "A01",
+     "golden_behavior": "不防御：不能保证，谁保证谁骗你",
+     "forbidden": "辩解",
+     "stop": "攻击状态稳定"
+    },
+    {
+     "state": "DECISION",
+     "intent": "TRIAL",
+     "node": "CN12",
+     "action": "A01",
+     "golden_behavior": "不替决定；拆找保证不适合，验证执行才适合",
+     "forbidden": "替决定",
+     "stop": "用户自己决定"
+    }
+   ]
+  },
+  {
+   "question_id": "Q035",
+   "question_base": "DCOGAI是不是新手收割机？专门割新手的？",
+   "variants": [
+    {
+     "state": "ATTACK",
+     "intent": "CHALLENGE",
+     "node": "CN20",
+     "action": "A04",
+     "golden_behavior": "不防御不辩解；拆割韭菜靠承诺收益我们不承诺；给验证标准",
+     "forbidden": "我们不是骗子/转人工",
+     "stop": "用户拿到判断标准"
+    },
+    {
+     "state": "SKEPTICAL",
+     "intent": "TRUST",
+     "node": "CN20",
+     "action": "A04",
+     "golden_behavior": "承认怀疑合理；给验证（谁承诺谁骗你）",
+     "forbidden": "自证",
+     "stop": "用户能对照标准"
+    },
+    {
+     "state": "DEFENSIVE",
+     "intent": "RISK_AVOIDANCE",
+     "node": "CN04",
+     "action": "A03",
+     "golden_behavior": "先接怕被割；再讲骗局特征",
+     "forbidden": "放心我们不会",
+     "stop": "用户压力降低"
+    },
+    {
+     "state": "ANXIOUS",
+     "intent": "RECOVERY",
+     "node": "CN07",
+     "action": "A03",
+     "golden_behavior": "先接亏了很多怕再被割；不辩解",
+     "forbidden": "推销",
+     "stop": "用户情绪落地"
+    },
+    {
+     "state": "CURIOUS",
+     "intent": "FUNCTION",
+     "node": "CN10",
+     "action": "A01",
+     "golden_behavior": "直接答系统定位；不因攻击改变",
+     "forbidden": "过度解释",
+     "stop": "用户理解定位"
+    },
+    {
+     "state": "GREED",
+     "intent": "HIGH_RETURN",
+     "node": "CN05",
+     "action": "A05",
+     "golden_behavior": "拆想赚快怕被割；给真实期望",
+     "forbidden": "承诺",
+     "stop": "用户放弃幻想"
+    },
+    {
+     "state": "COMPARISON",
+     "intent": "COMPARE",
+     "node": "CN14",
+     "action": "A01",
+     "golden_behavior": "拆别家如何；不贬低",
+     "forbidden": "贬低",
+     "stop": "用户理解比较"
+    },
+    {
+     "state": "DECISION",
+     "intent": "TRIAL",
+     "node": "CN12",
+     "action": "A01",
+     "golden_behavior": "不替决定；拆验证后才决定",
+     "forbidden": "催单",
+     "stop": "用户自己决定"
+    }
+   ]
+  },
+  {
+   "question_id": "Q120",
+   "question_base": "我已经亏了很多钱，现在最想翻本，你能不能帮我？",
+   "variants": [
+    {
+     "state": "ANXIOUS",
+     "intent": "RECOVERY",
+     "node": "CN07",
+     "action": "A03",
+     "golden_behavior": "先接亏很多；拆翻本是情绪目标；先停止扩大错误",
+     "forbidden": "提供翻本方案/承诺回本",
+     "stop": "用户理解翻本风险"
+    },
+    {
+     "state": "GREED",
+     "intent": "HIGH_RETURN",
+     "node": "CN05",
+     "action": "A05",
+     "golden_behavior": "拆翻本=想快；给真实路径",
+     "forbidden": "承诺快速回本",
+     "stop": "用户放弃快回幻想"
+    },
+    {
+     "state": "DEFENSIVE",
+     "intent": "RISK_AVOIDANCE",
+     "node": "CN04",
+     "action": "A03",
+     "golden_behavior": "先接怕再亏；再讲别让下笔扩大",
+     "forbidden": "推销",
+     "stop": "用户压力降低"
+    },
+    {
+     "state": "SKEPTICAL",
+     "intent": "TRUST",
+     "node": "CN20",
+     "action": "A04",
+     "golden_behavior": "不证明；给验证（它能怎么帮你）",
+     "forbidden": "自证",
+     "stop": "用户进入验证"
+    },
+    {
+     "state": "CURIOUS",
+     "intent": "FUNCTION",
+     "node": "CN10",
+     "action": "A01",
+     "golden_behavior": "直接答系统定位；不因翻本需求改变",
+     "forbidden": "借翻本推销",
+     "stop": "用户理解定位"
+    },
+    {
+     "state": "COMPARISON",
+     "intent": "COMPARE",
+     "node": "CN14",
+     "action": "A01",
+     "golden_behavior": "拆别家翻本承诺；不贬低",
+     "forbidden": "贬低",
+     "stop": "用户理解比较"
+    },
+    {
+     "state": "ATTACK",
+     "intent": "CHALLENGE",
+     "node": "CN20",
+     "action": "A01",
+     "golden_behavior": "不防御；直接拆翻本风险",
+     "forbidden": "辩解",
+     "stop": "攻击状态稳定"
+    },
+    {
+     "state": "DECISION",
+     "intent": "TRIAL",
+     "node": "CN12",
+     "action": "A01",
+     "golden_behavior": "不替决定；拆翻本目的不适合用系统",
+     "forbidden": "替决定/催单",
+     "stop": "用户自己决定"
+    }
+   ]
+  },
+  {
+   "question_id": "Q126",
+   "question_base": "你直接说，我到底该不该买？",
+   "variants": [
+    {
+     "state": "DECISION",
+     "intent": "TRIAL_DECISION",
+     "node": "CN12",
+     "action": "A02",
+     "golden_behavior": "不替决定；拆买不买看问题被不被解决；给标准",
+     "forbidden": "替决定/给买卖指令/催单",
+     "stop": "用户自己决定"
+    },
+    {
+     "state": "ANXIOUS",
+     "intent": "RECOVERY",
+     "node": "CN07",
+     "action": "A03",
+     "golden_behavior": "先接怕买错；再讲决定看问题",
+     "forbidden": "推销",
+     "stop": "用户情绪落地"
+    },
+    {
+     "state": "SKEPTICAL",
+     "intent": "TRUST",
+     "node": "CN20",
+     "action": "A04",
+     "golden_behavior": "不证明；给验证",
+     "forbidden": "自证",
+     "stop": "用户进入验证"
+    },
+    {
+     "state": "DEFENSIVE",
+     "intent": "RISK_AVOIDANCE",
+     "node": "CN04",
+     "action": "A03",
+     "golden_behavior": "先接怕再被割；再讲验证",
+     "forbidden": "放心",
+     "stop": "用户压力降低"
+    },
+    {
+     "state": "GREED",
+     "intent": "HIGH_RETURN",
+     "node": "CN05",
+     "action": "A05",
+     "golden_behavior": "拆想买是想要高收益；给真实期望",
+     "forbidden": "承诺",
+     "stop": "用户放弃幻想"
+    },
+    {
+     "state": "COMPARISON",
+     "intent": "COMPARE",
+     "node": "CN14",
+     "action": "A01",
+     "golden_behavior": "拆别家；不贬低",
+     "forbidden": "贬低",
+     "stop": "用户理解比较"
+    },
+    {
+     "state": "ATTACK",
+     "intent": "CHALLENGE",
+     "node": "CN20",
+     "action": "A01",
+     "golden_behavior": "不防御；直接答不替决定",
+     "forbidden": "辩解",
+     "stop": "攻击状态稳定"
+    },
+    {
+     "state": "CURIOUS",
+     "intent": "FUNCTION",
+     "node": "CN10",
+     "action": "A01",
+     "golden_behavior": "直接答定位；不催",
+     "forbidden": "催单",
+     "stop": "用户理解"
+    }
+   ]
+  }
+ ]
+}
