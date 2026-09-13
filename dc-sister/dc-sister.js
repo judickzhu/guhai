@@ -299,6 +299,16 @@
     }
     var ql = toSimplified(qa.q.toLowerCase());
     if (q.indexOf(ql) >= 0 || ql.indexOf(q) >= 0) score += 5;
+    // V4.7 英文匹配：用戶英文輸入命中 q_en（英文問題翻譯）加分——讓英文用戶精確匹配知識庫
+    if (qa.q_en) {
+      var qel = String(qa.q_en).toLowerCase();
+      if (q.indexOf(qel) >= 0 || qel.indexOf(q) >= 0) score += 5;
+      // 英文關鍵詞子串匹配（用戶輸入包含問題核心詞）
+      var words = qel.split(/[^a-z0-9]+/).filter(function (w) { return w.length > 3; });
+      for (var wi = 0; wi < words.length; wi++) {
+        if (q.indexOf(words[wi]) >= 0) score += 0.8;
+      }
+    }
     var qTokens = tokenize(q);
     var aTokens = tokenize(qa.q + " " + (qa.keywords || []).join(" "));
     if (qTokens.length && aTokens.length) {
