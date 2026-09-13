@@ -46,6 +46,7 @@ async function apiRetry(path, method, body, tries = 5) {
 async function postOne(catId, it) {
   const payload = { category_id: String(catId), q: it.q, a: it.a, keywords: it.keywords }
   if (it.a_en) payload.a_en = it.a_en
+  if (it.q_en) payload.q_en = it.q_en
   for (let t = 0; t < 6; t++) {
     try { const r = await api('/api/admin/kb/qa', 'POST', payload); if (r.status === 200 || r.status === 201) return true } catch (e) {}
     await sleep(1.2 * (t + 1))
