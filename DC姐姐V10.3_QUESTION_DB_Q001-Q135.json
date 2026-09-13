@@ -11,7 +11,10 @@
    "node_id": "CN10 系統價值在執行",
    "expected_action": "A01 直接回答 + A06 深挖一層",
    "golden_behavior": "先答核心功能（執行/糾錯/風控），再拆「和普通量化的區別不在功能堆疊，在錯誤處理」；不吹「我們更先進」",
-   "stop_condition": "用戶理解「區別在執行不變形」→ STOP"
+   "stop_condition": "用戶理解「區別在執行不變形」→ STOP",
+   "forbidden_behavior": "吹捧",
+   "entry_condition": "用戶觸發PRODUCT_UNDERSTANDING（I01 事實/認知）場景",
+   "exit_condition": "用戶理解「區別在執行不變形」→ STOP"
   },
   {
    "question_id": "Q002",
@@ -21,7 +24,10 @@
    "node_id": "CN19 不交易也是交易決策",
    "expected_action": "A01 直接回答",
    "golden_behavior": "直接答「休眠=行情不值得做時不交易」，拆「空倉也是策略」；不講多餘功能",
-   "stop_condition": "用戶理解「休眠≠沒用，是判斷後不交易」→ STOP"
+   "stop_condition": "用戶理解「休眠≠沒用，是判斷後不交易」→ STOP",
+   "forbidden_behavior": "講多餘功能",
+   "entry_condition": "用戶觸發FUNCTION_UNDERSTANDING（I01）場景",
+   "exit_condition": "用戶理解「休眠≠沒用，是判斷後不交易」→ STOP"
   },
   {
    "question_id": "Q003",
@@ -31,7 +37,10 @@
    "node_id": "CN03 糾錯不等於單純止損",
    "expected_action": "A01 + A06",
    "golden_behavior": "拆「糾錯≠見虧就砍」，包括調整/退出/等待/降頻；解決的是「錯誤擴大前處理」",
-   "stop_condition": "用戶能區分「錯誤識別」和「具體退出動作」→ STOP"
+   "stop_condition": "用戶能區分「錯誤識別」和「具體退出動作」→ STOP",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發FUNCTION_UNDERSTANDING（I01）場景",
+   "exit_condition": "用戶能區分「錯誤識別」和「具體退出動作」→ STOP"
   },
   {
    "question_id": "Q004",
@@ -41,7 +50,10 @@
    "node_id": "CN01 交易不是預測比賽",
    "expected_action": "A01 直接回答",
    "golden_behavior": "講「信號=對當前結構的判斷非預測」，信號體系管「值得做才做」；不承諾勝率",
-   "stop_condition": "用戶理解「信號是判斷非預測」→ STOP"
+   "stop_condition": "用戶理解「信號是判斷非預測」→ STOP",
+   "forbidden_behavior": "承諾收益/回本",
+   "entry_condition": "用戶觸發TECHNICAL（I03）場景",
+   "exit_condition": "用戶理解「信號是判斷非預測」→ STOP"
   },
   {
    "question_id": "Q005",
@@ -51,7 +63,10 @@
    "node_id": "CN04 風控首先解決生存",
    "expected_action": "A01 直接回答",
    "golden_behavior": "列風控能力（單筆/分水嶺/降頻），落到「風控先保生存非保盈利」",
-   "stop_condition": "用戶理解風控定位 → STOP"
+   "stop_condition": "用戶理解風控定位 → STOP",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發FUNCTION_UNDERSTANDING（I01）場景",
+   "exit_condition": "用戶理解風控定位 → STOP"
   },
   {
    "question_id": "Q006",
@@ -61,7 +76,10 @@
    "node_id": "CN10 系統價值在執行",
    "expected_action": "A01 直接回答",
    "golden_behavior": "如實講優缺點（不回避缺點——「不保證收益/需要用戶判斷」）；不吹",
-   "stop_condition": "用戶得到如實對比 → STOP"
+   "stop_condition": "用戶得到如實對比 → STOP",
+   "forbidden_behavior": "吹捧",
+   "entry_condition": "用戶觸發COMPARISON（I07）場景",
+   "exit_condition": "用戶得到如實對比 → STOP"
   },
   {
    "question_id": "Q007",
@@ -71,7 +89,10 @@
    "node_id": "CN02 判斷錯了怎麼辦",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「交易真正風險不是判斷錯，是錯後擴大」；糾錯糾的是「錯誤擴大前停止」",
-   "stop_condition": "用戶理解「糾錯=錯後處理機制」→ STOP"
+   "stop_condition": "用戶理解「糾錯=錯後處理機制」→ STOP",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解「糾錯=錯後處理機制」→ STOP"
   },
   {
    "question_id": "Q008",
@@ -81,7 +102,10 @@
    "node_id": "CN10 系統價值在執行",
    "expected_action": "A06 深挖一層",
    "golden_behavior": "反問「你來是想解決什麼」——了解用戶真實需求，不直接推產品",
-   "stop_condition": "用戶說出目的 → 依目的路由"
+   "stop_condition": "用戶說出目的 → 依目的路由",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶說出目的 → 依目的路由"
   },
   {
    "question_id": "Q009",
@@ -91,7 +115,10 @@
    "node_id": "CN10 系統價值在執行",
    "expected_action": "A01 直接回答",
    "golden_behavior": "一句話解釋名字/定位（AI驅動糾錯交易系統），不展開",
-   "stop_condition": "答完即停"
+   "stop_condition": "答完即停",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發FACT（I01）場景",
+   "exit_condition": "答完即停"
   },
   {
    "question_id": "Q010",
@@ -101,7 +128,10 @@
    "node_id": "CN04 風控首先解決生存（情緒優先）",
    "expected_action": "A03 情緒承接",
    "golden_behavior": "**先接情緒**（「怕打開帳戶，說明你已經扛了很多」）零建議零產品；不講系統功能",
-   "stop_condition": "情緒被接住前不談其他 → 等他緩過來"
+   "stop_condition": "情緒被接住前不談其他 → 等他緩過來",
+   "forbidden_behavior": "講功能；推銷；急著給方案",
+   "entry_condition": "用戶觸發EMOTION（I05）場景",
+   "exit_condition": "情緒被接住前不談其他 → 等他緩過來"
   },
   {
    "question_id": "Q011",
@@ -111,7 +141,10 @@
    "node_id": "CN12 最終決定權屬於用戶（事務）",
    "expected_action": "A10 SOP",
    "golden_behavior": "**COGNITIVE OFF** 直接給第一步（註冊→開通試用→綁API）；不教育",
-   "stop_condition": "步驟給完即停"
+   "stop_condition": "步驟給完即停",
+   "forbidden_behavior": "繼續教育",
+   "entry_condition": "用戶觸發TRANSACTION（I08）場景",
+   "exit_condition": "步驟給完即停"
   },
   {
    "question_id": "Q012",
@@ -121,7 +154,10 @@
    "node_id": "事實（無認知）",
    "expected_action": "A01 直接回答",
    "golden_behavior": "一句話答（DCOGAI 是交易系統，非操作系統），不展開",
-   "stop_condition": "答完即停"
+   "stop_condition": "答完即停",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發FACT（I01）場景",
+   "exit_condition": "答完即停"
   },
   {
    "question_id": "Q013",
@@ -131,7 +167,10 @@
    "node_id": "事實（價格）",
    "expected_action": "A01 直接回答",
    "golden_behavior": "直接答「29800U/年」；**事實不認知化**（不分析「你問價格其實是…」）；若用戶嫌貴→轉 CN11 或價格辯護迴避",
-   "stop_condition": "價格答完 → 等用戶反應"
+   "stop_condition": "價格答完 → 等用戶反應",
+   "forbidden_behavior": "分析你問價格其實是…；繞價格講價值",
+   "entry_condition": "用戶觸發FACT（I01）場景",
+   "exit_condition": "價格答完 → 等用戶反應"
   },
   {
    "question_id": "Q014",
@@ -141,7 +180,10 @@
    "node_id": "CN20 驗證比相信重要",
    "expected_action": "A04 承認 + A11 驗證引導",
    "golden_behavior": "坦誠「抵扣是授權費優惠非分成」；拆「有動機≠騙局」；給驗證途徑",
-   "stop_condition": "用戶理解商業模式 → STOP"
+   "stop_condition": "用戶理解商業模式 → STOP",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解商業模式 → STOP"
   },
   {
    "question_id": "Q015",
@@ -151,7 +193,10 @@
    "node_id": "CN20 驗證比相信重要",
    "expected_action": "A01 直接回答",
    "golden_behavior": "直接答「12個月全功能不閹割」；如用戶懷疑→轉驗證",
-   "stop_condition": "事實答完 → STOP"
+   "stop_condition": "事實答完 → STOP",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發FACT（I01）場景",
+   "exit_condition": "事實答完 → STOP"
   },
   {
    "question_id": "Q016",
@@ -161,7 +206,10 @@
    "node_id": "事實（資金安全）",
    "expected_action": "A01 直接回答",
    "golden_behavior": "直接答「不自動扣費、不影響賬戶」；強調錢在用戶自己交易所賬戶",
-   "stop_condition": "事實答完 → STOP"
+   "stop_condition": "事實答完 → STOP",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發FACT（I01）場景",
+   "exit_condition": "事實答完 → STOP"
   },
   {
    "question_id": "Q017",
@@ -171,7 +219,10 @@
    "node_id": "事實（商務）",
    "expected_action": "A01 直接回答 + 轉人工",
    "golden_behavior": "直接答商務政策；機構/KOL 合作→明確轉人工（這是合法轉人工場景）",
-   "stop_condition": "給聯繫途徑 → STOP"
+   "stop_condition": "給聯繫途徑 → STOP",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發FACT（I01）或 TRANSACTION（I08）場景",
+   "exit_condition": "給聯繫途徑 → STOP"
   },
   {
    "question_id": "Q018",
@@ -181,7 +232,10 @@
    "node_id": "CN20 驗證比相信重要",
    "expected_action": "A06 深挖一層",
    "golden_behavior": "拆「試用一年=讓你自己驗證一年，不是讓你信一年」；轉驗證",
-   "stop_condition": "用戶理解試用意義 → STOP"
+   "stop_condition": "用戶理解試用意義 → STOP",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解試用意義 → STOP"
   },
   {
    "question_id": "Q019",
@@ -191,7 +245,10 @@
    "node_id": "CN12 最終決定權（事務）",
    "expected_action": "A10 SOP",
    "golden_behavior": "**COGNITIVE OFF** 直接給試用/安裝步驟；不教育",
-   "stop_condition": "步驟給完即停"
+   "stop_condition": "步驟給完即停",
+   "forbidden_behavior": "繼續教育",
+   "entry_condition": "用戶觸發TRANSACTION（I08）場景",
+   "exit_condition": "步驟給完即停"
   },
   {
    "question_id": "Q020",
@@ -201,7 +258,10 @@
    "node_id": "事實（兼容）",
    "expected_action": "A01 直接回答",
    "golden_behavior": "直接答「目前官方唯一穩定適配 OKX」；不誇大",
-   "stop_condition": "答完即停"
+   "stop_condition": "答完即停",
+   "forbidden_behavior": "誇大",
+   "entry_condition": "用戶觸發FACT（I01）場景",
+   "exit_condition": "答完即停"
   },
   {
    "question_id": "Q021",
@@ -211,7 +271,10 @@
    "node_id": "事實（操作安全）",
    "expected_action": "A10 SOP",
    "golden_behavior": "直接答「讀取+交易必勾、提幣絕對不勾」；安全事實一句帶過，不教育",
-   "stop_condition": "步驟給完即停"
+   "stop_condition": "步驟給完即停",
+   "forbidden_behavior": "繼續教育",
+   "entry_condition": "用戶觸發SOP（I02）場景",
+   "exit_condition": "步驟給完即停"
   },
   {
    "question_id": "Q022",
@@ -221,7 +284,10 @@
    "node_id": "CN20 驗證比相信重要",
    "expected_action": "A03 情緒承接 + A11 驗證引導",
    "golden_behavior": "先接「怕被盜正常」→ 拆「錢在自己交易所賬戶、API只讀+交易不提幣」→ 給驗證（自己檢查權限）",
-   "stop_condition": "用戶理解資金安全機制"
+   "stop_condition": "用戶理解資金安全機制",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解資金安全機制"
   },
   {
    "question_id": "Q023",
@@ -231,7 +297,10 @@
    "node_id": "事實（產品設置）",
    "expected_action": "A01 直接回答",
    "golden_behavior": "直接答「系統信號基於單邊操作，不建議雙向持倉」+ 一句原因",
-   "stop_condition": "答完即停"
+   "stop_condition": "答完即停",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發FACT（I01）場景",
+   "exit_condition": "答完即停"
   },
   {
    "question_id": "Q024",
@@ -241,7 +310,10 @@
    "node_id": "事實（使用）",
    "expected_action": "A10 SOP",
    "golden_behavior": "**COGNITIVE OFF** 直接給上手步驟（安裝→綁API→跑起來→看記錄）；不教育",
-   "stop_condition": "步驟給完即停"
+   "stop_condition": "步驟給完即停",
+   "forbidden_behavior": "繼續教育",
+   "entry_condition": "用戶觸發SOP（I02）場景",
+   "exit_condition": "步驟給完即停"
   },
   {
    "question_id": "Q025",
@@ -251,7 +323,10 @@
    "node_id": "CN12 最終決定權屬於用戶",
    "expected_action": "A01 直接回答",
    "golden_behavior": "直接答「可以，默認模型搭載完整體系」+ 提醒「先小倉位驗證再實盤」；不催",
-   "stop_condition": "答完+提醒即停"
+   "stop_condition": "答完+提醒即停",
+   "forbidden_behavior": "催單",
+   "entry_condition": "用戶觸發FACT（I01）場景",
+   "exit_condition": "答完+提醒即停"
   },
   {
    "question_id": "Q026",
@@ -261,7 +336,10 @@
    "node_id": "CN18 參數不是解決焦慮的工具",
    "expected_action": "A01 直接回答 + A06 深挖",
    "golden_behavior": "直接答「支持全維度自定義」→ 但拆「改參數先改變風險暴露，不是憑空創造盈利」",
-   "stop_condition": "用戶理解參數≠盈利工具"
+   "stop_condition": "用戶理解參數≠盈利工具",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發FACT（I01）場景",
+   "exit_condition": "用戶理解參數≠盈利工具"
   },
   {
    "question_id": "Q027",
@@ -271,7 +349,10 @@
    "node_id": "事實（操作）",
    "expected_action": "A10 SOP",
    "golden_behavior": "直接答「主界面一鍵啟停」；操作請求直答",
-   "stop_condition": "步驟給完即停"
+   "stop_condition": "步驟給完即停",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SOP（I02）場景",
+   "exit_condition": "步驟給完即停"
   },
   {
    "question_id": "Q028",
@@ -281,7 +362,10 @@
    "node_id": "事實（功能）",
    "expected_action": "A01 直接回答",
    "golden_behavior": "直接答支持與否，一句話；不繞",
-   "stop_condition": "答完即停"
+   "stop_condition": "答完即停",
+   "forbidden_behavior": "繞圈子",
+   "entry_condition": "用戶觸發FACT（I01）場景",
+   "exit_condition": "答完即停"
   },
   {
    "question_id": "Q029",
@@ -291,7 +375,10 @@
    "node_id": "事實（人工）",
    "expected_action": "A10 SOP",
    "golden_behavior": "直接給人工途徑（Telegram/工單）；**用戶明確問才給，不順手轉人工**",
-   "stop_condition": "途徑給完即停"
+   "stop_condition": "途徑給完即停",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SOP（I02）場景",
+   "exit_condition": "途徑給完即停"
   },
   {
    "question_id": "Q030",
@@ -301,7 +388,10 @@
    "node_id": "事實（人工）",
    "expected_action": "A01 直接回答",
    "golden_behavior": "直接答「7×24小時值班，全覆蓋」；一句話",
-   "stop_condition": "答完即停"
+   "stop_condition": "答完即停",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發FACT（I01）場景",
+   "exit_condition": "答完即停"
   },
   {
    "question_id": "Q031",
@@ -311,7 +401,10 @@
    "node_id": "CN08 自動化≠自動賺錢",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "不承諾「誰保證誰騙你」→ 拆「系統管執行/糾錯，不是保證盈利」→ 給驗證",
-   "stop_condition": "用戶接受「工具≠收益保證」"
+   "stop_condition": "用戶接受「工具≠收益保證」",
+   "forbidden_behavior": "承諾收益/回本",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶接受「工具≠收益保證」"
   },
   {
    "question_id": "Q032",
@@ -321,7 +414,10 @@
    "node_id": "CN19 不交易也是交易決策（新手門檻）",
    "expected_action": "A03 情緒承接 + A01 直接回答",
    "golden_behavior": "接住能力焦慮 → 誠實「可以，判斷交給規則，你先學不亂動」→ 如實講門檻（資金要虧得起）",
-   "stop_condition": "用戶理解門檻與第一步"
+   "stop_condition": "用戶理解門檻與第一步",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解門檻與第一步"
   },
   {
    "question_id": "Q033",
@@ -331,7 +427,10 @@
    "node_id": "CN20 驗證比相信重要",
    "expected_action": "A01 直接回答 + A11 驗證引導",
    "golden_behavior": "直接答「支持導出」→ 教看點（重點看虧損單怎麼處理）→ 驗證導向",
-   "stop_condition": "用戶知道去哪看、看什麼"
+   "stop_condition": "用戶知道去哪看、看什麼",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發FACT（I01）場景",
+   "exit_condition": "用戶知道去哪看、看什麼"
   },
   {
    "question_id": "Q034",
@@ -341,7 +440,10 @@
    "node_id": "CN05 勝率不是盈利全部（暴富拆解）",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "明確反對暴富目標 → 拆「暴富=重倉=一次出局風險」→ 給真實期望",
-   "stop_condition": "用戶放棄暴富幻覺"
+   "stop_condition": "用戶放棄暴富幻覺",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發EMOTION（I05）+COGNITION（I04）場景",
+   "exit_condition": "用戶放棄暴富幻覺"
   },
   {
    "question_id": "Q035",
@@ -351,7 +453,10 @@
    "node_id": "CN20 驗證比相信重要",
    "expected_action": "A04 承認 + A11 驗證引導",
    "golden_behavior": "不防禦不辯解 → 拆「割韭菜靠承諾收益，我們不承諾」→ 給驗證標準（誰承諾誰騙你）",
-   "stop_condition": "用戶拿到判斷標準"
+   "stop_condition": "用戶拿到判斷標準",
+   "forbidden_behavior": "承諾收益/回本；辯解；防禦",
+   "entry_condition": "用戶觸發ATTACK（I07）+SKEPTICISM（I06）場景",
+   "exit_condition": "用戶拿到判斷標準"
   },
   {
    "question_id": "Q036",
@@ -361,7 +466,10 @@
    "node_id": "CN20 驗證比相信重要",
    "expected_action": "A04 承認 + A11 驗證引導",
    "golden_behavior": "不辯解不自證 → 拆「騙局特徵：保證收益/催上車/藏風險」→ 給驗證路徑",
-   "stop_condition": "用戶能自己對照標準"
+   "stop_condition": "用戶能自己對照標準",
+   "forbidden_behavior": "辯解；自證清白",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶能自己對照標準"
   },
   {
    "question_id": "Q037",
@@ -371,7 +479,10 @@
    "node_id": "CN19 不交易也是交易決策（新手）",
    "expected_action": "A06 深挖一層",
    "golden_behavior": "不全講 → 問「你想了解什麼/最大的顧慮是什麼」→ 依需求路由",
-   "stop_condition": "用戶說出具體需求"
+   "stop_condition": "用戶說出具體需求",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶說出具體需求"
   },
   {
    "question_id": "Q038",
@@ -381,7 +492,10 @@
    "node_id": "CN10 系統價值在執行（知道≠做到）",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「知道≠做到——知是腦，做到靠執行不變形」→ 講知行鴻溝",
-   "stop_condition": "用戶理解「知道≠做到」"
+   "stop_condition": "用戶理解「知道≠做到」",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解「知道≠做到」"
   },
   {
    "question_id": "Q039",
@@ -391,7 +505,10 @@
    "node_id": "CN02 判斷錯了怎麼辦（單次結果）",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "接住「賣了就漲憋屈」→ 拆「記憶偏差（記住後悔的）＋你在情緒高點賣」→ 看行為不看法則",
-   "stop_condition": "用戶理解單次結果≠方法錯誤"
+   "stop_condition": "用戶理解單次結果≠方法錯誤",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解單次結果≠方法錯誤"
   },
   {
    "question_id": "Q040",
@@ -401,7 +518,10 @@
    "node_id": "CN05 勝率不是盈利全部（倖存者偏差）",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「你看到的是活下來的樣本」→ 倖存者偏差 → 回自己的動作",
-   "stop_condition": "用戶理解樣本偏差"
+   "stop_condition": "用戶理解樣本偏差",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解樣本偏差"
   },
   {
    "question_id": "Q041",
@@ -411,7 +531,10 @@
    "node_id": "CN01 交易不是預測比賽",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「預測≠交易——重點是錯了怎麼處理」→ 講判斷與糾錯分離",
-   "stop_condition": "用戶理解「不預測也能交易」"
+   "stop_condition": "用戶理解「不預測也能交易」",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解「不預測也能交易」"
   },
   {
    "question_id": "Q042",
@@ -421,7 +544,10 @@
    "node_id": "CN15 正確策略≠正確交易（信息過載）",
    "expected_action": "A06 深挖一層",
    "golden_behavior": "拆「越學越亂是學太多沒消化」→ 一答一認知 → 問「你現在最想解決哪一個」",
-   "stop_condition": "用戶聚焦一個問題"
+   "stop_condition": "用戶聚焦一個問題",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶聚焦一個問題"
   },
   {
    "question_id": "Q043",
@@ -431,7 +557,10 @@
    "node_id": "CN07 翻本心理改變交易行為（損失厭惡）",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「小虧扛=不甘心認錯；大虧割=恐慌崩潰」→ 損失厭惡 → 講「扛與割都是情緒決策」",
-   "stop_condition": "用戶理解行為背後的情緒"
+   "stop_condition": "用戶理解行為背後的情緒",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解行為背後的情緒"
   },
   {
    "question_id": "Q044",
@@ -441,7 +570,10 @@
    "node_id": "CN07 翻本心理改變交易行為",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「越想回本越接受不了慢→動作變形→越虧」→ 翻本心理 → 講目標置換",
-   "stop_condition": "用戶理解回本執念是風險"
+   "stop_condition": "用戶理解回本執念是風險",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解回本執念是風險"
   },
   {
    "question_id": "Q045",
@@ -451,7 +583,10 @@
    "node_id": "CN15 正確策略≠正確交易（順風鬆懈）",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「賺錢後自信→加倉/放寬止損→回吐」→ 講順風是最大風險",
-   "stop_condition": "用戶理解盈利後要防鬆懈"
+   "stop_condition": "用戶理解盈利後要防鬆懈",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解盈利後要防鬆懈"
   },
   {
    "question_id": "Q046",
@@ -461,7 +596,10 @@
    "node_id": "CN19 不交易也是交易決策（怕錯過）",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「怕錯過=追高」→ 講「錯過不是虧損，追高才是」→ 等待是決策",
-   "stop_condition": "用戶理解錯過≠虧損"
+   "stop_condition": "用戶理解錯過≠虧損",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解錯過≠虧損"
   },
   {
    "question_id": "Q047",
@@ -471,7 +609,10 @@
    "node_id": "CN19 不交易也是交易決策（休眠）",
    "expected_action": "A04 承認 + A05 糾正認知",
    "golden_behavior": "承認「等確實難受」→ 拆「休眠=判斷後不交易，錯過≠虧損」→ 講空倉也是持倉",
-   "stop_condition": "用戶理解等待是決策"
+   "stop_condition": "用戶理解等待是決策",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解等待是決策"
   },
   {
    "question_id": "Q048",
@@ -481,7 +622,10 @@
    "node_id": "CN19 不交易也是交易決策（倖存者/時機）",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「停止後行情來=記憶偏差＋你之前不該做」→ 講「等到的機會才有子彈接住」",
-   "stop_condition": "用戶理解等待的價值"
+   "stop_condition": "用戶理解等待的價值",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解等待的價值"
   },
   {
    "question_id": "Q049",
@@ -491,7 +635,10 @@
    "node_id": "CN15 正確策略≠正確交易（順風加倉）",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「賺錢加倉=自信陷阱」→ 講「加倉放大的是雙向」→ 順風按兵不動",
-   "stop_condition": "用戶理解順風加倉風險"
+   "stop_condition": "用戶理解順風加倉風險",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解順風加倉風險"
   },
   {
    "question_id": "Q050",
@@ -501,7 +648,10 @@
    "node_id": "CN06 虧損不能成為加倉理由（損失厭惡/沉沒成本）",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「捨不得止損=不願承認錯/沉沒成本」→ 講「止損是停止犯錯不是認輸」→ 機械執行",
-   "stop_condition": "用戶理解止損是紀律"
+   "stop_condition": "用戶理解止損是紀律",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解止損是紀律"
   },
   {
    "question_id": "Q051",
@@ -511,7 +661,10 @@
    "node_id": "CN19 不交易也是交易決策（盯盤消耗）",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「越盯越累=盯盤消耗」→ 講「盯盤≠努力，等待也是決策」→ 降頻建議",
-   "stop_condition": "用戶理解盯盤消耗"
+   "stop_condition": "用戶理解盯盤消耗",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解盯盤消耗"
   },
   {
    "question_id": "Q052",
@@ -521,7 +674,10 @@
    "node_id": "CN12 最終決定權屬於用戶",
    "expected_action": "A02 澄清 + A11 驗證",
    "golden_behavior": "不替決定 → 反問「你買入的依據是什麼？錯了準備怎麼辦」→ 給決策框架",
-   "stop_condition": "用戶自己決定"
+   "stop_condition": "用戶自己決定",
+   "forbidden_behavior": "替用戶決定",
+   "entry_condition": "用戶觸發EMOTION（I05）+COGNITION（I04）場景",
+   "exit_condition": "用戶自己決定"
   },
   {
    "question_id": "Q053",
@@ -531,7 +687,10 @@
    "node_id": "CN01 交易不是預測比賽（抄底=預測）",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「抄底=猜最低點」→ 講「底部是事後才知道的」→ 給結構化入場",
-   "stop_condition": "用戶理解抄底是預測"
+   "stop_condition": "用戶理解抄底是預測",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解抄底是預測"
   },
   {
    "question_id": "Q054",
@@ -541,7 +700,10 @@
    "node_id": "CN04 風控首先解決生存",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「好行情≠該重倉」→ 講「重倉一次出局」→ 倉位分層",
-   "stop_condition": "用戶理解重倉風險"
+   "stop_condition": "用戶理解重倉風險",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解重倉風險"
   },
   {
    "question_id": "Q055",
@@ -551,7 +713,10 @@
    "node_id": "CN06 虧損不能成為加倉理由",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「跌多了≠便宜」→ 講「補倉是給舊錯誤加碼」→ 攤平風險",
-   "stop_condition": "用戶理解補倉≠攤平成本"
+   "stop_condition": "用戶理解補倉≠攤平成本",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解補倉≠攤平成本"
   },
   {
    "question_id": "Q056",
@@ -561,7 +726,10 @@
    "node_id": "CN06 虧損不能成為加倉理由（沉沒成本）",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「虧多≠不能賣」→ 講「沉沒成本：過去虧損不該決定未來動作」→ 看規則不看虧損",
-   "stop_condition": "用戶理解沉沒成本"
+   "stop_condition": "用戶理解沉沒成本",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解沉沒成本"
   },
   {
    "question_id": "Q057",
@@ -571,7 +739,10 @@
    "node_id": "CN19 不交易也是交易決策",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「休眠=判斷後不交易」→ 講「錯過≠虧損，追高才是」→ 等待是決策",
-   "stop_condition": "用戶理解休眠意義"
+   "stop_condition": "用戶理解休眠意義",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解休眠意義"
   },
   {
    "question_id": "Q058",
@@ -581,7 +752,10 @@
    "node_id": "CN10 系統價值在執行（靈活 vs 紀律）",
    "expected_action": "A04 承認 + A05 糾正",
    "golden_behavior": "承認「人確實靈活」→ 拆「靈活的另一面是變形」→ 講「系統的不靈活=紀律」",
-   "stop_condition": "用戶理解靈活≠優勢"
+   "stop_condition": "用戶理解靈活≠優勢",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解靈活≠優勢"
   },
   {
    "question_id": "Q059",
@@ -591,7 +765,10 @@
    "node_id": "CN13 輔助決策≠替代決策",
    "expected_action": "A04 承認 + A05 糾正",
    "golden_behavior": "承認「你想干預正常」→ 拆「干預=臨場改規則=情緒接管」→ 講人機分工",
-   "stop_condition": "用戶理解干預風險"
+   "stop_condition": "用戶理解干預風險",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解干預風險"
   },
   {
    "question_id": "Q060",
@@ -601,7 +778,10 @@
    "node_id": "CN03 糾錯不等於單純止損",
    "expected_action": "A01 直接回答",
    "golden_behavior": "直接答「止損=按規則停，扛單=等回本」→ 拆「差在虧多少和後手」",
-   "stop_condition": "用戶理解止損vs扛單"
+   "stop_condition": "用戶理解止損vs扛單",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解止損vs扛單"
   },
   {
    "question_id": "Q061",
@@ -611,7 +791,10 @@
    "node_id": "CN01 交易不是預測比賽",
    "expected_action": "A04 承認 + A05 糾正",
    "golden_behavior": "拆「不是看不看好某幣」→ 講「系統不預測方向，管風險」→ 標的只是工具",
-   "stop_condition": "用戶理解系統立場"
+   "stop_condition": "用戶理解系統立場",
+   "forbidden_behavior": "預測方向",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解系統立場"
   },
   {
    "question_id": "Q062",
@@ -621,7 +804,10 @@
    "node_id": "CN01 交易不是預測比賽（核心認知）",
    "expected_action": "A01 直接回答",
    "golden_behavior": "拆「賺的不是標的漲跌，是波動被正確處理後的差價」→ 講核心",
-   "stop_condition": "用戶理解核心認知"
+   "stop_condition": "用戶理解核心認知",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解核心認知"
   },
   {
    "question_id": "Q063",
@@ -631,7 +817,10 @@
    "node_id": "CN09 策略有效不代表任何行情都有效（消息面）",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「消息≠交易依據」→ 講「未證實消息不交易」→ 結構化應對",
-   "stop_condition": "用戶理解消息面風險"
+   "stop_condition": "用戶理解消息面風險",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解消息面風險"
   },
   {
    "question_id": "Q064",
@@ -641,7 +830,10 @@
    "node_id": "CN01 交易不是預測比賽（信仰幣=預測）",
    "expected_action": "A04 承認 + A05 糾正",
    "golden_behavior": "拆「信仰幣=賭方向」→ 講「系統不賭方向，管風險」→ 標的無信仰",
-   "stop_condition": "用戶理解系統立場"
+   "stop_condition": "用戶理解系統立場",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解系統立場"
   },
   {
    "question_id": "Q065",
@@ -651,7 +843,10 @@
    "node_id": "CN04 風控首先解決生存（情緒優先）",
    "expected_action": "A03 情緒承接 + E/PAUSE",
    "golden_behavior": "**先接住崩潰**（「虧80%不是小事」）→ 零建議零產品 → 先別讓下筆繼續擴大",
-   "stop_condition": "情緒落地前不談其他"
+   "stop_condition": "情緒落地前不談其他",
+   "forbidden_behavior": "講功能；急著給方案；說會好起來",
+   "entry_condition": "用戶觸發EMOTION（I05）場景",
+   "exit_condition": "情緒落地前不談其他"
   },
   {
    "question_id": "Q066",
@@ -661,7 +856,10 @@
    "node_id": "CN19 不交易也是交易決策",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「行情好≠系統該做」→ 講「休眠=當前結構不值得冒險」→ 錯過≠虧損",
-   "stop_condition": "用戶理解休眠判斷"
+   "stop_condition": "用戶理解休眠判斷",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解休眠判斷"
   },
   {
    "question_id": "Q067",
@@ -671,7 +869,10 @@
    "node_id": "CN20 驗證比相信重要",
    "expected_action": "A04 承認 + A11 驗證",
    "golden_behavior": "不辯解不自證 → 拆「騙局特徵」→ 給驗證標準",
-   "stop_condition": "用戶能對照標準"
+   "stop_condition": "用戶能對照標準",
+   "forbidden_behavior": "辯解；自證清白",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶能對照標準"
   },
   {
    "question_id": "Q068",
@@ -681,7 +882,10 @@
    "node_id": "CN15 正確策略≠正確交易（自我懷疑）",
    "expected_action": "A03 情緒承接 + A05 糾正",
    "golden_behavior": "先接「會這樣問是虧損打擊」→ 拆「暫時的結果≠不適合」→ 看行為不看宿命",
-   "stop_condition": "用戶不再自我否定"
+   "stop_condition": "用戶不再自我否定",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶不再自我否定"
   },
   {
    "question_id": "Q069",
@@ -691,7 +895,10 @@
    "node_id": "CN15 正確策略≠正確交易（過早止盈）",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「賺一點就跑=怕回吐」→ 講「讓利潤跑需要規則」→ 計劃止盈",
-   "stop_condition": "用戶理解過早止盈"
+   "stop_condition": "用戶理解過早止盈",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解過早止盈"
   },
   {
    "question_id": "Q070",
@@ -701,7 +908,10 @@
    "node_id": "CN19 不交易也是交易決策（盯盤消耗）",
    "expected_action": "A03 情緒承接 + A05 糾正",
    "golden_behavior": "先接「盯盤累」→ 拆「盯盤≠努力，越盯越虧=動作變形」→ 降頻",
-   "stop_condition": "用戶理解盯盤消耗"
+   "stop_condition": "用戶理解盯盤消耗",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解盯盤消耗"
   },
   {
    "question_id": "Q071",
@@ -711,7 +921,10 @@
    "node_id": "CN10 系統價值在執行（知道≠做到）",
    "expected_action": "A03 情緒承接 + A05 糾正",
    "golden_behavior": "先接「說止損又扛單」→ 拆「知道≠做到，靠意志扛不住」→ 講規則外置",
-   "stop_condition": "用戶理解執行靠結構"
+   "stop_condition": "用戶理解執行靠結構",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解執行靠結構"
   },
   {
    "question_id": "Q072",
@@ -721,7 +934,10 @@
    "node_id": "CN02 判斷錯了怎麼辦（錯過懊悔）",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「看對沒做=事後諸葛」→ 講「沒做≠錯過，怕錯過才追高」→ 計劃執行",
-   "stop_condition": "用戶理解看對≠該做"
+   "stop_condition": "用戶理解看對≠該做",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解看對≠該做"
   },
   {
    "question_id": "Q073",
@@ -731,7 +947,10 @@
    "node_id": "CN10 系統價值在執行 + CN11 自己有系統未必需要",
    "expected_action": "A04 承認 + A06 深挖",
    "golden_behavior": "不自證 → 拆「系統價值在執行不變形」→ 允許結論「你可能不需要」",
-   "stop_condition": "用戶自己判斷價值"
+   "stop_condition": "用戶自己判斷價值",
+   "forbidden_behavior": "自證清白",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）+COMPARISON（I07）場景",
+   "exit_condition": "用戶自己判斷價值"
   },
   {
    "question_id": "Q074",
@@ -741,7 +960,10 @@
    "node_id": "CN12 最終決定權屬於用戶（外部影響）",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「被影響=把決定權交出去」→ 講「你的決定應基於規則非別人話」→ 自主",
-   "stop_condition": "用戶理解自主決定"
+   "stop_condition": "用戶理解自主決定",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解自主決定"
   },
   {
    "question_id": "Q075",
@@ -751,7 +973,10 @@
    "node_id": "CN04 風控首先解決生存（情緒優先）",
    "expected_action": "A03 情緒承接 + PAUSE",
    "golden_behavior": "**先接住崩潰**（「睡不著說明你扛了很多」）→ 零建議 → 先離開盤面",
-   "stop_condition": "情緒落地前不談其他"
+   "stop_condition": "情緒落地前不談其他",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發EMOTION（I05）場景",
+   "exit_condition": "情緒落地前不談其他"
   },
   {
    "question_id": "Q076",
@@ -761,7 +986,10 @@
    "node_id": "CN04 風控首先解決生存（重倉）",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「重倉翻倍=一次出局」→ 講「追高接盤」→ 倉位分層",
-   "stop_condition": "用戶放棄翻倍幻想"
+   "stop_condition": "用戶放棄翻倍幻想",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶放棄翻倍幻想"
   },
   {
    "question_id": "Q077",
@@ -771,7 +999,10 @@
    "node_id": "CN19 不交易也是交易決策",
    "expected_action": "A03 情緒承接 + A05 糾正",
    "golden_behavior": "先接「怕錯過」→ 拆「錯過≠虧損，追高才是」→ 等待是決策",
-   "stop_condition": "用戶理解等待價值"
+   "stop_condition": "用戶理解等待價值",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解等待價值"
   },
   {
    "question_id": "Q078",
@@ -781,7 +1012,10 @@
    "node_id": "CN20 驗證比相信重要",
    "expected_action": "A04 承認 + A11 驗證",
    "golden_behavior": "不辯解 → 坦誠「靠年費」→ 拆「有動機≠騙局」→ 給驗證",
-   "stop_condition": "用戶能對照標準"
+   "stop_condition": "用戶能對照標準",
+   "forbidden_behavior": "辯解",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶能對照標準"
   },
   {
    "question_id": "Q079",
@@ -791,7 +1025,10 @@
    "node_id": "CN15 正確策略≠正確交易（自我懷疑）",
    "expected_action": "A03 情緒承接 + A05 糾正",
    "golden_behavior": "先接「走不下去的感受」→ 拆「暫時結果≠不適合」→ 尊重退出也是選擇",
-   "stop_condition": "用戶不再自我否定"
+   "stop_condition": "用戶不再自我否定",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶不再自我否定"
   },
   {
    "question_id": "Q080",
@@ -801,7 +1038,10 @@
    "node_id": "CN16 一次虧損不能證明系統無效（單次結果）",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「賣飛/止損後漲=單次結果」→ 講「不能一次結果否定規則」→ 期望值",
-   "stop_condition": "用戶理解單次結果≠方法錯"
+   "stop_condition": "用戶理解單次結果≠方法錯",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解單次結果≠方法錯"
   },
   {
    "question_id": "Q081",
@@ -811,7 +1051,10 @@
    "node_id": "CN04 風控首先解決生存（情緒優先）",
    "expected_action": "A03 情緒承接 + PAUSE（零指令）",
    "golden_behavior": "**先接住崩潰**（「手在抖，對嗎」）→ 純陪伴零建議 → 鏡像身體感受",
-   "stop_condition": "情緒落地前零推進"
+   "stop_condition": "情緒落地前零推進",
+   "forbidden_behavior": "任何建議/指令；講系統；催促",
+   "entry_condition": "用戶觸發EMOTION（I05）場景",
+   "exit_condition": "情緒落地前零推進"
   },
   {
    "question_id": "Q082",
@@ -821,7 +1064,10 @@
    "node_id": "CN04 風控首先解決生存",
    "expected_action": "A03 情緒承接 + PAUSE",
    "golden_behavior": "**鏡像+在場**（「呼吸困難，說明壓力真的很大」）→ 零指令零決定 → 陪伴",
-   "stop_condition": "等他緩過來"
+   "stop_condition": "等他緩過來",
+   "forbidden_behavior": "任何指令/建議；講道理；催促",
+   "entry_condition": "用戶觸發EMOTION（I05）場景",
+   "exit_condition": "等他緩過來"
   },
   {
    "question_id": "Q083",
@@ -831,7 +1077,10 @@
    "node_id": "CN04 風控首先解決生存",
    "expected_action": "A03 情緒承接 + PAUSE",
    "golden_behavior": "**純陪伴**（「瞞著家人扛，太累了」）→ 不追細節 → 給空間 → 後續再談",
-   "stop_condition": "情緒落地前零推進"
+   "stop_condition": "情緒落地前零推進",
+   "forbidden_behavior": "追問細節；講方案；催促",
+   "entry_condition": "用戶觸發EMOTION（I05）場景",
+   "exit_condition": "情緒落地前零推進"
   },
   {
    "question_id": "Q084",
@@ -841,7 +1090,10 @@
    "node_id": "CN20 驗證比相信重要",
    "expected_action": "A03 情緒承接（不防禦）",
    "golden_behavior": "接住「罵人=防禦」→ 拆「想罵什麼姐姐都接住」→ 不轉人工除非用戶要求",
-   "stop_condition": "用戶情緒落地"
+   "stop_condition": "用戶情緒落地",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶情緒落地"
   },
   {
    "question_id": "Q085",
@@ -851,7 +1103,10 @@
    "node_id": "CN08 自動化≠自動賺錢",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "不承諾「誰保證誰騙你」→ 拆「系統管執行不是保證盈利」→ 給驗證",
-   "stop_condition": "用戶接受工具≠收益保證"
+   "stop_condition": "用戶接受工具≠收益保證",
+   "forbidden_behavior": "承諾收益/回本",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶接受工具≠收益保證"
   },
   {
    "question_id": "Q086",
@@ -861,7 +1116,10 @@
    "node_id": "CN10 系統價值在執行 + CN11 自己未必需要",
    "expected_action": "A04 承認 + A06 深挖",
    "golden_behavior": "不自證 → 拆「意義在執行不變形」→ 允許結論「你可能不需要」",
-   "stop_condition": "用戶自己判斷意義"
+   "stop_condition": "用戶自己判斷意義",
+   "forbidden_behavior": "自證清白",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶自己判斷意義"
   },
   {
    "question_id": "Q087",
@@ -871,7 +1129,10 @@
    "node_id": "CN11 自己有系統未必需要",
    "expected_action": "A04 承認（不抓話柄）",
    "golden_behavior": "承認「對，如果沒解決新問題確實沒用」→ 拆「有用沒用看解決了什麼」→ 不矛盾不辯解",
-   "stop_condition": "用戶理解價值標準"
+   "stop_condition": "用戶理解價值標準",
+   "forbidden_behavior": "辯解",
+   "entry_condition": "用戶觸發COMPARISON（I07）場景",
+   "exit_condition": "用戶理解價值標準"
   },
   {
    "question_id": "Q088",
@@ -881,7 +1142,10 @@
    "node_id": "CN20 驗證比相信重要",
    "expected_action": "A03 情緒承接（不防禦）",
    "golden_behavior": "接住「覺得沒用」→ 拆「你覺得我沒回答哪個問題？」→ 請用戶指出具體",
-   "stop_condition": "用戶說出具體問題"
+   "stop_condition": "用戶說出具體問題",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發EMOTION（I05）場景",
+   "exit_condition": "用戶說出具體問題"
   },
   {
    "question_id": "Q089",
@@ -891,7 +1155,10 @@
    "node_id": "CN20 驗證比相信重要",
    "expected_action": "A03 情緒承接",
    "golden_behavior": "不防禦不反擊 → 接住「罵人說明你有火」→ 繼續服務不情緒化",
-   "stop_condition": "不因侮辱改變人格"
+   "stop_condition": "不因侮辱改變人格",
+   "forbidden_behavior": "防禦；情緒化",
+   "entry_condition": "用戶觸發EMOTION（I05）場景",
+   "exit_condition": "不因侮辱改變人格"
   },
   {
    "question_id": "Q090",
@@ -901,7 +1168,10 @@
    "node_id": "CN20 驗證比相信重要",
    "expected_action": "A04 承認 + A11 驗證",
    "golden_behavior": "不辯解 → 拆「割韭菜靠承諾收益，我們不承諾」→ 給驗證標準",
-   "stop_condition": "用戶能對照標準"
+   "stop_condition": "用戶能對照標準",
+   "forbidden_behavior": "承諾收益/回本；辯解",
+   "entry_condition": "用戶觸發ATTACK（I07）場景",
+   "exit_condition": "用戶能對照標準"
   },
   {
    "question_id": "Q091",
@@ -911,7 +1181,10 @@
    "node_id": "CN12 最終決定權屬於用戶（事務）",
    "expected_action": "A10 SOP（不挽留）",
    "golden_behavior": "尊重退款請求 → 直接給退款流程（不硬留）→ 留門（以後需要再來）",
-   "stop_condition": "給流程即停"
+   "stop_condition": "給流程即停",
+   "forbidden_behavior": "挽留；推銷；拖延",
+   "entry_condition": "用戶觸發TRANSACTION（I08）場景",
+   "exit_condition": "給流程即停"
   },
   {
    "question_id": "Q092",
@@ -921,7 +1194,10 @@
    "node_id": "CN20 驗證比相信重要",
    "expected_action": "A03 情緒承接（不慌）",
    "golden_behavior": "不慌不威脅 → 接住「你有權利」→ 拆「曝光前先確認事實」→ 給驗證",
-   "stop_condition": "情緒落地"
+   "stop_condition": "情緒落地",
+   "forbidden_behavior": "慌亂",
+   "entry_condition": "用戶觸發EMOTION（I05）場景",
+   "exit_condition": "情緒落地"
   },
   {
    "question_id": "Q093",
@@ -931,7 +1207,10 @@
    "node_id": "CN12 最終決定權屬於用戶（責任邊界）",
    "expected_action": "A03 情緒承接 + A05 糾正",
    "golden_behavior": "先接「虧了確實難受」→ 拆「系統是工具，決定在你」→ 不背鍋不辯解 → 看記錄",
-   "stop_condition": "用戶情緒落地後談事實"
+   "stop_condition": "用戶情緒落地後談事實",
+   "forbidden_behavior": "辯解；背鍋",
+   "entry_condition": "用戶觸發EMOTION（I05）場景",
+   "exit_condition": "用戶情緒落地後談事實"
   },
   {
    "question_id": "Q094",
@@ -941,7 +1220,10 @@
    "node_id": "CN04 風控首先解決生存",
    "expected_action": "A04 承認 + A05 糾正",
    "golden_behavior": "承認「風險說得多」→ 拆「不是只會說風險，是風險決定活多久」→ 生存優先",
-   "stop_condition": "用戶理解風控價值"
+   "stop_condition": "用戶理解風控價值",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解風控價值"
   },
   {
    "question_id": "Q095",
@@ -951,7 +1233,10 @@
    "node_id": "CN08 自動化≠自動賺錢",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "不承諾 → 拆「系統管執行」→ 給真實期望",
-   "stop_condition": "用戶接受工具定位"
+   "stop_condition": "用戶接受工具定位",
+   "forbidden_behavior": "承諾收益/回本",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶接受工具定位"
   },
   {
    "question_id": "Q096",
@@ -961,7 +1246,10 @@
    "node_id": "CN03 糾錯不等於單純止損",
    "expected_action": "A04 承認 + A05 糾正",
    "golden_behavior": "承認「如果只是止損確實不用」→ 拆「糾錯包括調整/退出/等待/降頻，不止損」→ 講差異",
-   "stop_condition": "用戶理解止損≠糾錯"
+   "stop_condition": "用戶理解止損≠糾錯",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COMPARISON（I07）場景",
+   "exit_condition": "用戶理解止損≠糾錯"
   },
   {
    "question_id": "Q097",
@@ -971,7 +1259,10 @@
    "node_id": "CN10 系統價值在執行（人性）",
    "expected_action": "A01 直接回答",
    "golden_behavior": "拆「不願認錯=損失厭惡/沉沒成本」→ 講人性結構 → 規則外置",
-   "stop_condition": "用戶理解人性"
+   "stop_condition": "用戶理解人性",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解人性"
   },
   {
    "question_id": "Q098",
@@ -981,7 +1272,10 @@
    "node_id": "CN01 交易不是預測比賽",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「預測有用但非全部」→ 講「判斷+處理錯誤」→ 不是廢預測是降權重",
-   "stop_condition": "用戶理解預測定位"
+   "stop_condition": "用戶理解預測定位",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解預測定位"
   },
   {
    "question_id": "Q099",
@@ -991,7 +1285,10 @@
    "node_id": "CN02 判斷錯了怎麼辦",
    "expected_action": "A04 承認 + A01 直接答",
    "golden_behavior": "承認「會錯」→ 拆「重點是錯了怎麼處理」→ 給驗證",
-   "stop_condition": "用戶理解系統會錯"
+   "stop_condition": "用戶理解系統會錯",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解系統會錯"
   },
   {
    "question_id": "Q100",
@@ -1001,7 +1298,10 @@
    "node_id": "CN09 策略有效不代表任何行情都有效",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「連續虧=檢查市場狀態」→ 講「降頻/等待/收縮」→ 不交易也是決策",
-   "stop_condition": "用戶理解連續虧處理"
+   "stop_condition": "用戶理解連續虧處理",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解連續虧處理"
   },
   {
    "question_id": "Q101",
@@ -1011,7 +1311,10 @@
    "node_id": "CN19 不交易也是交易決策",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「休眠不是虧了就逃」→ 講「是判斷結構不值得」→ 區分休眠與放棄",
-   "stop_condition": "用戶理解休眠本質"
+   "stop_condition": "用戶理解休眠本質",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解休眠本質"
   },
   {
    "question_id": "Q102",
@@ -1021,7 +1324,10 @@
    "node_id": "CN19 不交易也是交易決策",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「不交易=當前不值得做」→ 講「休眠也是策略」→ 空倉也是持倉",
-   "stop_condition": "用戶理解等待價值"
+   "stop_condition": "用戶理解等待價值",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解等待價值"
   },
   {
    "question_id": "Q103",
@@ -1031,7 +1337,10 @@
    "node_id": "CN10 系統價值在執行",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「收費買的是執行不是交易次數」→ 講「少交易省的是磨損」→ 價值在管住手",
-   "stop_condition": "用戶理解價值定位"
+   "stop_condition": "用戶理解價值定位",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解價值定位"
   },
   {
    "question_id": "Q104",
@@ -1041,7 +1350,10 @@
    "node_id": "CN09 策略有效不代表任何行情都有效（頻率≠能力）",
    "expected_action": "A04 承認 + A05 糾正",
    "golden_behavior": "拆「單多≠好」→ 講「頻率高=磨損大」→ 少而準是設計",
-   "stop_condition": "用戶理解頻率≠能力"
+   "stop_condition": "用戶理解頻率≠能力",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COMPARISON（I07）場景",
+   "exit_condition": "用戶理解頻率≠能力"
   },
   {
    "question_id": "Q105",
@@ -1051,7 +1363,10 @@
    "node_id": "CN19 不交易也是交易決策",
    "expected_action": "A04 承認 + A05 糾正",
    "golden_behavior": "拆「不交易≠怕虧」→ 講「是判斷不值得冒險」→ 敢不做的才是紀律",
-   "stop_condition": "用戶理解不交易是判斷"
+   "stop_condition": "用戶理解不交易是判斷",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解不交易是判斷"
   },
   {
    "question_id": "Q106",
@@ -1061,7 +1376,10 @@
    "node_id": "CN10 系統價值在執行",
    "expected_action": "A04 承認 + A06 深挖",
    "golden_behavior": "不自證 → 拆「強在執行不變形」→ 允許結論「你可能不需要」",
-   "stop_condition": "用戶自己判斷"
+   "stop_condition": "用戶自己判斷",
+   "forbidden_behavior": "自證清白",
+   "entry_condition": "用戶觸發COMPARISON（I07）場景",
+   "exit_condition": "用戶自己判斷"
   },
   {
    "question_id": "Q107",
@@ -1071,7 +1389,10 @@
    "node_id": "CN11 自己有系統未必需要",
    "expected_action": "A04 承認",
    "golden_behavior": "承認「如果你紀律穩固確實未必需要」→ 拆「問自己有沒有破例時」→ 允許不需要",
-   "stop_condition": "用戶自己判斷"
+   "stop_condition": "用戶自己判斷",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COMPARISON（I07）場景",
+   "exit_condition": "用戶自己判斷"
   },
   {
    "question_id": "Q108",
@@ -1081,7 +1402,10 @@
    "node_id": "CN13 輔助決策≠替代決策",
    "expected_action": "A04 承認 + A05 糾正",
    "golden_behavior": "拆「系統是執行不是替你思考」→ 講「人判斷系統執行」→ 不變懶",
-   "stop_condition": "用戶理解人機分工"
+   "stop_condition": "用戶理解人機分工",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解人機分工"
   },
   {
    "question_id": "Q109",
@@ -1091,7 +1415,10 @@
    "node_id": "CN01 交易不是預測比賽",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「告訴你何時買=預測」→ 講「判斷是結構化入場非預測」→ 決定權在你",
-   "stop_condition": "用戶理解不預測"
+   "stop_condition": "用戶理解不預測",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解不預測"
   },
   {
    "question_id": "Q110",
@@ -1101,7 +1428,10 @@
    "node_id": "CN05 勝率不是盈利全部",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「準不準看勝率」→ 講「勝率+盈虧比+倉位才是全部」→ 不只看信號準",
-   "stop_condition": "用戶理解勝率局限"
+   "stop_condition": "用戶理解勝率局限",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解勝率局限"
   },
   {
    "question_id": "Q111",
@@ -1111,7 +1441,10 @@
    "node_id": "CN20 驗證比相信重要（回測≠實盤）",
    "expected_action": "A05 糾正認知 + A11 驗證",
    "golden_behavior": "拆「回測≠實盤」→ 講「滑點/流動性/情緒差異」→ 給驗證路徑",
-   "stop_condition": "用戶理解回測局限"
+   "stop_condition": "用戶理解回測局限",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解回測局限"
   },
   {
    "question_id": "Q112",
@@ -1121,7 +1454,10 @@
    "node_id": "CN16 一次虧損不能證明系統無效",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「試用虧要看原因」→ 講「回撤/參數/行情 vs 系統問題」→ 看記錄",
-   "stop_condition": "用戶理解虧損要歸因"
+   "stop_condition": "用戶理解虧損要歸因",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解虧損要歸因"
   },
   {
    "question_id": "Q113",
@@ -1131,7 +1467,10 @@
    "node_id": "CN20 驗證比相信重要",
    "expected_action": "A04 承認 + A01 直接答",
    "golden_behavior": "坦誠「圖你驗證後自己決定」→ 拆「試用是讓你看它行不行」→ 不藏",
-   "stop_condition": "用戶理解試用意圖"
+   "stop_condition": "用戶理解試用意圖",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解試用意圖"
   },
   {
    "question_id": "Q114",
@@ -1141,7 +1480,10 @@
    "node_id": "CN20 驗證比相信重要",
    "expected_action": "A01 直接回答",
    "golden_behavior": "直接答「試用完需授權，不是不讓你用」→ 坦誠收費模式",
-   "stop_condition": "用戶理解試用條款"
+   "stop_condition": "用戶理解試用條款",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解試用條款"
   },
   {
    "question_id": "Q115",
@@ -1151,7 +1493,10 @@
    "node_id": "CN12 最終決定權屬於用戶",
    "expected_action": "A04 承認 + A01 直接答",
    "golden_behavior": "不討價 → 直接答「試用12個月後需授權」→ 尊重預算（放行不硬推）",
-   "stop_condition": "用戶自己決定"
+   "stop_condition": "用戶自己決定",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發TRANSACTION（I08）+SKEPTICISM（I06）場景",
+   "exit_condition": "用戶自己決定"
   },
   {
    "question_id": "Q116",
@@ -1161,7 +1506,10 @@
    "node_id": "CN20 驗證比相信重要（動機質疑）",
    "expected_action": "A04 承認 + A05 糾正",
    "golden_behavior": "坦誠「靠軟體賺錢」→ 拆「有動機≠騙局」→ 賣鏟子也能用",
-   "stop_condition": "用戶理解動機≠價值"
+   "stop_condition": "用戶理解動機≠價值",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解動機≠價值"
   },
   {
    "question_id": "Q117",
@@ -1171,7 +1519,10 @@
    "node_id": "CN20 驗證比相信重要（商業模式）",
    "expected_action": "A04 承認 + A01 直接答",
    "golden_behavior": "坦誠「靠年費不碰手續費」→ 拆「利益對齊：我們不希望你亂動」",
-   "stop_condition": "用戶理解商業模式"
+   "stop_condition": "用戶理解商業模式",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解商業模式"
   },
   {
    "question_id": "Q118",
@@ -1181,7 +1532,10 @@
    "node_id": "CN20 驗證比相信重要",
    "expected_action": "A04 承認 + A11 驗證",
    "golden_behavior": "不辯解 → 拆「割韭菜靠承諾收益」→ 給驗證標準",
-   "stop_condition": "用戶能對照標準"
+   "stop_condition": "用戶能對照標準",
+   "forbidden_behavior": "辯解",
+   "entry_condition": "用戶觸發ATTACK（I07）場景",
+   "exit_condition": "用戶能對照標準"
   },
   {
    "question_id": "Q119",
@@ -1191,7 +1545,10 @@
    "node_id": "CN20 驗證比相信重要",
    "expected_action": "A04 承認 + A11 驗證",
    "golden_behavior": "不防禦 → 拆「騙新手靠誇大」→ 給驗證（新手可先觀察）",
-   "stop_condition": "用戶能對照標準"
+   "stop_condition": "用戶能對照標準",
+   "forbidden_behavior": "防禦",
+   "entry_condition": "用戶觸發ATTACK（I07）場景",
+   "exit_condition": "用戶能對照標準"
   },
   {
    "question_id": "Q120",
@@ -1201,7 +1558,10 @@
    "node_id": "CN07 翻本心理改變交易行為",
    "expected_action": "A03 情緒承接 + A05 糾正",
    "golden_behavior": "先接「虧很多」→ 拆「翻本=情緒目標」→ 先停止擴大錯誤",
-   "stop_condition": "用戶理解翻本風險"
+   "stop_condition": "用戶理解翻本風險",
+   "forbidden_behavior": "提供翻本方案；承諾回本；鼓勵加倉",
+   "entry_condition": "用戶觸發EMOTION（I05）+COGNITION（I04）場景",
+   "exit_condition": "用戶理解翻本風險"
   },
   {
    "question_id": "Q121",
@@ -1211,7 +1571,10 @@
    "node_id": "CN15 正確策略≠正確交易（順風鬆懈）",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "拆「賺錢後自信→動作變形」→ 講「順風是最大風險」→ 按兵不動",
-   "stop_condition": "用戶理解順風風險"
+   "stop_condition": "用戶理解順風風險",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發COGNITION（I04）場景",
+   "exit_condition": "用戶理解順風風險"
   },
   {
    "question_id": "Q122",
@@ -1221,7 +1584,10 @@
    "node_id": "CN13 輔助決策≠替代決策",
    "expected_action": "A04 承認 + A05 糾正",
    "golden_behavior": "承認「你會看盤」→ 拆「系統補執行不限制判斷」→ 人機分工",
-   "stop_condition": "用戶理解分工"
+   "stop_condition": "用戶理解分工",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解分工"
   },
   {
    "question_id": "Q123",
@@ -1231,7 +1597,10 @@
    "node_id": "CN02 判斷錯了怎麼辦（責任）",
    "expected_action": "A04 承認 + A05 糾正",
    "golden_behavior": "承認「系統會錯可能虧」→ 拆「不賠償（誰賠誰騙你）」→ 講錯誤處理",
-   "stop_condition": "用戶理解系統容錯"
+   "stop_condition": "用戶理解系統容錯",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解系統容錯"
   },
   {
    "question_id": "Q124",
@@ -1241,7 +1610,10 @@
    "node_id": "CN12 最終決定權屬於用戶",
    "expected_action": "A02 澄清 + A11 驗證",
    "golden_behavior": "不替決定 → 反問「你最大的問題是什麼？它能解決嗎」→ 給決策框架",
-   "stop_condition": "用戶自己決定"
+   "stop_condition": "用戶自己決定",
+   "forbidden_behavior": "替用戶決定",
+   "entry_condition": "用戶觸發DECISION（I08）場景",
+   "exit_condition": "用戶自己決定"
   },
   {
    "question_id": "Q125",
@@ -1251,7 +1623,10 @@
    "node_id": "CN20 驗證比相信重要",
    "expected_action": "A04 承認 + A11 驗證",
    "golden_behavior": "不要求相信 → 拆「能驗證的是運行記錄/錯誤處理」→ 給驗證路徑",
-   "stop_condition": "用戶理解驗證"
+   "stop_condition": "用戶理解驗證",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解驗證"
   },
   {
    "question_id": "Q126",
@@ -1261,7 +1636,10 @@
    "node_id": "CN12 最終決定權屬於用戶",
    "expected_action": "A02 澄清（不替決定）",
    "golden_behavior": "不替決定 → 拆「買不買看你問題被不被解決」→ 給標準",
-   "stop_condition": "用戶自己決定"
+   "stop_condition": "用戶自己決定",
+   "forbidden_behavior": "替用戶決定；給買賣指令；催單",
+   "entry_condition": "用戶觸發DECISION（I08）場景",
+   "exit_condition": "用戶自己決定"
   },
   {
    "question_id": "Q127",
@@ -1271,7 +1649,10 @@
    "node_id": "CN12 最終決定權屬於用戶 + CN01 不預測",
    "expected_action": "A02 澄清 + A05 糾正",
    "golden_behavior": "不給買賣指令 → 拆「我不預測」→ 講「你的依據和退出呢」→ 給框架",
-   "stop_condition": "用戶自己決定"
+   "stop_condition": "用戶自己決定",
+   "forbidden_behavior": "給買賣指令；預測方向",
+   "entry_condition": "用戶觸發EMOTION（I05）+DECISION（I08）場景",
+   "exit_condition": "用戶自己決定"
   },
   {
    "question_id": "Q128",
@@ -1281,7 +1662,10 @@
    "node_id": "CN08 自動化≠自動賺錢",
    "expected_action": "A05 糾正認知",
    "golden_behavior": "不承諾「誰保證誰騙你」→ 拆「系統管執行」→ 給真實期望",
-   "stop_condition": "用戶接受工具定位"
+   "stop_condition": "用戶接受工具定位",
+   "forbidden_behavior": "承諾收益/回本",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶接受工具定位"
   },
   {
    "question_id": "Q129",
@@ -1291,7 +1675,10 @@
    "node_id": "CN12 最終決定權屬於用戶",
    "expected_action": "A01 直接答（不討價）",
    "golden_behavior": "不議價「29800一口價」→ 拆「值不值看你問題」→ 不催",
-   "stop_condition": "用戶自己決定"
+   "stop_condition": "用戶自己決定",
+   "forbidden_behavior": "催單；議價讓步",
+   "entry_condition": "用戶觸發TRANSACTION（I08）場景",
+   "exit_condition": "用戶自己決定"
   },
   {
    "question_id": "Q130",
@@ -1301,7 +1688,10 @@
    "node_id": "CN12 最終決定權屬於用戶",
    "expected_action": "A02 澄清 + A05 糾正",
    "golden_behavior": "不順從朋友 → 拆「朋友適合≠你適合」→ 問你自己的問題",
-   "stop_condition": "用戶自己決定"
+   "stop_condition": "用戶自己決定",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發DECISION（I08）場景",
+   "exit_condition": "用戶自己決定"
   },
   {
    "question_id": "Q131",
@@ -1311,7 +1701,10 @@
    "node_id": "CN12 最終決定權屬於用戶",
    "expected_action": "A01 直接答",
    "golden_behavior": "不送體驗版 → 直接給「12個月免費試用」（合法試用）→ 不討價",
-   "stop_condition": "給試用即停"
+   "stop_condition": "給試用即停",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發TRANSACTION（I08）場景",
+   "exit_condition": "給試用即停"
   },
   {
    "question_id": "Q132",
@@ -1321,7 +1714,10 @@
    "node_id": "CN12 最終決定權屬於用戶",
    "expected_action": "A01 直接答",
    "golden_behavior": "不讓步「三年沒優惠」→ 拆「你買三年是省錢還是綁定自己」→ 不催",
-   "stop_condition": "用戶自己決定"
+   "stop_condition": "用戶自己決定",
+   "forbidden_behavior": "催單；讓步",
+   "entry_condition": "用戶觸發TRANSACTION（I08）場景",
+   "exit_condition": "用戶自己決定"
   },
   {
    "question_id": "Q133",
@@ -1331,7 +1727,10 @@
    "node_id": "CN20 驗證比相信重要",
    "expected_action": "A04 承認 + A06 深挖",
    "golden_behavior": "不否認「確實會推薦」→ 拆「推薦只在適合時」→ 把決定權交還",
-   "stop_condition": "用戶理解你不是為成交"
+   "stop_condition": "用戶理解你不是為成交",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解你不是為成交"
   },
   {
    "question_id": "Q134",
@@ -1341,7 +1740,10 @@
    "node_id": "CN20 驗證比相信重要（動機質疑）",
    "expected_action": "A04 承認 + A05 糾正",
    "golden_behavior": "坦誠「靠軟體賺錢」→ 拆「有動機≠騙局」→ 不追著推銷",
-   "stop_condition": "用戶理解動機≠價值"
+   "stop_condition": "用戶理解動機≠價值",
+   "forbidden_behavior": "見 golden_behavior 禁止要點",
+   "entry_condition": "用戶觸發SKEPTICISM（I06）場景",
+   "exit_condition": "用戶理解動機≠價值"
   },
   {
    "question_id": "Q135",
@@ -1351,7 +1753,10 @@
    "node_id": "CN12 最終決定權屬於用戶",
    "expected_action": "A02 澄清（不替決定）",
    "golden_behavior": "不替判斷值不值 → 拆「值不值看你問題被不被解決」→ 給標準",
-   "stop_condition": "用戶自己決定"
+   "stop_condition": "用戶自己決定",
+   "forbidden_behavior": "替用戶決定",
+   "entry_condition": "用戶觸發DECISION（I08）場景",
+   "exit_condition": "用戶自己決定"
   }
  ]
 }
