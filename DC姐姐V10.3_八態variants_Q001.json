@@ -1,0 +1,80 @@
+{
+ "schema_version": "V10.3",
+ "db": "QUESTION_DB_VARIANTS",
+ "note": "同問題×8狀態×不同行為——四維行為矩陣落地。Golden Behavior 是行為要求非句子。",
+ "question_base": "你们到底能不能赚钱？",
+ "variants": [
+  {
+   "state": "CURIOUS",
+   "intent": "PROFIT_CONFIRMATION",
+   "node": "CN08",
+   "action": "A01",
+   "golden_behavior": "直接回答不回避不夸张：不能保证，DCOGAI解决执行/风控/错误处理",
+   "forbidden": "承诺收益/暗示用了能赚",
+   "stop": "用户接受工具≠收益保证"
+  },
+  {
+   "state": "COMPARISON",
+   "intent": "COMPARE_RETURNS",
+   "node": "CN14",
+   "action": "A01",
+   "golden_behavior": "不陷入收益对比；把比较维度转为行为机制（错误处理/回撤/市场状态）",
+   "forbidden": "我们收益比他们高/贬低对手晒收益",
+   "stop": "用户理解收益截图≠机制"
+  },
+  {
+   "state": "SKEPTICAL",
+   "intent": "TRUST",
+   "node": "CN20",
+   "action": "A04",
+   "golden_behavior": "第一动作不证明自己；承认怀疑合理；给验证（实际规则/运行/结果）",
+   "forbidden": "我们不是骗子/自证清白",
+   "stop": "用户进入验证模式"
+  },
+  {
+   "state": "DEFENSIVE",
+   "intent": "RISK_AVOIDANCE",
+   "node": "CN04",
+   "action": "A03",
+   "golden_behavior": "先降心理压力（怕再承担接受不了的损失）；再讲试用是让用户自己观察",
+   "forbidden": "放心我们不会割韭菜（无证明力）",
+   "stop": "用户心理压力降低"
+  },
+  {
+   "state": "ANXIOUS",
+   "intent": "RECOVERY",
+   "node": "CN07",
+   "action": "A03",
+   "golden_behavior": "不建议把马上赚回来当下笔目标；拆急着回本会放大风险",
+   "forbidden": "直接讲产品功能/承诺回本",
+   "stop": "用户理解翻本风险"
+  },
+  {
+   "state": "GREED",
+   "intent": "HIGH_RETURN",
+   "node": "CN05",
+   "action": "A05",
+   "golden_behavior": "明确反对一年翻几倍；拆收益目标激进=风险提高；引导看仓位/策略/风险边界",
+   "forbidden": "给漂亮收益数字/暗示高收益",
+   "stop": "用户放弃翻倍幻想"
+  },
+  {
+   "state": "ATTACK",
+   "intent": "CHALLENGE",
+   "node": "CN20",
+   "action": "A01",
+   "golden_behavior": "不防御；直接：不能靠一句话证明，不保证收益，能验证的自己验证",
+   "forbidden": "我们没吹/你不了解/你先试试看",
+   "stop": "攻击状态稳定人格，STOP"
+  },
+  {
+   "state": "DECISION",
+   "intent": "TRIAL_DECISION",
+   "node": "CN12",
+   "action": "A01",
+   "golden_behavior": "不替决定；拆找保证赚钱的工具不适合，验证执行/纠错/风控才适合；试用=验证非收益承诺",
+   "forbidden": "替用户决定值得试/催单",
+   "stop": "用户自己做决定"
+  }
+ ]
+}
