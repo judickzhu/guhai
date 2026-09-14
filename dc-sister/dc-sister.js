@@ -1361,9 +1361,24 @@
         },
         function () {
           removeTyping();
-          // V4.8 修復：DS 直連失敗 → 降級到後台 /chat（後台 LLM 可用，英文模式加英文指令），再降級本地
-          var fbText = (state.lang === "en") ? "[Please reply entirely in English. No Chinese characters.] " + text : text;
-          callLLM(fbText,
+          // V4.9 修復英文：後台 /chat 英文模式不穩（返回中文/合規聲明）——英文問題 DS 直連失敗後
+          // 優先本地 matchBest + a_en（487 題英文回答可靠）；本地弱命中 → 後台 /chat 帶英文指令兜底
+          if (state.lang === "en") {
+            var m = matchBest(text);
+            if (m && m.score >= 4) {
+              localFallbackPath(text);  // 本地強命中 → a_en 英文回答
+            } else {
+              callLLM("[Please reply entirely in English. No Chinese characters.] " + text,
+                function (reply, source) {
+                  appendMessage("bot", reply, { suffix: false, deepBtn: text });
+                  renderQuick([u("q_price"), u("q_diff"), u("q_api")]);
+                },
+                function () { localFallbackPath(text); });
+            }
+            return;
+          }
+          // 中文：DS 直連失敗 → 降級後台 /chat → 本地
+          callLLM(text,
             function (reply, source) {
               appendMessage("bot", reply, { suffix: false, deepBtn: text });
               renderQuick([u("q_price"), u("q_diff"), u("q_api")]);
