@@ -1361,8 +1361,16 @@
         },
         function () {
           removeTyping();
-          // DeepSeek 失敗才降級到本地完整流程
-          localFallbackPath(text);
+          // V4.8 修復：DS 直連失敗 → 降級到後台 /chat（後台 LLM 可用，英文模式加英文指令），再降級本地
+          var fbText = (state.lang === "en") ? "[Please reply entirely in English. No Chinese characters.] " + text : text;
+          callLLM(fbText,
+            function (reply, source) {
+              appendMessage("bot", reply, { suffix: false, deepBtn: text });
+              renderQuick([u("q_price"), u("q_diff"), u("q_api")]);
+            },
+            function () {
+              localFallbackPath(text);
+            });
         }
       );
       return;
