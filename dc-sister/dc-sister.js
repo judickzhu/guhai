@@ -689,9 +689,12 @@
     if (state.cog && state.cog.pos) {
       sys = sys + "\n【上一輪認知狀態】位置:" + state.cog.pos + " 已理解:" + (state.cog.understood || "") + " 下一最佳:" + (state.cog.next || "") + " 引擎:" + (state.cog.engine || "cognitive") + "——若用戶話題未變，從下一最佳認知繼續，不重頭講；若話題已變，重新判斷。";
     }
-    // V10.7：帶入本輪 USER_STATE（代碼檢測的 intent/emotion——增強路由判斷，不改變輸出邏輯）
+    // V10.7：帶入本輪 USER_STATE（代碼檢測的 intent/emotion/regression/loop——增強路由判斷，不改變輸出邏輯）
     if (state.user && state.user.intent) {
-      sys = sys + "\n【本輪 USER_STATE】intent:" + state.user.intent + " emotion:{anxiety:" + (state.user.emotion.anxiety || 0) + ",greed:" + (state.user.emotion.greed || 0) + ",skepticism:" + (state.user.emotion.skepticism || 0) + ",defense:" + (state.user.emotion.defense || 0) + "}——按 intent 分流（FACT/SOP/TECH/TRANSACTION 認知OFF直接答；EMOTION先接；SKEPTICISM給驗證；COMPARISON進CN11；COGNITION進認知引擎）。";
+      sys = sys + "\n【本輪 USER_STATE】intent:" + state.user.intent + " emotion:{anxiety:" + (state.user.emotion.anxiety || 0) + ",greed:" + (state.user.emotion.greed || 0) + ",skepticism:" + (state.user.emotion.skepticism || 0) + ",defense:" + (state.user.emotion.defense || 0) + "}";
+      if (state.user.regression) sys = sys + " regression:true(用戶回到舊認知「" + (state.user.current_topic || "") + "」——觸發A08回退提醒，只提醒不重講)";
+      if (state.user.loop && state.user.loop.detected) sys = sys + " loop:true(主題「" + (state.user.loop.group || "") + "」重複≥2——觸發A09循環斷路，跳表面找底層卡點)";
+      sys = sys + "——按 intent 分流（FACT/SOP/TECH/TRANSACTION 認知OFF直接答；EMOTION先接；SKEPTICISM給驗證；COMPARISON進CN11；COGNITION進認知引擎）。";
     }
     var hist = [];
     try {
@@ -1404,6 +1407,25 @@
     if (/亏|害怕|难受|睡不着|崩溃|绝望|不敢/.test(lower)) return "EMOTION";
     return "COGNITION";
   }
+  // V10.7 主題指紋：把一句話歸到認知主題（用於回退/循環檢測）
+  var TOPIC_LEX = {
+    '翻本': ['翻本','回本','赚回来','拿回来','翻倍','快速赚','赚回'],
+    '加仓': ['加仓','补仓','重仓','满仓','加大仓位'],
+    '止损': ['止损','割肉','扛单','认错','卖飞','不卖'],
+    '等待': ['等待','休眠','空仓','不交易','盯盘','错过','没开单'],
+    '验证': ['骗子','割韭菜','骗局','套路','证明','回测','凭什么','信'],
+    '价格': ['贵','29800','便宜','值不值','收费','打折','年费'],
+    '自信': ['我会','我懂','我强','我有','不需要','自己','纪律']
+  };
+  function topicFingerprint(text) {
+    var lower = toSimplified(text.toLowerCase());
+    for (var t in TOPIC_LEX) {
+      for (var i = 0; i < TOPIC_LEX[t].length; i++) {
+        if (lower.indexOf(TOPIC_LEX[t][i]) >= 0) return t;
+      }
+    }
+    return null;
+  }
   function updateUserState(text) {
     try {
       var st = state.user || {};
@@ -1411,6 +1433,24 @@
       st.intent = detectIntent(text);
       // 記錄 sales_impulse（回答後由輸出檢測，此處初步：含產品名/試用/購買）
       st.sales_impulse = /试用|购买|开通|DCOGAI/.test(text) ? 0.3 : 0;
+      // V10.7 Step3：主題指紋 → 回退/循環檢測
+      var topic = topicFingerprint(text);
+      if (topic) {
+        if (!st.topic_history) st.topic_history = [];
+        st.topic_history.push(topic);
+        if (st.topic_history.length > 6) st.topic_history.shift();
+        // 循環：同主題 ≥2 次
+        var cnt = 0;
+        for (var i = 0; i < st.topic_history.length; i++) if (st.topic_history[i] === topic) cnt++;
+        st.loop = { detected: cnt >= 2, group: cnt >= 2 ? topic : null };
+        // 回退：用戶在 understood 含該主題後又回到（簡化：understood 記錄過 + 又出現同主題）
+        if (st.understood && st.understood.indexOf(topic) >= 0) {
+          st.regression = true;
+        } else {
+          st.regression = false;
+        }
+        st.current_topic = topic;
+      }
       state.user = st;
     } catch (e) {}
   }
