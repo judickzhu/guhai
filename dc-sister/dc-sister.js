@@ -689,6 +689,10 @@
     if (state.cog && state.cog.pos) {
       sys = sys + "\n【上一輪認知狀態】位置:" + state.cog.pos + " 已理解:" + (state.cog.understood || "") + " 下一最佳:" + (state.cog.next || "") + " 引擎:" + (state.cog.engine || "cognitive") + "——若用戶話題未變，從下一最佳認知繼續，不重頭講；若話題已變，重新判斷。";
     }
+    // V10.7：帶入本輪 USER_STATE（代碼檢測的 intent/emotion——增強路由判斷，不改變輸出邏輯）
+    if (state.user && state.user.intent) {
+      sys = sys + "\n【本輪 USER_STATE】intent:" + state.user.intent + " emotion:{anxiety:" + (state.user.emotion.anxiety || 0) + ",greed:" + (state.user.emotion.greed || 0) + ",skepticism:" + (state.user.emotion.skepticism || 0) + ",defense:" + (state.user.emotion.defense || 0) + "}——按 intent 分流（FACT/SOP/TECH/TRANSACTION 認知OFF直接答；EMOTION先接；SKEPTICISM給驗證；COMPARISON進CN11；COGNITION進認知引擎）。";
+    }
     var hist = [];
     try {
       var h = state.history || [];
