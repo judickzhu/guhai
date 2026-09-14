@@ -138,3 +138,24 @@ U8 第一步做什麼 → A06/Next NULL/STOP=TRUE
 
 拿真實對話跑——逐輪記錄：Turn/User Input/State/Intent/Current Node/Cognitive Level/Block/Action/Golden Behavior/Actual Response/State Change/Next Node/Regression/Loop/Decision Dependency/Sales Impulse/STOP/Failure Tag。
 **專門找**：DC 從哪一輪開始「像AI」/「像銷售」/「管用戶」/「重複說教」——暴露 V10 架構漏洞。
+
+---
+
+## 十五、與 dc-sister.js 的銜接（2026-09-13 確認）
+
+**V10.4/10.5 路由已部分內化於網站 dc-sister.js**：
+- `state.cog`（pos/understood/next/engine）——認知位置跟踪（V3.0 實現）
+- `[COG|pos|understood|next|engine]` 隱形標記——跨輪認知傳遞
+- Prompt 內化：決策器 12 動作/記憶壓縮器四欄/比較引擎/連續攻擊質疑/認知循環檢測/主幹鏈 10 條
+- **100 輪盲測 100/100 無 Failure**（V10.6）證明 prompt 內化已生效
+
+**未代碼化**（V10.5 完整 USER_STATE vs 現有簡版 state.cog）：
+| V10.5 完整字段 | 現有 state.cog | 差距 |
+|---|---|---|
+| emotion 8 維向量 | 無（靠 prompt 判）| 未代碼化 |
+| intent（8 類）| 無 | 未代碼化 |
+| cognitive_level（L0-L5）| pos（簡版）| 部分 |
+| regression/loop/dependency | 無 | 未代碼化 |
+| sales_impulse | 無（prompt 檢查）| 未代碼化 |
+
+**建議**：若需代碼級 USER_STATE（可測/可存/可跨會話），重構 handleUserMessage 為狀態驅動——但當前 prompt 內化已通過 100 輪驗證，重構有回歸風險，按需決定。
