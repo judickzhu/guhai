@@ -863,6 +863,25 @@
     scriptPinned: false,           // 用户手动固定文字体系（防输入自动切回）
     quick: [],                   // 当前快捷提问原始项（简体基准）
     cog: null,                      // V3.0 認知路徑：{pos,understood,next,engine} 上一輪狀態
+    // V10.7 代碼級 USER_STATE（完整狀態對象——可觀測/可調試/可持久化）
+    user: {
+      emotion: { curiosity: 0, skepticism: 0, anxiety: 0, greed: 0, defense: 0, attack: 0, decision: 0 },
+      intent: null,
+      current_node: null,
+      level: 0,
+      block: '',
+      understood: [],
+      rejected: [],
+      regression: false,
+      loop: { detected: false, group: null },
+      decision_dependency: 'NONE',
+      confirmation_loop: 0,
+      user_has_solution: 'UNKNOWN',
+      sales_impulse: 0,
+      next_target: null,
+      do_not_repeat: [],
+      stop: false
+    },
     welcomeEl: null,             // 欢迎语气泡元素
     welcomeRaw: ""               // 欢迎语简体原文
   };
@@ -1351,8 +1370,53 @@
     handleUserMessage(text);
   }
 
+  // ============== V10.7 代碼級 USER_STATE（工具函數——只記錄不干預）==============
+  var EMOTION_LEX = {
+    anxiety: ["亏麻","亏惨","睡不着","失眠","害怕","恐惧","恐慌","焦虑","着急","心慌","难受","忍不住","怕了","绝望","崩溃"],
+    greed: ["翻本","翻倍","回本","赚回","一把","梭哈","满仓","重仓","翻盘","快速赚","赚快"],
+    skepticism: ["骗子","骗人","割韭菜","骗局","套路","凭什么","忽悠","靠谱","可信","假的"],
+    defense: ["自己","不需要","我有","我能","别教我","用不着","我自己做"],
+    attack: ["傻鸟","没用","废物","垃圾","滚","退钱","曝光","投诉","煞笔","有病"]
+  };
+  function detectEmotion(text) {
+    var e = { curiosity: 0.1, skepticism: 0, anxiety: 0, greed: 0, defense: 0, attack: 0, decision: 0 };
+    var lower = toSimplified(text.toLowerCase());
+    for (var k in EMOTION_LEX) {
+      for (var i = 0; i < EMOTION_LEX[k].length; i++) {
+        if (lower.indexOf(EMOTION_LEX[k][i]) >= 0) e[k] = Math.min(1, e[k] + 0.3);
+      }
+    }
+    if (/该不该|要不要|买不买|进不进|怎么办|适合/.test(lower)) e.decision = Math.max(e.decision, 0.5);
+    return e;
+  }
+  function detectIntent(text) {
+    var lower = toSimplified(text.toLowerCase());
+    if (/怎么装|怎么安|怎么绑|怎么设置|怎么暂停|怎么导出|怎么下|怎么开/.test(lower)) return "SOP";
+    if (/多少钱|多少价格|年费|收费|支持.*交易所|有没有.*客户端|Windows|Mac/.test(lower)) return "FACT";
+    if (/参数怎么|为什么没|报错|错误|怎么调/.test(lower)) return "TECH";
+    if (/我要买|我要试|怎么开通|怎么购买|下单/.test(lower)) return "TRANSACTION";
+    if (/骗子|骗人|割韭菜|凭什么|套路|图什么|保证/.test(lower)) return "SKEPTICISM";
+    if (/和.*比|区别|有什么不同|你们好在哪里/.test(lower)) return "COMPARISON";
+    if (/亏|害怕|难受|睡不着|崩溃|绝望|不敢/.test(lower)) return "EMOTION";
+    return "COGNITION";
+  }
+  function updateUserState(text) {
+    try {
+      var st = state.user || {};
+      st.emotion = detectEmotion(text);
+      st.intent = detectIntent(text);
+      // 記錄 sales_impulse（回答後由輸出檢測，此處初步：含產品名/試用/購買）
+      st.sales_impulse = /试用|购买|开通|DCOGAI/.test(text) ? 0.3 : 0;
+      state.user = st;
+    } catch (e) {}
+  }
+  // ============== END V10.7 ==============
+
   function handleUserMessage(text) {
     var lower = toSimplified(text.toLowerCase());
+
+    // V10.7：每輪記錄 USER_STATE（只記錄不干預）
+    updateUserState(text);
 
     // 0) AI 模式開啟時，直接走 LLM（情緒層/本地匹配都讓位）
     loadDSConfig();
