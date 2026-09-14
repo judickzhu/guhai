@@ -303,11 +303,16 @@
     if (qa.q_en) {
       var qel = String(qa.q_en).toLowerCase();
       if (q.indexOf(qel) >= 0 || qel.indexOf(q) >= 0) score += 5;
-      // 英文關鍵詞子串匹配（用戶輸入包含問題核心詞）
-      var words = qel.split(/[^a-z0-9]+/).filter(function (w) { return w.length > 3; });
-      for (var wi = 0; wi < words.length; wi++) {
-        if (q.indexOf(words[wi]) >= 0) score += 0.8;
-      }
+      // 英文詞重疊度：query 詞 ∩ q_en 詞（停用詞過濾）——比子串匹配強
+      var STOP = { what:1,is:1,the:1,a:1,an:1,do:1,does:1,did:1,can:1,you:1,it:1,of:1,to:1,for:1,with:1,in:1,on:1,how:1,why:1,when:1,and:1,or:1,your:1,my:1,me:1,i:1,are:1,be:1,not:1,this:1,that:1,use:1,used:1,get:1,do:1 };
+      var qWords = q.split(/[^a-z0-9]+/).filter(function (w) { return w.length > 2 && !STOP[w]; });
+      var eWords = qel.split(/[^a-z0-9]+/).filter(function (w) { return w.length > 2 && !STOP[w]; });
+      var eSet = {}; eWords.forEach(function (w) { eSet[w] = true; });
+      var inter = 0;
+      qWords.forEach(function (w) { if (eSet[w]) inter++; });
+      // 核心詞（>4字符）重疊權重更高
+      qWords.forEach(function (w) { if (w.length > 4 && eSet[w]) score += 2; });
+      score += inter * 0.8;
     }
     var qTokens = tokenize(q);
     var aTokens = tokenize(qa.q + " " + (qa.keywords || []).join(" "));
@@ -1365,7 +1370,7 @@
           // 優先本地 matchBest + a_en（487 題英文回答可靠）；本地弱命中 → 後台 /chat 帶英文指令兜底
           if (state.lang === "en") {
             var m = matchBest(text);
-            if (m && m.score >= 4) {
+            if (m && m.score >= 3.0) {  // 英文放宽阈值：本地 a_en 比後台英文兜底更可靠
               localFallbackPath(text);  // 本地強命中 → a_en 英文回答
             } else {
               callLLM("[Please reply entirely in English. No Chinese characters.] " + text,
