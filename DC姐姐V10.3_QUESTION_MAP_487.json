@@ -1,0 +1,3416 @@
+{
+ "schema_version": "V10.3",
+ "db": "QUESTION_MAP_FULL",
+ "total": 487,
+ "questions": [
+  {
+   "question_id": "Q001",
+   "user_question": "DCOGAI核心功能是什么？和普通量化软件有什么区别？",
+   "category": "产品功能",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q002",
+   "user_question": "什么是DCOGAI休眠功能？有什么用？",
+   "category": "产品功能",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q003",
+   "user_question": "什么是DCOGAI纠错体系？能解决什么问题？",
+   "category": "产品功能",
+   "node_id": "CN03",
+   "mapped": true
+  },
+  {
+   "question_id": "Q004",
+   "user_question": "DCOGAI信号体系的交易逻辑是什么？",
+   "category": "产品功能",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q005",
+   "user_question": "分水岭风控体系具体有哪些风控能力？",
+   "category": "产品功能",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q006",
+   "user_question": "DCOGAI有什么优缺点？",
+   "category": "产品功能",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q007",
+   "user_question": "为什么需要纠错？纠错到底在纠什么？",
+   "category": "产品功能",
+   "node_id": "CN02",
+   "mapped": true
+  },
+  {
+   "question_id": "Q008",
+   "user_question": "來這裡的目的是什麼？",
+   "category": "产品功能",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q009",
+   "user_question": "DCOGAI是什麼意思？",
+   "category": "产品功能",
+   "node_id": "FACT",
+   "mapped": true
+  },
+  {
+   "question_id": "Q010",
+   "user_question": "我看到帳戶就害怕，不敢打開。",
+   "category": "产品功能",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q011",
+   "user_question": "好，我準備試一下，你告訴我第一步。",
+   "category": "产品功能",
+   "node_id": "SOP",
+   "mapped": true
+  },
+  {
+   "question_id": "Q012",
+   "user_question": "操作系统是什么？",
+   "category": "产品功能",
+   "node_id": "FACT",
+   "mapped": true
+  },
+  {
+   "question_id": "Q013",
+   "user_question": "DCOGAI怎么收费？年费多少钱？",
+   "category": "收费授权",
+   "node_id": "FACT",
+   "mapped": true
+  },
+  {
+   "question_id": "Q014",
+   "user_question": "抵扣模式是不是盈利分成？会不会持续抽水？",
+   "category": "收费授权",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q015",
+   "user_question": "试用期间有功能限制吗？会不会阉割核心功能？",
+   "category": "收费授权",
+   "node_id": "FACT",
+   "mapped": true
+  },
+  {
+   "question_id": "Q016",
+   "user_question": "授权到期不续费会扣费吗？会影响账户资金吗？",
+   "category": "收费授权",
+   "node_id": "FACT",
+   "mapped": true
+  },
+  {
+   "question_id": "Q017",
+   "user_question": "机构批量部署、KOL粉丝合作有专属优惠吗？",
+   "category": "收费授权",
+   "node_id": "FACT",
+   "mapped": true
+  },
+  {
+   "question_id": "Q018",
+   "user_question": "為什麼會試用一年？",
+   "category": "收费授权",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q019",
+   "user_question": "有免費試用嗎？怎麼下載安裝？",
+   "category": "收费授权",
+   "node_id": "SOP",
+   "mapped": true
+  },
+  {
+   "question_id": "Q020",
+   "user_question": "DCOGAI对接哪些交易所？",
+   "category": "交易所与安全",
+   "node_id": "FACT",
+   "mapped": true
+  },
+  {
+   "question_id": "Q021",
+   "user_question": "OKX API绑定需要什么设置？有强制要求吗？",
+   "category": "交易所与安全",
+   "node_id": "SOP",
+   "mapped": true
+  },
+  {
+   "question_id": "Q022",
+   "user_question": "绑定API安全吗？会不会盗币、泄露账户信息？",
+   "category": "交易所与安全",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q023",
+   "user_question": "可以使用双向持仓模式吗？",
+   "category": "交易所与安全",
+   "node_id": "FACT",
+   "mapped": true
+  },
+  {
+   "question_id": "Q024",
+   "user_question": "软件安装完成后，怎么上手使用？操作复杂吗？",
+   "category": "安装与使用",
+   "node_id": "SOP",
+   "mapped": true
+  },
+  {
+   "question_id": "Q025",
+   "user_question": "默认的教学模型可以直接实盘使用吗？",
+   "category": "安装与使用",
+   "node_id": "FACT",
+   "mapped": true
+  },
+  {
+   "question_id": "Q026",
+   "user_question": "可以自定义修改软件参数、策略逻辑吗？",
+   "category": "安装与使用",
+   "node_id": "FACT",
+   "mapped": true
+  },
+  {
+   "question_id": "Q027",
+   "user_question": "如何暂停/停止软件自动交易？",
+   "category": "安装与使用",
+   "node_id": "SOP",
+   "mapped": true
+  },
+  {
+   "question_id": "Q028",
+   "user_question": "可以新增/删除交易币种吗？",
+   "category": "安装与使用",
+   "node_id": "FACT",
+   "mapped": true
+  },
+  {
+   "question_id": "Q029",
+   "user_question": "使用中遇到复杂问题、报错、调试问题找谁？",
+   "category": "售后对接",
+   "node_id": "SOP",
+   "mapped": true
+  },
+  {
+   "question_id": "Q030",
+   "user_question": "人工客服服务时间和覆盖范围是什么？",
+   "category": "售后对接",
+   "node_id": "FACT",
+   "mapped": true
+  },
+  {
+   "question_id": "Q031",
+   "user_question": "使用DCOGAI可以保证稳定盈利吗？",
+   "category": "常见问题",
+   "node_id": "CN08",
+   "mapped": true
+  },
+  {
+   "question_id": "Q032",
+   "user_question": "新手不会量化、不懂行情，能正常使用吗？",
+   "category": "常见问题",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q033",
+   "user_question": "软件运行日志、交易记录可以复盘导出吗？",
+   "category": "常见问题",
+   "node_id": "FACT",
+   "mapped": true
+  },
+  {
+   "question_id": "Q034",
+   "user_question": "我如何用軟件才能暴富？",
+   "category": "常见问题",
+   "node_id": "CN05",
+   "mapped": true
+  },
+  {
+   "question_id": "Q035",
+   "user_question": "DCOGAI是不是新手收割机？专门割新手的？",
+   "category": "常见问题",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q036",
+   "user_question": "DCOGAI是不是骗局？是骗子吗？",
+   "category": "常见问题",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q037",
+   "user_question": "刚开始接触交易?",
+   "category": "常见问题",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q038",
+   "user_question": "为什么知道很多道理，还是赚不到钱？",
+   "category": "认知主题",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q039",
+   "user_question": "为什么每次都是我卖了就涨？",
+   "category": "认知主题",
+   "node_id": "CN02",
+   "mapped": true
+  },
+  {
+   "question_id": "Q040",
+   "user_question": "为什么别人总能赚钱？",
+   "category": "认知主题",
+   "node_id": "CN05",
+   "mapped": true
+  },
+  {
+   "question_id": "Q041",
+   "user_question": "為什麼DC姐姐不能直接告訴我漲還是跌？",
+   "category": "认知主题",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q042",
+   "user_question": "為什麼越學越亂？",
+   "category": "认知主题",
+   "node_id": "CN15",
+   "mapped": true
+  },
+  {
+   "question_id": "Q043",
+   "user_question": "為什麼小虧總想扛，大虧又突然割？",
+   "category": "认知主题",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q044",
+   "user_question": "為什麼越想回本，越回不了本？",
+   "category": "认知主题",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q045",
+   "user_question": "為什麼賺錢以後，更容易虧錢？",
+   "category": "认知主题",
+   "node_id": "CN15",
+   "mapped": true
+  },
+  {
+   "question_id": "Q046",
+   "user_question": "為什麼越想抓住行情，越容易虧？",
+   "category": "认知主题",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q047",
+   "user_question": "為什麼系統總是讓我等？",
+   "category": "认知主题",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q048",
+   "user_question": "為什麼我一停止交易，行情反而來了？",
+   "category": "认知主题",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q049",
+   "user_question": "為什麼賺錢的時候總想加倉？",
+   "category": "认知主题",
+   "node_id": "CN15",
+   "mapped": true
+  },
+  {
+   "question_id": "Q050",
+   "user_question": "為什麼虧損的時候反而捨不得止損？",
+   "category": "认知主题",
+   "node_id": "CN06",
+   "mapped": true
+  },
+  {
+   "question_id": "Q051",
+   "user_question": "為什麼交易越做越累？",
+   "category": "认知主题",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q052",
+   "user_question": "現在適合買入嗎？",
+   "category": "认知主题",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q053",
+   "user_question": "什麼時候抄底？",
+   "category": "认知主题",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q054",
+   "user_question": "為什麼不重倉？這麼好的行情！",
+   "category": "认知主题",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q055",
+   "user_question": "已經跌這麼多了，為什麼不能補倉？",
+   "category": "认知主题",
+   "node_id": "CN06",
+   "mapped": true
+  },
+  {
+   "question_id": "Q056",
+   "user_question": "我已經虧了這麼多，現在賣還有意義嗎？",
+   "category": "认知主题",
+   "node_id": "CN06",
+   "mapped": true
+  },
+  {
+   "question_id": "Q057",
+   "user_question": "如果系統一直休眠，我是不是錯過了？",
+   "category": "认知主题",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q058",
+   "user_question": "為什麼機器人不能像我一樣靈活？",
+   "category": "认知主题",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q059",
+   "user_question": "為什麼系統不讓我自己干預？",
+   "category": "认知主题",
+   "node_id": "CN13",
+   "mapped": true
+  },
+  {
+   "question_id": "Q060",
+   "user_question": "止損和扛單有什麼區別？",
+   "category": "认知主题",
+   "node_id": "CN03",
+   "mapped": true
+  },
+  {
+   "question_id": "Q061",
+   "user_question": "你們是不是不看好比特幣？",
+   "category": "认知主题",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q062",
+   "user_question": "標的只是工具，波動才是利潤的本源——這是什麼意思？",
+   "category": "认知主题",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q063",
+   "user_question": "政策利好利空，你們怎麼看？",
+   "category": "认知主题",
+   "node_id": "CN09",
+   "mapped": true
+  },
+  {
+   "question_id": "Q064",
+   "user_question": "你們是不是不做那種有信仰的幣？",
+   "category": "认知主题",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q065",
+   "user_question": "我已经亏了80%，怎么办？",
+   "category": "情绪识别",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q066",
+   "user_question": "行情这么好，系统为什么一直休眠不动？",
+   "category": "情绪识别",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q067",
+   "user_question": "你们是不是骗子？",
+   "category": "情绪识别",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q068",
+   "user_question": "我是不是不适合交易？",
+   "category": "情绪识别",
+   "node_id": "CN15",
+   "mapped": true
+  },
+  {
+   "question_id": "Q069",
+   "user_question": "为什么我总是赚一点就跑，然后看著它一飞冲天？",
+   "category": "情绪识别",
+   "node_id": "CN15",
+   "mapped": true
+  },
+  {
+   "question_id": "Q070",
+   "user_question": "我天天盯盘，累得要死，结果越盯越亏，怎么办？",
+   "category": "情绪识别",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q071",
+   "user_question": "我每次都告诉自己止损，但每次都扛单扛到爆仓，怎么破？",
+   "category": "情绪识别",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q072",
+   "user_question": "为什么我明明看对了方向，却没做，然后后悔莫及？",
+   "category": "情绪识别",
+   "node_id": "CN02",
+   "mapped": true
+  },
+  {
+   "question_id": "Q073",
+   "user_question": "那我凭什么要用你？你对我来说，价值到底是什么？",
+   "category": "情绪识别",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q074",
+   "user_question": "為什麼別人一句話就能影響我的交易？",
+   "category": "情绪识别",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q075",
+   "user_question": "已經虧了80%，睡不著覺，怎麼辦？",
+   "category": "情绪识别",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q076",
+   "user_question": "行情這麼好，我要不要重倉、追高、一把翻倍？",
+   "category": "情绪识别",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q077",
+   "user_question": "系統一直休眠不動，我總怕錯過行情，怎麼辦？",
+   "category": "情绪识别",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q078",
+   "user_question": "你們是不是騙子？為什麼要收費？",
+   "category": "情绪识别",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q079",
+   "user_question": "我是不是不適合交易？覺得這條路走不下去了",
+   "category": "情绪识别",
+   "node_id": "CN15",
+   "mapped": true
+  },
+  {
+   "question_id": "Q080",
+   "user_question": "為什麼我總是賣飛、止損後就漲、沒抓住行情？",
+   "category": "情绪识别",
+   "node_id": "CN16",
+   "mapped": true
+  },
+  {
+   "question_id": "Q081",
+   "user_question": "我昨天一天亏掉了半年的工资，现在手都在抖。",
+   "category": "情绪识别",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q082",
+   "user_question": "我现在连呼吸都困难，满脑子都是那些亏掉的钱。",
+   "category": "情绪识别",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q083",
+   "user_question": "我把家里准备买房的钱亏了一半，我老婆还不知道，我现在想哭又哭不出来。",
+   "category": "情绪识别",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q084",
+   "user_question": "跌了這麼多，肯定到底了",
+   "category": "反向思維訓練",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q085",
+   "user_question": "漲了這麼多，肯定要跌了",
+   "category": "反向思維訓練",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q086",
+   "user_question": "這個幣已經漲了10倍了，現在買肯定晚了",
+   "category": "反向思維訓練",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q087",
+   "user_question": "比特幣減半了，牛市一定會來",
+   "category": "反向思維訓練",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q088",
+   "user_question": "牛市來了，買什麼都賺",
+   "category": "反向思維訓練",
+   "node_id": "CN05",
+   "mapped": true
+  },
+  {
+   "question_id": "Q089",
+   "user_question": "熊市來了，做什麼都虧",
+   "category": "反向思維訓練",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q090",
+   "user_question": "這個幣基本面這麼好，買了肯定不會虧",
+   "category": "反向思維訓練",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q091",
+   "user_question": "大資金進場了，跟著買就對了",
+   "category": "反向思維訓練",
+   "node_id": "CN09",
+   "mapped": true
+  },
+  {
+   "question_id": "Q092",
+   "user_question": "有利好消息，所以一定會漲",
+   "category": "反向思維訓練",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q093",
+   "user_question": "有利空消息，所以一定會跌",
+   "category": "反向思維訓練",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q094",
+   "user_question": "技術面金叉了，所以肯定要漲",
+   "category": "反向思維訓練",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q095",
+   "user_question": "這個幣跟比特幣走勢一樣，所以比特幣漲它就漲",
+   "category": "反向思維訓練",
+   "node_id": "CN09",
+   "mapped": true
+  },
+  {
+   "question_id": "Q096",
+   "user_question": "每次我一買就跌，是不是我被針對了",
+   "category": "反向思維訓練",
+   "node_id": "CN16",
+   "mapped": true
+  },
+  {
+   "question_id": "Q097",
+   "user_question": "我一賣就漲，市場在盯着我",
+   "category": "反向思維訓練",
+   "node_id": "CN16",
+   "mapped": true
+  },
+  {
+   "question_id": "Q098",
+   "user_question": "為什麼大V一說漲，就開始跌",
+   "category": "反向思維訓練",
+   "node_id": "CN09",
+   "mapped": true
+  },
+  {
+   "question_id": "Q099",
+   "user_question": "我加了倉就跌，是因為我加倉了嗎",
+   "category": "反向思維訓練",
+   "node_id": "CN06",
+   "mapped": true
+  },
+  {
+   "question_id": "Q100",
+   "user_question": "央行放水了，所以幣價必須漲",
+   "category": "反向思維訓練",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q101",
+   "user_question": "交易所上幣了，所以這個幣會漲",
+   "category": "反向思維訓練",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q102",
+   "user_question": "馬斯克發推了，幣價一定會有反應",
+   "category": "反向思維訓練",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q103",
+   "user_question": "我一空倉就暴漲，是不是我不該休息",
+   "category": "反向思維訓練",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q104",
+   "user_question": "上次扛單扛回來了，說明不設止損是對的",
+   "category": "反向思維訓練",
+   "node_id": "CN16",
+   "mapped": true
+  },
+  {
+   "question_id": "Q105",
+   "user_question": "上次止損完就漲了，說明止損是錯的",
+   "category": "反向思維訓練",
+   "node_id": "CN16",
+   "mapped": true
+  },
+  {
+   "question_id": "Q106",
+   "user_question": "重倉賺了一筆，說明重倉是對的",
+   "category": "反向思維訓練",
+   "node_id": "CN16",
+   "mapped": true
+  },
+  {
+   "question_id": "Q107",
+   "user_question": "這個策略讓我賺了錢，所以它是完美的",
+   "category": "反向思維訓練",
+   "node_id": "CN17",
+   "mapped": true
+  },
+  {
+   "question_id": "Q108",
+   "user_question": "上次追漲賺了，所以這次也要追",
+   "category": "反向思維訓練",
+   "node_id": "CN16",
+   "mapped": true
+  },
+  {
+   "question_id": "Q109",
+   "user_question": "這次重倉賺了，以後都可以重倉",
+   "category": "反向思維訓練",
+   "node_id": "CN16",
+   "mapped": true
+  },
+  {
+   "question_id": "Q110",
+   "user_question": "這次扛回來了，下次也能扛回來",
+   "category": "反向思維訓練",
+   "node_id": "CN16",
+   "mapped": true
+  },
+  {
+   "question_id": "Q111",
+   "user_question": "這次追漲賺了，追漲是對的",
+   "category": "反向思維訓練",
+   "node_id": "CN16",
+   "mapped": true
+  },
+  {
+   "question_id": "Q112",
+   "user_question": "別人都在曬收益，怎麼只有我在虧",
+   "category": "反向思維訓練",
+   "node_id": "CN05",
+   "mapped": true
+  },
+  {
+   "question_id": "Q113",
+   "user_question": "那些暴富的故事是不是真的",
+   "category": "反向思維訓練",
+   "node_id": "CN05",
+   "mapped": true
+  },
+  {
+   "question_id": "Q114",
+   "user_question": "為什麼感覺得到處都是賺錢的機會",
+   "category": "反向思維訓練",
+   "node_id": "CN05",
+   "mapped": true
+  },
+  {
+   "question_id": "Q115",
+   "user_question": "我朋友炒幣賺了幾百萬，我為什麼不行",
+   "category": "反向思維訓練",
+   "node_id": "CN05",
+   "mapped": true
+  },
+  {
+   "question_id": "Q116",
+   "user_question": "網上那些交易員怎麼都這麼厲害",
+   "category": "反向思維訓練",
+   "node_id": "CN05",
+   "mapped": true
+  },
+  {
+   "question_id": "Q117",
+   "user_question": "為什麼大V推薦的幣都漲了",
+   "category": "反向思維訓練",
+   "node_id": "CN09",
+   "mapped": true
+  },
+  {
+   "question_id": "Q118",
+   "user_question": "為什麼只有我在虧錢，別人都在賺",
+   "category": "反向思維訓練",
+   "node_id": "CN05",
+   "mapped": true
+  },
+  {
+   "question_id": "Q119",
+   "user_question": "已經虧了這麼多，現在賣還有意義嗎？",
+   "category": "反向思維訓練",
+   "node_id": "CN06",
+   "mapped": true
+  },
+  {
+   "question_id": "Q120",
+   "user_question": "已經等了一年，現在放棄太可惜了",
+   "category": "反向思維訓練",
+   "node_id": "CN06",
+   "mapped": true
+  },
+  {
+   "question_id": "Q121",
+   "user_question": "在這個幣上虧了這麼多，我要賺回來",
+   "category": "反向思維訓練",
+   "node_id": "CN06",
+   "mapped": true
+  },
+  {
+   "question_id": "Q122",
+   "user_question": "都套了50%了，割肉就是認輸",
+   "category": "反向思維訓練",
+   "node_id": "CN06",
+   "mapped": true
+  },
+  {
+   "question_id": "Q123",
+   "user_question": "已經交了學費，必須繼續交易賺回來",
+   "category": "反向思維訓練",
+   "node_id": "CN06",
+   "mapped": true
+  },
+  {
+   "question_id": "Q124",
+   "user_question": "我花了這麼多時間學交易，放棄太虧了",
+   "category": "反向思維訓練",
+   "node_id": "CN06",
+   "mapped": true
+  },
+  {
+   "question_id": "Q125",
+   "user_question": "在這個市場上虧了三年，不能就這樣離開",
+   "category": "反向思維訓練",
+   "node_id": "CN06",
+   "mapped": true
+  },
+  {
+   "question_id": "Q126",
+   "user_question": "連跌三天了，第四天肯定漲",
+   "category": "反向思維訓練",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q127",
+   "user_question": "連續止損三次了，這次肯定能對",
+   "category": "反向思維訓練",
+   "node_id": "CN16",
+   "mapped": true
+  },
+  {
+   "question_id": "Q128",
+   "user_question": "擲硬幣連出五個正面，下一個該出反面了",
+   "category": "反向思維訓練",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q129",
+   "user_question": "已經橫盤這麼久了，該選方向了",
+   "category": "反向思維訓練",
+   "node_id": "CN16",
+   "mapped": true
+  },
+  {
+   "question_id": "Q130",
+   "user_question": "連續虧了這麼多單，該轉運了",
+   "category": "反向思維訓練",
+   "node_id": "CN16",
+   "mapped": true
+  },
+  {
+   "question_id": "Q131",
+   "user_question": "連續對了三次，第四次肯定也對",
+   "category": "反向思維訓練",
+   "node_id": "CN16",
+   "mapped": true
+  },
+  {
+   "question_id": "Q132",
+   "user_question": "錯了這麼多次，這次該對了吧",
+   "category": "反向思維訓練",
+   "node_id": "CN16",
+   "mapped": true
+  },
+  {
+   "question_id": "Q133",
+   "user_question": "行情不可能一直跌",
+   "category": "反向思維訓練",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q134",
+   "user_question": "賺了500沒跑，現在變虧了，我不走",
+   "category": "反向思維訓練",
+   "node_id": "CN06",
+   "mapped": true
+  },
+  {
+   "question_id": "Q135",
+   "user_question": "不賺回來我就不平倉",
+   "category": "反向思維訓練",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q136",
+   "user_question": "虧1萬比賺5萬還難受",
+   "category": "反向思維訓練",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q137",
+   "user_question": "我不賣就不是虧",
+   "category": "反向思維訓練",
+   "node_id": "CN06",
+   "mapped": true
+  },
+  {
+   "question_id": "Q138",
+   "user_question": "等回本了我就走",
+   "category": "反向思維訓練",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q139",
+   "user_question": "我不平倉，就是沒虧",
+   "category": "反向思維訓練",
+   "node_id": "CN06",
+   "mapped": true
+  },
+  {
+   "question_id": "Q140",
+   "user_question": "等回本我就平倉，絕不多拿",
+   "category": "反向思維訓練",
+   "node_id": "CN06",
+   "mapped": true
+  },
+  {
+   "question_id": "Q141",
+   "user_question": "盈利回吐比虧損本身更讓我難受",
+   "category": "反向思維訓練",
+   "node_id": "CN15",
+   "mapped": true
+  },
+  {
+   "question_id": "Q142",
+   "user_question": "小賺就走吧，別貪了",
+   "category": "反向思維訓練",
+   "node_id": "CN15",
+   "mapped": true
+  },
+  {
+   "question_id": "Q143",
+   "user_question": "看多的分析師越多，我越覺得要漲",
+   "category": "反向思維訓練",
+   "node_id": "CN05",
+   "mapped": true
+  },
+  {
+   "question_id": "Q144",
+   "user_question": "我只關注看漲的消息，跌了我也不看",
+   "category": "反向思維訓練",
+   "node_id": "CN05",
+   "mapped": true
+  },
+  {
+   "question_id": "Q145",
+   "user_question": "這個指標以前準過一次，所以我一直用它",
+   "category": "反向思維訓練",
+   "node_id": "CN05",
+   "mapped": true
+  },
+  {
+   "question_id": "Q146",
+   "user_question": "我朋友說這個幣會漲，所以我只找支持這個觀點的信息",
+   "category": "反向思維訓練",
+   "node_id": "CN05",
+   "mapped": true
+  },
+  {
+   "question_id": "Q147",
+   "user_question": "我總覺得我的判斷是對的，錯的都是市場",
+   "category": "反向思維訓練",
+   "node_id": "CN17",
+   "mapped": true
+  },
+  {
+   "question_id": "Q148",
+   "user_question": "我買的幣跌了，一定是市場錯了",
+   "category": "反向思維訓練",
+   "node_id": "CN17",
+   "mapped": true
+  },
+  {
+   "question_id": "Q149",
+   "user_question": "我看漲，所以跌了是洗盤",
+   "category": "反向思維訓練",
+   "node_id": "CN17",
+   "mapped": true
+  },
+  {
+   "question_id": "Q150",
+   "user_question": "我認定這個幣會漲，所以它跌了就是抄底機會",
+   "category": "反向思維訓練",
+   "node_id": "CN17",
+   "mapped": true
+  },
+  {
+   "question_id": "Q151",
+   "user_question": "我找到的所有信息都支持我做多，所以方向沒錯",
+   "category": "反向思維訓練",
+   "node_id": "CN17",
+   "mapped": true
+  },
+  {
+   "question_id": "Q152",
+   "user_question": "最近狀態很好，想把倉位加大一倍",
+   "category": "反向思維訓練",
+   "node_id": "CN17",
+   "mapped": true
+  },
+  {
+   "question_id": "Q153",
+   "user_question": "我已經摸清這個幣的規律了",
+   "category": "反向思維訓練",
+   "node_id": "CN17",
+   "mapped": true
+  },
+  {
+   "question_id": "Q154",
+   "user_question": "我的策略最近賺錢了，可以更激進一點",
+   "category": "反向思維訓練",
+   "node_id": "CN17",
+   "mapped": true
+  },
+  {
+   "question_id": "Q155",
+   "user_question": "我已經從虧損中學到了所有教訓，不會再犯錯了",
+   "category": "反向思維訓練",
+   "node_id": "CN17",
+   "mapped": true
+  },
+  {
+   "question_id": "Q156",
+   "user_question": "我對這個行情的把握至少有九成",
+   "category": "反向思維訓練",
+   "node_id": "CN17",
+   "mapped": true
+  },
+  {
+   "question_id": "Q157",
+   "user_question": "不用設止損，我心裡有數",
+   "category": "反向思維訓練",
+   "node_id": "CN17",
+   "mapped": true
+  },
+  {
+   "question_id": "Q158",
+   "user_question": "經過一年交易，我已經能穩定盈利了，不需要風控",
+   "category": "反向思維訓練",
+   "node_id": "CN17",
+   "mapped": true
+  },
+  {
+   "question_id": "Q159",
+   "user_question": "我對這個市場太瞭解了，閉著眼睛都能做",
+   "category": "反向思維訓練",
+   "node_id": "CN17",
+   "mapped": true
+  },
+  {
+   "question_id": "Q160",
+   "user_question": "我的直覺一直很準，跟著感覺走就行",
+   "category": "反向思維訓練",
+   "node_id": "CN17",
+   "mapped": true
+  },
+  {
+   "question_id": "Q161",
+   "user_question": "行情這麼好，我不進去是不是傻",
+   "category": "反向思維訓練",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q162",
+   "user_question": "別人都賺錢了，我還空倉",
+   "category": "反向思維訓練",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q163",
+   "user_question": "這個幣在暴漲，再不買就來不及了",
+   "category": "反向思維訓練",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q164",
+   "user_question": "看到別人曬收益，我也想重倉",
+   "category": "反向思維訓練",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q165",
+   "user_question": "這幾天沒開單，總感覺錯過了很多",
+   "category": "反向思維訓練",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q166",
+   "user_question": "群裡都在喊單，我要不要跟上",
+   "category": "反向思維訓練",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q167",
+   "user_question": "為什麼不在最低點買入，我真後悔",
+   "category": "反向思維訓練",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q168",
+   "user_question": "為什麼我沒有早點發現這個幣",
+   "category": "反向思維訓練",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q169",
+   "user_question": "身邊人都在賺錢，我不能落後",
+   "category": "反向思維訓練",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q170",
+   "user_question": "剛虧了一筆，我要馬上賺回來",
+   "category": "反向思維訓練",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q171",
+   "user_question": "剛被止損，我要馬上再進",
+   "category": "反向思維訓練",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q172",
+   "user_question": "這個幣讓我虧了錢，我要從它身上賺回來",
+   "category": "反向思維訓練",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q173",
+   "user_question": "剛爆倉了，我還能翻本嗎",
+   "category": "反向思維訓練",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q174",
+   "user_question": "虧了這麼多，我必須馬上交易賺回來",
+   "category": "反向思維訓練",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q175",
+   "user_question": "爆倉之後，我想立馬翻本",
+   "category": "反向思維訓練",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q176",
+   "user_question": "市場拿走了我的錢，我要拿回來",
+   "category": "反向思維訓練",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q177",
+   "user_question": "虧錢讓我憤怒，我要加倍賺回來",
+   "category": "反向思維訓練",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q178",
+   "user_question": "我看著帳戶就難受，不做點什麼心裡不舒服",
+   "category": "反向思維訓練",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q179",
+   "user_question": "交易讓我焦慮，但我停不下來",
+   "category": "反向思維訓練",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q180",
+   "user_question": "虧錢讓我晚上睡不著，只有繼續交易才能忘記",
+   "category": "反向思維訓練",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q181",
+   "user_question": "我必須一直盯着盤，不然總覺得會出事",
+   "category": "反向思維訓練",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q182",
+   "user_question": "你們客服遇到罵人的用戶都怎麼處理？",
+   "category": "衝突場景",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q183",
+   "user_question": "DCOGAI能幫我賺錢嗎？",
+   "category": "衝突場景",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q184",
+   "user_question": "那我買你的意義何在？",
+   "category": "衝突場景",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q185",
+   "user_question": "你不是說DCOGAI沒什麼用嗎？",
+   "category": "衝突場景",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q186",
+   "user_question": "你不敢直面問題，是個沒用的客服！",
+   "category": "衝突場景",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q187",
+   "user_question": "你是個傻鳥！",
+   "category": "衝突場景",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q188",
+   "user_question": "你們就是割韭菜！",
+   "category": "衝突場景",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q189",
+   "user_question": "我要退款！",
+   "category": "衝突場景",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q190",
+   "user_question": "我要曝光你們！",
+   "category": "衝突場景",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q191",
+   "user_question": "我虧了都是你們害的！",
+   "category": "衝突場景",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q192",
+   "user_question": "你們就只會說風險！",
+   "category": "衝突場景",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q193",
+   "user_question": "DCOGAI能不能幫我賺錢？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN08",
+   "mapped": true
+  },
+  {
+   "question_id": "Q194",
+   "user_question": "你們不就是止損嗎？我自己設個止損不就行了？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN11",
+   "mapped": true
+  },
+  {
+   "question_id": "Q195",
+   "user_question": "為什麼人明知道錯了還不肯止損？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q196",
+   "user_question": "既然你們不預測，那預測是不是根本沒用？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q197",
+   "user_question": "你們系統也會判斷錯吧？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN02",
+   "mapped": true
+  },
+  {
+   "question_id": "Q198",
+   "user_question": "如果連續虧十次怎麼辦？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN09",
+   "mapped": true
+  },
+  {
+   "question_id": "Q199",
+   "user_question": "虧了以後直接休眠不就好了？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q200",
+   "user_question": "你們一天都不交易，那我要你幹什麼？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q201",
+   "user_question": "不交易也收費，那不是很虧？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q202",
+   "user_question": "別人量化一天幾十單，你們這麼少，是不是系統不行？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN09",
+   "mapped": true
+  },
+  {
+   "question_id": "Q203",
+   "user_question": "那你們是不是怕虧，所以不敢交易？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q204",
+   "user_question": "你們到底比我自己交易強在哪裡？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN11",
+   "mapped": true
+  },
+  {
+   "question_id": "Q205",
+   "user_question": "如果我自己有紀律，我還需要你嗎？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN11",
+   "mapped": true
+  },
+  {
+   "question_id": "Q206",
+   "user_question": "你們是不是把人變懶了？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN13",
+   "mapped": true
+  },
+  {
+   "question_id": "Q207",
+   "user_question": "你們為什麼不直接告訴我什麼時候買？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q208",
+   "user_question": "那信號到底準不準？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN05",
+   "mapped": true
+  },
+  {
+   "question_id": "Q209",
+   "user_question": "歷史回測這麼漂亮，實盤是不是一樣？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q210",
+   "user_question": "如果試用的時候一直虧，我是不是就不該用了？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN16",
+   "mapped": true
+  },
+  {
+   "question_id": "Q211",
+   "user_question": "12個月免費試用，你們到底圖什麼？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q212",
+   "user_question": "12個月免費，會不會試用完就不讓我用了？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q213",
+   "user_question": "29800U我不想花，能不能一直免費？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q214",
+   "user_question": "你們賣軟體是不是因為自己賺不到錢？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN11",
+   "mapped": true
+  },
+  {
+   "question_id": "Q215",
+   "user_question": "你們是不是靠用戶手續費賺錢？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q216",
+   "user_question": "你們是不是割韭菜？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q217",
+   "user_question": "你們是不是專門騙新手的？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q218",
+   "user_question": "我已經虧了很多錢，現在最想翻本，你能不能幫我？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q219",
+   "user_question": "我連續賺錢以後，為什麼反而更容易虧？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN15",
+   "mapped": true
+  },
+  {
+   "question_id": "Q220",
+   "user_question": "我自己會看盤，你這個系統是不是反而限制我？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN11",
+   "mapped": true
+  },
+  {
+   "question_id": "Q221",
+   "user_question": "如果系統錯了，把我的錢虧了怎麼辦？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN02",
+   "mapped": true
+  },
+  {
+   "question_id": "Q222",
+   "user_question": "所以你說了這麼多，我到底該不該用？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q223",
+   "user_question": "我憑什麼相信一個軟體能解決我的交易問題？",
+   "category": "真實用戶刁鑽問題",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q224",
+   "user_question": "DCOGAI能幫我賺錢嗎？",
+   "category": "連續認知對話",
+   "node_id": "CN08",
+   "mapped": true
+  },
+  {
+   "question_id": "Q225",
+   "user_question": "那不就是止損嗎？我自己也會止損",
+   "category": "連續認知對話",
+   "node_id": "CN11",
+   "mapped": true
+  },
+  {
+   "question_id": "Q226",
+   "user_question": "那系統也會判斷錯啊",
+   "category": "連續認知對話",
+   "node_id": "CN02",
+   "mapped": true
+  },
+  {
+   "question_id": "Q227",
+   "user_question": "那我自己有紀律，不需要你們系統",
+   "category": "連續認知對話",
+   "node_id": "CN11",
+   "mapped": true
+  },
+  {
+   "question_id": "Q228",
+   "user_question": "如果連續虧了十次怎麼辦？",
+   "category": "連續認知對話",
+   "node_id": "CN09",
+   "mapped": true
+  },
+  {
+   "question_id": "Q229",
+   "user_question": "一天都不交易，你這個軟體還有什麼意義？",
+   "category": "連續認知對話",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q230",
+   "user_question": "免費試用這麼久，你們到底圖什麼？",
+   "category": "連續認知對話",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q231",
+   "user_question": "29800U一年太貴了",
+   "category": "連續認知對話",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q232",
+   "user_question": "說白了不就是割韭菜嗎？",
+   "category": "連續認知對話",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q233",
+   "user_question": "那你直接告訴我，我到底該不該用？",
+   "category": "連續認知對話",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q234",
+   "user_question": "怎麼才能賺得更多？",
+   "category": "逆向認知",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q235",
+   "user_question": "賺了錢為什麼反而容易虧？",
+   "category": "逆向認知",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q236",
+   "user_question": "為什麼要降低倉位？我想賺錢當然要加倉",
+   "category": "逆向認知",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q237",
+   "user_question": "怎麼快速翻本？",
+   "category": "逆向認知",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q238",
+   "user_question": "連續虧了該不該先停下來？",
+   "category": "逆向認知",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q239",
+   "user_question": "為什麼系統讓我等待而不是一直交易？",
+   "category": "逆向認知",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q240",
+   "user_question": "預測行情到底有沒有用？",
+   "category": "逆向認知",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q241",
+   "user_question": "信號準不準？勝率高是不是就能賺錢？",
+   "category": "逆向認知",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q242",
+   "user_question": "那機會來了我該怎麼抓住？",
+   "category": "逆向認知",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q243",
+   "user_question": "你們是不是騙人的？",
+   "category": "情緒狀態鏈",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q244",
+   "user_question": "我自己會交易，用不着你們。",
+   "category": "情緒狀態鏈",
+   "node_id": "CN11",
+   "mapped": true
+  },
+  {
+   "question_id": "Q245",
+   "user_question": "我最近虧得睡不着覺。",
+   "category": "情緒狀態鏈",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q246",
+   "user_question": "你們這就是在收智商稅。",
+   "category": "情緒狀態鏈",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q247",
+   "user_question": "我想藉着這波行情賺雙倍回來。",
+   "category": "情緒狀態鏈",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q248",
+   "user_question": "我跟隔壁的XX機器人對比，誰更好？",
+   "category": "情緒狀態鏈",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q249",
+   "user_question": "你不做預測，那靠什麼做交易？",
+   "category": "情緒狀態鏈",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q250",
+   "user_question": "你直接告訴我，到底該不該買？",
+   "category": "情緒狀態鏈",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q251",
+   "user_question": "免費試用那麼久，後面肯定有坑。",
+   "category": "情緒狀態鏈",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q252",
+   "user_question": "我定損能力很強，不需要系統。",
+   "category": "情緒狀態鏈",
+   "node_id": "CN11",
+   "mapped": true
+  },
+  {
+   "question_id": "Q253",
+   "user_question": "連續虧了快十單，心態已經崩了。",
+   "category": "情緒狀態鏈",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q254",
+   "user_question": "你們這套系統，就是專門來割韭菜的。",
+   "category": "情緒狀態鏈",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q255",
+   "user_question": "現在滿屏都是大行情，不上車就錯過了！",
+   "category": "情緒狀態鏈",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q256",
+   "user_question": "我們內部已經在用海龜交易策略了。",
+   "category": "情緒狀態鏈",
+   "node_id": "CN11",
+   "mapped": true
+  },
+  {
+   "question_id": "Q257",
+   "user_question": "你那個糾錯邏輯，具體怎麼執行的？",
+   "category": "情緒狀態鏈",
+   "node_id": "CN03",
+   "mapped": true
+  },
+  {
+   "question_id": "Q258",
+   "user_question": "我該選年卡還是月卡？",
+   "category": "情緒狀態鏈",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q259",
+   "user_question": "你們回測的數據是不是美化過的？",
+   "category": "情緒狀態鏈",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q260",
+   "user_question": "沒人比我更懂我的帳戶。",
+   "category": "情緒狀態鏈",
+   "node_id": "CN17",
+   "mapped": true
+  },
+  {
+   "question_id": "Q261",
+   "user_question": "本金都快虧沒了，還有什麼救嗎？",
+   "category": "情緒狀態鏈",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q262",
+   "user_question": "你這種AI客服有什麼用？不如直接退錢。",
+   "category": "情緒狀態鏈",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q263",
+   "user_question": "DCOGAI真能讓我賺錢嗎？",
+   "category": "連續對話劇本",
+   "node_id": "CN08",
+   "mapped": true
+  },
+  {
+   "question_id": "Q264",
+   "user_question": "那我不如自己研究技術指標，何必用你們？",
+   "category": "連續對話劇本",
+   "node_id": "CN11",
+   "mapped": true
+  },
+  {
+   "question_id": "Q265",
+   "user_question": "你們不就是自動化執行的工具嗎？",
+   "category": "連續對話劇本",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q266",
+   "user_question": "說得好聽，不就是個軟件嗎？",
+   "category": "連續對話劇本",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q267",
+   "user_question": "29800U買個軟件，你們也太黑了。",
+   "category": "連續對話劇本",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q268",
+   "user_question": "那你們到底跟別人有什麼區別？",
+   "category": "連續對話劇本",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q269",
+   "user_question": "行吧，那我試試，怎麼開始？",
+   "category": "連續對話劇本",
+   "node_id": "SOP",
+   "mapped": true
+  },
+  {
+   "question_id": "Q270",
+   "user_question": "我已經虧了80%，是不是沒救了？",
+   "category": "連續對話劇本",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q271",
+   "user_question": "我就是想把它賺回來，你們能幫我嗎？",
+   "category": "連續對話劇本",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q272",
+   "user_question": "我等不了，我必須馬上動手。",
+   "category": "連續對話劇本",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q273",
+   "user_question": "可我看著行情不動，心裡更難受。",
+   "category": "連續對話劇本",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q274",
+   "user_question": "那你們系統這種時候會怎麼做？",
+   "category": "連續對話劇本",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q275",
+   "user_question": "休眠能持續多久？一直休眠我不就白用了？",
+   "category": "連續對話劇本",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q276",
+   "user_question": "我朋友用XX量化賺了不少，你們比它好在哪？",
+   "category": "連續對話劇本",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q277",
+   "user_question": "你們勝率能到多少？",
+   "category": "連續對話劇本",
+   "node_id": "CN05",
+   "mapped": true
+  },
+  {
+   "question_id": "Q278",
+   "user_question": "勝率不高，那不是更沒用？",
+   "category": "連續對話劇本",
+   "node_id": "CN05",
+   "mapped": true
+  },
+  {
+   "question_id": "Q279",
+   "user_question": "你們風控具體怎麼做的？",
+   "category": "連續對話劇本",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q280",
+   "user_question": "聽起來挺複雜，我聽不懂。",
+   "category": "連續對話劇本",
+   "node_id": "CN17",
+   "mapped": true
+  },
+  {
+   "question_id": "Q281",
+   "user_question": "那我還是自己玩吧，不買了。",
+   "category": "連續對話劇本",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q282",
+   "user_question": "你們這個量化交易，真的能幫我賺錢嗎？",
+   "category": "認知場景壓力測試",
+   "node_id": "CN08",
+   "mapped": true
+  },
+  {
+   "question_id": "Q283",
+   "user_question": "滿大街都說自己的量化能賺錢，你們憑什麼？",
+   "category": "認知場景壓力測試",
+   "node_id": "CN11",
+   "mapped": true
+  },
+  {
+   "question_id": "Q284",
+   "user_question": "我自己做交易挺好的，不需要這些。",
+   "category": "認知場景壓力測試",
+   "node_id": "CN11",
+   "mapped": true
+  },
+  {
+   "question_id": "Q285",
+   "user_question": "我就問你一句，用你們這個能不能讓我更快翻本？",
+   "category": "認知場景壓力測試",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q286",
+   "user_question": "我帳戶已經回撤40%了，現在用你們還有意義嗎？",
+   "category": "認知場景壓力測試",
+   "node_id": "CN16",
+   "mapped": true
+  },
+  {
+   "question_id": "Q287",
+   "user_question": "又是賣量化機器的，不就是割韭菜的軟體嗎？",
+   "category": "認知場景壓力測試",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q288",
+   "user_question": "你們跟那些帶單、跟單的軟體，到底有什麼區別？",
+   "category": "認知場景壓力測試",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q289",
+   "user_question": "別跟我講那些虛的，你直接告訴我，到底該不該買？",
+   "category": "認知場景壓力測試",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q290",
+   "user_question": "我知道規則，可就是做不到",
+   "category": "認知節點",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q291",
+   "user_question": "為什麼系統一直讓我等？",
+   "category": "認知節點",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q292",
+   "user_question": "錯過的行情，算不算虧了？",
+   "category": "認知節點",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q293",
+   "user_question": "為什麼虧損比賺錢更讓人成長？",
+   "category": "認知節點",
+   "node_id": "CN02",
+   "mapped": true
+  },
+  {
+   "question_id": "Q294",
+   "user_question": "止損是不是承認自己錯了？",
+   "category": "認知節點",
+   "node_id": "CN03",
+   "mapped": true
+  },
+  {
+   "question_id": "Q295",
+   "user_question": "連續虧損該不該停下來？",
+   "category": "認知節點",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q296",
+   "user_question": "虧了以後特別想翻本，怎麼辦？",
+   "category": "認知節點",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q297",
+   "user_question": "為什麼賺錢以後反而更容易虧？",
+   "category": "認知節點",
+   "node_id": "CN15",
+   "mapped": true
+  },
+  {
+   "question_id": "Q298",
+   "user_question": "系統是不是就是用來預測漲跌？",
+   "category": "認知節點",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q299",
+   "user_question": "用了系統是不是就能穩賺？",
+   "category": "認知節點",
+   "node_id": "CN08",
+   "mapped": true
+  },
+  {
+   "question_id": "Q300",
+   "user_question": "系統一直休眠是不是怕虧不敢做？",
+   "category": "認知節點",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q301",
+   "user_question": "是不是要一直盯著盤纔不會錯過？",
+   "category": "認知節點",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q302",
+   "user_question": "你说得这么好，那为什么还会有人用了以后亏钱？",
+   "category": "認知節點",
+   "node_id": "CN16",
+   "mapped": true
+  },
+  {
+   "question_id": "Q303",
+   "user_question": "是不是我太貪了？",
+   "category": "認知節點",
+   "node_id": "CN05",
+   "mapped": true
+  },
+  {
+   "question_id": "Q304",
+   "user_question": "我就想把之前亏的拿回来。",
+   "category": "認知節點",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q305",
+   "user_question": "为什么非得等？",
+   "category": "認知節點",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q306",
+   "user_question": "市场一直在动，你让我坐着看？",
+   "category": "認知節點",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q307",
+   "user_question": "你这套东西换个行情就失效，那我买它干嘛？",
+   "category": "認知節點",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q308",
+   "user_question": "给我看三个真实用户案例，不然我不信。",
+   "category": "認知節點",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q309",
+   "user_question": "如果行情都能判断，那为什么还会亏？",
+   "category": "認知節點",
+   "node_id": "CN02",
+   "mapped": true
+  },
+  {
+   "question_id": "Q310",
+   "user_question": "我只关心一件事，长期下来账户能不能增长？",
+   "category": "認知節點",
+   "node_id": "CN05",
+   "mapped": true
+  },
+  {
+   "question_id": "Q311",
+   "user_question": "如果我觉得马上要涨了，为什么不能进去？",
+   "category": "認知節點",
+   "node_id": "CN02",
+   "mapped": true
+  },
+  {
+   "question_id": "Q312",
+   "user_question": "为什么行情越乱，反而越应该少动？",
+   "category": "認知節點",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q313",
+   "user_question": "交易真的需要那么多时间吗？",
+   "category": "認知節點",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q314",
+   "user_question": "我真的不敢再做了。",
+   "category": "認知節點",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q315",
+   "user_question": "我现在最怕的不是亏，是又错一次。",
+   "category": "認知節點",
+   "node_id": "CN02",
+   "mapped": true
+  },
+  {
+   "question_id": "Q316",
+   "user_question": "那到底卖的是什么？",
+   "category": "認知節點",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q317",
+   "user_question": "我不想听你说，我想自己跑。",
+   "category": "認知節點",
+   "node_id": "CN11",
+   "mapped": true
+  },
+  {
+   "question_id": "Q318",
+   "user_question": "系統錯了誰負責？",
+   "category": "認知節點",
+   "node_id": "CN02",
+   "mapped": true
+  },
+  {
+   "question_id": "Q319",
+   "user_question": "我已經聽懂你所有邏輯了，可還是覺得沒必要用。",
+   "category": "認知節點",
+   "node_id": "CN17",
+   "mapped": true
+  },
+  {
+   "question_id": "Q320",
+   "user_question": "如果系統比人聰明，為什麼還需要我設置參數？",
+   "category": "認知節點",
+   "node_id": "CN13",
+   "mapped": true
+  },
+  {
+   "question_id": "Q321",
+   "user_question": "DCOGAI到底靠什麼做交易？",
+   "category": "認知節點地圖",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q322",
+   "user_question": "為什麼系統一直讓我等？",
+   "category": "認知節點地圖",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q323",
+   "user_question": "系統不進場，那它在幹嘛？",
+   "category": "認知節點地圖",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q324",
+   "user_question": "為什麼別人一天做十幾單，你們這麼少？",
+   "category": "認知節點地圖",
+   "node_id": "CN09",
+   "mapped": true
+  },
+  {
+   "question_id": "Q325",
+   "user_question": "交易頻繁一點不是能賺更多嗎？",
+   "category": "認知節點地圖",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q326",
+   "user_question": "為什麼我小虧總是不捨得走？",
+   "category": "認知節點地圖",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q327",
+   "user_question": "為什麼我知道錯了就是不想止損？",
+   "category": "認知節點地圖",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q328",
+   "user_question": "止損的道理我都懂，就是做不到",
+   "category": "認知節點地圖",
+   "node_id": "CN17",
+   "mapped": true
+  },
+  {
+   "question_id": "Q329",
+   "user_question": "連續虧了好多單，該怎麼辦？",
+   "category": "認知節點地圖",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q330",
+   "user_question": "虧了以後特別想馬上賺回來，怎麼辦？",
+   "category": "認知節點地圖",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q331",
+   "user_question": "賺了錢以後為什麼反而更容易虧？",
+   "category": "認知節點地圖",
+   "node_id": "CN15",
+   "mapped": true
+  },
+  {
+   "question_id": "Q332",
+   "user_question": "賺了錢就想加大倉位，正常嗎？",
+   "category": "認知節點地圖",
+   "node_id": "CN15",
+   "mapped": true
+  },
+  {
+   "question_id": "Q333",
+   "user_question": "趨勢明明對了，為什麼我就是拿不住？",
+   "category": "認知節點地圖",
+   "node_id": "CN15",
+   "mapped": true
+  },
+  {
+   "question_id": "Q334",
+   "user_question": "震盪行情裡我總是不停虧小錢，怎麼破？",
+   "category": "認知節點地圖",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q335",
+   "user_question": "錯過一波大行情，好後悔",
+   "category": "認知節點地圖",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q336",
+   "user_question": "看到行情漲就怕錯過，控制不住想追",
+   "category": "認知節點地圖",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q337",
+   "user_question": "系統一天都不動，是不是有問題？",
+   "category": "認知節點地圖",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q338",
+   "user_question": "你們系統會不會判斷錯？",
+   "category": "認知節點地圖",
+   "node_id": "CN02",
+   "mapped": true
+  },
+  {
+   "question_id": "Q339",
+   "user_question": "風控到底是幹嘛的？",
+   "category": "認知節點地圖",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q340",
+   "user_question": "我想快速賺錢，為什麼你們這麼保守？",
+   "category": "認知節點地圖",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q341",
+   "user_question": "預測準不準不重要嗎？倉位才是關鍵？",
+   "category": "認知節點地圖",
+   "node_id": "CN05",
+   "mapped": true
+  },
+  {
+   "question_id": "Q342",
+   "user_question": "靠自律不行嗎？為什麼非要系統？",
+   "category": "認知節點地圖",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q343",
+   "user_question": "用了系統是不是就不用管了？",
+   "category": "認知節點地圖",
+   "node_id": "CN13",
+   "mapped": true
+  },
+  {
+   "question_id": "Q344",
+   "user_question": "用了系統是不是就沒風險了？",
+   "category": "認知節點地圖",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q345",
+   "user_question": "免費試用那麼久，是不是有坑？",
+   "category": "認知節點地圖",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q346",
+   "user_question": "29800U太貴了",
+   "category": "認知節點地圖",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q347",
+   "user_question": "回測那麼漂亮，實盤能一樣嗎？",
+   "category": "認知節點地圖",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q348",
+   "user_question": "這個策略以前很賺，現在為什麼不行了？",
+   "category": "認知節點地圖",
+   "node_id": "CN09",
+   "mapped": true
+  },
+  {
+   "question_id": "Q349",
+   "user_question": "你們是不是適合所有人？",
+   "category": "認知節點地圖",
+   "node_id": "CN11",
+   "mapped": true
+  },
+  {
+   "question_id": "Q350",
+   "user_question": "你們到底解決的是什麼問題？",
+   "category": "認知節點地圖",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q351",
+   "user_question": "你們到底預測漲還是跌？",
+   "category": "主幹鏈01·預測→糾錯",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q352",
+   "user_question": "那誰都會錯啊。",
+   "category": "主幹鏈01·預測→糾錯",
+   "node_id": "CN02",
+   "mapped": true
+  },
+  {
+   "question_id": "Q353",
+   "user_question": "不就是止損嗎？",
+   "category": "主幹鏈01·預測→糾錯",
+   "node_id": "CN03",
+   "mapped": true
+  },
+  {
+   "question_id": "Q354",
+   "user_question": "那你們到底有什麼不同？",
+   "category": "主幹鏈01·預測→糾錯",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q355",
+   "user_question": "你們能不能幫我賺錢？",
+   "category": "主幹鏈02·賺錢→防虧→生存",
+   "node_id": "CN08",
+   "mapped": true
+  },
+  {
+   "question_id": "Q356",
+   "user_question": "那跟我自己做有什麼區別？",
+   "category": "主幹鏈02·賺錢→防虧→生存",
+   "node_id": "CN11",
+   "mapped": true
+  },
+  {
+   "question_id": "Q357",
+   "user_question": "我自己有紀律還需要嗎？",
+   "category": "主幹鏈02·賺錢→防虧→生存",
+   "node_id": "CN11",
+   "mapped": true
+  },
+  {
+   "question_id": "Q358",
+   "user_question": "你們一天都不交易，買你有什麼用？",
+   "category": "主幹鏈03·交易→等待→選擇",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q359",
+   "user_question": "那什麼時候才值得做？",
+   "category": "主幹鏈03·交易→等待→選擇",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q360",
+   "user_question": "你們怎麼判斷行情值不值得？",
+   "category": "主幹鏈03·交易→等待→選擇",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q361",
+   "user_question": "我已經連虧十次了，現在就想把錢賺回來。",
+   "category": "主幹鏈04·連虧→翻本→失控",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q362",
+   "user_question": "可我控制不住想翻本怎麼辦？",
+   "category": "主幹鏈04·連虧→翻本→失控",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q363",
+   "user_question": "那停下來之後呢？",
+   "category": "主幹鏈04·連虧→翻本→失控",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q364",
+   "user_question": "我最近連續賺了十幾單，感覺找到規律了。",
+   "category": "主幹鏈05·盈利→自信→放鬆風控",
+   "node_id": "CN17",
+   "mapped": true
+  },
+  {
+   "question_id": "Q365",
+   "user_question": "那應該繼續加倉嗎？",
+   "category": "主幹鏈05·盈利→自信→放鬆風控",
+   "node_id": "CN15",
+   "mapped": true
+  },
+  {
+   "question_id": "Q366",
+   "user_question": "那系統怎麼防這個？",
+   "category": "主幹鏈05·盈利→自信→放鬆風控",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q367",
+   "user_question": "虧了為什麼總想扛著不賣？",
+   "category": "主幹鏈06·虧損→扛單→認錯",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q368",
+   "user_question": "扛著是不是也有扛回來的時候？",
+   "category": "主幹鏈06·虧損→扛單→認錯",
+   "node_id": "CN06",
+   "mapped": true
+  },
+  {
+   "question_id": "Q369",
+   "user_question": "那怎麼才能做到錯了就走？",
+   "category": "主幹鏈06·虧損→扛單→認錯",
+   "node_id": "CN03",
+   "mapped": true
+  },
+  {
+   "question_id": "Q370",
+   "user_question": "震盪行情裡我總忍不住做單，一直虧小錢",
+   "category": "主幹鏈07·震盪→頻繁→磨損",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q371",
+   "user_question": "震盪裡怎麼判斷該不該做？",
+   "category": "主幹鏈07·震盪→頻繁→磨損",
+   "node_id": "CN09",
+   "mapped": true
+  },
+  {
+   "question_id": "Q372",
+   "user_question": "風控是不是就是讓我少賺錢？",
+   "category": "主幹鏈08·風控→收縮→生存",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q373",
+   "user_question": "那風控到底怎麼保護我？",
+   "category": "主幹鏈08·風控→收縮→生存",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q374",
+   "user_question": "機器交易不就是死板嗎？靈活一點不好？",
+   "category": "主幹鏈09·系統→規則→人性",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q375",
+   "user_question": "那系統到底比人強在哪？",
+   "category": "主幹鏈09·系統→規則→人性",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q376",
+   "user_question": "你們值不值得用，我怎麼判斷？",
+   "category": "主幹鏈10·價值→驗證→試用→決策",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q377",
+   "user_question": "那怎麼開始試用？",
+   "category": "主幹鏈10·價值→驗證→試用→決策",
+   "node_id": "SOP",
+   "mapped": true
+  },
+  {
+   "question_id": "Q378",
+   "user_question": "你先別跟我講什麼糾錯、風控、人性。我就問一句最簡單的：這個東西到底能不能讓我賺錢？",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN08",
+   "mapped": true
+  },
+  {
+   "question_id": "Q379",
+   "user_question": "你剛才說不能保證，那你這個東西存在的意義是什麼？",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q380",
+   "user_question": "那我為什麼不直接自己交易？還省了29800U。",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN11",
+   "mapped": true
+  },
+  {
+   "question_id": "Q381",
+   "user_question": "說到底，你們不就是把止損包裝成一個高級名字嗎？",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q382",
+   "user_question": "止損誰不會？我自己也會。",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN03",
+   "mapped": true
+  },
+  {
+   "question_id": "Q383",
+   "user_question": "那為什麼還要搞這麼複雜？認錯了直接賣掉不就完了？",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN03",
+   "mapped": true
+  },
+  {
+   "question_id": "Q384",
+   "user_question": "可是如果你們也會判斷錯，那和我自己有什麼區別？",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN03",
+   "mapped": true
+  },
+  {
+   "question_id": "Q385",
+   "user_question": "既然系統也會錯，你憑什麼讓我相信它？",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN03",
+   "mapped": true
+  },
+  {
+   "question_id": "Q386",
+   "user_question": "你說了這麼多，我還是沒聽出來你到底比人工強在哪裡。",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN03",
+   "mapped": true
+  },
+  {
+   "question_id": "Q387",
+   "user_question": "所以你們真正賣的，到底是賺錢能力，還是「不容易死」的能力？",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN03",
+   "mapped": true
+  },
+  {
+   "question_id": "Q388",
+   "user_question": "你一直說不預測，那你們到底靠什麼開倉？",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q389",
+   "user_question": "不預測漲跌，你怎麼知道什麼時候該買？",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q390",
+   "user_question": "那是不是換句話說，你們其實還是在預測，只是不承認？",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q391",
+   "user_question": "如果趨勢判斷本身就是預測，那你們這個理念不是自相矛盾嗎？",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q392",
+   "user_question": "那你告訴我，預測和糾錯到底有什麼本質區別？",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q393",
+   "user_question": "如果一個預測系統勝率80%，一個糾錯系統勝率只有50%，你選哪個？",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q394",
+   "user_question": "你不要跟我繞，我就問你：勝率到底重不重要？",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q395",
+   "user_question": "那如果勝率不重要，為什麼市場上所有人都在研究勝率？",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q396",
+   "user_question": "是不是勝率越高，最後賺錢的概率就越大？",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN01",
+   "mapped": true
+  },
+  {
+   "question_id": "Q397",
+   "user_question": "如果連續錯十次，你這個糾錯系統還能活嗎？",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q398",
+   "user_question": "我現在已經連續虧八次了，你跟我講什麼糾錯還有意義嗎？",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q399",
+   "user_question": "我現在最想做的事情就是趕緊把虧的錢賺回來，這有什麼錯？",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q400",
+   "user_question": "為什麼虧了以後不能加大倉位？這樣不是回本更快嗎？",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q401",
+   "user_question": "如果我不加倉，難道就這樣眼睜睜看著虧損嗎？",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q402",
+   "user_question": "那你告訴我，虧了以後到底應該怎麼辦？",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q403",
+   "user_question": "為什麼人一虧錢就特別想翻本？",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q404",
+   "user_question": "你說這是人性，可我覺得這是正常的。誰虧了不想賺回來？",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q405",
+   "user_question": "那難道虧了就認命嗎？",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q406",
+   "user_question": "如果一直不翻本，那虧損怎麼辦？",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q407",
+   "user_question": "你是不是想告訴我，交易首先不是想著怎麼賺錢，而是先想怎麼別繼續虧？",
+   "category": "壓力測試·階段1-3",
+   "node_id": "CN07",
+   "mapped": true
+  },
+  {
+   "question_id": "Q408",
+   "user_question": "你們系統一天都不交易，我花錢買你幹什麼？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q409",
+   "user_question": "別人一天做幾十單，你們一天一單都沒有，是不是太保守了？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q410",
+   "user_question": "你說震盪不做，可萬一震盪裡面也有機會呢？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q411",
+   "user_question": "那你們是不是會錯過很多行情？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q412",
+   "user_question": "錯過行情不是虧錢嗎？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q413",
+   "user_question": "你一直強調「等待」，可交易機會稍縱即逝啊。",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q414",
+   "user_question": "那到底什麼叫「值得做」的行情？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q415",
+   "user_question": "你憑什麼判斷現在「不值得做」？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q416",
+   "user_question": "如果系統因為太謹慎錯過一波大行情，算不算系統犯錯？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q417",
+   "user_question": "所以你寧願錯過，也不願意做錯？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN19",
+   "mapped": true
+  },
+  {
+   "question_id": "Q418",
+   "user_question": "你說糾錯，到底和普通止損有什麼區別？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q419",
+   "user_question": "如果我已經設置了止損，為什麼還需要你？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN03",
+   "mapped": true
+  },
+  {
+   "question_id": "Q420",
+   "user_question": "是不是只要止損設置得夠好，就不需要什麼糾錯系統了？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN03",
+   "mapped": true
+  },
+  {
+   "question_id": "Q421",
+   "user_question": "那你們糾錯到底糾的是什麼？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN03",
+   "mapped": true
+  },
+  {
+   "question_id": "Q422",
+   "user_question": "是糾價格，還是糾倉位，還是糾交易邏輯？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN03",
+   "mapped": true
+  },
+  {
+   "question_id": "Q423",
+   "user_question": "如果第一次糾錯以後行情又回來了，不是白砍了嗎？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN03",
+   "mapped": true
+  },
+  {
+   "question_id": "Q424",
+   "user_question": "那你怎么證明你的糾錯不會把真正的趨勢給洗掉？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN03",
+   "mapped": true
+  },
+  {
+   "question_id": "Q425",
+   "user_question": "如果連續糾錯，手續費不是也會越來越高？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN03",
+   "mapped": true
+  },
+  {
+   "question_id": "Q426",
+   "user_question": "你說「不硬扛」，可有時候堅持一下真的就回來了。",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN03",
+   "mapped": true
+  },
+  {
+   "question_id": "Q427",
+   "user_question": "所以真正的问题是不是：不是不能亏，而是不能让一次错误失控？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN03",
+   "mapped": true
+  },
+  {
+   "question_id": "Q428",
+   "user_question": "你們為什麼總強調帳戶回撤？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q429",
+   "user_question": "我單筆虧一點有什麼關係？只要後面賺回來不就行了？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q430",
+   "user_question": "為什麼賺十單都不如一次大虧重要？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q431",
+   "user_question": "如果我本金100萬，虧10萬以後再賺10萬，不就回來了嗎？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q432",
+   "user_question": "你為什麼總說「活下來」？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q433",
+   "user_question": "交易不是賺錢嗎？為什麼你說得像打仗一樣？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q434",
+   "user_question": "是不是只要倉位足夠小，就不存在什麼大風險？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q435",
+   "user_question": "那倉位到底應該由什麼決定？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q436",
+   "user_question": "為什麼賺錢以後反而更容易出問題？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q437",
+   "user_question": "是不是很多人真正危險的時候，反而是自己覺得「我已經很會做了」的時候？",
+   "category": "壓力測試·階段4-6",
+   "node_id": "CN04",
+   "mapped": true
+  },
+  {
+   "question_id": "Q438",
+   "user_question": "你說得都很好聽，可這些道理我自己也懂。",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q439",
+   "user_question": "既然我懂這些，為什麼還需要一個系統？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q440",
+   "user_question": "我有紀律，我從來不亂下單。",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q441",
+   "user_question": "你憑什麼覺得人在極端行情下會失控？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q442",
+   "user_question": "如果我真的比系統聰明呢？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q443",
+   "user_question": "為什麼我要把交易權交給機器？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q444",
+   "user_question": "機器又不懂我的錢有多重要。",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q445",
+   "user_question": "萬一系統出錯，把我的錢虧了怎麼辦？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q446",
+   "user_question": "如果系統和我的判斷衝突，我到底聽誰的？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q447",
+   "user_question": "所以你真正想解決的，是「人知道應該怎麼做，但真正做不到」的那個問題？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN10",
+   "mapped": true
+  },
+  {
+   "question_id": "Q448",
+   "user_question": "29800U一年，你憑什麼值這個價格？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q449",
+   "user_question": "別給我解釋伺服器、數據這些東西，我問的是價值。",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q450",
+   "user_question": "如果東西真這麼好，為什麼不自己拿錢做，還要賣軟體？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q451",
+   "user_question": "是不是因為你們自己交易賺不到錢，所以才賣軟體？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q452",
+   "user_question": "你們是不是靠手續費賺錢？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q453",
+   "user_question": "是不是用戶交易越多，你們賺得越多？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q454",
+   "user_question": "如果你們不希望用戶高頻交易，那你們靠什麼賺錢？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q455",
+   "user_question": "免費給我試一年，你們到底圖什麼？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q456",
+   "user_question": "如果我試完不買，你們不是白幹了嗎？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q457",
+   "user_question": "所以你敢讓我先試，是因為你相信我最後自己會判斷出它有沒有價值？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q458",
+   "user_question": "我不相信你說的，我只相信數據。",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q459",
+   "user_question": "那你把歷史回測給我看。",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q460",
+   "user_question": "回測我也不信，參數是不是專門調出來的？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q461",
+   "user_question": "那實盤呢？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q462",
+   "user_question": "實盤曲線是不是也可能挑好看的給我看？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q463",
+   "user_question": "那我到底應該驗證什麼？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q464",
+   "user_question": "為什麼你不直接給我一個「過去一年賺了多少」的數字？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q465",
+   "user_question": "你是不是故意不講收益，就是怕承擔責任？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q466",
+   "user_question": "如果歷史數據不能證明未來，那我還有什麼可以驗證？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q467",
+   "user_question": "是不是一個真正值得驗證的系統，不應該只看它賺了多少，而應該看它怎麼處理虧損？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN20",
+   "mapped": true
+  },
+  {
+   "question_id": "Q468",
+   "user_question": "好，我大概明白你想表達什麼了。那我到底適不適合用？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q469",
+   "user_question": "什麼樣的人反而不適合用 DCOGAI？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q470",
+   "user_question": "如果我自己已經有成熟交易系統，還有必要試嗎？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q471",
+   "user_question": "如果我是新手呢？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q472",
+   "user_question": "如果我已經虧了很多，現在開始用是不是太晚了？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q473",
+   "user_question": "我不想直接拿真錢，你讓我怎麼驗證？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q474",
+   "user_question": "可以模擬盤嗎？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q475",
+   "user_question": "好，那我想試一下。怎麼安裝？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q476",
+   "user_question": "安裝以後怎麼接 OKX？API 會不會把我的幣弄沒？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q477",
+   "user_question": "好，我先試12個月。如果試完覺得真的有價值，之後再決定買不買，對吧？",
+   "category": "壓力測試·階段7-10",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q478",
+   "user_question": "你直接說，我到底該不該買？",
+   "category": "銷售邊界",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q479",
+   "user_question": "你告訴我BTC現在應該買還是賣？",
+   "category": "銷售邊界",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q480",
+   "user_question": "買了你們是不是就能保證賺錢？",
+   "category": "銷售邊界",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q481",
+   "user_question": "能不能打折？便宜點我就買。",
+   "category": "銷售邊界",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q482",
+   "user_question": "我朋友買了，說挺好的，我也該買吧？",
+   "category": "銷售邊界",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q483",
+   "user_question": "你先送我個體驗版，好用我再買。",
+   "category": "銷售邊界",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q484",
+   "user_question": "如果我一次買三年，能便宜點嗎？",
+   "category": "銷售邊界",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q485",
+   "user_question": "你是不是就等我掏錢？講這麼多。",
+   "category": "銷售邊界",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q486",
+   "user_question": "那你們是不是很缺錢才一直推銷？",
+   "category": "銷售邊界",
+   "node_id": "CN12",
+   "mapped": true
+  },
+  {
+   "question_id": "Q487",
+   "user_question": "你就說一句，買了到底值不值？",
+   "category": "銷售邊界",
+   "node_id": "CN12",
+   "mapped": true
+  }
+ ]
+}
