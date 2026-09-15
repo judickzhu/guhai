@@ -1452,6 +1452,31 @@
         st.current_topic = topic;
       }
       state.user = st;
+      // V10.7 Step4：持久化（localStorage——跨会话续接，限制大小防膨胀）
+      try {
+        var persist = { emotion: st.emotion, intent: st.intent, current_node: st.current_node, level: st.level,
+          understood: (st.understood || []).slice(-5), topic_history: (st.topic_history || []).slice(-6),
+          next_target: st.next_target, decision_dependency: st.decision_dependency };
+        localStorage.setItem("dc_user_state", JSON.stringify(persist));
+      } catch (e) {}
+    } catch (e) {}
+  }
+  // V10.7 Step4：恢复持久化状态（跨会话续接）
+  function restoreUserState() {
+    try {
+      var raw = localStorage.getItem("dc_user_state");
+      if (!raw) return;
+      var saved = JSON.parse(raw);
+      var st = state.user || {};
+      if (saved.emotion) st.emotion = saved.emotion;
+      if (saved.intent) st.intent = saved.intent;
+      if (saved.current_node) st.current_node = saved.current_node;
+      if (typeof saved.level === 'number') st.level = saved.level;
+      if (saved.understood) st.understood = saved.understood;
+      if (saved.topic_history) st.topic_history = saved.topic_history;
+      if (saved.next_target) st.next_target = saved.next_target;
+      if (saved.decision_dependency) st.decision_dependency = saved.decision_dependency;
+      state.user = st;
     } catch (e) {}
   }
   // ============== END V10.7 ==============
@@ -1921,6 +1946,7 @@
 
   /* ============== 初始化 ============== */
   function init() {
+    restoreUserState(); // V10.7 Step4：恢复跨会话状态
     loadDSConfig();
     KB_INDEX = buildKBIndex(); // V3.3：先建靜態知識庫索引，遠端到達後重建
     // 初始化：检测设备系统语言/区域，确定初始界面文字体系
