@@ -1393,6 +1393,23 @@ USER_INPUT → CONTEXT → USER_STATE → INTENT → COGNITIVE_BLOCK → NODE
 
 ---
 
-## 六、匯入行為訓練集（下一步）
+## 六、匯入行為訓練集（✅ 已完成 2026-09-29）
 
-將 60 條 Golden Behavior Case 轉成 V10.3 行為訓練集 JSON 格式（每條 CASE → 1+ 樣本，含八態 variants），與現有 `DC姐姐V10.3_行為訓練集_首批.json` 合併，供微調使用。
+已將 60 條 Golden Behavior Case 轉成 V10.3 行為訓練集 JSON 格式，並與 V10.3 首批合併：
+
+| 檔案 | 內容 |
+|:--|:--|
+| `DC姐姐V10.7_行為訓練集_GB60.json` | 60 條 Golden Behavior Case（GB-01~60，sample_id 格式，10 字段對映）|
+| `DC姐姐V10.7_行為訓練集_合併78.json` | V10.3 首批 18 條（八態變體＋單態映射）＋ GB60 = **78 條** |
+
+**映射方式**（V10.7 15 字段 → V10.3 10 字段）：
+- `CASE_ID → sample_id`（GB01~GB60）
+- `USER_INPUT → user_input`（取第一種問法，剝引號）
+- `USER_STATE → user_state`（主狀態）
+- `INTENT → intent`；`NODE → cognitive_node`（統一為 CNxx/SOP）
+- `EXPECTED_ACTION → expected_action`；`GOLDEN_BEHAVIOR → behavior_requirements`
+- `FORBIDDEN_BEHAVIOR → forbidden`；`STOP_CONDITION → stop`
+
+**node 分佈**（60 條）：CN20×20、CN07×7、SOP×6、CN05×4、CN08/CN14×3、CN06/CN03/CN11/CN13/CN01×2、其餘各 1。sample_id 無重複、字段全齊、禁語無泄漏。
+
+> 後續擴展：如需八態 variants（每條 ×8 狀態），可參照 `DC姐姐V10.3_八態variants_Q001.json` 的展開方式生成 480 條——本步先以「每條 1 樣本」的深度樣本入庫，variant 展開留待微調批次。
