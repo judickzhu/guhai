@@ -1412,4 +1412,4 @@ USER_INPUT → CONTEXT → USER_STATE → INTENT → COGNITIVE_BLOCK → NODE
 
 **node 分佈**（60 條）：CN20×20、CN07×7、SOP×6、CN05×4、CN08/CN14×3、CN06/CN03/CN11/CN13/CN01×2、其餘各 1。sample_id 無重複、字段全齊、禁語無泄漏。
 
-> 後續擴展：如需八態 variants（每條 ×8 狀態），可參照 `DC姐姐V10.3_八態variants_Q001.json` 的展開方式生成 480 條——本步先以「每條 1 樣本」的深度樣本入庫，variant 展開留待微調批次。
+> 後續擴展：八態 variants **已展開（2026-09-29）**——60 條 × 8 狀態 = **480 條**（`DC姐姐V10.7_行為訓練集_八態480.json`，git commit 7b721ce2）。主狀態由 USER_STATE 向量＋CASE 語義規則判定（保留原 golden/action），其餘 7 態依 V10.4 State×Intent 矩陣派生。480 條全唯一、60 CASE × 8 態完整、字段齊全。
