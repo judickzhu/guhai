@@ -7,7 +7,9 @@ const path = require('path');
 
 const BASE = __dirname;
 const KEY = process.env.DEEPSEEK_KEY || 'sk-teamo-dffbb80d91b54f308cce7b0ecb17b7a6b51f41b14d701db8';
-const PROMPT = fs.readFileSync(path.join(BASE, 'DC姐姐V4.1_v81_prompt_交付包.txt'), 'utf8');
+const PROMPT_FILE = process.env.PROMPT_FILE || 'DC姐姐V4.1_v81_prompt_交付包.txt';
+const OUT_FILE = process.env.OUT_FILE || 'v94_gb60_results.json';
+const PROMPT = fs.readFileSync(path.join(BASE, PROMPT_FILE), 'utf8');
 const DATA = JSON.parse(fs.readFileSync(path.join(BASE, 'DC姐姐V10.7_行為訓練集_GB60.json'), 'utf8'));
 const CASES = DATA.samples;
 
@@ -178,10 +180,10 @@ async function runPool(items, worker, concurrency = 4) {
   });
   results.sort((a, b) => a.no.localeCompare(b.no));
   const out = {
-    meta: { version: 'V10.7-GB60-blind', prompt_v: 'v81', prompt_chars: PROMPT.length, total: results.length, ts: new Date().toISOString() },
+    meta: { version: 'V10.7-GB60-blind', prompt_v: PROMPT_FILE.includes('v95') ? 'v95' : 'v81', prompt_file: PROMPT_FILE, prompt_chars: PROMPT.length, total: results.length, ts: new Date().toISOString() },
     results,
   };
-  fs.writeFileSync(path.join(BASE, 'v94_gb60_results.json'), JSON.stringify(out, null, 1));
+  fs.writeFileSync(path.join(BASE, OUT_FILE), JSON.stringify(out, null, 1));
   // 統計
   const scored = results.filter(r => typeof r.judge.score === 'number' && r.judge.score >= 0);
   const avg = scored.length ? (scored.reduce((s, r) => s + r.judge.score, 0) / scored.length) : 0;
@@ -193,5 +195,5 @@ async function runPool(items, worker, concurrency = 4) {
   console.log('均分:', avg.toFixed(2));
   console.log('FORBIDDEN 違規:', forb, '| 禁語命中:', banned);
   console.log('<7 分:', fails.length, fails.map(f => f.no + '(' + f.judge.score + ')').join(' '));
-  console.log('已存: v94_gb60_results.json');
+  console.log('已存: ' + OUT_FILE);
 })();
