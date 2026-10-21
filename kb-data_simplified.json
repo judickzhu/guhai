@@ -397,7 +397,8 @@
       "授权",
       "怎么收费",
       "收费标准",
-      "年费多少"
+      "年费多少",
+      "贵不贵"
      ],
      "a_en": "A full DCOGAI annual license costs 29,800U per suite per year.\nWe run a zero-cost trial mechanism, and the rules are completely transparent:\n1. Full-feature free trial with no stripped-down features and no time limit. If you're not satisfied, you pay nothing.\n2. Any positive trading returns generated while the software is running can be used to fully offset that year's license fee.\n3. The fee offset cap is 29,800U. Once you've hit that, the rest of the year is completely free with no extra charges.\n4. If there are no positive trading returns during the full annual cycle, the license fee is zero.\nNo hidden fees, no auto-renewal, no bank card required. All funds stay in your personal exchange account the entire time.",
      "q_en": "How does DCOGAI charge? What is the annual fee?"
@@ -600,7 +601,12 @@
       "单向持仓",
       "PassPhrase",
       "SecretKey",
-      "强制"
+      "强制",
+      "API怎么绑定",
+      "怎么绑定API",
+      "如何绑定",
+      "怎么绑",
+      "API绑定"
      ],
      "a_en": "Binding OKX API must strictly follow three official mandatory standards, otherwise it won't log in and run properly:\n1. API permissions: Only enable \"read market data\" and \"trade\". Withdrawal and transfer permissions must be off, protecting your assets from the start.\n2. Trading mode: The account needs to be switched to contract mode.\n3. Position mode: Set to one-way position, which perfectly matches the system's single-direction signal logic and avoids the extra cost or logic conflicts of two-way positions.\nAfter creating the API, fill in the API KEY, SecretKey, and PassPhrase in the software login box to complete the binding.",
      "q_en": "What settings are required for OKX API binding? Are there any mandatory requirements?"
@@ -641,27 +647,6 @@
      ],
      "a_en": "We don't recommend using two-way position mode. The DCOGAI signal system is built around one-sided operations on a two-sided market, specifically designed for one-way position logic.\nIf you turn on two-way positions, you'll run into issues like holding both long and short at the same time, hedging losses, signal conflicts, and it'll seriously increase slippage and fees, messing up the system's built-in risk control and trading logic.",
      "q_en": "Can I use hedge mode (dual position mode)?"
-    },
-    {
-     "id": "x_api_bind_steps",
-     "q": "API怎么绑定？具体步骤是什么？",
-     "a": "绑定分三步：\n① 先在 OKX 后台创建 API Key，权限只勾【读取】和【交易】，提现和划转的权限一定要关掉。\n② 创建时会给你三串东西：API Key、Secret Key、Pass Phrase，复制下来。\n③ 打开 DCOGAI 客户端，登录框里把三串填进去，点确认就绑定好了。\n\n两个容易卡住的地方：账户要切成合约模式、持仓设成单向持仓，不然跑起来会报错。\n\n绑定完可以先看它是否正常读取行情，有问题随时找我。",
-     "keywords": [
-      "API",
-      "绑定",
-      "怎么绑",
-      "如何绑定",
-      "步骤",
-      "设置",
-      "接入",
-      "配置",
-      "API Key",
-      "Secret",
-      "PassPhrase",
-      "填"
-     ],
-     "q_en": "How do I bind the API? What are the steps?",
-     "a_en": "Binding takes three steps:\n① Create an API Key in your OKX dashboard. Enable only [Read] and [Trade] permissions — make sure withdrawal and transfer permissions are OFF.\n② OKX gives you three strings: API Key, Secret Key, Pass Phrase. Copy them.\n③ Open the DCOGAI client, paste all three into the login box, confirm, and you're bound.\n\nTwo common snags: the account must be in Futures mode, and position mode must be One-way, otherwise it will error out.\n\nAfter binding, check that it reads market data correctly. Ping me if anything's off."
     },
     {
      "id": "x_company_info",
