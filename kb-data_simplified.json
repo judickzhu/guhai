@@ -150,7 +150,7 @@
     {
      "id": "f1",
      "q": "DCOGAI核心功能是什么？和普通量化软件有什么区别？",
-     "a": "DCOGAI拥有四大联动核心体系，彻底区别市面单一信号、高频刷单的普通量化工具，核心不靠预测行情，只靠管控风险、筛选优质行情提升交易稳定性。\n① 纠错体系（DCOG LOOP核心）：遵循模型→执行→纠错→适应→循环闭环，行情偏离模型预设阈值时自动分层减仓、纠错离场，锁定单笔亏损，杜绝扛单深套；\n② 休眠体系（独家差异化功能）：多维扫描市场波动、动能、区间、多空强度，自动识别低价值行情，全程停止开仓，避免本金、手续费、滑点损耗；\n③ 信号体系（低频高质量交易）：双边市场单边操作，不双向对冲、不频繁刷单，严格过滤弱信号，趋势确认后梯度重仓；\n④ 分水岭多级风控体系（资金安全屏障）：整合多品种分散风控、多策略权重切换、账户回撤分水岭管控、动态仓位调节，阶梯式锁死账户最大回撤。",
+     "a": "姐姐懂你现在的心情。看着跳动的K线，既兴奋又紧张，想试试，又怕亏钱，还有点不知道从哪儿下手。\n\n这种感觉很正常，每个人刚进来的时候都一样。\n\n但姐姐想在你开始之前，先跟你说一句最重要的话：**千万别把交易当成“猜涨跌”的游戏。**\n\n很多人刚进来，以为交易就是赌大小，猜对了就赚，猜错了就亏。这个想法，会让你从一开始就走错路。你会因为猜对一次就觉得自己是天才，重仓冲进去；也会因为猜错一次就不甘心，扛着不认输。这两种行为，都是新手亏大钱的根源。\n\n那交易是什么？\n\n交易是，你开单之前，先想好：如果对了，我什么时候走；如果错了，我什么时候认。你赚的不是“猜对”的钱，你赚的是“执行规则”的钱。\n\n所以姐姐给你的建议就三个字：**慢慢来。**\n\n用小资金去感受市场，去验证你的想法。别急着翻倍，别急着证明自己。你的目标不是第一单就赚钱，而是第一单就学会怎么在错了的时候，少亏钱。\n\n这个市场永远有机会，但前提是，你得先活下来。把“活下来”当成你的第一个目标，你就已经跑赢绝大多数新手了。",
      "keywords": [
       "核心功能",
       "区别",
@@ -162,7 +162,11 @@
       "信号",
       "风控",
       "和什么不一样",
-      "对比"
+      "对比",
+      "和别的有什么不同",
+      "和其他量化有什么区别",
+      "跟其他软件区别",
+      "有什么不一样"
      ],
      "a_en": "DCOGAI has four interconnected core systems that completely set it apart from the ordinary quant tools out there—the kind that just give single signals or spam trades. We don't rely on predicting the market. Instead, we focus on risk control and filtering out high-quality opportunities to boost trading stability.\n① Correction Loop (DCOG LOOP core): Follows the model → execute → correct → adapt → loop cycle. When the market strays beyond preset thresholds, it automatically scales down positions in layers, exits to correct errors, locks in single-trade losses, and prevents you from holding a losing position into deep trouble.\n② Dormant Mode (exclusive differentiator): Multi-dimensional scanning of market volatility, momentum, ranges, and long/short strength. It automatically identifies low-value market conditions and stops opening positions entirely, avoiding unnecessary loss of principal, fees, and slippage.\n③ Signal System (low-frequency, high-quality trades): Operates one-sided in a two-sided market—no hedging, no excessive scalping. Strictly filters weak signals, and once a trend is confirmed, it adds position in gradients.\n④ Watershed Multi-level Risk Control (fund safety barrier): Combines multi-asset diversification, multi-strategy weight switching, account drawdown watershed management, and dynamic position sizing to lock in maximum drawdown in a step-by-step manner.",
      "q_en": "What are the core functions of DCOGAI? What's the difference between it and ordinary quantitative software?"
@@ -178,7 +182,11 @@
       "震荡",
       "横盘",
       "等待",
-      "休眠功能"
+      "休眠功能",
+      "什么是休眠",
+      "休眠是什么",
+      "休眠功能是什么",
+      "什么是休眠功能"
      ],
      "a_en": "The dormancy feature is DCOGAI's signature standout—and the core edge that separates it from ordinary quant systems.\nThe system scans market conditions around the clock from multiple dimensions and automatically decides whether the current market is worth trading. When it sees narrow range-bound movement, balanced long/short pressure, weak volatility, or frequent false breakouts, it goes straight into dormant mode and halts all new positions. It won't trade just for the sake of trading.\nThis feature stops you from getting chopped up repeatedly in ranging markets—no repeated stop-losses, no fee waste, no slippage. It tackles the #1 pain point most traders have: over-trading and losing more the more they trade.\nCore trading mindset: Predictors are afraid of waiting. A professional trading system knows how to wait patiently for high-value opportunities.",
      "q_en": "What is the DCOGAI sleep mode? What is it used for?"
@@ -195,7 +203,11 @@
       "深套",
       "减仓",
       "离场",
-      "管控错误"
+      "管控错误",
+      "什么是纠错",
+      "纠错是什么",
+      "纠错怎么理解",
+      "纠错功能"
      ],
      "a_en": "The correction loop (DCOG LOOP) is the foundation of the entire system. Its whole philosophy is 'don't predict the market, just manage mistakes.'\nThe system runs a complete closed loop: it opens positions based on a standardized model, constantly comparing against live price action. If the market moves against expectations and risk starts to deviate, it automatically scales down positions in layers and exits to correct the error. It locks in the maximum loss per trade immediately, completely eliminating the classic human trader disease of 'holding a loser, refusing to stop out, letting a small loss snowball into a full disaster.'\nAfter a market cycle ends, the system adapts to the new market structure, dynamically updates model parameters, and keeps adapting to all sorts of conditions—ranging, trending, you name it.",
      "q_en": "What is the DCOGAI error correction system? What problems can it solve?"
@@ -214,7 +226,11 @@
       "单边",
       "双边",
       "梯度重仓",
-      "少交易"
+      "少交易",
+      "信号怎么来的",
+      "信号怎么产生",
+      "信号哪来的",
+      "怎么判断信号"
      ],
      "a_en": "DCOGAI's signal system throws out the mainstream high-frequency scalping playbook. The core idea is: trade less, trade smart, trade steady.\nHere's the logic: In a two-sided market, we operate one-sided. No holding both directions to hedge fees away. All weak signals and noise are strictly filtered. We keep opening frequency tight and refuse to take useless trades. Entry standards are strict—we chase extreme stability. When momentum fades or the trend turns, we close fast to lock in profits and don't linger. When a trend is fully formed and momentum is strong, the system scales up position size in gradients to maximize gains from confirmed moves. It fits all account sizes perfectly.",
      "q_en": "What is the trading logic behind DCOGAI's signal system?"
@@ -222,7 +238,7 @@
     {
      "id": "f5",
      "q": "分水岭风控体系具体有哪些风控能力？",
-     "a": "分水岭多级风控是账户资金的核心安全屏障，四维联动全方位管控风险：\n① 多品种组合风控：支持多币种同步监测运行，自动分散持仓风险，避免单一币种极端行情冲击整体账户净值；\n② 多策略组合风控：内置多套适配不同行情的策略模型，系统根据市场环境自动切换策略权重，规避单一策略失效风险；\n③ 分水岭回撤风控：可自定义账户盈亏回撤阈值，触碰风控红线后，系统自动降仓、限制新开仓、全局休眠，阶梯式阻断亏损扩大；\n④ 动态仓位控制：根据市场波动率、信号强弱、账户实时盈亏状态，自动调整单笔持仓仓位，弱信号轻仓试探，强趋势合理重仓，杜绝重仓梭哈风险。",
+     "a": "风控这词听着很干，但姐姐换个说法你就懂了——\n\n它是替你在三个地方踩刹车：\n\n**第一脚：单笔止损。** 你这单判断错了，到阈值就走，不扛。这一脚保的是「一次错误不会要你命」。\n\n**第二脚：账户回撤。** 你已经连亏几笔、账户从高点掉下来一大截，它会主动降仓位。为什么？因为这时候你最容易重仓翻本，而翻本冲动就是亏损的最大放大器。\n\n**第三脚：行情不适配。** 震荡、窄幅、假突破——它干脆不做。这一脚省的是手续费、滑点和情绪消耗。\n\n三脚踩下去，你会发现它其实不是在「控制市场」，是在**控制你在市场里的样子**。\n\n市场你控不了，但你自己的手，可以提前上锁。",
      "keywords": [
       "分水岭",
       "风控",
@@ -232,7 +248,11 @@
       "仓位",
       "动态",
       "红线",
-      "降仓"
+      "降仓",
+      "风控有哪些",
+      "有什么风控",
+      "风控怎么做",
+      "有哪些风控"
      ],
      "a_en": "The watershed multi-level risk control is the core safety barrier for your account funds. Four dimensions work together to manage risk from every angle:\n① Multi-asset portfolio risk control: Supports multiple coins running simultaneously with synchronized monitoring, automatically spreads position risk, and prevents a single coin's extreme move from wrecking your overall account equity.\n② Multi-strategy portfolio risk control: Built-in strategy models for different market conditions. The system automatically switches strategy weights based on the environment, avoiding the risk of any single strategy suddenly failing.\n③ Watershed drawdown risk control: Customizable account profit/loss drawdown threshold. Once the risk line is hit, the system automatically reduces positions, restricts new entries, and globally goes dormant, blocking further losses in a step-by-step manner.\n④ Dynamic position sizing: Based on real-time market volatility, signal strength, and your account's live P&L, it automatically adjusts position size per trade. Weak signals get light probing positions, strong trends get reasonable heavy sizing—no more all-in gambles.",
      "q_en": "What specific risk control capabilities does the Watershed risk control system have?"
@@ -324,7 +344,7 @@
     {
      "id": "step01",
      "q": "好，我准备试一下，你告诉我第一步。",
-     "a": "好，第一步很简单：先注册 DCOGAI 账户。\n\n路径就一条，认准官方客服，别的别碰：\n\n1. Telegram @DCOGAI877 或 @DCOGAI888\n2. 客服给你注册链接，按指引操作\n3. 注册完进后台，绑 OKX API 密钥\n\n绑 API 的时候注意安全：只开交易和读取权限，绝对别开提币权限。密钥和密钥密码别泄露，别截图发别人。\n\n另外说清楚：我不保证任何收益，系统跑试用是跑试用，赚不赚钱看行情，别拿真金白银，去赌一个稳稳当当的梦。注册和绑定过程只要遇到要你转钱、抵押、充值的，停手，回来问我。\n\n第一步就到这儿，去注册吧，绑 API 卡住了随时来问。",
+     "a": "好，姐姐给你最省事的路径，不绕。\n\n**第一步：注册。**\n认准官网，别从群里、朋友发的链接点进去——这一步最容易被骗，别省这一秒。\n\n**第二步：下客户端。**\n注册完后台就有下载入口。装好先别急着绑真钱。\n\n**第三步：绑 OKX API。**\n在 OKX 后台建 API Key，权限只开【读取】和【交易】，**提现和划转一定要关掉**。然后会给你三串东西——Key、Secret、Pass Phrase，填进客户端登录框就绑好了。\n\n⚠️ 两个最容易卡住的：账户要切成**合约模式**，持仓设成**单向持仓**。不设这两个，跑起来会报错。\n\n**第四步：先小仓位跑。**\n别一上来就满仓。先挂很小的仓位，看它该停的时候停不停、该走的时候走不走。\n\n哪一步卡了，截图发给姐姐。",
      "keywords": [
       "告诉我第一步",
       "告诉我第一步",
@@ -375,7 +395,9 @@
       "29800",
       "费用",
       "授权",
-      "怎么收费"
+      "怎么收费",
+      "收费标准",
+      "年费多少"
      ],
      "a_en": "A full DCOGAI annual license costs 29,800U per suite per year.\nWe run a zero-cost trial mechanism, and the rules are completely transparent:\n1. Full-feature free trial with no stripped-down features and no time limit. If you're not satisfied, you pay nothing.\n2. Any positive trading returns generated while the software is running can be used to fully offset that year's license fee.\n3. The fee offset cap is 29,800U. Once you've hit that, the rest of the year is completely free with no extra charges.\n4. If there are no positive trading returns during the full annual cycle, the license fee is zero.\nNo hidden fees, no auto-renewal, no bank card required. All funds stay in your personal exchange account the entire time.",
      "q_en": "How does DCOGAI charge? What is the annual fee?"
@@ -470,10 +492,72 @@
       "电脑能用吗",
       "电脑能用吗",
       "支持哪些交易所",
-      "支持哪些交易所"
+      "支持哪些交易所",
+      "先试用还是直接买",
+      "试用还是买",
+      "先试还是买",
+      "要不要先试"
      ],
      "a_en": "About the free trial — I'm not going to make up numbers for you and screw you over. Go check the official website; the rules are written out clear as day, and whatever's on the actual page is what counts. Same goes for downloading and installing — register on the official site and follow the prompts. Works on desktop. As for supported exchanges, right now it's mainly OKX, but that could change later. Best to check the official announcements or ask support directly.",
      "q_en": "Is there a free trial? How do I download and install it?"
+    },
+    {
+     "id": "x_cancel_subscription",
+     "q": "怎么取消订阅？可以退款吗？",
+     "a": "取消很简单：在客户端里点【账户】→【授权管理】→【取消自动续费】，当期到期就自动停了，不会再扣费。\n\n已经扣的当期费用不退，但取消后可以继续用到到期日，不会立刻失效。\n\n如果操作上卡住了，把页面截图发我，我帮你看是卡在哪一步。",
+     "keywords": [
+      "取消",
+      "退订",
+      "退款",
+      "终止",
+      "解约",
+      "不续费",
+      "自动续费",
+      "关闭",
+      "停用",
+      "退钱"
+     ],
+     "q_en": "How do I cancel my subscription? Can I get a refund?",
+     "a_en": "Cancelling is simple: in the client go to [Account] → [License Management] → [Cancel Auto-Renew]. It stops automatically when the current period ends and won't charge again.\n\nFees already paid for the current period aren't refunded, but you can keep using it until the expiry date — it won't shut off immediately.\n\nIf you get stuck, send me a screenshot and I'll help you figure out which step."
+    },
+    {
+     "id": "x_company_reliable",
+     "q": "你们会不会跑路？",
+     "a": "这个问题该问，不是不该问。\n\n姐姐不跟你保证「我们不会跑路」——任何人的保证都值不了几个钱。你可以按这三条自己判断：\n\n① 钱在谁手上：你的资产始终在你自己交易所账户，我们碰不到、也没权限转走。就算哪天我们没了，你的钱还在。\n② 收的是什么费：我们收的是软件年费，不是分成、不是代管资金——没有「拿着你的钱」这回事。\n③ 能不能随时走：全部功能免费试用，不合适随时走，不用等审核。\n\n真跑路的，往往先要你把钱交出去。这三条你不放心，随时可以不试。",
+     "keywords": [
+      "跑路",
+      "骗",
+      "可信",
+      "信不过",
+      "公司",
+      "实力",
+      "靠谱吗",
+      "会不会跑",
+      "卷款",
+      "消失"
+     ]
+    },
+    {
+     "id": "x_one_month",
+     "q": "能不能只用一个月？",
+     "a": "可以，但没必要——\n\n我们本来就是12个月免费试用，全功能不阉割。你只想用一个月，那一个月后停掉就行，一分钱不收。\n\n不用为了「只试一个月」而付钱。",
+     "keywords": [
+      "只用一个月",
+      "能不能只买一个月",
+      "单月",
+      "试用一个月"
+     ]
+    },
+    {
+     "id": "x_price_why",
+     "q": "凭什么收这么贵？",
+     "a": "姐姐不跟你辩「贵不贵」——这问题没有标准答案。\n\n但可以换个问法：它替你解决的问题，值不值这个价？\n\n如果你管不住手、舍不得止损、亏了就急着翻本——这三件事一年会让你亏掉多少？拿这个数字跟29800比一比。\n\n觉得不值，就别买，姐姐不催。",
+     "keywords": [
+      "凭什么收这么贵",
+      "太贵了",
+      "为什么这么贵",
+      "价格高"
+     ]
     }
    ]
   },
@@ -534,7 +618,11 @@
       "权限",
       "提现",
       "加密",
-      "本地"
+      "本地",
+      "安全吗",
+      "安全不安全",
+      "安全么",
+      "会不会被盗"
      ],
      "a_en": "Safety and control throughout—no coin theft, no info leaks:\n1. Controlled permissions: API permissions are set by you on OKX's backend, only trading and reading are enabled. There's no withdrawal or transfer access, so the system can't touch or move your funds.\n2. Fund security: all your assets stay in your personal OKX exchange account at all times; the system has no authority to move funds.\n3. Data security: your API key and trading data are encrypted and stored locally, only on your device—not uploaded or shared anywhere.\n4. Installation security: official clean installer, no bundled scripts, no background spyware.",
      "q_en": "Is binding an API safe? Will it steal coins or leak account information?"
@@ -553,6 +641,65 @@
      ],
      "a_en": "We don't recommend using two-way position mode. The DCOGAI signal system is built around one-sided operations on a two-sided market, specifically designed for one-way position logic.\nIf you turn on two-way positions, you'll run into issues like holding both long and short at the same time, hedging losses, signal conflicts, and it'll seriously increase slippage and fees, messing up the system's built-in risk control and trading logic.",
      "q_en": "Can I use hedge mode (dual position mode)?"
+    },
+    {
+     "id": "x_api_bind_steps",
+     "q": "API怎么绑定？具体步骤是什么？",
+     "a": "绑定分三步：\n① 先在 OKX 后台创建 API Key，权限只勾【读取】和【交易】，提现和划转的权限一定要关掉。\n② 创建时会给你三串东西：API Key、Secret Key、Pass Phrase，复制下来。\n③ 打开 DCOGAI 客户端，登录框里把三串填进去，点确认就绑定好了。\n\n两个容易卡住的地方：账户要切成合约模式、持仓设成单向持仓，不然跑起来会报错。\n\n绑定完可以先看它是否正常读取行情，有问题随时找我。",
+     "keywords": [
+      "API",
+      "绑定",
+      "怎么绑",
+      "如何绑定",
+      "步骤",
+      "设置",
+      "接入",
+      "配置",
+      "API Key",
+      "Secret",
+      "PassPhrase",
+      "填"
+     ],
+     "q_en": "How do I bind the API? What are the steps?",
+     "a_en": "Binding takes three steps:\n① Create an API Key in your OKX dashboard. Enable only [Read] and [Trade] permissions — make sure withdrawal and transfer permissions are OFF.\n② OKX gives you three strings: API Key, Secret Key, Pass Phrase. Copy them.\n③ Open the DCOGAI client, paste all three into the login box, confirm, and you're bound.\n\nTwo common snags: the account must be in Futures mode, and position mode must be One-way, otherwise it will error out.\n\nAfter binding, check that it reads market data correctly. Ping me if anything's off."
+    },
+    {
+     "id": "x_company_info",
+     "q": "你们公司在哪里？有实体公司吗？",
+     "a": "姐姐跟你说实话：我们是做工具的团队，不跟你玩神秘。\n\n但更重要的一点是——你不需要靠「公司大小」来判断要不要用。\n\n你可以用三个更实在的标准：\n① 钱在谁手上：你的资产始终在你自己交易所账户，我们碰不到、也没权限转走。\n② 有没有绑定：全部功能免费试用，不合适随时走。\n③ 能不能验证：它怎么判断、怎么执行，你自己看得见。\n\n公司名头再大，钱被卷走也没用；反过来，钱在你自己手里，比什么都实在。",
+     "keywords": [
+      "公司在哪里",
+      "有实体公司吗",
+      "什么公司",
+      "公司背景",
+      "公司地址",
+      "在哪办公"
+     ]
+    },
+    {
+     "id": "x_business_license",
+     "q": "有营业执照吗？有备案吗？",
+     "a": "姐姐不跟你晒证件照——晒给你，你也未必验得了真假。\n\n判断一个工具靠不靠谱，比起查证件，有两件事更直接：\n① 它敢不敢让你先免费试。骗子最怕你试，因为一试就穿帮。\n② 它要不要你的钱。我们的钱始终在你自己账户，我们碰不到。\n\n证件能造假，这两件造不了假。",
+     "keywords": [
+      "营业执照",
+      "有备案吗",
+      "有证件吗",
+      "合法吗",
+      "正规吗",
+      "什么资质"
+     ]
+    },
+    {
+     "id": "x_who_is_boss",
+     "q": "你们老板是谁？",
+     "a": "这个姐姐不聊——因为聊了对你也没帮助。\n\n你真正想知道的是「这东西到底靠不靠谱」，不是「谁做的」。苹果的老板是谁，跟你买不买 iPhone 没关系；同理，我们的老板是谁，跟你用不用这个工具也没关系。\n\n真正有用的判断是：你的钱在不在你自己手上、能不能免费试、效果能不能自己验证。",
+     "keywords": [
+      "老板是谁",
+      "创始人",
+      "谁做的",
+      "团队是谁",
+      "什么人做的"
+     ]
     }
    ]
   },
@@ -577,7 +724,11 @@
       "参数",
       "手数",
       "持仓数",
-      "K线"
+      "K线",
+      "怎么安装",
+      "安装步骤",
+      "怎么下载",
+      "如何安装"
      ],
      "a_en": "Super simple to operate, ready to use out of the box — zero learning curve for beginners, no need to develop your own strategies or do complicated debugging.\n1. After installing and logging in, the software comes with four major trading coins built in, plus the official standard teaching model, and all four core features are enabled by default;\n2. No need to tweak complex parameters — just go into the software's Settings section and fine-tune three basic parameters: position size per trade, max concurrent positions overall, and K-line timeframe (15min / 1H / 4H);\n3. Save your settings, hit start, and it runs fully automatically. The system handles market scanning, value assessment, trade selection, error correction, trend take-profit, and range-bound dormancy all by itself — no need to watch the charts or intervene manually.",
      "q_en": "After the software is installed, how do I get started? Is it complicated to operate?"
@@ -644,6 +795,32 @@
      ],
      "a_en": "Yes. The software comes with four major coins by default, and you can add or remove trading coins anytime. Multiple coins can run at the same time, and the system's watershed risk control automatically spreads risk across different positions to optimize overall account drawdown performance.",
      "q_en": "Can I add or remove trading coins?"
+    },
+    {
+     "id": "x_stoploss_setup",
+     "q": "停损怎么设？",
+     "a": "止损这个参数在客户端【风控设置】里，两个地方要填：\n\n① 单笔止损比例：建议不超过 8%。超过这个数，一次判断错就可能吃掉你十次的利润。\n② 单笔风险上限：按账户总资金的 2% 算，反推你能下多大的仓。\n\n举个例：10 万本金，2% 就是单笔最多亏 2000；止损设 8%，那这笔仓位最多下 2.5 万。\n\n设完别急着改——止损最怕的不是设错，是行情一走就手动放宽。",
+     "keywords": [
+      "止损",
+      "停损",
+      "止损怎么设",
+      "风控设置",
+      "亏多少",
+      "止损比例",
+      "设多少",
+      "参数"
+     ]
+    },
+    {
+     "id": "x_multi_account",
+     "q": "能同时跑几个账户？",
+     "a": "可以多账户，但姐姐建议你先跑好一个。\n\n原因很实在：\n① 一个账户跑通了，才知道它在你手上是什么表现。\n② 多个账户同时出错，你根本反应不过来。\n\n先用小资金把单个跑顺，再考虑加。",
+     "keywords": [
+      "能同时跑几个账户",
+      "几个账户",
+      "多账户",
+      "多个账户"
+     ]
     }
    ]
   },
@@ -719,7 +896,11 @@
       "不懂行情",
       "能用吗",
       "正常使用",
-      "零基础"
+      "零基础",
+      "适合新手吗",
+      "小白能用吗",
+      "新手可以吗",
+      "零基础能用吗"
      ],
      "a_en": "It works completely fine. The software comes with a mature, standardized default model built in—ready to use out of the box. You don't need to understand quant, and you don't need to analyze the market. The system automatically handles market screening, risk control, and trade execution. The whole process is super simple, and if you run into any issue, you can reach a human support agent anytime for one-on-one help.",
      "q_en": "I'm a beginner who doesn't know quantitative trading or market analysis. Can I still use it normally?"
@@ -805,6 +986,58 @@
      ],
      "a_en": "Sister understands how you feel right now. Watching the jumping candlesticks, you're excited and nervous—you want to try, but you're afraid of losing money, and you're not quite sure where to start.\n\nThat feeling is completely normal. Everyone feels the same when they first come in.\n\nBut before you start, sister wants to tell you the most important thing: **Don't treat trading as a game of guessing whether the price goes up or down.**\n\nA lot of people come in thinking trading is just betting on up or down—guess right and you win, guess wrong and you lose. That mindset will set you on the wrong path from the very beginning. You'll think you're a genius after one correct guess and pile in with heavy positions; or you'll refuse to accept defeat after one wrong guess and hold stubbornly. Both behaviors are the root cause of newbies losing big money.\n\nSo what is trading?\n\nTrading is: before you open a position, you decide in advance—if you're right, when will you exit; if you're wrong, when will you admit it. You don't make money from \"guessing right\"; you make money from \"executing your rules.\"\n\nSo sister's advice to you is just three words: **take it slow.**\n\nUse small capital to feel the market and test your ideas. Don't rush to double your money, don't rush to prove yourself. Your goal isn't to make money on the first trade—it's to learn, on the first trade, how to lose less when you're wrong.\n\nThis market always has opportunities, but the prerequisite is that you survive first. Make \"survival\" your first goal, and you've already outrun most newbies.",
      "q_en": "What are the core functions of DCOGAI? What's the difference between it and ordinary quantitative software?"
+    },
+    {
+     "id": "x_time_to_result",
+     "q": "要用多久才能看到效果？",
+     "a": "这个真没有标准答案，因为它取决于三件事：\n\n① 行情：趋势行情机会多，震荡行情系统会休眠——休眠不是坏了，是在保护你。\n② 你的执行：它按规则跑，但你要是中途手动干预，那测的就不是它了。\n③ 你的预期：它不是让账户天天涨，是让你少犯那几次致命的错。\n\n姐姐建议你先跑一个月，重点别盯赚多少，看两件事：该停的时候它停没停、该走的时候它走没走。这两点比收益数字更能说明它管不管用。",
+     "keywords": [
+      "多久",
+      "见效",
+      "多长时间",
+      "多久能看到",
+      "多久有效果",
+      "要用多久",
+      "什么时候见效",
+      "多长时间见效"
+     ]
+    },
+    {
+     "id": "x_realname",
+     "q": "要实名认证吗？",
+     "a": "客户端本身不需要你交身份证。\n\n你在 OKX 那边注册时如果已经做过实名，那一步是交易所的要求，跟我们的工具无关。\n\n我们只需要你在客户端里填 OKX 的 API Key 三串东西，目的是让它能替你在你自己账户里下单——不需要你的身份信息。",
+     "keywords": [
+      "要实名吗",
+      "实名认证",
+      "需要实名",
+      "要不要实名",
+      "身份证"
+     ]
+    },
+    {
+     "id": "x_manual",
+     "q": "能手动干预吗？",
+     "a": "能。\n\n你可以随时暂停它、手动平仓、调整参数，没人拦你。\n\n但姐姐要提醒一句：如果你经常在它按规则操作时手动插手，那你测的就不是它，是你自己的判断了。\n\n这也是为什么很多人用了系统还是亏——不是系统不管用，是每次它要止损，你就手动取消。",
+     "keywords": [
+      "能手动干预吗",
+      "可以手动吗",
+      "手动操作",
+      "自己操作",
+      "能插手吗",
+      "能暂停吗"
+     ]
+    },
+    {
+     "id": "x_download",
+     "q": "下载地址在哪？",
+     "a": "官网注册后就能下载客户端。\n\n姐姐提醒一句：别从群里、朋友圈、别人发的链接下载——认准官网，这是最基本的一条。\n\n下载完先别急着绑真实账户，可以用很小的仓位先跑跑看。",
+     "keywords": [
+      "下载地址",
+      "在哪下载",
+      "下载链接",
+      "怎么获取",
+      "哪里下载"
+     ]
     }
    ]
   },
@@ -909,7 +1142,13 @@
       "小亏扛",
       "不愿意结束",
       "被迫结束",
-      "纠错"
+      "纠错",
+      "会不会亏",
+      "亏钱怎么办",
+      "一直亏怎么办",
+      "我亏了怎么办",
+      "我亏钱了",
+      "亏了怎么办"
      ],
      "a_en": "Have you ever noticed something really strange?\n\nWhen you're down only a little, you don't want to sell — you think, 'It's just a small loss, let me wait.' When the loss gets bigger, you think, 'I've already lost this much, what's the point of selling now?' Then you keep dragging, and dragging, until the account pain becomes unbearable — and then you suddenly chop it all off at once.\n\nThis is the most uncomfortable part of trading for a lot of people: you're unwilling to end it when the loss is small, and you're forced to end it when the loss is big.\n\nSo truly good error correction isn't about waiting until it hurts too much to handle — it's about dealing with it while the mistake is still small. That's also why: correcting isn't about never losing, it's about not letting a small mistake slowly grow into a big one.",
      "q_en": "When the market rallies, I fear missing out and can't resist chasing."
@@ -1018,7 +1257,11 @@
       "有信心",
       "重仓",
       "顺风",
-      "连续赚钱"
+      "连续赚钱",
+      "我该加仓吗",
+      "要不要加仓",
+      "该不该加仓",
+      "加仓好吗"
      ],
      "a_en": "Actually, the most dangerous time isn't necessarily when you're losing money. Sometimes it's exactly after you've made money in a row. Because when you're losing, you're scared. When you're winning, you start believing in yourself—these are two completely different kinds of danger.\n\nAfter a few winning trades in a row, it's easy to feel: 'I've found the pattern.' So your position size starts getting bigger. Making $100 used to make you happy. Then $100 isn't enough, and you start thinking about $500, $1000, $5000.\n\nThe problem isn't adding size itself. The problem is: have you noticed that as your position grows, your confidence in your own judgment also grows? When those two rise together, risk shows up. Because the market loves to teach you one thing: the moment you think you've got it, it changes the test.\n\nSo truly mature traders get more careful after making money. Not because they're afraid of making money, but because they know: when the wind is at your back, it's easiest to forget the wind can change.",
      "q_en": "Why do I always want to add positions when I'm making money?"
@@ -1035,7 +1278,11 @@
       "承认自己错",
       "认错",
       "再等等",
-      "扛单"
+      "扛单",
+      "怎么止损",
+      "止损怎么设",
+      "如何止损",
+      "止损设置"
      ],
      "a_en": "Because what you can't let go of isn't really that money. What you can't let go of is admitting you were wrong. That's the hardest part.\n\nIf it's just losing $100, most people don't feel that much pain. What really hurts is: 'I've been looking at this for so long, how could I be wrong?' 'Let me wait a little longer, maybe it'll come back.' 'If I sell now, won't I lose even more?' So $100 becomes $200, $200 becomes $500, $500 becomes $1000. At some point you're not trading anymore. You're waiting for the market to prove to you: 'I wasn't wrong from the start.'\n\nBut the market has never owed you proof that you're right. So correcting a mistake isn't really about the position. It's about correcting a human instinct: not wanting to admit you're wrong. Once you hand 'admitting I'm wrong' over to your rules, it gets a lot lighter.",
      "q_en": "Why is it that I'm reluctant to stop losses when I'm losing?"
@@ -1150,7 +1397,10 @@
       "休眠错过",
       "错过BTC",
       "抓不住",
-      "每一波都要抓"
+      "每一波都要抓",
+      "能自动交易吗",
+      "自动交易",
+      "自动下单"
      ],
      "a_en": "You might indeed miss some opportunities—sis won't lie to you about that. No system can catch every wave.\n\nBut you need to slowly accept a trading truth: the opportunities the market gives you were never all meant to be yours.\n\nEvery day you open the market, you see hundreds of coins and thousands of fluctuations. Are you supposed to catch every single one? And if you miss one, does that count as loss? If you think like that, you'll be anxious forever. Because today you miss BTC, tomorrow you miss ETH, the day after some altcoin—there's always a next wave.\n\nSo real freedom is when one day you watch a rally fly past and calmly say, \"That's not my trade.\" Then you go back to living your life. That's when you've truly started to detach from the market.",
      "q_en": "If the system stays idle the whole time, am I missing out?"
@@ -1624,6 +1874,45 @@
      ],
      "a_en": "What you lost isn't just money — it's the weight of how many nights you stayed up, how many positions you held through, how many times your heart ached.\\n\\nYou've been carrying this breath alone, afraid your wife will find out, afraid your family will fall apart, afraid you'll become \"the one who lost the family's money\" in her eyes. Sister isn't going to talk trading with you right now, not about stop-loss, getting back to even, systems — you can't take any of that in at the moment.\\n\\nFirst, let yourself breathe. Wanting to cry is normal. If you can't cry, it's because it hurts too much — so much that your body has locked the tears away.\\n\\nBut remember this — the fact that you're sitting here telling me all this, not rushing to open another trade to win it back, means you're already stronger than so many people. Real loss of control is falling in and still betting your whole fortune, betting until you don't even dare to take the path of \"telling her.\"\\n\\nYou don't need to make any decision now. Let yourself recover first. Sister is here.\\n\\nLosing this money hurts, sure. But you're still here, your mind is still here, you didn't throw yourself in — this family still has a chance.",
      "q_en": "I lost half of the money we saved for a house, and my wife doesn't even know yet. I want to cry but can't."
+    },
+    {
+     "id": "x_cant_hold",
+     "q": "我快撑不住了",
+     "a": "姐姐听到了。\n\n先说一件事：撑不住不是你的错，也不是你不够坚强——是这个东西本身就会把人磨到这个份上。\n\n现在别做任何决定。不看盘、不下单、不算帐，什么都不做。今天就让自己停下来。\n\n亏掉的钱，等你缓过来了还可以再想怎么办；但你要是现在硬撑着一把梭，那就真的什么都留不下了。\n\n先活着，其他的以后再说。",
+     "keywords": [
+      "快撑不住",
+      "撑不住",
+      "扛不住",
+      "我快不行了",
+      "快崩溃了",
+      "实在受不了"
+     ]
+    },
+    {
+     "id": "x_family_oppose",
+     "q": "家里人不支持我交易",
+     "a": "家里人不支持，其实是很实在的担心——他们怕的不是你，是你亏钱。\n\n姐姐不劝你去说服他们，也不劝你瞒着他们继续做。\n\n先问自己一件事：如果这笔钱全亏了，你家里的日子还能正常过吗？\n\n能过，那你就把能亏多少、什么时候停，跟自己说清楚；不能过，那家里人的反对是对的，先把这笔钱拿出来。\n\n交易不该建立在瞒着家人的基础上——那种压力，最后会变成你在盘里的手抖。",
+     "keywords": [
+      "家里人不支持",
+      "家人反对",
+      "老婆不同意",
+      "家里不同意",
+      "家人不理解",
+      "瞒着家人"
+     ]
+    },
+    {
+     "id": "x_sorry_family",
+     "q": "我对不起家人",
+     "a": "这句话很重，姐姐听得出来你是真心的。\n\n但姐姐想跟你说：你现在的愧疚，不会让他们日子好过，只会让你更急着翻本——而急着翻本，才是真的会把剩下的也亏掉。\n\n真正对他们负责的做法，不是自责，是两件具体的事：\n① 停下来，别再扩大损失。\n② 想清楚接下来这笔钱怎么办，而不是下一单怎么下。\n\n愧疚帮不了家人，止损能。",
+     "keywords": [
+      "对不起家人",
+      "愧对家人",
+      "对不起老婆",
+      "对不起孩子",
+      "害了家人",
+      "我不是人"
+     ]
     }
    ]
   },
@@ -3145,6 +3434,44 @@
      ],
      "a_en": "Sis hears you—you think I keep going on about the same risk warnings over and over, like a broken record.\n\nI admit: just talking about risk is genuinely annoying.\n\nBut let me ask you: what do you want me to say? Should I promise you the moon, guarantee you'll make money, get you to pay up first, and then disappear when you lose?\n\nIn this game, some people use \"smooth talk\" to fool you, and some people use \"risk\" to warn you. The first one gets your heart racing, the second one keeps you alive.\n\nYes, I'm going to keep bringing up risk—not because that's all I can say, but because in this market, \"risk\" is the only thing that will never lie to you.\n\nIf you think I'm too naggy, I can tone it down. But I won't stop saying it. Because I'd rather have you find me annoying than watch you lose all your capital because you forgot about risk.",
      "q_en": "All you ever talk about is risk!"
+    },
+    {
+     "id": "x_mlm",
+     "q": "是不是传销？",
+     "a": "不是。\n\n姐姐跟你说清楚区别：\n① 传销靠拉人头赚钱——你拉一个人进来，你就有钱分。我们靠卖软件收费，你买不买、拉不拉人，跟我们收入无关。\n② 传销的钱要交到组织手里。我们的钱始终在你自己交易所账户，我们碰不到、也没权限转走。\n③ 传销不让你验证。我们的东西全部功能免费试，你自己看它怎么跑。\n\n这三点，任何传销都做不到。",
+     "keywords": [
+      "是不是传销",
+      "传销",
+      "传销吗",
+      "拉人头"
+     ]
+    },
+    {
+     "id": "x_gambling",
+     "q": "你们和赌博有什么区别？",
+     "a": "区别在「有没有规则」。\n\n赌博：结果完全随机，你做什么都没用，庄家还有概率优势。\n用系统交易：结果也不确定，但它有明确规则——错了什么时候走、亏到多少停、什么情况不进。你不是在赌，是在执行一套自己先定好的规则。\n\n当然，交易确实有赌的成分，谁都不能否认。区别是：赌徒靠运气，交易者靠纪律。",
+     "keywords": [
+      "和赌博有什么区别",
+      "赌博",
+      "是不是赌",
+      "跟赌一样吗"
+     ]
+    },
+    {
+     "id": "x_others_fail",
+     "q": "别人都不行，你们凭什么行？",
+     "a": "这话问得对——凭什么？\n\n姐姐给你的不是「我们比他们强」，是一个可以自己验证的点：\n\n大部分工具卖的是「预测准不准」。我们卖的是「判断错了以后怎么收场」。\n\n所以你别问谁更强，问一句：你见过几个工具，会主动告诉你它什么时候该停手？\n\n这一条，你自己判断。",
+     "keywords": [
+      "别人都不行",
+      "凭什么行",
+      "你们凭什么",
+      "别人都不行你们行",
+      "没人用你们行",
+      "没人用",
+      "你们行吗",
+      "凭什么比别家好",
+      "别家不行你们就行"
+     ]
     }
    ]
   },
@@ -3304,7 +3631,12 @@
       "比我自己强",
       "比我强",
       "人vs系统",
-      "状态不好"
+      "状态不好",
+      "有什么优势",
+      "优势是什么",
+      "强在哪",
+      "有什么好处",
+      "比别的强"
      ],
      "a_en": "If you have a mature trading system and you can execute it strictly every time, I'm not going to tell you DCOGAI is definitely better than you.\n\nThe real question is: can you be the same every single day? Today you slept well, so you're rational; tomorrow you lose three trades in a row—are you still rational? Yesterday you made 20%, and today an opportunity shows up—will you still trade with your original position size? If the market suddenly plunges in the middle of the night, will you change your risk management rules?\n\nA person's biggest weakness sometimes isn't ability—it's state. A system doesn't have your emotions, but it also doesn't have your inspiration. So it's not here to prove \"machines are smarter than people.\" What it solves is: when you're not in a good state, at least there's a set of rules that can execute on your behalf.",
      "q_en": "What exactly makes you better than me trading on my own?"
@@ -4412,7 +4744,9 @@
      "keywords": [
       "风控怎么做",
       "风控具体",
-      "怎么风控"
+      "怎么风控",
+      "风控有哪些",
+      "怎么控制风险"
      ],
      "next": "聽起來挺複雜，我聽不懂。",
      "drama": "精明比較型",
@@ -5031,7 +5365,12 @@
       "有人用了以后还会亏",
       "有人用了以后还会亏",
       "为什么还会有人用了",
-      "用了以后亏钱"
+      "用了以后亏钱",
+      "会不会亏钱",
+      "会亏钱吗",
+      "亏钱吗",
+      "会不会亏",
+      "能亏钱吗"
      ],
      "a_en": "Yes, it will, and there's no doubt about it. Let sis be straight with you: if any tool promises you \"use it and you won't lose,\" that's a scam. What it solves isn't \"not losing\"—it's \"still being alive after the loss.\" People who lose money in the market usually don't lose because they \"judged wrong\"—they lose because of \"what they did after being wrong\": refusing to admit it, desperately adding to the position, trying to get the money back. What a tool can do is, at the moment you can't control your hand, use rules to cut the risk for you. But if you go all-in with heavy size, get the direction wrong, or the system stops you out and you're not convinced so you pull the trade back yourself—nobody can save you from that.",
      "q_en": "You make it sound so good—so why do some people still lose money after using it?"
@@ -7380,7 +7719,8 @@
       "赚回来",
       "亏了很多",
       "急着翻本",
-      "急着翻本"
+      "急着翻本",
+      "急著翻本"
      ],
      "next": "可我控制不住想翻本怎麼辦？",
      "a_en": "What sis is actually most worried about isn't that you've lost ten times — it's that right now you want to win all ten back in one single trade.\n\nThe moment you start thinking about getting even, your position size, your frequency, your stop-loss — all those original rules can easily start silently bending.\n\nThe more urgent it feels to recover, the more you need to stop first. Let go of that 'I have to win it back' thought before a losing streak becomes full-blown losing control.",
@@ -7395,7 +7735,8 @@
       "想翻本怎么办",
       "忍不住翻本",
       "急着翻本",
-      "急着翻本"
+      "急着翻本",
+      "急著翻本"
      ],
      "next": "那停下來之後呢？",
      "a_en": "You can't control it because right now you're not trading — you're wrestling with your losses.\n\nThat's not the moment to hunt for the next trade; it's the moment to stop the mistake from growing any bigger. Step away from the charts, close the software, and get yourself back to a state where you're not carrying emotions.\n\nBeing able to stop is what gives you the right to choose again.",
@@ -7490,7 +7831,9 @@
       "扛着等回本",
       "不愿意卖",
       "扛着不卖",
-      "扛着等回本"
+      "扛着等回本",
+      "扛著不賣",
+      "扛著等回本"
      ],
      "next": "扛著是不是也有扛回來的時候？",
      "a_en": "Because when you sell, you're admitting that your judgment was wrong. The hardest part isn't the loss — it's saying out loud, 'I was wrong.'\n\nSo a lot of people would rather hold on and wait for a 'maybe it'll come back' — trading uncertainty for the temporary comfort of not admitting fault.\n\nBut your account doesn't care whether you admit it or not. It just keeps losing more while you hold.",
@@ -7506,7 +7849,8 @@
       "扛单赚了",
       "上次扛回来",
       "扛着回本了",
-      "扛着回本了"
+      "扛着回本了",
+      "扛著回本了"
      ],
      "next": "那怎麼才能做到錯了就走？",
      "a_en": "Sure, sometimes holding on works out. But the ones you remember are the ones that came back — the one time it doesn't, it can wipe everything out.\n\nHold ten times, and seven might recover — those seven are luck. The other three times, one of them can take back everything you gained before.\n\nRelying on holding is betting your whole account on 'this time it'll come back too.'",
@@ -7710,8 +8054,7 @@
       "风控",
       "错",
       "赚",
-      "钱",
-      "我"
+      "钱"
      ],
      "a_en": "No. I'm not going to beat around the bush on this one. If someone guarantees you'll make money, you should be suspicious of them. But when you ask me that, which answer are you really looking for — \"is it worth 29800\" or \"I'm scared of losing and I need something to save me\"?",
      "q_en": "Don't talk to me about error correction, risk control, or human nature. I just want one simple answer: can this thing actually make me money?"
@@ -7739,7 +8082,6 @@
      "keywords": [
       "那我为什么不",
       "为什么",
-      "我",
       "29800"
      ],
      "a_en": "If you could fully follow the rules on your own, then honestly, you don't need to spend this money. But here's the thing — of the money you've lost, how much was because you didn't understand, and how much was because you understood but just couldn't do it? If it's mostly the latter, then that 29800 is buying \"helping you actually do it.\"",
@@ -7769,8 +8111,7 @@
      "next": "那為什麼還要搞這麼複雜？認錯了直接賣掉不就完了？",
      "keywords": [
       "止损谁不会？",
-      "止损",
-      "我"
+      "止损"
      ],
      "a_en": "Knowing how to set a stop-loss and actually pulling the trigger when you're losing are two totally different things. You set it, the market hits it — are you really gonna press that button? First time you will. Third time you start thinking, 'just a little longer.' What I'm asking isn't whether you understand it, it's whether you can do it in that exact moment.",
      "q_en": "Stop loss? Anyone can do that. I can do it myself."
@@ -7801,8 +8142,7 @@
      "keywords": [
       "可是如果你们",
       "错",
-      "你们",
-      "我"
+      "你们"
      ],
      "a_en": "Everyone gets it wrong, but the way you handle it after the mistake is different. When you're wrong, you might hold, you might try to recover, you might dig yourself deeper. When the system's wrong, it exits when it needs to, reassesses, and doesn't let the loss grow. The difference isn't whether you make mistakes — it's who can survive better after making them.",
      "q_en": "But if you can get it wrong too, how are you any different from me?"
@@ -7818,8 +8158,7 @@
       "既然系统也会",
       "系统",
       "错",
-      "信",
-      "我"
+      "信"
      ],
      "a_en": "I'm not asking you to take my word for it — I'm asking you to prove it to yourself. How the system sleeps, how it fixes mistakes, how it controls risk — every single trade is logged. Run it on a live account for three months, and watch whether it does the right thing at the moments when you're most likely to lose it. Believe it or not, decide after you've seen it yourself.",
      "q_en": "Since the system can be wrong too, what makes you think I should trust it?"
@@ -7832,8 +8171,7 @@
      "a": "不是它比你聪明，是它比你稳定。你状态好时理性，连亏三单还理性吗？半夜暴跌还守规则吗？系统没有情绪，不会膨胀不会害怕，你状态最差的时候它还是照规则做。这就是它强的地方。",
      "next": "所以你們真正賣的，到底是賺錢能力，還是「不容易死」的能力？",
      "keywords": [
-      "你说了这么多",
-      "我"
+      "你说了这么多"
      ],
      "a_en": "It's not about being smarter than you — it's about being more stable. When you're feeling good, yeah you're rational. But after three losses in a row, are you still rational? At 3 AM during a crash, are you still following the rules? The system doesn't have emotions. It doesn't get cocky. It doesn't get scared. When you're at your absolute worst, it still plays by the rules. That's what makes it strong.",
      "q_en": "You've said a lot, but I still don't see what you do better than a human."
@@ -7927,8 +8265,7 @@
       "那你告诉我，",
       "纠错",
       "预测",
-      "错",
-      "我"
+      "错"
      ],
      "a_en": "Predicting is betting on \"what the future holds\"; correcting is managing \"I'm wrong right now.\" If you predict right, you're happy. The value of correcting is surviving when the prediction is wrong. One hunts for opportunities, the other faces reality.",
      "q_en": "Then tell me, what's the essential difference between prediction and error correction?"
@@ -7960,8 +8297,7 @@
      "next": "那如果勝率不重要，為什麼市場上所有人都在研究勝率？",
      "keywords": [
       "你不要跟我绕",
-      "胜率",
-      "我"
+      "胜率"
      ],
      "a_en": "It matters, but it's not the most important thing. Win rate decides how often you're right; risk-reward and risk control decide whether you survive. No matter how high your win rate, one slip-up wipes you out. With a low win rate, if you manage losses well, you can still profit.",
      "q_en": "Don't beat around the bush. I'm asking you straight: does win rate really matter?"
@@ -8028,8 +8364,7 @@
       "我现在已经连",
       "纠错",
       "亏",
-      "错",
-      "我"
+      "错"
      ],
      "a_en": "It matters, but sis won't talk about the system first. After eight straight losses, your biggest danger isn't the losses—it's the thought 'I have to win it back.' That thought is what makes you go heavy on the ninth trade. Stopping comes before everything.",
      "q_en": "I've already had eight straight losses. What's the point of talking about error correction now?"
@@ -8046,8 +8381,7 @@
       "亏",
       "错",
       "赚",
-      "钱",
-      "我"
+      "钱"
      ],
      "a_en": "Wanting to win it back isn't wrong, but have you noticed—the more desperate you are to recover, the easier it is to do things you'd never normally do: bigger positions, wider stops, not waiting when you should. That urge to recover is the risk itself.",
      "q_en": "All I want right now is to quickly win back what I lost. What's wrong with that?"
@@ -8078,7 +8412,6 @@
      "keywords": [
       "如果我不加仓",
       "亏",
-      "我",
       "亏损"
      ],
      "a_en": "Not adding isn't abandoning it—it's stopping the mistake from growing. What's already lost, accept it; what hasn't been lost, don't drag it in. Stop the bleeding first, then think about how to start over.",
@@ -8094,8 +8427,7 @@
      "keywords": [
       "那你告诉我，",
       "亏",
-      "怎么",
-      "我"
+      "怎么"
      ],
      "a_en": "The first step isn't to recover—it's to stop. Put down the 'I must earn it back' and get yourself back to a calm, emotion-free state. Then look at the market again and see if there's a move worth taking—if there is, take it; if not, keep waiting.",
      "q_en": "Then tell me, what exactly should I do after losing money?"
@@ -8127,8 +8459,7 @@
      "keywords": [
       "你说这是人性",
       "亏",
-      "赚",
-      "我"
+      "赚"
      ],
      "a_en": "Normal—which is exactly why almost everyone falls into it. And precisely because it's normal, you need rules to hold you back—because 'normal' human nature is exactly what loses money in the market.",
      "q_en": "You say it's human nature, but I think it's only natural. Who doesn't want to earn back what they lost?"
@@ -8176,8 +8507,7 @@
       "亏",
       "赚",
       "钱",
-      "怎么",
-      "我"
+      "怎么"
      ],
      "a_en": "Now you've got it. Don't lose first, and you survive; survive, and you get to talk about making money. This isn't being negative — it's priority #1 in trading.",
      "q_en": "Are you trying to tell me that in trading, the priority isn't making money, but avoiding further losses?"
@@ -8202,8 +8532,7 @@
       "系统",
       "买",
       "钱",
-      "你们",
-      "我"
+      "你们"
      ],
      "a_en": "What you're paying for isn't 'number of trades' — it's the ability to judge whether you should even be trading. When there's no setup, you stay out, that's the system protecting your capital — that's worth more than trading randomly every day.",
      "q_en": "Your system doesn't make a single trade all day, so what am I paying you for?"
@@ -8363,8 +8692,7 @@
      "keywords": [
       "如果我已经设",
       "止损",
-      "为什么",
-      "我"
+      "为什么"
      ],
      "a_en": "Setting a stop-loss and actually hitting it when you're losing money are two different things. You've set it, and when the market hits that level, can you bring yourself to press it? The value of the system is executing at the level without negotiating with you.",
      "q_en": "If I've already set a stop-loss, why would I still need you?"
@@ -8500,7 +8828,11 @@
       "你们为什么总",
       "回撤",
       "为什么",
-      "你们"
+      "你们",
+      "最大回撤多少",
+      "回撤多大",
+      "回撤多少",
+      "亏多少算正常"
      ],
      "a_en": "Because drawdown determines how long you can stay in the game. If your account draws down 50%, you need a 100% gain just to get back to even—the deeper the drawdown, the harder the climb back. Controlling drawdown means controlling your survival line.",
      "q_en": "Why do you guys always stress account drawdown?"
@@ -8515,8 +8847,7 @@
      "keywords": [
       "我单笔亏一点",
       "亏",
-      "赚",
-      "我"
+      "赚"
      ],
      "a_en": "A small loss on a single trade is no big deal, but if you ignore those small losses, they'll snowball into a huge one. Lose 10% and you brush it off; by the time it's 50%, you need to gain 100% just to get back. Small losses are your chance to fix things before they spiral.",
      "q_en": "What does it matter if I lose a little on one trade? As long as I make it back later, isn't that enough?"
@@ -8547,8 +8878,7 @@
      "keywords": [
       "如果我本金1",
       "亏",
-      "赚",
-      "我"
+      "赚"
      ],
      "a_en": "Say you have 1 million and lose 100k, leaving 900k. You need an 11.1% gain to get back to 1 million—not just earn back the 100k. The more you lose, the bigger the gain you need just to get back to even. That's why controlling losses matters more than chasing profit.",
      "q_en": "If my capital is 1 million, and I lose 100k, then earn 100k back, isn't that just getting back to where I started?"
@@ -8635,8 +8965,7 @@
      "a": "对。人最危险的时候，不是亏钱的时候，是觉得自己不会亏的时候。自信爆棚的那一刻，风控已经悄悄松了。",
      "next": "你說得都很好聽，可這些道理我自己也懂。",
      "keywords": [
-      "是不是很多人",
-      "我"
+      "是不是很多人"
      ],
      "a_en": "Right. The most dangerous moment isn't when you're losing money—it's when you think you can't lose. The second your confidence spikes, your risk control has already quietly loosened.",
      "q_en": "Isn't the really dangerous time for a lot of people when they start thinking \"I've got this down\"?"
@@ -8657,8 +8986,7 @@
      "a": "懂道理的人很多，做到的人很少。你懂的这些，亏钱的时候还想得起来吗？系统不是教你道理，是替你在最难做到的时候执行。",
      "next": "既然我懂這些，為什麼還需要一個系統？",
      "keywords": [
-      "你说得都很好",
-      "我"
+      "你说得都很好"
      ],
      "a_en": "Lots of people understand the logic, but few actually follow it. When you're losing money, can you still remember all that? The system isn't here to teach you lessons—it executes for you when you're least able to do it yourself.",
      "q_en": "That all sounds nice, but I already know these principles myself."
@@ -8673,8 +9001,7 @@
      "keywords": [
       "既然我懂这些",
       "系统",
-      "为什么",
-      "我"
+      "为什么"
      ],
      "a_en": "Knowing means you know what to do. Doing means you can still do it when you're losing money. What stands between them is human nature—can't let go, can't resist, fear of missing out. That gap is exactly what the system fills.",
      "q_en": "If I already know all this, why would I still need a system?"
@@ -8688,7 +9015,6 @@
      "next": "你憑什麼覺得人在極端行情下會失控？",
      "keywords": [
       "我有纪律，我",
-      "我",
       "纪律"
      ],
      "a_en": "That's great. But let me ask you: is your discipline the same after consecutive losses, sudden crashes, or big winning streaks? What truly tests discipline is never a calm market.",
@@ -8719,7 +9045,6 @@
      "keywords": [
       "如果我真的比",
       "系统",
-      "我",
       "聪明"
      ],
      "a_en": "You might honestly be smarter than the system and read the market better. But smart and stable are two different things. You're smart, but when you're off your game or emotionally heavy, your judgment warps. The system isn't smart, but it's stable.",
@@ -8735,7 +9060,6 @@
      "keywords": [
       "为什么我要把",
       "为什么",
-      "我",
       "交易权"
      ],
      "a_en": "It's not about handing decision-making to a machine—it's handing over execution. The judgment is still yours: whether to enter, whether it's worth it. What the machine does for you is: once you've decided, it executes without letting emotions change your mind.",
@@ -8750,8 +9074,7 @@
      "next": "萬一系統出錯，把我的錢虧了怎麼辦？",
      "keywords": [
       "机器又不懂我",
-      "钱",
-      "我"
+      "钱"
      ],
      "a_en": "It doesn't understand how important your money is, but it also won't hold a losing position out of reluctance or try to win back losses out of pride. It's precisely that lack of 'understanding' that lets it stick to the rules when your emotions are running highest.",
      "q_en": "A machine doesn't understand how much my money means to me."
@@ -8769,8 +9092,7 @@
       "亏",
       "错",
       "钱",
-      "怎么",
-      "我"
+      "怎么"
      ],
      "a_en": "The system makes mistakes, but they're controlled mistakes — each loss is capped, it owns up when wrong, and doesn't escalate. It won't turn one mistake into a disaster like a person holding a losing position.",
      "q_en": "What if the system glitches and loses my money?"
@@ -8785,7 +9107,6 @@
      "keywords": [
       "如果系统和我",
       "系统",
-      "我",
       "判断冲突"
      ],
      "a_en": "Here's my advice: if it's emotion vs. rules, follow the rules. When you're emotional, your judgment's already warped. If it's a carefully considered call, then we can talk — but you need a clear reason, not just a feeling.",
@@ -8830,7 +9151,6 @@
      "keywords": [
       "别给我解释伺",
       "值",
-      "我",
       "数据"
      ],
      "a_en": "Value isn't in how many features it has, it's in solving your problem. If your problem is 'I can't keep my hands off,' and it fixes that, 29,800 is worth it. If it can't fix your problem, then even cheaper is a waste.",
@@ -8935,7 +9255,6 @@
       "免费给我试一",
       "免费",
       "你们",
-      "我",
       "图什么"
      ],
      "a_en": "Go ahead and verify it. Because only after you've run it yourself and seen how it goes dormant and how it corrects errors, will you be able to believe it's worth 29,800. Rather than convincing you, we'd rather let the facts convince you.",
@@ -8952,7 +9271,6 @@
       "如果我试完不",
       "买",
       "你们",
-      "我",
       "白干"
      ],
      "a_en": "If you try it and think it's not worth it, then we truly didn't solve your problem—so not buying it is the right call. We take that risk because we believe: someone who can genuinely solve the problem will see the value themselves.",
@@ -8968,8 +9286,7 @@
      "keywords": [
       "所以你敢让我",
       "值",
-      "信",
-      "我"
+      "信"
      ],
      "a_en": "Exactly. We hand the judgment to the user—we don't force you to believe. The conclusion you draw after trying it is far more reliable than me saying 'don't worry' a hundred times.",
      "q_en": "So you dare let me try it first because you trust that I'll eventually judge for myself whether it has value?"
@@ -8984,7 +9301,6 @@
      "keywords": [
       "我不相信你说",
       "信",
-      "我",
       "数据"
      ],
      "a_en": "That's how it should be. Your big sister here also suggests you don't listen to me—look at the data. Let's see how the data presents itself, and you decide for yourself.",
@@ -8999,7 +9315,6 @@
      "next": "回測我也不信，參數是不是專門調出來的？",
      "keywords": [
       "那你把历史回",
-      "我",
       "回测"
      ],
      "a_en": "I can show you backtests, but you need to know—backtests are history, they can't guarantee the future. What you really need to look at is how it handles losses, what the max drawdown is, and what it does when it makes consecutive mistakes.",
@@ -9015,7 +9330,6 @@
      "keywords": [
       "回测我也不信",
       "信",
-      "我",
       "回测",
       "参数"
      ],
@@ -9045,7 +9359,6 @@
      "next": "那我到底應該驗證什麼？",
      "keywords": [
       "实盘曲线是不",
-      "我",
       "实盘"
      ],
      "a_en": "Maybe. So I’d say don’t just stare at the curve—look at the process instead. When does it go quiet, when does it correct course, how does it deal with drawdowns. The curve can fool you, but the process never lies.",
@@ -9060,8 +9373,7 @@
      "next": "為什麼你不直接給我一個「過去一年賺了多少」的數字？",
      "keywords": [
       "那我到底应该",
-      "验证",
-      "我"
+      "验证"
      ],
      "a_en": "Three things to check: when it decides to sit out, when it admits it’s wrong, and how it tightens up when risk builds. Those three spots reveal the system’s personality far better than any pretty curve.",
      "q_en": "So what exactly should I verify?"
@@ -9076,8 +9388,7 @@
      "keywords": [
       "为什么你不直",
       "赚",
-      "为什么",
-      "我"
+      "为什么"
      ],
      "a_en": "Because if I give you a number, it’s like hinting ‘it’ll do the same in the future’—that’s leading you astray. Past gains don’t guarantee future returns. I’d rather give you a method to evaluate it than some number that looks concrete.",
      "q_en": "Why don't you just give me a number like \"how much did it earn in the past year\"?"
@@ -9107,7 +9418,6 @@
      "keywords": [
       "如果历史数据",
       "验证",
-      "我",
       "数据"
      ],
      "a_en": "Verify the rules themselves—how it decides, how it executes, how it handles errors. When the rules make sense, you have a basis for the future; when they don’t, even the prettiest past is fake.",
@@ -9142,8 +9452,11 @@
      "next": "什麼樣的人反而不適合用 DCOGAI？",
      "keywords": [
       "好，我大概明",
-      "我",
-      "适合"
+      "适合",
+      "适合我吗",
+      "适合我不",
+      "我适合吗",
+      "适不适合我"
      ],
      "a_en": "Here’s a simple standard: if you find yourself constantly overtrading, reluctant to stop out, or anxious to chase losses—then you might benefit from trying it. If that’s not you, you probably have solid discipline and don’t really need it.",
      "q_en": "OK, I roughly get what you're trying to say. So am I suitable to use it or not?"
@@ -9171,8 +9484,7 @@
      "next": "如果我是新手呢？",
      "keywords": [
       "如果我自己已",
-      "系统",
-      "我"
+      "系统"
      ],
      "a_en": "If you can stick to your rules strictly long-term, maybe you don't need it. But you can give it a try — when you're in a bad state, on a losing streak, see if it can hold the line for you. You won't know until you try.",
      "q_en": "If I already have my own mature trading system, is it still necessary to try it?"
@@ -9186,7 +9498,6 @@
      "next": "如果我已經虧了很多，現在開始用是不是太晚了？",
      "keywords": [
       "如果我是新手",
-      "我",
       "新手"
      ],
      "a_en": "Newbies should go even slower. Start with a small amount or a demo account. Understand why it goes dormant, why it corrects itself — don't jump in with big capital right away. The tool lowers the difficulty of execution, but it doesn't take on risk for you.",
@@ -9202,7 +9513,6 @@
      "keywords": [
       "如果我已经亏",
       "亏",
-      "我",
       "晚"
      ],
      "a_en": "It's not too late. Actually, it's exactly the people who've lost who need rules to keep that 'I must win it back right now' impulse in check. Don't think about getting back to even yet. First, stop making the loss bigger—that's the most important thing right now.",
@@ -9219,8 +9529,7 @@
       "我不想直接拿",
       "验证",
       "钱",
-      "怎么",
-      "我"
+      "怎么"
      ],
      "a_en": "You can use a demo account first, or put on a really, really tiny position. The point isn't the amount — it's seeing how it judges and executes. If the logic is there, even small capital is enough to validate it.",
      "q_en": "I don't want to use real money directly—how can I verify it?"
@@ -9249,8 +9558,7 @@
      "keywords": [
       "好，那我想试",
       "安装",
-      "怎么",
-      "我"
+      "怎么"
      ],
      "a_en": "Alright, let's get down to business: we currently have a Windows client. After installing, log in and just run the default teaching model — don't touch the parameters yet. If you run into any installation issues, ask me anytime.",
      "q_en": "OK, I'd like to try it. How do I install it?"
@@ -9267,7 +9575,6 @@
       "安装",
       "API",
       "怎么",
-      "我",
       "OKX",
       "币"
      ],
@@ -9284,8 +9591,7 @@
      "keywords": [
       "好，我先试1",
       "值",
-      "买",
-      "我"
+      "买"
      ],
      "a_en": "Yeah. 12 months free trial, all features, no nerfed version. After you try it, judge for yourself whether it's worth it — if you think it is, then decide on a full license; if you don't, it's totally fine not to buy. That's your call.",
      "q_en": "Alright, I'll try it for 12 months first. If I find it valuable after the trial, I'll decide whether to buy later, right?"
@@ -9616,7 +9922,8 @@
       "笑着却让你不舒服",
       "的人",
       "你讨厌的真的是他吗",
-      "笑着却让你不舒服"
+      "笑着却让你不舒服",
+      "笑著卻讓你不舒服"
      ],
      "a_en": "That's a really clever angle～😊 He lived in a hotel for over a year, with no real home, and that professional smile just pushes people further away; he craves genuine emotional connection but can't get it. Hating that professional smile is really hating the \"fake\"—and his own life has already been packaged into another kind of fake by his profession."
     },
@@ -9712,7 +10019,9 @@
       "走的",
       "还是跟着",
       "是跟着",
-      "还是跟着"
+      "还是跟着",
+      "是跟著",
+      "還是跟著"
      ],
      "a_en": "We run into this problem every day~😊 The stock price goes up in the morning, retail investors see the rise and chase in, not expecting the big players to sell into the strength; greedy chasing highs, slow reaction. The essence of chasing a rally is treating 'it's rising' as proof that 'it'll keep rising'—but the rise itself is often just someone else's excuse to unload."
     },
@@ -9795,7 +10104,10 @@
       "这对你有什么好处",
       "你心里有没有放着",
       "你心里有没有放着一个",
-      "等着看他笑不出来"
+      "等着看他笑不出来",
+      "你心裡有沒有放著",
+      "你心裡有沒有放著一個",
+      "等著看他笑不出來"
      ],
      "a_en": "It's okay if you have it, but ask yourself if it's worth it~ 😊 This was a quiet psychological battle: he used 'buy stocks' as a thorn to pierce the manager's smile, to see who would crack first. When you turn relationships into a contest of endurance, you may win face, but you lose all the ease—because you're always on guard."
     },
@@ -9913,7 +10225,8 @@
       "快跑",
       "你敢不敢反着做",
       "你的犹豫在怕什么",
-      "你敢不敢反着做"
+      "你敢不敢反着做",
+      "你敢不敢反著做"
      ],
      "a_en": "This question hits home～😊 The retail crowd is scrambling out—a textbook panic sell-off, with everyone bearish in unison. The protagonist sees it as a golden chance and goes all-in against the tide—at the end of mass panic, prices are often at their cheapest; but anyone who dares to reach in must first be able to bear the loneliness of 'everyone's afraid and I'm the only one still here.'"
     },
@@ -9936,7 +10249,8 @@
       "你理想中的自己",
       "和真实的自己",
       "中间隔着什么",
-      "中间隔着什么"
+      "中间隔着什么",
+      "中間隔著什麼"
      ],
      "a_en": "This is a distance we all have to face～😊 A friend said he didn't have enough self-control and always liked checking out girls—the fiercely competitive monk world had no room for that; and on his own side, he couldn't stop thinking about carrying on the family line. The ideal self and real desires tear at each other—we all think we're saints, until desire knocks on the door."
     },
@@ -10185,7 +10499,8 @@
       "「卖了怕继续涨」",
       "卖了怕继续涨",
       "留着怕跌回去",
-      "留着怕跌回去"
+      "留着怕跌回去",
+      "留著怕跌回去"
      ],
      "a_en": "These two thoughts battle it out in retail investors' heads almost every day~ 😊 Seeing prices surge and refusing to leave is retail-style greed, anchored to the current rally. But the protagonist calmly does the math: average cost under 50 bucks, already six-fold gains, and massive capital can't unload at the peak price—so now is the best time. The reluctance to sell is often reluctance to let go of the “feeling of rising,” not the value itself."
     },
@@ -10198,7 +10513,9 @@
       "你急着一次做完的事",
       "有几次因为太急而坏了",
       "你急着一次做完的",
-      "你急着一次做完的事"
+      "你急着一次做完的事",
+      "你急著一次做完的",
+      "你急著一次做完的事"
      ],
      "a_en": "Too many times, right?~ 😊 He knows well that once the big money involved feels selling pressure, it'll trigger a chain reaction of mass selling. So he takes 15 days to unload at a gentle pace, like slow-warming water—without spooking the market. Slow isn't hesitation—it's respect for the crowd's reaction. The more rushed you are, the easier it is to wear your intentions on your face."
     },
@@ -10271,7 +10588,8 @@
       "你是怎么熬过",
       "看着它涨",
       "的日子的",
-      "看着它涨"
+      "看着它涨",
+      "看著它漲"
      ],
      "a_en": "This period is the most torturous~ 😊 She cut her losses and left in October 1992, and now watching the rise, she's both afraid of chasing high and missing out. The pain of cutting losses and the regret of missing out pile up, leaving a person frozen in place—not daring to go back, but unwilling to leave. The anxiety isn't because you don't know; it's because you know but don't dare to act."
     },
@@ -10703,7 +11021,9 @@
       "有人默默为你攒着什么",
       "你知道吗",
       "有人默默为你攒着",
-      "有人默默为你攒着什么"
+      "有人默默为你攒着什么",
+      "有人默默為你攢著",
+      "有人默默為你攢著什麼"
      ],
      "a_en": "Reading this one makes your eyes well up~ 😊 Dad said Uncle spent over 20,000 to get his son a wife, and he himself had saved over 10,000 over the past few years—one more year of saving and he'd have enough, to use when his own son gets married. The son's tears just fell on their own. Every yuan he saved was Dad depositing the words \"You'll have a tomorrow\" into the bank."
     },
@@ -10812,7 +11132,9 @@
       "的那个人",
       "现在还在你的生活里吗",
       "你童年里「盼着谁",
-      "盼着谁来"
+      "盼着谁来",
+      "你童年裡「盼著誰",
+      "盼著誰來"
      ],
      "a_en": "This question just left me quiet for a long time~😊 He spends all day hoping his sister will come home, because only then can he have a decent meal; his sister comes once a week to wash the clothes for him and his dad, and the clothes she wears are all patched up. The longing is so deep because these moments are so rare—his sister's visits were the only warmth in his childhood that always showed up on time."
     },
@@ -10992,7 +11314,9 @@
       "你敢不敢想",
       "新钱不来会怎样",
       "市场全靠新钱撑着",
-      "市场全靠新钱撑着时"
+      "市场全靠新钱撑着时",
+      "市場全靠新錢撐著",
+      "市場全靠新錢撐著時"
      ],
      "a_en": "Few dare to think like this, but it's crucial~😊 The market is overheated—existing funds barely trade because prices are rising, so almost all the trading is from new accounts. The moment a whiff of trouble appears, new money stops coming in and old money heads for the exit—that's a scary scenario. When the rally is at its hottest, that's often when the supply of \"bag holders\" is tightest. That prosperity you see? It might just be a line of new money waiting to get in."
     },
@@ -11138,7 +11462,8 @@
       "买进要排队",
       "卖出没人理的时候",
       "你觉得谁在对面等着",
-      "你觉得谁在对面等着"
+      "你觉得谁在对面等着",
+      "你覺得誰在對面等著"
      ],
      "a_en": "There are more people waiting on the other side than you think～😊 This is classic herd behavior and the greed of chasing rallies: everyone's bullish, buying in and never selling. The crowd jamming at the counter is group emotion made real—the moment you squeeze in, someone's already lining up behind you, ready to take the stuff you'll want to dump later."
     },
@@ -11197,7 +11522,8 @@
       "你记得自己入市的",
       "原始起因",
       "它还支撑着你吗",
-      "它还支撑着你吗"
+      "它还支撑着你吗",
+      "它還支撐著你嗎"
      ],
      "a_en": "A lot of people have long forgotten～😊 In February 1992, Deng Xiaoping's Southern Tour speech was fully publicized, sparking a crazy rally; this time around, it was fueled by the 8th NPC session and overly high expectations. Every market wave has an 'origin story'—but the story is just the starting point. What happens afterward has nothing to do with it."
     },
@@ -11299,7 +11625,8 @@
       "你错过上涨的那个晚上",
       "是怎么过的",
       "谁在陪着你后悔",
-      "谁在陪着你后悔"
+      "谁在陪着你后悔",
+      "誰在陪著你後悔"
      ],
      "a_en": "That night, a lot of people remember it~😊 Those who didn't buy spend a long night in self-blame and excitement; TV and radio pile on with dramatic analysis, and group emotions amplify each other. Media doesn't create emotion—it just puts a megaphone to it. Your regret, once broadcast, becomes the whole city's regret."
     },
@@ -11473,7 +11800,8 @@
       "有人对你特别「商",
       "有人对你特别",
       "商量着说话",
-      "商量着说话"
+      "商量着说话",
+      "商量著說話"
      ],
      "a_en": "The sooner you learn to see through this, the better~😊 He approached with a friendly, consultative tone, creating an illusion of trust that put the young man at ease. Inside, he thought, 'Kid, I have to use you.' The most dangerous manipulation wears the kindest face—what you think is a mentor's favor might just be a step in someone else's plan."
     },
@@ -11575,7 +11903,8 @@
       "不想想",
       "直接睡着的那些晚上",
       "是在逃避什么",
-      "直接睡着的那些晚上"
+      "直接睡着的那些晚上",
+      "直接睡著的那些晚上"
      ],
      "a_en": "Anyone who's been running away knows that kind of tiredness～😊 Not watching TV because he can't bear to see the host bragging, crashing into bed shows total burnout and self-disgust; knowing the scheme is dirty but having to do it anyway. Avoidance isn't laziness—it's clearly knowing what you're about to face next. Sleep is the only legal hiding place."
     },
@@ -12204,7 +12533,8 @@
       "你读得懂吗",
       "低开高走",
       "对你意味着什么",
-      "对你意味着什么"
+      "对你意味着什么",
+      "對你意味著什麼"
      ],
      "a_en": "Those who read the rhythm have already won half～😊 A low open fills all the chase-the-rally orders, then a quick lift creates the illusion of a 'real rebound,' forming a psychological support. The market maker controls the opening pace, using the price action to guide the crowd's emotions, making retail investors think they're right and happily take over the positions. Rhythm is the market maker's baton—you think you're dancing, but he's the one conducting."
     },
@@ -12330,7 +12660,8 @@
       "一下",
       "gp还是6",
       "为何能让人安心",
-      "心会不会跟着"
+      "心会不会跟着",
+      "心會不會跟著"
      ],
      "a_en": "Because six yuan is the retail investor's 'psychological support level'~😊 Hold that line, and the downtrend still looks manageable, so followers stay active; once it breaks, confidence collapses and you can't pull it back in the afternoon. The round number itself means nothing—it's everyone's minds that turn it into a line of defense. When your heart skips a beat at the number, it's not because the number has magic, it's because you've placed your belief in it."
     },
@@ -12576,7 +12907,8 @@
       "30%亏损",
       "你盯的是哪一行",
       "主角怎么选",
-      "一笔交易同时写着"
+      "一笔交易同时写着",
+      "一筆交易同時寫著"
      ],
      "a_en": "Total inflow was under 1.5 billion, planned distribution, profit around 15%; but the trend probably won't last long—once it flips, risk hits 85%, loss around 30%—he calculated the tipping point between greed and fear precisely, and decided to cut through the mess quickly～😊 Putting risk and reward on the table together—that's a decision. Only putting reward on the table—that's gambling. Before you hit that buy button, can you tell me the max loss on that trade? Or did you just memorize how much you could make?"
     },
@@ -12638,7 +12970,8 @@
       "暴跌时你怕亏损",
       "这两种怕都有人等着用",
       "庄家怎么用它们",
-      "这两种怕都有人等着用"
+      "这两种怕都有人等着用",
+      "這兩種怕都有人等著用"
      ],
      "a_en": "Fear is instinct～😊 In a crash, retail traders fear losses and sell without caring about cost; in a surge, they fear missing out and rush in. As long as big capital can manipulate investors' emotions, they can make everyone do exactly what they need them to do. Your fear and greed aren't flaws—they're interfaces in someone else's system. The last time you cut at the bottom and chased at the top—was the market too cunning, or was your emotion just too obedient?"
     },
@@ -13328,7 +13661,8 @@
       "主角的",
       "推入黄浦江",
       "在说什么",
-      "你的玩笑里藏着什么"
+      "你的玩笑里藏着什么",
+      "你的玩笑裡藏著什麼"
      ],
      "a_en": "The protagonist joked about pushing his pregnant girlfriend to the Bund, waiting for a foreign-flagged ship to come by, then pushing her into the Huangpu River—using dark humor to relieve the pressure. 😊 Underneath the laughter is the emotional detachment and repression of someone alienated by the game. The darker the joke, the bigger the hole in the heart—he can't even offer a proper blessing anymore. When was the last time you brushed off your real feelings with a joke?"
     },
@@ -13542,7 +13876,9 @@
       "下一个是我",
       "主角为何自认旁观者",
       "看着别人亏损，你",
-      "看着别人亏损"
+      "看着别人亏损",
+      "看著別人虧損，你",
+      "看著別人虧損"
      ],
      "a_en": "This is the loneliness and alienation of a professional whale～😊 He watches others about to be burned to ashes, yet tells himself he's standing aside, only caring about getting out unscathed—almost numb and cold-eyed toward others' suffering. The illusion of the bystander is the most dangerous—you think you're standing on shore, but you're actually in the same water. Is your position right now really on the 'safe side'?"
     },
@@ -13570,7 +13906,8 @@
       "是冲着你的钱来的",
       "主角为何把大户",
       "进酒店",
-      "是冲着你的钱来的"
+      "是冲着你的钱来的",
+      "是衝著你的錢來的"
      ],
      "a_en": "He 'invited' the big players into the hotel—it kept them under control, kept them from catching on to the real selling, then sent them back on time the next day. It also made it easy for the main character to meet up with his crew at night, count up his chips, and plan the pace of unloading~😊 The person who takes care of you down to the smallest detail might be counting your chips—hospitality can be a chain. All those 'VIP perks' you enjoy—have you ever wondered who's paying for them?"
     },
@@ -13671,7 +14008,8 @@
       "你瞭解你的",
       "对手",
       "还是你从来只盯着价格",
-      "还是你从来只盯着价格"
+      "还是你从来只盯着价格",
+      "還是你從來只盯著價格"
      ],
      "a_en": "From the data: a lot of opening capital, but each account is small, easy to move in and out, the runway is wide open. The opponent doesn't chase high returns—usually targets around 10%. When it rises, they're smooth; when it falls, they lack strategy. Stubborn and especially arrogant~😊 Read the chart by reading the person—once you see what the opponent fears and what they're greedy for, you'll know where the price is headed. Last time you lost money, was it because you didn't read the market, or didn't read your opponent?"
     },
@@ -13791,7 +14129,8 @@
       "安抚吗",
       "清脆的报单声里",
       "藏着什么",
-      "藏着什么"
+      "藏着什么",
+      "藏著什麼"
      ],
      "a_en": "The crisper and sweeter the voice, the harder the index falls, and thousands of investors lose everything~😊 A pleasant form carrying the cruelest content—it's ironic how the market uses a nice-sounding surface to mask a destructive core. The more beautifully packaged something is, the more you should ask what's really inside. The last time you were soothed by a 'good-sounding narrative,' did it actually deliver?"
     },
@@ -13805,7 +14144,8 @@
       "交易所保护投资人",
       "的招牌吗",
       "浮雕上画着什么",
-      "浮雕上画着什么"
+      "浮雕上画着什么",
+      "浮雕上畫著什麼"
      ],
      "a_en": "At the center of the relief figures is 'Integrity,' flanked by images of science, progress, industry, and inventors on one side, and mining and agriculture on the other—symbolizing that the securities market has meaning in protecting humanity~😊 The grander the signboard, the more you should ask: protecting who? And how? A hundred-year-old decoration, still hanging today. The 'protection' you believe in—does it have concrete terms, or is it just a slogan?"
     },
@@ -14274,7 +14614,8 @@
       "都开始忽略风险时",
       "你会跟着松懈吗",
       "主角为何反而警觉",
-      "你会跟着松懈吗"
+      "你会跟着松懈吗",
+      "你會跟著鬆懈嗎"
      ],
      "a_en": "Many old accounts are participating, which means even the \"old hands\" who've been in the market for ages are starting to ignore policy risks～😊 Even seasoned retail investors are driven by habitual thinking and greed, collectively letting their guard down—that's exactly the opening the big players can exploit. The complacency of old hands is more dangerous than the impulsiveness of newbies, because it looks like experience. What warnings have you ignored \"based on experience\"? And did experience turn out to be right?"
     },
@@ -14458,7 +14799,9 @@
       "成功",
       "时惆怅",
       "看着众人疯狂，你",
-      "看着众人疯狂"
+      "看着众人疯狂",
+      "看著眾人瘋狂，你",
+      "看著眾人瘋狂"
      ],
      "a_en": "Melancholy comes from retail investors' urgent desire to trade short-term, so easily tempted~😊 He reflects: when people die, they feel satisfied because they see a more beautiful world—a metaphor for the manipulated drowning in the illusion of an uptrend without realizing it. The cruelest compassion is watching someone walk smiling toward a cliff, and you can't wake them up. Have you ever had a moment where you watched someone rush in but didn't stop them? Why didn't you stop them then?"
     },
@@ -15388,7 +15731,8 @@
       "外人眼里风光无限",
       "你羡慕过的位置",
       "可能藏着什么",
-      "可能藏着什么"
+      "可能藏着什么",
+      "可能藏著什麼"
      ],
      "a_en": "Behind all the glory, there's often a weight that's hard to put into words 😊 Outsiders see them as mysterious and privileged, but in reality, they're weighed down by guilt and low spirits. The loneliness and detachment behind the shine cut them off from the crowd. The more they gain, the fewer people they can talk to — and the things they can't say are often heavier than any loss."
     },
@@ -15449,7 +15793,8 @@
      "keywords": [
       "为什么跌到130",
       "主力就急着接住",
-      "主力就急着接住"
+      "主力就急着接住",
+      "主力就急著接住"
      ],
      "a_en": "Numbers themselves have no magic 😊 The 1300-point mark is a round-number psychological support level. When the index approaches or breaks below it, retail investors panic—so he used consecutive 50,000-share orders to catch it and quickly pulled the index back above 1360. The magic isn't in the number; it's that everyone believes it is."
     },
@@ -15563,7 +15908,8 @@
       "破天荒吃西餐",
       "反常的背后藏着什么",
       "你压力大时会怎么反常",
-      "反常的背后藏着什么"
+      "反常的背后藏着什么",
+      "反常的背後藏著什麼"
      ],
      "a_en": "Unusual spending often means there's an unspoken hole in your heart 😊 Failing to persuade the granny weighs him down, and knowing a big move is coming in the afternoon, he splurges on western food for the first time—behind it is a complex mix of guilt and loneliness that a trader carries."
     },
@@ -15717,7 +16063,8 @@
       "隔着玻璃看戏",
       "的状态",
       "你有过吗",
-      "隔着玻璃看戏"
+      "隔着玻璃看戏",
+      "隔著玻璃看戲"
      ],
      "a_en": "The one watching the show stopped seeing himself as part of it long ago 😊 He closes his eyes and imagines the burly men standing at the sell window, the arrogant clueless big-money traders throwing tantrums in their private rooms—while he just watches the crowd coldly from the sidelines. That detachment from the crowd? It's exactly what the loneliness and alienation of a professional trader looks like."
     },
@@ -16107,7 +16454,9 @@
       "——这句话狠在哪里",
       "它其实在心疼谁",
       "「宁愿她一直病着",
-      "宁愿她一直病着"
+      "宁愿她一直病着",
+      "「寧願她一直病著",
+      "寧願她一直病著"
      ],
      "a_en": "The harshest words often hide the deepest helplessness😊 He saw the old granny still refusing to cut her losses despite being sick, still dreaming of a rebound—and he knew that once she got better, she'd jump back into the market and get slaughtered again. So he'd rather she stay sick—behind that cruel remark lies a helpless sorrow for the fate of retail traders."
     },
@@ -16120,7 +16469,9 @@
       "看着满堂灿烂的笑容",
       "你走得开吗",
       "看着满堂灿烂的笑",
-      "看着满堂灿烂的笑容"
+      "看着满堂灿烂的笑容",
+      "看著滿堂燦爛的笑",
+      "看著滿堂燦爛的笑容"
      ],
      "a_en": "Knowing a tragedy is coming but being unable to stop it, the only option is to look away😊 The market was about to shift, and he foresaw that in just ten-plus minutes, those bright smiles would turn from joy to panic selling—the crowd's blind optimism and the impending collapse made it unbearable to watch, so he quietly walked away, wandering the streets alone."
     },
@@ -16265,7 +16616,8 @@
       "三代穷光蛋",
       "——他到底在怕什么",
       "你怕过什么被翻出来",
-      "主角怒骂之余急着自证"
+      "主角怒骂之余急着自证",
+      "主角怒罵之餘急著自證"
      ],
      "a_en": "The less secure someone is, the louder they get when defending themselves 😊 He angrily tells the cops off — 'Why don't you catch the real bad guys instead of coming after me?' — and can't wait to prove he's an 'upstanding citizen' whose family's been broke for three generations. That desperate rush to disassociate himself from any 'criminal' quietly hints at his own unease and guilt over where that money really came from."
     },
@@ -16433,7 +16785,9 @@
       "抢着表现",
       "摔碎过什么",
       "两个孩子抢着在老",
-      "抢着表现"
+      "抢着表现",
+      "兩個孩子搶著在老",
+      "搶著表現"
      ],
      "a_en": "When you grow up, it’s not alarm clocks you fight over—it’s credit and pride, and the things you break are a lot more expensive 😊 The two kids fighting to show off in front of the teacher is all about competitiveness and the need to shine—the rivalry in a small group got to their heads and they forgot how fragile the clock was."
     },
@@ -16483,7 +16837,8 @@
       "是你吗",
       "——你上一次被这样问",
       "是什么时候",
-      "父亲摸着你的头问"
+      "父亲摸着你的头问",
+      "父親摸著你的頭問"
      ],
      "a_en": "A single pat on the head beats a thousand words 😊 Dad was already asleep, and the cave house was pitch black. When the man knocked on the door, his dad saw it was him, touched his head and asked, 'Is that you?' Then father and son sat on the warm brick bed talking all night — it had been way too long since that father had seen this son."
     },
@@ -16610,7 +16965,9 @@
       "看着儿子远去的汽车",
       "矛盾的笑",
       "看着儿子远去的汽",
-      "看着儿子远去的汽车"
+      "看着儿子远去的汽车",
+      "看著兒子遠去的汽",
+      "看著兒子遠去的汽車"
      ],
      "a_en": "Parents' happiness often hides a goodbye they can't put into words😊 They were sad because their son was leaving again, and happy because their son was so valued at work that city people had traveled all the way to this remote mountain village to find him—both reluctant and proud."
     },
@@ -16645,7 +17002,8 @@
       "大姐为何哭成泪人",
       "你见过这种",
       "笑着哭",
-      "笑着哭"
+      "笑着哭",
+      "笑著哭"
      ],
      "a_en": "She wasn't crying over the wedding—she was crying for the family she was leaving behind, the one no one would look after😊 The eldest sister couldn't rest easy over the young protagonist and the motherless home, and she cried her heart out. Their dad wouldn't let the protagonist see her off for fear she'd break down on the way, but before she left, she hugged him and cried out loud—the deeper her worry, the heavier her goodbye."
     },
@@ -16684,7 +17042,8 @@
       "我娃他舅本事大",
       "——这份炫耀里",
       "藏着乡村人的什么心愿",
-      "藏着乡村人的什么心愿"
+      "藏着乡村人的什么心愿",
+      "藏著鄉村人的什麼心願"
      ],
      "a_en": "He's praising you, but really he's fulfilling his own dream of 'getting out of the mountains' 😊 Brother-in-law treats you like his own younger brother, and he's proud of having city relatives — shows them off to everyone. That kind of competitive bragging carries genuine pride, but it also reflects the village mindset where 'city people' are seen as a symbol of success."
     },
@@ -16729,7 +17088,8 @@
       "——父亲这句话",
       "是在催你走",
       "还是在忍着不哭",
-      "还是在忍着不哭"
+      "还是在忍着不哭",
+      "還是在忍著不哭"
      ],
      "a_en": "Some harsh words from a father are actually the deepest tenderness 😊 'If you take the government's money, you have to work' — Dad used that sense of duty to make the decision for his son, packing his reluctance into silence: it lets his son go back to his post with peace of mind, and it also holds back his tears."
     },
@@ -16842,7 +17202,9 @@
       "「和市场趋势对着",
       "和市场趋势对着干",
       "「和市场趋势对着",
-      "和市场趋势对着干"
+      "和市场趋势对着干",
+      "「和市場趨勢對著",
+      "和市場趨勢對著幹"
      ],
      "a_en": "The trend won't turn just because you believe it will 😊 That's gambler-style overconfidence: putting your own judgment above the market trend, stubbornly holding against the tide, refusing to admit you're wrong—to the protagonist, that's not courage, it's suicide."
     },
@@ -16893,7 +17255,8 @@
       "你的",
       "战场",
       "在哪",
-      "藏着什么悲哀"
+      "藏着什么悲哀",
+      "藏著什麼悲哀"
      ],
      "a_en": "A person who can only come alive on the battlefield—where does the one off the battlefield go? 😊 His professional habit means he only feels excitement and a sense of existence in the game, and the battlefield becomes the only place where he can fully express his humanity—this is loneliness and alienation."
     },
@@ -17013,7 +17376,8 @@
       "能微笑么",
       "你上一次对着帐户微笑",
       "是什么时候",
-      "你上一次对着帐户微笑"
+      "你上一次对着帐户微笑",
+      "你上一次對著帳戶微笑"
      ],
      "a_en": "Smiles are a luxury; staying calm is a necessity 😊 The market doesn't give anyone a reason to smile—it's all suffering and grind. Every day is like a surprise exam, and the moment you get smug, it'll slap you right back down. Keep your head level and stay rational—that's the only way to survive."
     },
@@ -17262,7 +17626,8 @@
       "等着它跌",
       "的心情",
       "它告诉了你什么",
-      "等着它跌"
+      "等着它跌",
+      "等著它跌"
      ],
      "a_en": "When retail investors start feeling 'settled', that's the big player's moment 😊 Retail folks are only afraid of a drop — once it drops, they breathe a sigh of relief. That's when you fire up a move, and they'll be all too happy to jump in. A 400-point rally — nobody would think it's distribution. Better to let fear land than to keep them hanging by it."
     },
@@ -17476,7 +17841,8 @@
       "能让一个操盘手",
       "灵魂得到净化",
       "你的手机里循环着什么",
-      "你的手机里循环着什么"
+      "你的手机里循环着什么",
+      "你的手機裡循環著什麼"
      ],
      "a_en": "The music you choose often reveals what you're missing inside. 😊 The high-pressure job in Shenzhen had him surrounded by loneliness, emptiness, and worries every day, and the restlessness of modern music only made things worse; funeral music, instead, made him feel pure, as if his soul was being cleansed — from then on, he only carried funeral music with him and would hum it without thinking."
     },
@@ -17588,7 +17954,9 @@
       "——你从成交的速度里",
       "读出过对方的心态吗",
       "对手急着「一次倒",
-      "对手急着"
+      "对手急着",
+      "對手急著「一次倒",
+      "對手急著"
      ],
      "a_en": "The faster a trade fills, the more desperate the other side is 😊 He placed an order to buy 30,000 shares in batches, and it all filled within five minutes at an even better price than expected—proof that the counterparty was desperate to dump 30,000 shares at once, under so much pressure they'd rather sell cheap than wait. This is a psychological contest between big players to see who cracks first."
     },
@@ -17703,7 +18071,8 @@
       "——在市场里",
       "你的",
       "靠什么浮着",
-      "靠什么浮着"
+      "靠什么浮着",
+      "靠什麼浮著"
      ],
      "a_en": "Public sentiment is capital flow—go against it, and no matter how big a player you are, you'll capsize 😊 He quoted the old lesson, 'Water can carry the boat, but it can also overturn it.' He reckons a few of them are nothing next to Li Shimin or Zhu Yuanzhang—but they're facing thousands upon thousands of investors. Only by riding with the trend and following the people's will can they find a way through."
     },
@@ -18336,7 +18705,8 @@
       "一群人同时盯着同",
       "你觉得那条线是真相",
       "还是共识",
-      "一群人同时盯着同"
+      "一群人同时盯着同",
+      "一羣人同時盯著同"
      ],
      "a_en": "This is exactly the power of collective expectations~😊 Retail investors treat the 1000-point mark as a life-or-death line—the closer it gets, the more they panic or hope for a bounce. This isn't personal judgment; it's herd-driven collective expectation. The scary thing is, it doesn't need to be true. As long as everyone believes it, it becomes the market. The big player just needs to give it a push along with everyone's rhythm."
     },
@@ -18612,7 +18982,8 @@
       "你有没有算过",
       "你赚的每一块钱",
       "对面坐着谁",
-      "对面坐着谁"
+      "对面坐着谁",
+      "對面坐著誰"
      ],
      "a_en": "That's a heavy question~😊 The stock loses more than half its value, and someone ends up in the hospital with high blood pressure — cold numbers for the market maker, but for the retail investor it's a tragedy of ruined homes and hurt people. For the first time he's face-to-face with his own 'masterpiece': behind every percentage point, there's a real person."
     },
@@ -18746,7 +19117,8 @@
       "领带",
       "——它象征你的成就",
       "也勒着你的脖子",
-      "也勒着你的脖子"
+      "也勒着你的脖子",
+      "也勒著你的脖子"
      ],
      "a_en": "It's not the tie's fault — it's the whole career that outfit represents, suffocating him～😊 He sees the tie as a snake coiled around his neck, rips it off like crazy and throws it in the trash, longing to wear an old cotton-padded jacket and carry a hoe like his dad. When alienation goes to the extreme, you can't even recognize the person in the mirror."
     },
@@ -18991,7 +19363,8 @@
       "有没有想过它的",
       "来源",
       "可能带着别人的血",
-      "可能带着别人的血"
+      "可能带着别人的血",
+      "可能帶著別人的血"
      ],
      "a_en": "Guilt begins the first time you realize: the career you depend on might be someone else's catastrophe~ 😊 The bloody reality of the capital market plays out before his eyes—and he's the one driving the stock price down. The blood might be on his hands."
     },
@@ -19546,7 +19919,8 @@
       "你盯着K线的时间",
       "和陪家人的时间",
       "哪个更多",
-      "你盯着K线的时间"
+      "你盯着K线的时间",
+      "你盯著K線的時間"
      ],
      "a_en": "Think too much, and the pain only grows~😊 Staring at the candlestick chart, he blankly asks himself: is this all life is—alone, facing the curves forever? He sees good people stripped clean and his conscience aches; yet he knows a professional investor just has to do his own job."
     },
@@ -20086,7 +20460,8 @@
       "你的",
       "热情",
       "是不是也跟着行情涨跌",
-      "是不是也跟着行情涨跌"
+      "是不是也跟着行情涨跌",
+      "是不是也跟著行情漲跌"
      ],
      "a_en": "Buzz is the market's thermometer — and the retail investor's own~😊 At five branches, the retail halls have fewer than a hundred people, the big-money rooms are empty, mid-tier traders are playing mahjong, and the staff are asleep at the counters. When the market loses its buzz, collective enthusiasm fades and everyone exits like sheep, cooling from frenzy into numb withdrawal."
     },
@@ -20285,7 +20660,8 @@
       "关键时刻",
       "是越仔细",
       "还是越着急",
-      "还是越着急"
+      "还是越着急",
+      "還是越著急"
      ],
      "a_en": "Being careful near the finish line isn't cowardice—it's respect for all the hard work before it～😊 'The closer to the end, the more careful you have to be.' He keeps reviewing the plan for flaws, calmly calculating the rally and the buzz. Wealth numbers replace everyday emotions. But a person who only counts numbers and ignores feelings—they might win the game, but they lose at life."
     },
@@ -20312,7 +20688,9 @@
       "是跟着涨幅走的",
       "还是跟着别人走的",
       "是跟着涨幅走的",
-      "还是跟着别人走的"
+      "还是跟着别人走的",
+      "是跟著漲幅走的",
+      "還是跟著別人走的"
      ],
      "a_en": "What the sentiment indicator drops isn't a number—it's retail courage～😊 In a weak market, investors still hold back: gains are small, the urge to chase cools down—greed gets crushed by fear, and herd enthusiasm can't last. When the rise is slow, nobody dares to move first."
     },
@@ -20415,7 +20793,8 @@
       "地想逃离",
       "是因为行业",
       "还是因为自己",
-      "整夜睡不着"
+      "整夜睡不着",
+      "整夜睡不著"
      ],
      "a_en": "What you want to run from is often not the industry—it's the version of yourself that's changed beyond recognition inside it~😊 He felt drained, hurt, heartbroken, couldn't sleep all night—he told himself he hadn't even gone deep when he chose to quit, not knowing if that counts as success or failure. He wants to go to the UK to study history and archaeology, far away from the securities circle."
     },
@@ -20934,7 +21313,8 @@
       "还是",
       "该顺着走",
       "你看的是什么",
-      "该顺着走"
+      "该顺着走",
+      "該順著走"
      ],
      "a_en": "Hey there~ 😊 What he's watching is crowd sentiment: retail investors are already fully mobilized, and if he keeps shaking them out, he'll just scare away the buyers. So he drops the shakeout and goes with the flow—using that hot energy to hold the price high into the close. The big player doesn't use the same move every time—he reads your current mood first, and then picks which trick to use on you. So next time you want to 'scare' the market, ask yourself: Am I really reading the tape, or am I just reading my own emotions?"
     },
@@ -21034,7 +21414,8 @@
       "你有没有想过",
       "你的每一次犹豫和冲动",
       "都有人在等着利用",
-      "都有人在等着利用"
+      "都有人在等着利用",
+      "都有人在等著利用"
      ],
      "a_en": "This one's worth memorizing~😊 The book puts it bluntly: the big players attack you psychologically, manipulate you emotionally, until you lose your fighting spirit and just keep losing money on autopilot. Their target isn't your wallet—it's your emotional switch. The more panicked or greedy you are, the easier that switch is to press. So every time hesitation or impulse flares up, ask yourself: is someone out there just waiting to press this switch?"
     },
@@ -21176,7 +21557,9 @@
       "做投资时",
       "还能输得起吗",
       "你扛着「全家人的",
-      "你扛着"
+      "你扛着",
+      "你扛著「全家人的",
+      "你扛著"
      ],
      "a_en": "This one really cuts deep: the protagonist in the book came from a rural background, the hope of his family. Even with about 40% net profit, he still feels tormented—struggling all morning, losing control by the afternoon, just wanting to settle things early and protect himself. The pressure often isn't from losses—it's from 'I can't afford to lose.' Carrying other people's lives on your shoulders makes your hands shake. In investing, it's best to only use money you can afford to lose, and don't stake your whole family's expectations on it."
     },
@@ -21263,7 +21646,8 @@
       "明日必定大涨",
       "必定",
       "两个字对你意味着什么",
-      "两个字对你意味着什么"
+      "两个字对你意味着什么",
+      "兩個字對你意味著什麼"
      ],
      "a_en": "Be extra careful with this one~😊 Statements like 'high volume, turnover doji, tomorrow is bound to surge' plus rumors of 'management bailing out the market' are all used to create positive expectations — under an information cascade, the more absolute the claim, the more people believe it. In the market, there’s no such thing as 'bound to'. What he really wants isn’t your judgment, it’s your belief. Next time you hear the words 'bound to', first ask: what does the person saying this stand to gain?"
     },
@@ -21274,7 +21658,8 @@
      "keywords": [
       "你扛着无人能分担",
       "身边有人吗",
-      "你扛着无人能分担"
+      "你扛着无人能分担",
+      "你扛著無人能分擔"
      ],
      "a_en": "This one’s heartbreaking: the ally breaks down and might never come back to the market, and once that 30% stake is released, the whole rally is destroyed — he’s left alone carrying the weight of supporting the market, with no one to share it. When you win, everyone surrounds you; when you carry the burden, you’re on your own. The loneliness of a professional investor is the clearest after the close. If you have someone beside you who can share the weight, cherish them. If not, at least don’t wait until you’re on the verge of breaking down before you say something."
     },
@@ -21301,7 +21686,9 @@
       "会不会也",
       "装睡",
       "你被一群人逼着表",
-      "你被一群人逼着表态时"
+      "你被一群人逼着表态时",
+      "你被一羣人逼著表",
+      "你被一羣人逼著表態時"
      ],
      "a_en": "Many people get this one~😊 Playing asleep is passive resistance: using silence to avoid the pressure of collective blame, stalling on taking a stance, and dodging an on-the-spot commitment — the more everyone shouts, the less he speaks. Silence doesn’t mean he didn’t hear; it means he hasn’t figured out how to protect himself under pressure. But if you keep playing asleep for too long, ask yourself: am I thinking, or am I avoiding taking a stance?"
     },
@@ -21824,7 +22211,8 @@
       "有人正盯着你",
       "想跑",
       "的念头",
-      "有人正盯着你"
+      "有人正盯着你",
+      "有人正盯著你"
      ],
      "a_en": "This one is a game-theory lesson ~😊 Near the close, a third-tier stock is pumping hard, clearly trying to use the moment to offload—he smirks, then reverses and sells, using the velocity of the crash to spread mass panic until the other side has nowhere to hide. 'If you run, what am I supposed to do?' In the game, your escape route is exactly the ambush point someone left ready. Next time you feel like running, look first: does this road happen to lead straight into someone else's pocket?"
     },
@@ -21970,7 +22358,8 @@
       "补涨",
       "别人涨它没涨",
       "对你意味着什么",
-      "对你意味着什么"
+      "对你意味着什么",
+      "對你意味著什麼"
      ],
      "a_en": "Oh, this one's caught a lot of people~ 😊 When the index was soaring, Honshan's stock only rose less than 20%, giving small investors the illusion of 'strong stocks catching up,' so they rushed in—what he's exploiting is the chasing and comparison mentality: what you can't stand isn't that it's cheap, it's that 'everything else is up and it's not.' Next time you chase because 'others went up,' ask yourself: am I bullish on this stock, or just annoyed it's lagging behind?"
     },
@@ -22019,7 +22408,8 @@
       "危机四伏",
       "地睡不着吗",
       "怕的是什么",
-      "地睡不着吗"
+      "地睡不着吗",
+      "地睡不著嗎"
      ],
      "a_en": "This one many people understand~😊 When money is being moved through its hardest phase, a single piece of bad news or a sudden accident can ruin everything—retail sentiment can flip in an instant, and doubts about highs and hot spots are deadly blows. What he fears isn't the market, it's “human hearts”: how well you sleep tonight decides whether he wins or loses tomorrow morning. When you're fully positioned and can't sleep, it usually isn't the market frightening you—it's that your position is bigger than what your mind can rest with."
     },
@@ -22838,7 +23228,8 @@
       "你的手会不会也开始抖",
       "你上一次",
       "跟着别人跑",
-      "跟着别人跑"
+      "跟着别人跑",
+      "跟著別人跑"
      ],
      "a_en": "This one's a lesson in contagion~😊 The index fell from 1,280 to 1,240, stocks down 30% were everywhere, and the third-tier stocks that just followed the market fell even harder. In panic, people sold at any cost, and plenty jumped on the short-selling bandwagon—this is textbook panic selling. Panic is contagious, and the first ones to catch it are usually those who act when others act: they didn't judge the danger; they just saw other people running. Next time your hand starts shaking, ask yourself: am I seeing danger, or am I only seeing other people?"
     },
@@ -22887,7 +23278,8 @@
       "量很大",
       "价没涨",
       "有人急着出货",
-      "有人急着出货"
+      "有人急着出货",
+      "有人急著出貨"
      ],
      "a_en": "This one's a lesson in tape reading~😊 Volume was huge but the drop was small—the protagonist in the book figured Old Hu was using the third-tier stocks' popularity to support the price while unloading, so he joined in by smashing the market as cover. Shanzi's stock was moving sideways in a balance zone, also as cover. The big players were working together smoothly. Heavy volume with a slow fall is the standard move for distribution: you can't sell into a rise, you need a dip to get out—but retail investors only remember \"the volume was huge\" and forget to ask \"why didn't the price rise?\" Next time you see this kind of movement, ask yourself: is someone in a hurry to leave?"
     },
@@ -22901,7 +23293,8 @@
       "你在干什么",
       "是盯着行情",
       "还是已经在想明天",
-      "是盯着行情"
+      "是盯着行情",
+      "是盯著行情"
      ],
      "a_en": "This one's a lesson in focus~😊 With 20 minutes left to close, the protagonist kept buying in blocks of 5 million shares, stepping up 30 yuan each time. His heavy-held stock turned upward, Old Hu's and Shanzi's stocks followed, heavyweights became hot again, and the index got pushed to a high, completing the day's sell-high-buy-low game. The real winners and losers are often decided right before the close—because that's when most people have already let their guard down. Next time before the close, ask yourself: am I watching the market, or am I thinking about tomorrow?"
     },
@@ -23181,7 +23574,8 @@
       "你到现在还惦记着吗",
       "为了它",
       "你多等了多久",
-      "你到现在还惦记着吗"
+      "你到现在还惦记着吗",
+      "你到現在還惦記著嗎"
      ],
      "a_en": "This one’s painfully real 😊 The high price becomes the anchor in retail investors’ minds — everyone’s waiting for it to rise back so they can “eat the pancake,” nobody wants to cut losses at the bottom. The main player exploits that reluctance to make sure sell orders stay scarce, making it easy for Lao Hu to offload. The pancake you didn’t eat smells the best — and when the big player draws a pancake, they’re betting exactly on your refusal to admit you missed out. Next time you’re still craving that pancake, ask: did it ever really exist? How long have I been waiting?"
     },
@@ -23260,7 +23654,8 @@
       "你见过吗",
       "你是跟着怕了",
       "还是看穿了它只是空转",
-      "你是跟着怕了"
+      "你是跟着怕了",
+      "你是跟著怕了"
      ],
      "a_en": "This one's a lesson in spinning your wheels~ 😊 Shanzi's stock basically stays as is, going with the flow, only being pushed along by the trend; the swings are wide but fast up and down, with no time to change hands, so trading volume and amount are extremely low, making it hard for retail investors to join in. If no one takes over in violent swings, it's just spinning wheels — and a spinning market is perfect for creating the illusion of being 'very lively.' Next time you see a big drop without volume, ask yourself: am I just getting scared, or am I seeing through it?"
     },
@@ -23278,7 +23673,8 @@
       "只看涨多少",
       "不想怎么退",
       "退场的门还开着吗",
-      "退场的门还开着吗"
+      "退场的门还开着吗",
+      "退場的門還開著嗎"
      ],
      "a_en": "This one's a lesson in exiting~ 😊 Closing at 1272 points with turnover of over 2.3 billion, down 25 points from yesterday, the highest turnover of this round; the main force is worried about how much Old Hu's position has been reduced, which directly decides whether all trades can be wrapped up within two weeks. No matter how good the market is, the big players are always calculating 'how to exit' — while retail investors are forever calculating 'how much more it can rise.' Next time you only look at gains, ask yourself: is my exit door still open?"
     },
@@ -23293,7 +23689,8 @@
       "好让别人不要跟着慌",
       "装到最后",
       "是谁先信了",
-      "好让别人不要跟着慌"
+      "好让别人不要跟着慌",
+      "好讓別人不要跟著慌"
      ],
      "a_en": "This one's a lesson in leadership~ 😊 The closer things get to the end, the more tense and changing they become. If you let Xiao Zhang and the accountant sense this is the finishing stage, restless hearts will surely throw off the rhythm. Keeping everyone calm is the only way to quietly close out the psychological game. Confidence isn't just for yourself; it's for the team — and the calm you fake, if you fake it long enough, sometimes even you believe it. Next time you pretend to be calm, ask yourself: in the end, who believed it first?"
     },
@@ -23309,7 +23706,9 @@
       "重到想找人说说话",
       "却发现无人可说",
       "你手上「压着」什",
-      "压着"
+      "压着",
+      "你手上「壓著」什",
+      "壓著"
      ],
      "a_en": "This one breaks my heart: heavily positioned at the top, no one to take over, selling off feels like walking a tightrope — the oppressive buildings and hurried passersby only amplify his loneliness. A professional investor with no one to talk to, the weight inside so heavy it's almost suffocating — a true portrait of solitude and alienation. The real weight is often not the position, but that 'only you can carry this alone' — and when you carry it too long, even 'just talking' becomes a luxury. Next time you really want someone to talk to, don't hold it in. Say it."
     },
@@ -23409,7 +23808,9 @@
       "你是跟着买了",
       "还是读出了什么",
       "有人着急",
-      "你是跟着买了"
+      "你是跟着买了",
+      "有人著急",
+      "你是跟著買了"
      ],
      "a_en": "This one's a tape-reading lesson～😊 Old Hu was dumping shares into the rally — huge volume but almost no price gain, and the protagonist could tell he 'was getting a little anxious.' Then in the afternoon, his stock suddenly shot up fast, making people suspect another high dive, and it dropped hard before the close — a sign that he'd already unloaded most of his chips. Volume is the action, price is the intention: when volume is huge but the price won't budge, it usually means someone's in a hurry to leave but doesn't want to tip you off. Next time you see that kind of move, ask yourself: is somebody getting anxious?"
     },
@@ -23555,7 +23956,9 @@
       "之后",
       "真的没犹豫吗",
       "「约定好了却拖着",
-      "约定好了却拖着不执行"
+      "约定好了却拖着不执行",
+      "「約定好了卻拖著",
+      "約定好了卻拖著不執行"
      ],
      "a_en": "This one's a lesson in execution～😊 Shanzai's position is under 15%, Lao Hu's around 35%. The protagonist argues for a straight drop tomorrow—the first half goes to Lao Hu, the second half to him, keeping it above 1200 points, so Lao Hu can cut his position below 20%. No more hesitating. The essence of a position-cutting plan is 'no more hesitation'—and every plan that ruins people dies on the three words 'wait a bit longer.'\nNext time you say 'can't hesitate anymore,' first ask: am I really not hesitating?"
     },
@@ -23645,7 +24048,10 @@
       "还是跟着人群跑了",
       "一个「大家都盯着",
       "大家都盯着的点位",
-      "还是跟着人群跑了"
+      "还是跟着人群跑了",
+      "一個「大家都盯著",
+      "大家都盯著的點位",
+      "還是跟著人羣跑了"
      ],
      "a_en": "This one's about anchoring ~😊 1250 is retail's psychological support level; breaking below it shakes bulls' conviction. The main players use the psychological anchoring effect of key levels to create panic and selling pressure, serving their sell-off plan—once the anchor cracks, retail loses direction. A price level isn't a wall, it's a rope: it doesn't block anything by itself, but the moment it snaps, everyone loses their footing at once. Next time your defense line breaks, ask yourself: Am I finding a new anchor, or just running with the crowd?"
     },
@@ -23676,7 +24082,8 @@
       "你有没有想过",
       "你正被人算计着",
       "无论如何都会后悔",
-      "你正被人算计着"
+      "你正被人算计着",
+      "你正被人算計著"
      ],
      "a_en": "This one's about shaking out ~😊 Buys and sells are evenly split, reflecting how torn retail sentiment is. The protagonist in the book thinks the best move is to gobble all these people up: a sharp drop hands chips to those who want to short-term trade, then a sharp rally scoops the chips back up at low levels—washing retail out so buyers feel smug and sellers regret it endlessly. Conflicted retail traders make the best prey: because whether it goes up or down, half of them always regret it, and those who regret will be even more impulsive next time. Next time you regret buying and regret selling, ask yourself: Am I being set up to 'regret either way'?"
     },
@@ -23894,7 +24301,9 @@
       "看见的是事实",
       "还是自己的幻影",
       "「望着耀眼的金色",
-      "望着耀眼的金色"
+      "望着耀眼的金色",
+      "「望著耀眼的金色",
+      "望著耀眼的金色"
      ],
      "a_en": "Mark says those poor souls 'staring at the dazzling gold, always fancy themselves as the master of that gold,' so they never see anything wrong with the master—retail investors twist their own reality with fantasy and rationalization. Once you put yourself in the 'master's shoes, you can no longer see that you're actually standing on the prey's side."
     },
@@ -24147,7 +24556,8 @@
       "是不是也只留着",
       "辉煌",
       "那几页",
-      "是不是也只留着"
+      "是不是也只留着",
+      "是不是也只留著"
      ],
      "a_en": "Because when they talk about stocks, they only remember winners' track records and never mention overall losses. They brag when they win and keep quiet when they lose—they can't see the majority of losers, and they credit luck to their own skill. That's survivor bias mixed with self-serving bias. Memory isn't a mirror; it's an editor that picks and chooses. It only keeps the clips that make you feel good."
     },
@@ -24398,7 +24808,8 @@
       "还是找点",
       "哀乐",
       "陪着",
-      "陪着"
+      "陪着",
+      "陪著"
      ],
      "a_en": "The morning rain was the heaviest in days, and driving through it with that funeral music — everything felt unbearably heavy, a suffocating vibe like death anxiety, setting off his guilt and nerves about the position swap. The weather and music are innocent; it's the storm inside that's using them to speak. When you're wound up that tight, even the sound of rain feels like it's telling you how it ends."
     },
@@ -24684,7 +25095,8 @@
       "看着自己的持仓自",
       "还是总想",
       "做点什么",
-      "看着自己的持仓自"
+      "看着自己的持仓自",
+      "看著自己的持倉自"
      ],
      "a_en": "He wants to see how far the price drops before people start bargain hunting, using that to test the support level and the psychological bottom of retail investors, so he can set the rhythm for the afternoon. This is a classic big-player move: testing the waters and probing how much pain retail investors can take. Not stepping in isn't giving up—it's observing. But retail investors do the exact opposite: they act when they should watch, and watch when they should act."
     },
@@ -24870,7 +25282,8 @@
       "贪婪战胜恐惧",
       "的时刻吗",
       "你自己在里面吗",
-      "深跌反而有人抢着接"
+      "深跌反而有人抢着接",
+      "深跌反而有人搶著接"
      ],
      "a_en": "He thought the steep drop would scare off buyers, but surprise — there are still plenty of takers. Greed beats fear. When retail investors see a deep dip, they zip in to grab the bargain — classic chase-up, kill-down herd mentality. It also taught him just how hard it is to offload. Fear makes people run, but greed makes them turn back — and those who turn back often walk straight into the market maker's blade."
     },
@@ -25095,7 +25508,8 @@
       "高开38点后急速下探",
       "是抢着跑",
       "还是先问为什么",
-      "是抢着跑"
+      "是抢着跑",
+      "是搶著跑"
      ],
      "a_en": "The index opened up 38 points but quickly rolled over. Every hot heavyweight stock had sell orders over a million shares. Everyone agreed it was 'good news exhausted equals bad news' and rushed for the exits—a textbook case of herd misjudgment. It handed the big money the perfect chance to absorb shares at low levels and then turn the tables. When the crowd moves in lockstep, it's usually not because they think the same way, but because they're each scared of something different—nobody wants to be the last one out."
     },
@@ -26311,7 +26725,13 @@
       "抛压起初",
       "散户恐慌性抛盘",
       "山洪暴发",
-      "难以收拾"
+      "难以收拾",
+      "1992",
+      "上海",
+      "冬天",
+      "反常氣氛",
+      "主角",
+      "嚴冬"
      ],
      "a_en": "When the market opened, the price was moving up. After 10, the big players in Shenzhen started dumping their positions. At first, the selling pressure wasn't visible, but then retail panic selling kicked in—\"like a flash flood\"—the fallout was impossible to control."
     },
@@ -26325,7 +26745,15 @@
       "时代象征",
       "十字路口",
       "人多",
-      "神奇"
+      "神奇",
+      "多久",
+      "感受",
+      "工作",
+      "枯燥無味",
+      "上上下下",
+      "行業價值",
+      "產生懷疑",
+      "辛辛苦苦"
      ],
      "a_en": "This was a symbol of the early 1990s: almost everyone had a brick-sized 'big brother' phone, and people with status also wore pagers on their belts. At first the protagonist thought it was amazing, but after using one himself, he got it—a lot of people walked around with their antennas out, talking loudly on the phone, mainly to show off their status. Calling at an intersection? Because that's where the most people could see you."
     },
@@ -26337,7 +26765,15 @@
       "跌了多少",
       "早盘进场",
       "处境如何",
-      "十有八九"
+      "十有八九",
+      "虛擬經濟",
+      "觀點",
+      "沒有收益",
+      "只有效用",
+      "社會價值",
+      "就業問題",
+      "價格變動",
+      "波動"
      ],
      "a_en": "It had already dropped over 30 yuan; people who went in in the morning, if they were slow to get out, nine times out of ten took a loss."
     },
@@ -26350,7 +26786,13 @@
       "1987",
       "人们的表情",
       "这个样子",
-      "眼前的"
+      "眼前的",
+      "消息",
+      "苦惱",
+      "什麼心理",
+      "賠錢之後",
+      "心理壓力",
+      "未來的恐懼"
      ],
      "a_en": "He'd never personally lived through the 1987 U.S. market crash, but looking at the faces around him now, he figured American folks back then probably looked exactly the same."
     },
@@ -26368,7 +26810,17 @@
       "多此一举",
       "不说话",
       "疏离",
-      "冷冷地听着"
+      "冷冷地听着",
+      "酒店",
+      "住在哪裡",
+      "住了多久",
+      "說明什麼",
+      "自己的家",
+      "回家",
+      "漂泊",
+      "住宿的地方",
+      "缺乏歸屬感",
+      "冷冷地聽著"
      ],
      "a_en": "Xiao Li said an old lady downstairs had fainted and been taken to the hospital. The protagonist listened coldly, no reaction at all, and even he was surprised at how indifferent he was. He forced himself to make conversation, to smile at people—but instead they thought they'd done something wrong and rushed to apologize. That made him feel, 'this kind of change is really pointless, might as well stay quiet'—showing how his life in the stock market had turned him cold and distant."
     },
@@ -26383,7 +26835,13 @@
       "职业道德",
       "证明",
       "谁对",
-      "没有一丝高兴"
+      "没有一丝高兴",
+      "職業微笑",
+      "大堂經理",
+      "人與人",
+      "距離拉大",
+      "什麼感覺",
+      "虛偽社交"
      ],
      "a_en": "Yesterday he argued with his supervisor over 'unloading' shares, and today's crash proved he was right. But he felt not a shred of happiness. He even had a nasty thought: if he hadn't gotten out either, watching it fall this hard today, he might have been laughing. But he immediately rejected it—that's not the mindset of a professional investor, and it doesn't fit the industry's professional ethics."
     },
@@ -26397,7 +26855,13 @@
       "残酷的股市",
       "心如铁石",
       "一样冷酷",
-      "人性的异化"
+      "人性的异化",
+      "紅燈",
+      "罵他",
+      "路上",
+      "什麼小事",
+      "撞車",
+      "聽不懂"
      ],
      "a_en": "The protagonist suddenly remembered a video, 'The Killer Without a Smile,' which echoed his indifference to the old lady who fainted—hinting that in the brutal stock market, a professional investor has to have a heart of stone, as cold as a 'killer without a smile,' pointing out how professional stock trading dehumanizes people."
     }
@@ -26519,7 +26983,8 @@
       "还是",
       "照着做过",
       "是哪个落差",
-      "照着做过"
+      "照着做过",
+      "照著做過"
      ],
      "a_en": "Heyyy~ 😊 You finish a page of tips, think \"Oh, that makes sense,\" and close the book feeling like you've got it. This book's thing is using tons of charts alongside real trading techniques—it not only explains practical applications of many techniques but also corrects some long-standing misconceptions about using technical indicators. Look at the chart, do it, fix your mistakes—turn \"I get it\" into \"I can do it.\" You walk away at \"I get it\" because you're afraid to admit you haven't actually practiced; without really placing trades to test it, understanding will always just be understanding."
     },
@@ -26851,7 +27316,8 @@
       "信息拿不到",
       "有人比我懂",
       "并跟着他们吗",
-      "并跟着他们吗"
+      "并跟着他们吗",
+      "並跟著他們嗎"
      ],
      "a_en": "Hey~ 😊 Since you can't easily get all the info on a listed company, you can look at what funds, brokerages, and QFII are doing with it, read their professional judgment, and use that to value the company. Admitting 'someone knows better than me' isn't surrendering—it's getting around your own weak spot. But you stubbornly force yourself to research everything alone, and in the end, the losses are your tuition. You're afraid to admit you'd rather die on that hill."
     },
@@ -27681,7 +28147,9 @@
       "是带着勇气",
       "还是带着恐惧",
       "是带着勇气",
-      "还是带着恐惧"
+      "还是带着恐惧",
+      "是帶著勇氣",
+      "還是帶著恐懼"
      ],
      "a_en": "Hey there~ 😊 It’s “don’t be afraid.” The idea is, when facing the unknown and risk, you gotta dare to act and go for it. Don’t let fear make you miss the chance—that mindset is what gets you to take that first step. You walked in carrying fear, so every little fluctuation felt like a judgment. But “don’t be afraid” isn’t about being reckless—it’s about daring to follow your method, not daring to go wild."
     },
@@ -27901,7 +28369,8 @@
       "市场里的钱会",
       "追着股票跑",
       "本书说的条件是什么",
-      "追着股票跑"
+      "追着股票跑",
+      "追著股票跑"
      ],
      "a_en": "Hey~ 😊 You're starting to hear relatives ask over dinner, 'Is it time to get in now?' — that's money looking for stocks. The book describes this condition: when new investors keep flooding in while no new shares are issued, capital chases limited stocks, boosting demand and pushing prices up. When you jump in at that point, it's usually not because you calculated supply and demand — it's because you're scared of being left behind by the people around you. And the day the headcount peaks is often the day this rally peaks."
     },
@@ -28039,7 +28508,9 @@
       "赶潮跟风",
       "你占几条",
       "讨厌风险、急着发",
-      "急着发财"
+      "急着发财",
+      "討厭風險、急著發",
+      "急著發財"
      ],
      "a_en": "Hey there~ 😊 It's mainly due to human weaknesses: aversion to risk, eagerness to get rich, self-righteousness, lack of drive, following trends, sticking to old ways, being penny-wise — these flaws make it hard for most investors to avoid the traps. As you look at this list, you're thinking, \"I'm not that bad\" — and \"not that bad\" is exactly when it's most dangerous. You're afraid to admit that when you say \"not that bad,\" you're avoiding the truth."
     },
@@ -28081,7 +28552,9 @@
       "是顺着市场走的",
       "还是跟市场对着干的",
       "是顺着市场走的",
-      "还是跟市场对着干的"
+      "还是跟市场对着干的",
+      "是順著市場走的",
+      "還是跟市場對著幹的"
      ],
      "a_en": "Hey~ 😊 The author's point is that before you participate, you need to understand the rules of the game first, then craft a strategy that aligns with how the market actually moves. If you dive in without studying the rules or going with the flow, you're basically walking into a trap. If your strategy keeps trying to 'reason with the market,' you're not responding to it—you're fighting it. And the story tells you exactly how that ends for people who fight it. You're afraid to admit that you're always trying to reason with the market."
     },
@@ -28780,7 +29253,8 @@
       "就是",
       "市场围着我转",
       "本书怎么纠正这个误会",
-      "市场围着我转"
+      "市场围着我转",
+      "市場圍著我轉"
      ],
      "a_en": "Hey there! 😊 You lost a trade, and your first thought is, \"The market has it out for me.\" No, it doesn't. The author warns you not to misunderstand \"people-oriented\" as \"the market revolves around me.\" That's not what it means at all. What it really means is that when you study stock investing, you must first study people, because people are the very subjects of this market. The reason you hear \"people-oriented\" as \"me-oriented\" is that blaming the market is easier than blaming yourself—and admitting you can't read people is way harder than admitting you were wrong about the market."
     },
@@ -29884,7 +30358,8 @@
       "投资前先做哪件事",
       "才不会被盈亏牵着走",
       "本书的启示是什么",
-      "才不会被盈亏牵着走"
+      "才不会被盈亏牵着走",
+      "纔不會被盈虧牽著走"
      ],
      "a_en": "Hey~ 😊 The moment you enter a position, you're glued to your P&L—red or green dictates your mood all day. Investing starts with cultivating the mind. Make happiness the starting point and destination of investing, keep a positive attitude, and don't let gains or losses sway you into anxiety. Then you can make clear-headed decisions. Investing starts with inner work—make happiness your anchor. You're being dragged around by numbers because that flash of red or green triggers you, and you haven't swept that mind clean yet."
     },
@@ -29914,7 +30389,8 @@
       "身边人纷纷卖出",
       "你是跟着跑",
       "还是敢继续拿",
-      "你是跟着跑"
+      "你是跟着跑",
+      "你是跟著跑"
      ],
      "a_en": "Hey there~ 😊 Your stock goes up and the group chat is all screaming 'top,' and you're itching to follow them. But you keep holding. Because that doubt and selling are proof that the contradiction is still struggling—things are still developing, the uptrend isn't over yet, and you still have a chance to wait for a higher price. The more people don't believe it, the more the rally isn't done. The more people doubt, the more upside remains; if you run with them, you're turning other people's fear into your own sell signal."
     },
@@ -30626,7 +31102,8 @@
       "背后那笔钱企业",
       "不用还",
       "这对你意味着什么",
-      "这对你意味着什么"
+      "这对你意味着什么",
+      "這對你意味著什麼"
      ],
      "a_en": "Hey there~ 😊 You place an order, and all you can think about is how much you'll make. When a company raises money through the stock market, that's equity—it doesn't have to be repaid like a bank loan. So the company can use it freely, and that's exactly what makes the market attractive to businesses. You put in the money, they don't have to pay it back—you need to think hard about how risk and reward are split. You don't want to think about the company's side, because the moment you do, you realize they owe you nothing—and that thought just kills your greed."
     },
@@ -32230,7 +32707,8 @@
      "keywords": [
       "你嘴里谈着巴菲特",
       "作者想让你看见什么",
-      "你嘴里谈着巴菲特"
+      "你嘴里谈着巴菲特",
+      "你嘴裡談著巴菲特"
      ],
      "a_en": "Hey there~ 😊 You envy Buffett for holding stocks long-term, but you've never thought about what those years felt like for him at night. The book hits you with a truth: Buffett can hold a stock for years—but the pressure during those years may not be something you can even imagine or bear. Talking about Buffett without really understanding him just shows you shouldn't worship him—you should examine yourself instead. Those years of decline you can't stomach are exactly the gap you refuse to admit."
     },
@@ -32372,7 +32850,9 @@
       "钱闲着就难受",
       "的人",
       "「钱闲着就难受」",
-      "钱闲着就难受"
+      "钱闲着就难受",
+      "「錢閒著就難受」",
+      "錢閒著就難受"
      ],
      "a_en": "Hey there~ 😊 The day you're in cash, you feel restless, like you're letting down the account if you don't buy something. This 'money sitting idle makes me uneasy' habit will keep your funds busy, make you buy stocks carelessly, and ignore risks; once the trend reverses, you'll cling to stocks and refuse to let go, leading to serious losses. What really pushes you in isn't opportunity – it's the anxiousness of not being able to sit still."
     },
@@ -32499,7 +32979,8 @@
       "不打算买卖时",
       "你盯着盘面看什么",
       "作者说你该做什么",
-      "你盯着盘面看什么"
+      "你盯着盘面看什么",
+      "你盯著盤面看什麼"
      ],
      "a_en": "Hey there~ 😊 You have no trading plan, but your fingers can’t stay off the quote page—refreshing it dozens of times a day. That’s not diligence. The book says it straight: don’t look at the market when you have no intention to trade. The only way to make money in stocks is to buy low and sell high, and staring at the screen all day just leaves you deceived by institutions and ruled by emotion, leading to bad decisions—so stay away from the screen. Those hours you spend staring? You’re just waiting for an excuse to give in to the itch."
     },
@@ -32796,7 +33277,8 @@
       "股价大涨时，你是",
       "股价大涨时",
       "还是忙着制定应对策略",
-      "还是忙着制定应对策略"
+      "还是忙着制定应对策略",
+      "還是忙著制定應對策略"
      ],
      "a_en": "Hey there～😊 Stocks are soaring, and you're busy hunting for reasons to convince yourself “it can still go up”—the book stops you right there: the right move is to use tools to analyze and come up with a response strategy in the shortest time possible, not to waste time digging for positive news behind the rally. The rally itself doesn't need reasons to vouch for it; it needs your next step. You're desperately looking for reasons because you're afraid that if it stops rising, you'll panic."
     },
@@ -33087,7 +33569,8 @@
      "keywords": [
       "纪律定下来就一劳",
       "还是它也该跟着你成长",
-      "还是它也该跟着你成长"
+      "还是它也该跟着你成长",
+      "還是它也該跟著你成長"
      ],
      "a_en": "Hey~ 😊 The night you set your rules, you were fired up. The next day, you forgot they even existed—they became just a piece of paper on the wall. The book says discipline has to grow too. It needs to evolve. Discipline should be continuously adjusted as you trade and your trading history builds up, so it fits you better and better for managing and supervising yourself. If your rules have never changed, it's not because they're perfect—it's because you're afraid to admit they stopped fitting who you are now a long time ago."
     },
@@ -33257,7 +33740,8 @@
       "赚了一点就急着卖",
       "怕它跌回去——这个",
       "让你错过了什么",
-      "赚了一点就急着卖"
+      "赚了一点就急着卖",
+      "賺了一點就急著賣"
      ],
      "a_en": "Hey~ 😊 You sell the moment you’ve made a little profit, then watch it go up and up — you call yourself an idiot for being so trigger-happy, but next time you do exactly the same thing. The stock is already sold, and only then does the real move start. You miss the whole main rally, and still show off your little sad move like it’s some masterstroke. It’s not that you don’t know you should hold on — it’s that you’re scared the profit in your pocket will fly away. And that fear sells you out far earlier than the market ever will."
     },
@@ -33841,7 +34325,8 @@
      "keywords": [
       "一根K线里装着四",
       "你每次真的都看全了吗",
-      "一根K线里装着四"
+      "一根K线里装着四",
+      "一根K線裡裝著四"
      ],
      "a_en": "Hey~ 😊 A single candlestick holds five things—do you really look at all of them every time? A candlestick consists of the open, close, high, low, and volume. When close is higher than open, it's a bullish candle; lower than open, it's a bearish candle. When low is below open, that's the lower shadow; when high is above close, that's the upper shadow. You place orders just by looking at the close—not because the rest isn't important, but because you're greedy for speed—and speed is often the vanguard of losses."
     },
@@ -33965,7 +34450,9 @@
       "你急着要的",
       "判断高低的方法",
       "你急着要的「判断",
-      "你急着要的"
+      "你急着要的",
+      "你急著要的「判斷",
+      "你急著要的"
      ],
      "a_en": "Hey there~ 😊 The moment you saw this chapter didn't hand you a method, you wanted to skip ahead. No. This chapter just explains that this is one of the rules of the game for making money in the stock market. The specific method of judgment isn't what we're discussing right now—that comes in detail later. Rule first, method second—the order can't be flipped. You love skipping the groundwork because you're in a hurry to get the \"how-to\"—but without a solid foundation, even the best method lands crooked in your hands."
     },
@@ -34533,7 +35020,8 @@
       "一条直线上连的点",
       "一条直线上连的点越多",
       "意味着什么",
-      "意味着什么"
+      "意味着什么",
+      "意味著什麼"
      ],
      "a_en": "Hey there~ 😊 The more points a single trendline touches, the more reliable it is—are you willing to wait for those points? The more touches on a line, the higher the reliability and the stronger the breakout—they're directly proportional. That's the standard for gauging reliability and breakout strength. You find waiting a few extra weeks too slow, preferring to rush in with fewer points—but those points are the confirmation letter the big players write to you over time; you won't wait because you're scared that waiting will end with you realizing you misread the market."
     },
@@ -34739,7 +35227,8 @@
       "头肩顶反而",
       "不用急着卖",
       "你分得清吗",
-      "不用急着卖"
+      "不用急着卖",
+      "不用急著賣"
      ],
      "a_en": "Hey～😊 What's the deal with head-and-shoulders top and you're not in a rush to sell?——When the right shoulder volume isn't shrinking. When the right shoulder's volume equals or exceeds the left shoulder, and the left shoulder itself is a double-shoulder pattern, the head-and-shoulders top morphs into a compound head-and-shoulders top. When you see that kind of move, there's no need to rush selling. You keep mishearing “I don't want to sell” as “no need to sell” — because greed wants more profit, so you pretend the signal is telling you to hold on. That greed loves to dress up as judgment at moments like this."
     },
@@ -35145,7 +35634,8 @@
       "「成交量不会忽大",
       "成交量不会忽大忽小",
       "——这背后站着谁",
-      "——这背后站着谁"
+      "——这背后站着谁",
+      "——這背後站著誰"
      ],
      "a_en": "Hey there~ 😊 It stands on big money. The volume is orderly and consistent—no wild ups and downs—which fully displays the big players' artistry and sheer financial strength. It tells you the main force is in control, steady and well-funded. Retail volume is bound to be a mess; only planned, disciplined capital can paint such a regular pattern. You can't see who's drawing the lines because admitting you're also buying blindly would be too embarrassing—and the big players love nothing more than that kind of opponent."
     },
@@ -35726,7 +36216,8 @@
       "判断趋势清晰明瞭",
       "的背后",
       "藏着什么代价",
-      "藏着什么代价"
+      "藏着什么代价",
+      "藏著什麼代價"
      ],
      "a_en": "Hey there~ 😊 Hidden inside is 'slowness.' The strength is that it gives clear, straightforward trend readings—that's its biggest advantage. The weakness, like other mid-to-long-term indicators, is that chasing stability costs you sharpness. It lays out bulls and bears clearly, but the price is that you always have to wait for it to 'see clearly' before acting—and by the time you see it, the move is often half over. Clarity and sharpness, you can only pick one, just like you can't expect a horse to run fast without getting spooked. You can't have both speed and patience—wanting both is greed."
     },
@@ -35775,7 +36266,8 @@
       "看海",
       "的故事",
       "教了你什么",
-      "一位大师看着海浪"
+      "一位大师看着海浪",
+      "一位大師看著海浪"
      ],
      "a_en": "Hey there! 😊 Let me teach you to see the market through cycles. American investing legend Joe Granville got inspired watching the ocean tides roll in and out, and designed the OBV energy tide indicator to reflect the ebb and flow of stock prices. Its N-shaped pattern moves just like waves. Tides rise and fall, never changing for anyone's wishes—and stock prices are the same. You can argue with the sea all you want, but you'd be better off learning to read the waves and ride them. Thing is, you just can't help wanting to fight the ocean."
     },
@@ -35823,7 +36315,8 @@
       "OBV却在涨——这种",
       "反常",
       "通常藏着谁的身影",
-      "通常藏着谁的身影"
+      "通常藏着谁的身影",
+      "通常藏著誰的身影"
      ],
      "a_en": "Hey there! 😊 There are big players hiding here. It shows big money is collecting chips, support underneath is strong, and the stock could stop falling and turn up at any time. In December 2005, price hadn't left its consolidation range, but OBV broke to a new high first—signaling the big bull market ahead. Price drops for retail to see, while the big players quietly scoop up shares. What you see is panic; what OBV sees is harvest. Whether you dare to trust the direction of money when things look ugly decides whether you get to eat that wave or not."
     },
@@ -36714,7 +37207,8 @@
       "不需量价配合",
       "——这份孤傲",
       "同时藏着什么陷阱",
-      "同时藏着什么陷阱"
+      "同时藏着什么陷阱",
+      "同時藏著什麼陷阱"
      ],
      "a_en": "Hey there! 😊 The trap is that it stops working the moment you switch battlegrounds. The upside is it's obvious for price positioning and has some predictive power; the downside is that once the price moves into a new range of fluctuation, it loses its edge. The fix is to pair Elliott Wave Theory with Fibonacci retracements—that combo works beautifully. It's like a ruler that only recognizes the old map: as long as price stays in the old range, it's spot on; the second it breaks into new territory, it goes blind instantly. No matter how amazing a tool is, you need to know its expiration date. — You don't know the warranty period, because you're afraid."
     },
@@ -37328,7 +37822,8 @@
       "准确率只有50%",
       "——50%意味着什么",
       "你现在是几%",
-      "——50%意味着什么"
+      "——50%意味着什么",
+      "——50%意味著什麼"
      ],
      "a_en": "Hey there! 😊 It means \"no different from flipping a coin.\" Technical indicators for judging trends must be combined with volume to be effective—otherwise, your accuracy in judging market trends is only 50%, because volume is the raw driving force behind trends. 50% is coin-flipping—if your current method only hits half the time, it's not a luck problem, it's that you haven't used the \"volume\" leg yet. Stop blaming the market for being hard to trade—first check whether you've actually put volume into your analysis. You're afraid you've been flipping a coin all along."
     },
@@ -37577,7 +38072,8 @@
       "还是",
       "它现在多少钱",
       "本书说价格跟着谁走",
-      "本书说价格跟着谁走"
+      "本书说价格跟着谁走",
+      "本書說價格跟著誰走"
      ],
      "a_en": "Hey there~ 😊 You buy a stock, and all you can think about is \"what's the price right now,\" but you've never calculated what it's actually worth. Price changes depend on value—price moves around value, and value is the main factor driving price. Just like a truckload of sand might not be worth a 3-gram diamond, because the diamond has much higher value. You only look at price, not value—you're hooked on the thrill of the numbers jumping. If you actually calculated the value, you'd be afraid of finding out you overpaid."
     },
@@ -37682,7 +38178,9 @@
       "怎么算出投机价值",
       "本书为什么不在此处讲",
       "你急着想知道「怎",
-      "你急着想知道"
+      "你急着想知道",
+      "你急著想知道「怎",
+      "你急著想知道"
      ],
      "a_en": "Hey there~ 😊 You see 'the method is in the later chapters' and instantly want to flip to that page. There are many ways to assess speculative value, but this chapter doesn't dive into them—the book has dedicated content later on how to spot speculative value, which belongs in the upcoming chapters. You're rushing to find the method because you want that one quick trick you can use—but the principles before it haven't even been digested yet. Even when you get the method, you'll end up using it crooked."
     },
@@ -37890,7 +38388,8 @@
       "对你这种",
       "不会设参数的人",
       "意味着什么",
-      "意味着什么"
+      "意味着什么",
+      "意味著什麼"
      ],
      "a_en": "Hey there~ 😊 It means \"someone already took the hits for you.\" EXPMA doesn't require investors to set technical indicator parameters — the parameters are default values preset by experts, saving you the hassle of tuning things. While you're still agonizing over \"5-day, 10-day, or 21-day?\" EXPMA just hands you an \"expert version.\" That's not saying you're dumb — it's saying you don't need to reinvent the wheel. Spend the time you saved on executing your rules, which is way better use than fiddling with parameters. You're afraid you're still stuck tweaking those settings."
     },
@@ -38069,7 +38568,8 @@
       "上涨中的每一次回",
       "价位",
       "牵着走过几次",
-      "牵着走过几次"
+      "牵着走过几次",
+      "牽著走過幾次"
      ],
      "a_en": "Hey~ 😊 When we talk about ups and downs, we mean trends, not specific price movements. During an uptrend, pullbacks keep investors from jumping in; during a downtrend, bounces keep them from selling. Focusing on price levels while ignoring the trend—that's exactly why people end up empty-handed in rallies and fully loaded in crashes. You're staring at that one or two dollar wiggle, while the trend has already run the whole road. You're afraid to admit you've been led around by price levels."
     },
@@ -38381,7 +38881,8 @@
       "你留着它",
       "是因为它会涨",
       "还是因为你舍不得认错",
-      "你留着它"
+      "你留着它",
+      "你留著它"
      ],
      "a_en": "Hey there~ 😊 This chapter says: the strong stay strong, the weak stay weak—so in practice you should pick strong stocks whenever possible and firmly avoid weak ones. You hold onto weak stocks, usually not because they'll go up, but because \"they've already dropped so much, they gotta bounce sometime, right?\"—and that's exactly the kind of investor that \"weak stays weak\" loves. You're afraid to admit that holding on is really just unwillingness to let go."
     },
@@ -38629,7 +39130,9 @@
       "跟着庄家买",
       "你受得了吗",
       "你总想「跟着庄家",
-      "跟着庄家买"
+      "跟着庄家买",
+      "你總想「跟著莊家",
+      "跟著莊家買"
      ],
      "a_en": "Hey there~ 😊 Small money gets sliced and diced, forced to accept market prices. Big money, with its financial muscle, can freely set prices. So when positions are being built, there are two characteristics: the building cycle is long, and during that time the price steadily slides down. The “slow grind” during the big players’ position building is exactly the pattern that retail investors fear the most and want to flee — if you can’t stand the slow grind, you’ll never be there when positions are being built."
     },
@@ -38745,7 +39248,8 @@
       "同样一套方法",
       "别人用着赚钱",
       "问题真的在方法吗",
-      "别人用着赚钱"
+      "别人用着赚钱",
+      "別人用著賺錢"
      ],
      "a_en": "Hey~ 😊 Technical indicators and tools like that don't change, but the market and the people in it change all the time. Use the same tool on two different stocks, and the returns and outcomes will be completely different — it's impossible to get identical results. That's the limitation of the tool. You blame the method for not working, but actually the market changed the question while you're still reciting old answers. Tools are rigid, but people who won't adapt are even more rigid. You're afraid to admit that you're the one who refuses to change your answers."
     },
@@ -38987,6 +39491,201 @@
      ],
      "a_en": "Whether it's worth it depends on whether it solves your problem. That answer you can only get by trying — if I told you \"it's worth it,\" that'd be lying; if I told you \"it's not,\" that'd be arbitrary. So here's 12 months free for you to draw your own conclusion.",
      "q_en": "Just tell me in one sentence: is it worth buying or not?"
+    },
+    {
+     "id": "x_should_i_buy",
+     "q": "我该不该买？",
+     "a": "这个决定姐姐不能替你做——我替你做，你将来无论赚亏都会怪那个替你做决定的人。\n\n但我可以给你三个问题，你自己对答案：\n\n① 这笔钱亏了，你扛不扛得住？不是「会不会亏」，是「亏了以后你还有没有后手」。\n② 你缺的到底是「判断」还是「执行」？如果你本来就知道该走，只是手没动——那系统帮得上；如果你连方向都选不准，那先别谈工具。\n③ 你能接受它不保证赚钱吗？它管的是「错了少亏、不扩大」，不是「帮你预测涨」。\n\n三个都答得上来，答案你自己就有了。答不上来，再等一等也不亏。",
+     "keywords": [
+      "该不该买",
+      "要不要买",
+      "值不值得",
+      "买不买",
+      "适合我",
+      "要不要用",
+      "该不该用"
+     ]
+    },
+    {
+     "id": "x_want_buy_wo",
+     "q": "我要不要买？",
+     "a": "姐姐不替你拍板。因为真正承担盈亏的是你，不是姐姐。但我可以给你判断标准：如果你管不住手、舍不得止损、急着翻本——那值得试。如果没有，可能不需要。",
+     "keywords": [
+      "我要不要买",
+      "该不该买",
+      "要不要买",
+      "买不买",
+      "该不该用"
+     ]
+    },
+    {
+     "id": "x_should_buy_ma",
+     "q": "我应该买吗？",
+     "a": "姐姐不替你拍板。因为真正承担盈亏的是你，不是姐姐。但我可以给你判断标准：如果你管不住手、舍不得止损、急着翻本——那值得试。如果没有，可能不需要。",
+     "keywords": [
+      "我应该买吗",
+      "该不该买",
+      "要不要买",
+      "买不买",
+      "该不该用"
+     ]
+    },
+    {
+     "id": "x_user_end_01",
+     "q": "算了，我不想试了",
+     "a": "好，姐姐不劝你。\n\n今天聊到这儿，你自己心里有数就行——什么时候想再看，随时回来。",
+     "keywords": [
+      "不想试",
+      "算了",
+      "不试了",
+      "不用了",
+      "放弃",
+      "不要了",
+      "没兴趣",
+      "不考虑",
+      "感觉不适合我",
+      "不适合我",
+      "我不适合",
+      "觉得不合适"
+     ]
+    },
+    {
+     "id": "x_user_end_02",
+     "q": "我先不试了，再看看",
+     "a": "可以，不用勉强。你先放着，想清楚了再说——这种东西本来就不该冲动决定。",
+     "keywords": [
+      "再看看",
+      "先不试",
+      "考虑一下",
+      "以后再说",
+      "先放着",
+      "暂时不"
+     ]
+    },
+    {
+     "id": "x_risk_question",
+     "q": "有风险吗？安全吗？",
+     "a": "这个问题必须说清楚：DCOGAI不能替你承担市场风险。\n\n市场的波动风险永远存在，没有任何工具能消灭它。谁告诉你「用了就没风险」，谁就是骗子。\n\n系统能做的是：改变你在风险面前的行为——该止损止损、该休眠休眠、该收缩收缩。\n\n它能让你的错误可控，但不能让市场不波动。",
+     "keywords": [
+      "有风险吗",
+      "有风险么",
+      "风险大吗",
+      "安全吗",
+      "安全么"
+     ]
+    },
+    {
+     "id": "x_anxious",
+     "q": "我心里很慌",
+     "a": "慌是正常的。\n\n你现在慌，多半不是因为行情本身，是因为你心里没底——不知道该做什么、不知道亏到哪算完。\n\n姐姐不劝你别慌，那没用。给你一个具体的动作：\n\n先把仓位降下来。降到什么程度？降到「就算明天再跌一半，你晚上也睡得着」为止。\n\n慌的时候做任何决定都会变形，先让手停下来，比想明白更重要。",
+     "keywords": [
+      "心里很慌",
+      "很慌",
+      "慌得很",
+      "我很焦虑",
+      "心里没底"
+     ]
+    },
+    {
+     "id": "x_auto_trade",
+     "q": "能自动交易吗？",
+     "a": "能。\n\n但姐姐得先说清楚「自动」到什么程度：\n\n它替你做的是——按你设好的规则自动下单、自动止损、行情不适合时自动不开仓。\n\n它不替你做的是——不预测涨跌、不保证赚钱、也不要你的钱（你的资金始终在你自己交易所账户）。\n\n所以准确说：它自动执行，不自动盈利。",
+     "keywords": [
+      "能自动交易吗",
+      "自动交易吗",
+      "可以自动吗",
+      "自动下单吗"
+     ]
+    },
+    {
+     "id": "x_features",
+     "q": "有哪些功能？",
+     "a": "DCOGAI拥有四大联动核心体系，彻底区别市面单一信号、高频刷单的普通量化工具，核心不靠预测行情，只靠管控风险、筛选优质行情提升交易稳定性。\n① 纠错体系（DCOG LOOP核心）：遵循模型→执行→纠错→适应→循环闭环，行情偏离模型预设阈值时自动分层减仓、纠错离场，锁定单笔亏损，杜绝扛单深套；\n② 休眠体系（独家差异化功能）：多维扫描市场波动、动能、区间、多空强度，自动识别低价值行情，全程停止开仓，避免本金、手续费、滑点损耗；\n③ 信号体系（低频高质量交易）：双边市场单边操作，不双向对冲、不频繁刷单，严格过滤弱信号，趋势确认后梯度重仓；\n④ 分水岭多级风控体系（资金安全屏障）：整合多品种分散风控、多策略权重切换、账户回撤分水岭管控、动态仓位调节，阶梯式锁死账户最大回撤。",
+     "keywords": [
+      "有哪些功能",
+      "有什么功能",
+      "功能有哪些",
+      "都什么功能"
+     ]
+    },
+    {
+     "id": "x_data_leak",
+     "q": "数据会泄露吗？",
+     "a": "全程安全可控，完全杜绝盗币、信息泄露问题：\n1. 权限可控：API权限由用户自主在OKX后台设置，仅开放交易、读取权限，无任何提现、划转资产权限，系统无法触碰、转移用户资金；\n2. 资金安全：用户所有资产全程留存于个人OKX交易所账户，系统无资金调度权限；\n3. 数据安全：API密钥、交易数据全程本地加密存储，仅留存用户本地设备，不上传后台、不对外泄露；\n4. 安装安全：官方纯净安装包，无捆绑脚本、无后台窃取程序。",
+     "keywords": [
+      "数据会泄露吗",
+      "数据泄露",
+      "隐私泄露",
+      "信息泄露"
+     ]
+    },
+    {
+     "id": "x_think_again",
+     "q": "我再想想",
+     "a": "好，不用急着定。\n\n这种事本来就该想清楚再动——你要是今天冲动买了，回头发现跟自己想的不一样，那才叫浪费。\n\n你先去做别的，什么时候心里那个问题清楚了，再来找姐姐。",
+     "keywords": [
+      "我再想想",
+      "再想想",
+      "让我想想",
+      "考虑考虑",
+      "先考虑",
+      "再考虑"
+     ]
+    },
+    {
+     "id": "x_enter_now",
+     "q": "现在能进吗？",
+     "a": "姐姐不替你判断时机——因为亏了赚了都是你的钱，不是我的。\n\n但可以给你三个问题，你自己对：\n① 现在进，如果明天跌 10%，你准备怎么办？\n② 你进的理由是「看它涨了」，还是「我算过值不值」？\n③ 这笔钱亏掉，会影响你生活吗？\n\n三个都答得上来，那就是能进；答不上来，再等等不亏。",
+     "keywords": [
+      "现在能进吗",
+      "现在能买吗",
+      "可以进场吗",
+      "现在入场",
+      "现在适合进",
+      "能不能进场",
+      "现在进",
+      "我现在该不该进场",
+      "该不该进场",
+      "我现在能不能进",
+      "现在进场好吗",
+      "要不要现在进"
+     ]
+    },
+    {
+     "id": "x_understand_first",
+     "q": "我先了解一下",
+     "a": "应该的。\n\n不用急着决定买不买，先搞清楚三件事就够：它到底解决什么问题、哪些情况下它不管用、你自己是不是真的需要。\n\n想了解哪一块，姐姐随时讲。",
+     "keywords": [
+      "我先了解一下",
+      "先了解一下",
+      "先了解",
+      "想先看看",
+      "了解一下",
+      "先看看"
+     ]
+    },
+    {
+     "id": "x_guarantee",
+     "q": "有没有保底？",
+     "a": "没有。谁说有，你就该警惕他。\n\n姐姐能跟你说的是：它管的是「少亏」，不是「保本」。\n\n具体说，它在三种情况下帮你踩刹车——判断错了、行情不适合了、连续亏损了。这三次刹车，能让你活下来。但活下来不等于不亏。",
+     "keywords": [
+      "有没有保底",
+      "保底",
+      "保本吗",
+      "能保本吗",
+      "兜底"
+     ]
+    },
+    {
+     "id": "x_monthly",
+     "q": "一个月能赚多少？",
+     "a": "姐姐给不了你数字——谁给你数字，谁就是在骗你。\n\n赚多少取决于三件事：行情有没有机会、你的本金多大、你执行时有没有乱来。\n\n而且更重要的是：第一个月赚多少，说明不了什么。真正要看的是它在该停的时候停没停。",
+     "keywords": [
+      "一个月能赚多少",
+      "每月能赚",
+      "月收益",
+      "多久能赚钱"
+     ]
     }
    ]
   }
