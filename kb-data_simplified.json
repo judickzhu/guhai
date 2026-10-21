@@ -974,7 +974,7 @@
      "q_en": "Is DCOGAI a scam? Is it fraudulent?"
     },
     {
-     "id": "f1",
+     "id": "f1_常见1",
      "q": "刚开始接触交易?",
      "a": "姐姐懂你现在的心情。看着跳动的K线，既兴奋又紧张，想试试，又怕亏钱，还有点不知道从哪儿下手。\n\n这种感觉很正常，每个人刚进来的时候都一样。\n\n但姐姐想在你开始之前，先跟你说一句最重要的话：**千万别把交易当成“猜涨跌”的游戏。**\n\n很多人刚进来，以为交易就是赌大小，猜对了就赚，猜错了就亏。这个想法，会让你从一开始就走错路。你会因为猜对一次就觉得自己是天才，重仓冲进去；也会因为猜错一次就不甘心，扛着不认输。这两种行为，都是新手亏大钱的根源。\n\n那交易是什么？\n\n交易是，你开单之前，先想好：如果对了，我什么时候走；如果错了，我什么时候认。你赚的不是“猜对”的钱，你赚的是“执行规则”的钱。\n\n所以姐姐给你的建议就三个字：**慢慢来。**\n\n用小资金去感受市场，去验证你的想法。别急着翻倍，别急着证明自己。你的目标不是第一单就赚钱，而是第一单就学会怎么在错了的时候，少亏钱。\n\n这个市场永远有机会，但前提是，你得先活下来。把“活下来”当成你的第一个目标，你就已经跑赢绝大多数新手了。",
      "keywords": [
@@ -1671,7 +1671,7 @@
      "q_en": "After a loss, I really want to make it back immediately. What should I do?"
     },
     {
-     "id": "c11",
+     "id": "c11_情绪1",
      "q": "那我凭什么要用你？你对我来说，价值到底是什么？",
      "a": "我们换个角度，姐姐帮你回忆一个场景。\n\n你过去是不是也有过这样的经历？明明看准了一波行情，分析得头头是道，结果呢？要么是被中间一个小回调吓出去了，赚了蝇头小利就跑，然后眼睁睁看它一飞冲天；要么是做反了，心里想着「再等等，会回来的」，结果越套越深，最后把本金都搭进去。\n\n你发现没有——你赚不到钱，很多时候不是因为看不懂行情，而是因为在执行的关键时刻，情绪接管了你的操作。那个怕利润飞走的恐惧，那个不甘心亏损离场的侥幸，让你在该贪的时候怕，在该怕的时候贪。\n\n所以姐姐不跟你保证任何收益——因为谁都无法替你预测行情。姐姐能跟你说清楚的，是另一件事：交易里真正能改的，往往不是判断，是执行。\n\n如果你愿意，可以先不谈用不用什么工具。先问自己一句：过去那些亏损，有多少是「看错」造成的，又有多少是「看对了却没做好」造成的？把这个问题想清楚，你对「自己到底需要什么」的答案，会比现在清楚很多。",
      "keywords": [
@@ -1688,7 +1688,7 @@
      "q_en": "Why is it easier to lose money after making some?"
     },
     {
-     "id": "c12",
+     "id": "c12_情绪1",
      "q": "为什么别人一句话就能影响我的交易？",
      "a": "姐姐觉得你不是缺一个更厉害的老师，你是缺一个属于自己的规则。\n\n因为只要你的交易决定一直建立在别人怎么说上面，你就永远会被别人牵着走。他说涨，你怕错过；他说跌，你怕套牢。最后赚了，是他的；亏了，也是你自己的。\n\n所以真正成熟以后，你会慢慢从「你觉得会涨吗？」变成「如果我错了，我怎么办？」你看，这两个问题其实完全不同。第一个是在问未来，第二个是在管理未来的不确定性。\n\n而交易真正能控制的，从来不是未来，是：如果事情没有按照我想的发生，我准备怎么办。这就是纠错思维。",
      "keywords": [
@@ -6244,7 +6244,7 @@
      "q_en": "I've had a string of losing trades. What should I do?"
     },
     {
-     "id": "c10",
+     "id": "c10_認知1",
      "q": "亏了以后特别想马上赚回来，怎么办？",
      "node_name": "為什麼虧損後最容易急著翻本",
      "asks": [
@@ -6308,7 +6308,7 @@
      "q_en": "After a loss, I really want to make it back immediately. What should I do?"
     },
     {
-     "id": "c11",
+     "id": "c11_認知2",
      "q": "赚了钱以后为什么反而更容易亏？",
      "node_name": "為什麼賺錢之後反而容易虧更多",
      "asks": [
@@ -6368,7 +6368,7 @@
      "q_en": "Why is it easier to lose money after making some?"
     },
     {
-     "id": "c12",
+     "id": "c12_認知2",
      "q": "赚了钱就想加大仓位，正常吗？",
      "node_name": "為什麼盈利會讓人放鬆風控",
      "asks": [
@@ -6428,7 +6428,7 @@
      "q_en": "Is it normal to want to increase position size after a win?"
     },
     {
-     "id": "c13",
+     "id": "c13_認知1",
      "q": "趋势明明对了，为什么我就是拿不住？",
      "node_name": "為什麼趨勢中最難的是拿住",
      "asks": [
@@ -6488,7 +6488,7 @@
      "q_en": "The trend is obviously right, so why can't I hold on?"
     },
     {
-     "id": "c14",
+     "id": "c14_認知1",
      "q": "震荡行情里我总是不停亏小钱，怎么破？",
      "node_name": "為什麼震盪行情最容易磨損",
      "asks": [
@@ -6548,7 +6548,7 @@
      "q_en": "I keep chipping away losses in a choppy market. How do I fix this?"
     },
     {
-     "id": "c15",
+     "id": "c15_認知1",
      "q": "错过一波大行情，好后悔",
      "node_name": "為什麼錯過行情並不可怕",
      "asks": [
@@ -6608,7 +6608,7 @@
      "q_en": "I missed a big move, I'm so regretful."
     },
     {
-     "id": "c16",
+     "id": "c16_認知1",
      "q": "看到行情涨就怕错过，控制不住想追",
      "node_name": "為什麼「怕錯過」本身很危險",
      "asks": [
@@ -26563,7 +26563,7 @@
      "a_en": "Chasing rallies and panic selling is a perfect picture of the crowd acting on greed and fear: buying high when prices rise, cutting losses when they fall. Big players use this instinct to shake out weak hands and accumulate shares. CCI is just there to mark buy and sell points for this human rhythm. Indicators are just mirrors—they reflect who you really are. And big players love people who look in mirrors the most."
     },
     {
-     "id": "c1",
+     "id": "c1_ca1",
      "q": "故事发生在什么时间、什么地点？天气给人什么感觉？",
      "a": "1992 年的上海。开头一句「怎么看这儿都不像冬天」营造反常氛围——表面上不是寒冬，主角的心境却已如严冬。",
      "keywords": [
@@ -26608,7 +26608,7 @@
      "a_en": "He felt like the whole trend was being manipulated by those people in Shenzhen, and news in the stock market spread unbelievably fast."
     },
     {
-     "id": "c4",
+     "id": "c4_ca1",
      "q": "主角做这一行多久了？他对这份「新行当」的感受如何？",
      "a": "两年。他觉得工作枯燥无味，整天只是价格的上上下下，甚至怀疑这样赚的钱和辛辛苦苦干力气活赚的钱有什么不一样——对行业价值产生怀疑。\n\ngu z wu mei",
      "keywords": [
@@ -26624,7 +26624,7 @@
      "a_en": "Two years. He feels the work is dull and meaningless—just prices going up and down all day. He even wonders whether the money he makes this way is any different from what he'd earn doing hard physical labor—he starts doubting the value of his industry.\n\ngu z wu mei"
     },
     {
-     "id": "c5",
+     "id": "c5_ca1",
      "q": "老师对「虚拟经济」的观点是什么？主角同意吗？",
      "a": "老师说：「虚拟经济没有效益，只有效用。」主角基本理解这个道理，却补充了自己的看法：价格变动确实不创造社会价值，但起码解决了很多就业问题——这是他与老师不同的地方。",
      "keywords": [
@@ -26640,7 +26640,7 @@
      "a_en": "The teacher said, \"The virtual economy has no real output, only utility.\" The protagonist basically gets it, but adds his own take: price changes may not create social value, but at least they solve a lot of employment problems—that's where he differs from his teacher."
     },
     {
-     "id": "c6",
+     "id": "c6_ca1",
      "q": "报纸上的什么消息让主角苦恼？反映了他什么心理？",
      "a": "有人炒股赔钱之后自杀。主角忍不住想：「我不知道我会不会也去自杀。」反映股市巨大的心理压力与他对未来的恐惧。",
      "keywords": [
@@ -26654,7 +26654,7 @@
      "a_en": "Someone who played the market lost money and killed themselves. The protagonist can't help but think, \"I don't know if I'd kill myself too.\" It shows the enormous psychological pressure of the stock market and his fear of what's ahead."
     },
     {
-     "id": "c7",
+     "id": "c7_ca1",
      "q": "主角住在哪里？住了多久？这说明什么？",
      "a": "他住在酒店里已经一年多，没有自己的家，「回家」只是回到一个只能称之为住宿的地方——漂泊、疏离，缺乏归属感。",
      "keywords": [
@@ -26671,7 +26671,7 @@
      "a_en": "He's been living in a hotel for over a year now—no real home. \"Going home\" just means going back to a place you'd only call a place to stay—drifting, cut off, without any sense of belonging."
     },
     {
-     "id": "c8",
+     "id": "c8_ca1",
      "q": "主角对大堂经理的「职业微笑」有何看法？",
      "a": "他讨厌这种微笑，认为它把人和人之间的距离拉大了；他甚至恶毒地设想：假如每个宾馆都设一名专门会哭的人，见了顾客一阵大哭会是什么感觉？——表达他对虚伪社交的反感。",
      "keywords": [
@@ -26685,7 +26685,7 @@
      "a_en": "He hates that smile—thinks it puts more distance between people. He even thinks viciously: what if every hotel hired a professional crier, and when a guest walks in, they burst into tears?—It shows his disgust with fake social etiquette."
     },
     {
-     "id": "c9",
+     "id": "c9_ca1",
      "q": "路上发生了什么小事？",
      "a": "他闯了红灯，差点和汽车撞在一起；开车的司机用上海话骂他，他听不懂，估计是在骂他。",
      "keywords": [
@@ -26699,7 +26699,7 @@
      "a_en": "He ran a red light and almost smashed into a car. The driver cursed at him in Shanghainese—he didn't understand, but guessing it was insults."
     },
     {
-     "id": "c10",
+     "id": "c10_ca2",
      "q": "第一章结尾用什么比喻形容股票的下跌？有何用意？",
      "a": "「价格像谁从高处扔下的石头一样，无休止地在下跌。」用下坠的石头比喻股价，暗示跌势猛烈、无法阻挡，也象征主角人生的不确定与下坠感。",
      "keywords": [
@@ -26714,7 +26714,7 @@
      "a_en": "\"The price keeps falling endlessly, like a stone thrown from a height.\" Using a falling stone to describe the stock price implies a violent, unstoppable drop, and also symbolizes the protagonist's uncertainty and sense of falling through life."
     },
     {
-     "id": "c1",
+     "id": "c1_ca2",
      "q": "开盘行情如何？转折点发生在什么时候？",
      "a": "开盘时股价向上；10 点以后，深圳那边开始有主力出货，抛压起初看不出来，随后散户恐慌性抛盘一出来，「就像山洪暴发一样」，下跌的场面难以收拾。",
      "keywords": [
@@ -26736,7 +26736,7 @@
      "a_en": "When the market opened, the price was moving up. After 10, the big players in Shenzhen started dumping their positions. At first, the selling pressure wasn't visible, but then retail panic selling kicked in—\"like a flash flood\"—the fallout was impossible to control."
     },
     {
-     "id": "c4",
+     "id": "c4_ca2",
      "q": "文中的「大哥大」和「BB 机」说明了什么?",
      "a": "这是 1990 年代初的时代象征：人人几乎都有一台砖头大的「大哥大」，有身份的人还腰别 BB 机。主角起初觉得神奇，自己用过之后才明白，很多人之所以在大街上拉长天线大声讲电话，主要是想显示身份——十字路口打电话，是因为那儿能看到的人多。",
      "keywords": [
@@ -26758,7 +26758,7 @@
      "a_en": "This was a symbol of the early 1990s: almost everyone had a brick-sized 'big brother' phone, and people with status also wore pagers on their belts. At first the protagonist thought it was amazing, but after using one himself, he got it—a lot of people walked around with their antennas out, talking loudly on the phone, mainly to show off their status. Calling at an intersection? Because that's where the most people could see you."
     },
     {
-     "id": "c5",
+     "id": "c5_ca2",
      "q": "股票跌了多少？早盘进场的人处境如何？",
      "a": "已经下跌 30 多块钱；早上进去的人，如果出来得慢一点，十有八九是亏损了。",
      "keywords": [
@@ -26778,7 +26778,7 @@
      "a_en": "It had already dropped over 30 yuan; people who went in in the morning, if they were slow to get out, nine times out of ten took a loss."
     },
     {
-     "id": "c6",
+     "id": "c6_ca2",
      "q": "主角怎么会联想到 1987 年的美国股灾？",
      "a": "他没有亲身经历过 1987 年的美国股灾，但看到眼前人们的表情，猜想当年美国人民大概也就是这个样子。",
      "keywords": [
@@ -26797,7 +26797,7 @@
      "a_en": "He'd never personally lived through the 1987 U.S. market crash, but looking at the faces around him now, he figured American folks back then probably looked exactly the same."
     },
     {
-     "id": "c7",
+     "id": "c7_ca2",
      "q": "老太太晕倒的事件中，主角的反应说明了什么？",
      "a": "小丽说楼下有位老太太晕倒被送医，主角冷冷地听着、毫无反应，连自己都惊讶为何这样无动于衷。他强迫自己找话说、对人笑，结果别人反而以为自己做错了什么，急忙解释，让他觉得「这种改变真是多此一举，还不如不说话」——反映股市生涯让他变得冷漠、疏离",
      "keywords": [
@@ -26825,7 +26825,7 @@
      "a_en": "Xiao Li said an old lady downstairs had fainted and been taken to the hospital. The protagonist listened coldly, no reaction at all, and even he was surprised at how indifferent he was. He forced himself to make conversation, to smile at people—but instead they thought they'd done something wrong and rushed to apologize. That made him feel, 'this kind of change is really pointless, might as well stay quiet'—showing how his life in the stock market had turned him cold and distant."
     },
     {
-     "id": "c8",
+     "id": "c8_ca2",
      "q": "昨天主角和领导争执了什么？事实证明谁对？",
      "a": "昨天他为了「出货」和领导争执，今天暴跌证明瞭他是对的。但他没有一丝高兴，甚至恶毒地想：要是自己也没出来，今天这样没命地跌，自己可能会笑；不过他随即否定——那不是职业投资者的性格，也不符合行业的职业道德。",
      "keywords": [
@@ -26846,7 +26846,7 @@
      "a_en": "Yesterday he argued with his supervisor over 'unloading' shares, and today's crash proved he was right. But he felt not a shred of happiness. He even had a nasty thought: if he hadn't gotten out either, watching it fall this hard today, he might have been laughing. But he immediately rejected it—that's not the mindset of a professional investor, and it doesn't fit the industry's professional ethics."
     },
     {
-     "id": "c9",
+     "id": "c9_ca2",
      "q": "章末「《杀手无笑容》」有什么深意？",
      "a": "主角忽然想起一部录影《杀手无笑容》，与他对晕倒老太太无动于衷相呼应——暗示在残酷的股市中，职业投资者必须心如铁石，像「没有笑容的杀手」一样冷酷，点出职业炒股对人性的异化。",
      "keywords": [
