@@ -862,6 +862,22 @@ const _api = {
   // （防止「來這裡的目的是什麼」誤命中硬碟題「的是什麼」這類答非所問）
   // V3.3 書籍題解分類（優先產品/系統回答，書籍題解降權為次選）
   var BOOK_CATS = { "股路不歸·DC問答": 1, "股道·DC問答": 1 };
+
+  // 2026-10-20：書本題只在「用戶明確問股票/投資知識」時啟用
+  // 軟件類問題（價格/API/安裝/信任）一律不讓書本題搶答
+  var STOCK_TERMS = ["莊家","庄家","主力","散戶","散户","出貨","出货","洗盤","洗盘","拉抬","拉升",
+    "砸盤","砸盘","趨勢","趋势","均線","均线","指標","指标","量價","量价","成交量","K線","K线","k线",
+    "支撐","支撑","壓力位","压力位","支撐位","形态","形態","MACD","KDJ","BOLL","BIAS","OBV","EXPMA",
+    "選股","选股","個股","个股","大盤","大盘","持股","持幣","持币","止損","止损","買點","买点","賣點","卖点",
+    "牛市","熊市","震盪","震荡","黑天鵝","黑天鹅","崩盤","崩盘","暴跌","套牢","被套","減倉","减仓",
+    "倉位","仓位","滿倉","满仓","空倉","空仓","加倉","加仓","炒股","選股","股票","股市","行情"];
+  function isStockQuestion(text) {
+    var t = toSimplified(String(text || "").toLowerCase());
+    for (var i = 0; i < STOCK_TERMS.length; i++) {
+      if (t.indexOf(toSimplified(STOCK_TERMS[i].toLowerCase())) >= 0) return true;
+    }
+    return false;
+  }
   // V3.3 語氣詞尾綴規則：以 嗎/呢/吧 等結尾的 keyword 是問句通用尾綴，不進索引/不計分
   function isParticleSuffix(k) { return /[嗎呢吧呀哦啦]$/.test(String(k)); }
   var KB_STOPWORDS = {
@@ -1332,11 +1348,13 @@ const _api = {
     // V3.3 書籍題純備用：產品/系統題命中優先；書籍題解只在產品題答不上時兜底
     var best = null, bestScore = 0;         // 非書籍題最佳
     var bestBook = null, bestBookScore = 0; // 書籍題最佳（兜底）
+    var allowBook = isStockQuestion(query);  // 2026-10-20：非股票問題不讓書本題參賽
     var scoreRef = function (ref) {
       var s = scoreQA(query, ref.qa);
       // V2.3 上下文狀態：上一輪同分類話題延續時加權（真實對話是連貫的）
       if (state.lastCat && ref.cat.id === state.lastCat) s *= 1.25;
       if (BOOK_CATS[ref.cat.name]) {
+        if (!allowBook) return;  // 非股票問題：書本題直接出局
         if (s > bestBookScore) { bestBookScore = s; bestBook = { qa: ref.qa, cat: ref.cat, score: s }; }
       } else {
         if (s > bestScore) { bestScore = s; best = { qa: ref.qa, cat: ref.cat, score: s }; }
@@ -1350,6 +1368,7 @@ const _api = {
           var s = scoreQA(query, qa);
           if (state.lastCat && cat.id === state.lastCat) s *= 1.25;
           if (BOOK_CATS[cat.name]) {
+            if (!allowBook) return;
             if (s > bestBookScore) { bestBookScore = s; bestBook = { qa: qa, cat: cat, score: s }; }
           } else {
             if (s > bestScore) { bestScore = s; best = { qa: qa, cat: cat, score: s }; }
