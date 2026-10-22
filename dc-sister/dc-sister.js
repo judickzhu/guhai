@@ -871,8 +871,22 @@ const _api = {
     "選股","选股","個股","个股","大盤","大盘","持股","持幣","持币","止損","止损","買點","买点","賣點","卖点",
     "牛市","熊市","震盪","震荡","黑天鵝","黑天鹅","崩盤","崩盘","暴跌","套牢","被套","減倉","减仓",
     "倉位","仓位","滿倉","满仓","空倉","空仓","加倉","加仓","炒股","選股","股票","股市","行情"];
+  // 軟件問題關鍵詞：出現這些時，即使含股票術語也不讓書本題參賽
+  var APP_TERMS = ["多少錢","多少钱","價格","价格","收費","收费","年費","年费","費用","费用",
+    "怎麼裝","怎么装","安裝","安装","下載","下载","綁定","绑定","API","訂閱","订阅","取消",
+    "退費","退费","退款","安全嗎","安全吗","跑路","跑路嗎","實名","实名","營業執照","营业执照",
+    "客服","售後","售后","試用","试用","賬戶","账户","幣種","币种","參數","参数","設置","设置"];
+  function isAppQuestion(text) {
+    var t = toSimplified(String(text || "").toLowerCase());
+    for (var i = 0; i < APP_TERMS.length; i++) {
+      if (t.indexOf(toSimplified(APP_TERMS[i].toLowerCase())) >= 0) return true;
+    }
+    return false;
+  }
   function isStockQuestion(text) {
     var t = toSimplified(String(text || "").toLowerCase());
+    // 軟件問題優先：即使有股票術語，也不讓書本題參賽
+    if (isAppQuestion(text)) return false;
     for (var i = 0; i < STOCK_TERMS.length; i++) {
       if (t.indexOf(toSimplified(STOCK_TERMS[i].toLowerCase())) >= 0) return true;
     }
