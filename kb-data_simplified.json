@@ -398,7 +398,15 @@
       "怎么收费",
       "收费标准",
       "年费多少",
-      "贵不贵"
+      "贵不贵",
+      "多少钱",
+      "价格是多少",
+      "价格是多少",
+      "要多少钱",
+      "要多少钱",
+      "收费标准",
+      "费用多少",
+      "费用多少"
      ],
      "a_en": "A full DCOGAI annual license costs 29,800U per suite per year.\nWe run a zero-cost trial mechanism, and the rules are completely transparent:\n1. Full-feature free trial with no stripped-down features and no time limit. If you're not satisfied, you pay nothing.\n2. Any positive trading returns generated while the software is running can be used to fully offset that year's license fee.\n3. The fee offset cap is 29,800U. Once you've hit that, the rest of the year is completely free with no extra charges.\n4. If there are no positive trading returns during the full annual cycle, the license fee is zero.\nNo hidden fees, no auto-renewal, no bank card required. All funds stay in your personal exchange account the entire time.",
      "q_en": "How does DCOGAI charge? What is the annual fee?"
