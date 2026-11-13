@@ -167,6 +167,8 @@ def nav_html(prefix: str, active: str) -> str:
     for href, label in NAV_ITEMS:
         a = f' class=active' if label == active else ""
         items.append(f'<a href="{prefix}{href}"{a}>{label}</a>')
+    items.append(f'<a class="switch" href="{prefix}orig/index.html"'
+                 ' title="切換到原版（尖問＋透答＋照見）">📖 原版</a>')
     return "".join(items)
 
 
@@ -295,6 +297,11 @@ def build_index() -> str:
 <li><b>合成</b>——AI 只生成畫面；所有文字、數字、K 線刻度、UI、字幕，全部後期合成。</li>
 <li><b>驗收</b>——每集 12 條硬指標，過不了就重做，不修。</li>
 </ol>
+
+<h2>180 集完整劇本</h2>
+<p>全 180 集正文已同步上線，按六大篇分篇編目，單集一頁，附「本集落點」。
+每集固定四段：鉤子（0–3s）／中段敘事（4–170s）／收尾懸念（170–180s）／本集落點。</p>
+<p class="dl"><a href="juben/index.html">→ 進入 180 集劇本目錄</a>　·　<a href="src/juben-180.md">全集 Markdown 下載</a></p>
 
 <h2>素材下載</h2>
 <p class="dl">
