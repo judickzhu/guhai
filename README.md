@@ -27,3 +27,18 @@
 ## 注意
 - 內含原書引文（王新平《股路不归》2008、《股道》2007），僅供學習研究；發布前請評估授權，分享時保留免責聲明。
 - 如需自訂網域（如 guhai.com），在 Netlify/Vercel/GitHub Pages 設定裡綁定即可。
+
+## 提交前守門（重要）
+
+本倉庫是**公開**的（GitHub Pages 免費方案無法用私有倉庫）。網站上的密碼鎖只是前端遮罩，
+任何 commit 內容都可被公開取得。因此：
+
+```bash
+tools/install_hooks.sh     # 安裝 git hook（只寫 .git/hooks）
+```
+
+- 詞表放在 `local-only/guard-terms.txt`（已被 `.gitignore` 排除，只在本地存在）。
+- 命中即拒絕提交；確認誤判可 `GUHAI_ALLOW_SENSITIVE=1 git commit …` 放行。
+- 手動檢查：`tools/precommit_guard.sh --all`（全樹）、`--file PATH`（單檔）。
+
+**原則：機密、立場聲明、內部備忘、未定稿方向，一律放 `local-only/`，永不 `git add`。**
