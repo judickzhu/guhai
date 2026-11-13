@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 1 集〈刀已入手〉逐鏡拍攝腳本 · 《股路不歸》短劇改編</title>
+<meta name="description" content="第 1 集 40 鏡逐鏡腳本：時間碼、景別、運鏡、台詞、生成提示詞、後期合成層與 12 條驗收指標。">
+<meta property="og:title" content="第 1 集〈刀已入手〉逐鏡拍攝腳本 · 《股路不歸》短劇改編">
+<meta property="og:description" content="第 1 集 40 鏡逐鏡腳本：時間碼、景別、運鏡、台詞、生成提示詞、後期合成層與 12 條驗收指標。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://judickzhu.github.io/guhai/og.png">
+<meta property="og:url" content="https://judickzhu.github.io/guhai/drama/ep001.html">
+<meta name="twitter:card" content="summary_large_image">
+<script>var PREFIX = "../";</script>
+<link rel="stylesheet" href="../style.css?v=3">
+<script src="../search-data.js?v=3" defer></script>
+<script src="../auth.js?v=3"></script>
+<script src="../app.js?v=3" defer></script>
+<link rel="stylesheet" href="../dc-sister/dc-sister.css">
+<script src="../dc-sister/iconify-icon.min.js"></script>
+<script src="../dc-sister/kb-data.js?v=22"></script>
+<script src="../dc-sister/zh-map.js"></script>
+<script src="../dc-sister/kb-books.js"></script>
+<script src="../dc-sister/dc-sister.js?v=85"></script>
+<style>
+ main{max-width:920px;margin:0 auto;padding:0 18px 80px}
+ article h1{margin:.6em 0 .3em}
+ article h2{margin-top:1.8em;border-bottom:1px solid var(--line,#e5e5e5);padding-bottom:.3em}
+ article h3{margin-top:1.6em}
+ .tablewrap{overflow-x:auto;margin:1em 0}
+ table{border-collapse:collapse;width:100%;font-size:.92em}
+ th,td{border:1px solid var(--line,#e0e0e0);padding:.5em .6em;vertical-align:top;text-align:left}
+ th{background:rgba(128,128,128,.10);white-space:nowrap}
+ pre.code{background:#14161a;color:#d7e2e8;padding:14px 16px;border-radius:10px;overflow-x:auto;font-size:.85em;line-height:1.5}
+ code{background:rgba(128,128,128,.16);padding:.12em .35em;border-radius:4px;font-size:.92em}
+ blockquote{margin:1em 0;padding:.6em 1em;border-left:3px solid rgba(190,160,70,.8);background:rgba(190,160,70,.08);border-radius:0 8px 8px 0}
+ .video{width:100%;max-width:420px;display:block;margin:1.2em auto;border-radius:12px;background:#000}
+ .kpi{display:flex;flex-wrap:wrap;gap:10px;margin:1.2em 0}
+ .kpi div{flex:1 1 130px;border:1px solid var(--line,#e0e0e0);border-radius:10px;padding:.7em .9em}
+ .kpi b{display:block;font-size:1.35em;line-height:1.2}
+ .kpi span{color:#888;font-size:.85em}
+ .epdone{color:#2e7d32;font-weight:600}
+ .eptodo{color:#999}
+ .dl{line-height:2}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand"><a href="../index.html">股海雙書</a></div>
+  <nav><a href="../index.html">首頁</a><a href="../chapters/000.html">股路不归問答</a><a href="../phenomena.html">現象索引</a><a href="../checklist.html">自檢表</a><a href="../framework.html">框架</a><a href="../mapping.html">三層映射</a><a href="../acts.html">六幕</a><a href="../gudao/000.html">股道問答</a><a href="../drama/index.html" class=active>短劇改編</a><a href="../dc-kb.html">DC知識庫</a><a href="../kb.html">知識庫檢索</a></nav>
+  <div class="search">
+    <input type="search" id="q" placeholder="搜尋 252 篇問答…" oninput="searchSite(this.value)" autocomplete="off">
+    <div id="search-results"></div>
+  </div>
+  <div class="tools">
+    <button onclick="setSize('s')" title="小字">A-</button>
+    <button onclick="setSize('m')" title="中字">A</button>
+    <button onclick="setSize('l')" title="大字">A+</button>
+    <button onclick="toggleTheme()" title="夜間模式">◐</button>
+  </div>
+</header>
+<main><article>
+<p class="dl"><a href="index.html">← 回短劇改編</a>　·　<a href="src/ep01-shotlist.md" download>下載 Markdown 原檔</a></p>
+<h1>《股路不归》第 1 集｜逐鏡拍攝腳本（40 鏡 / 180 秒 / 可直接投喂）</h1>
+<blockquote>片名：第 1 集〈刀已入手〉<br>對應劇本：第一篇〈黃土歸城・人工坐莊〉第 1 集（冷面殺手修訂版）<br>規格：9:16，1080×1920，24fps，−16 LUFS<br>結構：12 段 → 40 鏡，平均 4.6 秒／鏡<br>鐵律：<b>AI 只生成畫面。所有文字、數字、UI、字幕，一律後期合成。</b></blockquote>
+<hr>
+<h2>一、先跑這 5 張定妝（沒有這 5 張，後面 39 鏡全白做）</h2>
+<p>每張要求：正面 / 3/4 側 / 側面 / 表情，四個角度各一張，同一 seed。</p>
+<p><b>王红军（歸國時 30 歲）</b></p>
+<pre class=code>cinematic character sheet, Chinese man, 30 years old, lean, short black hair,
+high cheekbones, calm cold eyes, thin lips, dark navy suit no tie,
+neutral expression, four views: front, three-quarter, profile, subtle frown,
+plain dark background, low saturation, 35mm film grain, AR 9:16</pre>
+<p><b>王红军（現時 40 歲，段 2、7–12 用）</b>：同上，加 <code>slight temple grey, deeper eye sockets, tired eyes</code></p>
+<p><b>王老实（62 歲，陝北老農）</b></p>
+<pre class=code>cinematic character sheet, Chinese farmer, 62, deep weathered wrinkles,
+sun-darkened skin, grey stubble, sheepskin vest, long tobacco pipe,
+kind but tired eyes, four views, plain dark background, 35mm grain, AR 9:16</pre>
+<p><b>王秀蓮（二姐，34 歲）</b>：<code>rural Chinese woman, 34, blue cloth jacket, hair in a bun, cracked knuckles, warm gentle eyes, four views, AR 9:16</code></p>
+<p><b>陳老太（72 歲，散戶）</b>：<code>Chinese elderly woman, 72, short grey hair, dark padded jacket, reading glasses on a cord, holding a bankbook, four views, AR 9:16</code></p>
+<p><b>場景鎖（各一張空鏡）</b>：黃土溝壑、機構操盤室、窯洞內、高鐵站出站口、機構會客小間、證券營業部大廳。</p>
+<hr>
+<h2>二、逐鏡腳本</h2>
+<blockquote>記法：<code>TC</code> 時間碼｜<code>D</code> 時長｜景別／焦段｜運鏡<br><code>P</code> = 生成提示詞（英文，直接複製）<br><code>N</code> = 負面提示詞（全局共用，見文末）</blockquote>
+<hr>
+<h3>段 1｜鉤子｜0:00–0:03</h3>
+<p><b>S01</b> ｜0:00–0:01.2｜1.2s｜大遠景／24mm｜垂直俯衝</p>
+<p>畫面：黃土溝壑，狂風捲沙，天壓得很低。風把黃沙掃過溝底。</p>
+<p>音效：風聲（滿）</p>
+<p>P：</p>
+<pre class=code>extreme wide shot, Loess Plateau gullies, yellow dust storm sweeping the valley,
+heavy dark storm sky, camera diving down fast vertically, desaturated ochre palette,
+35mm film grain, harsh sunlight through dust, AR 9:16</pre>
+<p><b>S02</b> ｜0:01.2–0:02.4｜1.2s｜微距／100mm｜固定</p>
+<p>畫面：<b>硬切</b>到漆黑房間。一根手指落下，按下鍵盤。螢幕綠光映在手背上。畫面右側是委託單的輪廓（<b>文字不可讀</b>）。</p>
+<p>音效：風聲<b>驟停</b>（3 幀真空）→ 報單器「叮」→ 低頻 sub</p>
+<p>P：</p>
+<pre class=code>macro shot, index finger pressing a keyboard key in a pitch-black room,
+only cold green monitor glow, silhouette of an order ticket on screen edge,
+shallow DOF f/2, 100mm macro, 35mm grain, no readable text, AR 9:16</pre>
+<p><b>S03</b> ｜0:02.4–0:03.0｜0.6s｜特寫／85mm｜極緩推</p>
+<p>畫面：王红军側臉。螢幕冷光在他臉頰切出一道硬邊緣光。眼神平，不眨。</p>
+<p>台詞（0:02.4 起）：「資金進場，戰場開啟。」</p>
+<p>音效：sub 低頻延續</p>
+<p>P：</p>
+<pre class=code>extreme close-up, profile of a Chinese man's face lit only by monitor glow,
+hard rim light on cheekbone, absolutely calm eyes, no expression, 85mm f/1.8,
+low key, 35mm grain, AR 9:16</pre>
+<hr>
+<h3>段 2｜權力感｜0:03–0:12</h3>
+<p><b>S04</b> ｜0:03–0:06｜3.0s｜全景／24mm｜極慢 dolly in</p>
+<p>畫面：數十塊螢幕鋪滿牆，紅綠抽象波形跳動。王红军坐在中控位，背對鏡頭，房間只有螢幕的光。</p>
+<p>音效：鍵盤、報單、風扇低鳴</p>
+<p>P：</p>
+<pre class=code>wide shot, dark institutional trading room, wall of 16 monitors with abstract
+glowing red and green waveforms (no readable numbers), one man seated centre
+back to camera, cold blue rim light, slow dolly in, 24mm, deep space, 35mm grain, AR 9:16</pre>
+<p><b>S05</b> ｜0:06–0:09｜3.0s｜過肩／35mm｜手持輕晃</p>
+<p>畫面：從背後過肩，他的手在兩個鍵盤之間移動，動作極省。</p>
+<p>P：</p>
+<pre class=code>over-the-shoulder shot, man's hands moving minimally between two keyboards,
+monitor glow, cold room, handheld micro-shake, 35mm, shallow DOF, AR 9:16</pre>
+<p><b>S06</b> ｜0:09–0:12｜3.0s｜低角度特寫／50mm｜固定</p>
+<p>畫面：桌面——一杯涼透的茶（水面無熱氣）、一部舊手機（螢幕黑）、一疊手寫筆記（<b>字跡模糊不可讀</b>）。</p>
+<p>音效：遠方城市車流（極弱）</p>
+<p>P：</p>
+<pre class=code>low angle close-up of a desk: a cup of cold tea with no steam, an old black
+phone, a stack of handwritten notes with illegible scrawl, monitor glow from
+the side, 50mm, dust in the air, AR 9:16</pre>
+<hr>
+<h3>段 3｜窯洞・家訓｜0:12–0:30</h3>
+<p><b>S07</b> ｜0:12–0:16｜4.0s｜全景／35mm｜固定（對稱）</p>
+<p>畫面：土坯牆、炕、油燈。透過木門框看見三人：王老实抽旱煙、少年王红军坐炕沿、二姐在旁縫衣。<b>這是全片唯一的暖光。</b></p>
+<p>音效：窯洞外風聲（悶）／旱煙「呼嚕」／針線穿布</p>
+<p>P：</p>
+<pre class=code>cave dwelling interior on the Loess Plateau, symmetrical composition framed by
+a wooden door, oil lamp with warm 2800K light, old farmer smoking a long pipe,
+a thin boy in a patched jacket sitting on the kang, a woman sewing beside him,
+earthen walls, 35mm, warm low key, film grain, AR 9:16</pre>
+<p><b>S08</b> ｜0:16–0:20｜4.0s｜中景／50mm｜固定</p>
+<p>畫面：王老实抬眼，煙霧從他臉前升起。</p>
+<p>台詞（0:16.5 起）：「小軍，記牢。」</p>
+<p>P：</p>
+<pre class=code>medium shot of an old Chinese farmer lifting his eyes, smoke drifting in front
+of his weathered face, oil lamp light from below, earthen wall behind, 50mm,
+warm low key, 35mm grain, AR 9:16</pre>
+<p><b>S09</b> ｜0:20–0:26｜6.0s｜中近景／50mm｜固定（雙段拼接：20–23 + 23–26 於煙霧處切）</p>
+<p>台詞（0:20.0 起）：「一袋錢搭在肩膀上，人長錢短。」（停 1.2s）「做人，義永遠在錢前面。」</p>
+<p>畫面：他說話時不動，只有嘴與煙霧。少年在畫框右下角，低頭聽。</p>
+<p>P：</p>
+<pre class=code>medium close-up, old farmer speaking slowly, pipe in hand, teenager's head
+lowered at the bottom right of the frame, warm oil lamp light, earthen wall,
+50mm f/2, 35mm grain, AR 9:16</pre>
+<p><b>S10</b> ｜0:26–0:30｜4.0s｜特寫／85mm｜極緩推</p>
+<p>畫面：少年王红军的臉。瘦，眼睛大而黑，抬眼看向父親。</p>
+<p>台詞：無。</p>
+<p>P：</p>
+<pre class=code>close-up of a thin 8-year-old Chinese boy's face, big dark eyes lifting to look
+at his father, warm lamp light, patched collar visible, 85mm f/2, slow push in,
+35mm grain, AR 9:16</pre>
+<hr>
+<h3>段 4｜二姐・身體｜0:30–0:42</h3>
+<p><b>S11</b> ｜0:30–0:36｜6.0s｜雙人中近景／50mm｜固定（微呼吸感）</p>
+<p>畫面：王秀蓮坐在少年身後，手掌貼在他後背上，一下一下地撫。動作很輕。</p>
+<p>台詞（0:31.0 起）：「身子弱，長大別跟人拼命。」</p>
+<p>P：</p>
+<pre class=code>two-shot, a rural woman in a blue cloth jacket sitting behind a thin boy,
+her rough hand resting on his back, gentle repetitive movement, oil lamp light,
+earthen wall, 50mm f/2, 35mm grain, AR 9:16</pre>
+<p><b>S12</b> ｜0:36–0:39｜3.0s｜微距／100mm｜固定</p>
+<p>畫面：她的手。指節粗大、有裂口、正在縫一件補丁褂。布很舊。</p>
+<p>P：</p>
+<pre class=code>macro shot of a rural woman's rough cracked hands mending a patched jacket,
+coarse fabric, warm lamp light, extreme shallow DOF, 100mm macro, 35mm grain, AR 9:16</pre>
+<p><b>S13</b> ｜0:39–0:42｜3.0s｜特寫／85mm｜固定</p>
+<p>畫面：少年眼睛。不說話，只是看著姐姐的手。</p>
+<p>P：</p>
+<pre class=code>close-up of a boy's dark eyes looking down at a woman's hands, warm light,
+reflection of lamp flame in the pupil, 85mm, 35mm grain, AR 9:16</pre>
+<hr>
+<h3>段 5｜時間流逝｜0:42–0:55</h3>
+<p><b>S14</b> ｜0:42–0:45｜3.0s｜微距／100mm｜固定</p>
+<p>畫面：燈芯燃盡，火苗縮小，最後一縷黑煙直上。</p>
+<p>音效：油燈「噗」一聲</p>
+<p>P：</p>
+<pre class=code>macro shot, oil lamp wick burning out, flame shrinking then extinguishing,
+last thin wisp of black smoke rising, warm light dying to darkness, 100mm,
+35mm grain, AR 9:16</pre>
+<p><b>S15</b> ｜0:45–0:49｜4.0s｜全景／35mm｜極慢橫移</p>
+<p>畫面：窯洞空了。炕上只剩一件疊好的補丁褂。灰塵在光柱裡浮。</p>
+<p>音效：只剩風</p>
+<p>P：</p>
+<pre class=code>wide shot of an empty cave dwelling, only a neatly folded patched jacket left
+on the kang, dust motes floating in a shaft of light through the door, very slow
+lateral move, 35mm, cold daylight now, film grain, AR 9:16</pre>
+<p><b>S16</b> ｜0:49–0:55｜6.0s｜特寫／50mm｜固定＋疊化</p>
+<p>畫面：風沙從窗櫺縫裡灌進來，紙窗被吹得鼓起。畫面疊化到黑。</p>
+<p>後期字幕卡（0:51–0:54）：「一九九八年・陝西古豳」</p>
+<p>P：</p>
+<pre class=code>close-up of wind-blown dust forcing through a wooden window lattice, paper
+window bulging inward, cold grey light, slow dissolve to black, 50mm, 35mm grain, AR 9:16</pre>
+<hr>
+<h3>段 6｜歸國｜0:55–1:10</h3>
+<p><b>S17</b> ｜0:55–0:59｜4.0s｜中景／35mm｜手持背跟</p>
+<p>畫面：高鐵站出站口，冷白燈。人流拖著行李箱迎面而來，他被夾在中間，逆著走。</p>
+<p>音效：車站底噪（廣播必須處理成不可辨）、行李箱輪子</p>
+<p>P：</p>
+<pre class=code>handheld follow shot from behind, a Chinese man in a dark suit walking against
+the flow of travellers in a cold-lit railway arrival hall, luggage wheels,
+fluorescent light, desaturated, 35mm, AR 9:16</pre>
+<p><b>S18</b> ｜0:59–1:04｜5.0s｜中近景／50mm｜固定</p>
+<p>畫面：他停下，回頭看了一眼（什麼都沒有），然後繼續走。</p>
+<p>P：</p>
+<pre class=code>medium close-up, the man stops and looks back over his shoulder in a station
+concourse, nothing behind him, cold light, neutral expression, 50mm, 35mm grain, AR 9:16</pre>
+<p><b>S19</b> ｜1:04–1:10｜6.0s｜微距／100mm｜固定</p>
+<p>畫面：他手裡那張泛黃照片——<b>正是 S07 的構圖</b>（同一個門框、同一盞燈的位置）。照片邊角磨白。</p>
+<p>P：</p>
+<pre class=code>macro shot of a yellowed photograph held in a man's hand, the photo shows a
+cave dwelling interior framed by a wooden door with an oil lamp, corners worn
+white, cold fluorescent light on the print, 100mm macro, 35mm grain, AR 9:16</pre>
+<hr>
+<h3>段 7｜進機構｜1:10–1:25</h3>
+<p><b>S20</b> ｜1:10–1:14｜4.0s｜中景／35mm｜手持跟</p>
+<p>畫面：玻璃走廊，門禁燈紅轉綠。他刷卡，走進去。</p>
+<p>音效：門禁「嘀」、空調、椅子滑輪</p>
+<p>P：</p>
+<pre class=code>handheld follow shot, man in suit walking down a glass corridor in an office
+tower, access control light turning green, cold white light, reflections,
+35mm, AR 9:16</pre>
+<p><b>S21</b> ｜1:14–1:18｜4.0s｜中景／35mm｜固定</p>
+<p>畫面：他推開門。冷氣白霧湧出。</p>
+<p>P：</p>
+<pre class=code>medium shot, man pushing open a heavy glass door, cold air haze rolling out,
+dark trading floor beyond him, backlit, 35mm, AR 9:16</pre>
+<p><b>S22</b> ｜1:18–1:25｜7.0s｜全景／24mm｜慢搖（雙段拼接：18–21.5 + 21.5–25）</p>
+<p>畫面：操盤室全貌。十幾個人回頭看了他一秒，又全部轉回螢幕。沒人說話。他走到中控位坐下。</p>
+<p>P：</p>
+<pre class=code>wide shot of a dark trading floor, a dozen traders glance up for one second
+then turn back to their monitors, a man walks to the centre seat and sits down,
+slow pan, cold fluorescent, 24mm, 35mm grain, AR 9:16</pre>
+<hr>
+<h3>段 8｜第一句試探｜1:25–1:45</h3>
+<p><b>S23</b> ｜1:25–1:31｜6.0s｜中景／50mm｜固定（正反打 A）</p>
+<p>畫面：小會議間。出資方（50 歲、圓臉、金錶、笑意不到眼）坐在對面，兩杯茶都沒動。</p>
+<p>台詞（1:26.0 起）：「這隻票，交給你操盤。我們要目標價位。」</p>
+<p>P：</p>
+<pre class=code>medium shot of a wealthy Chinese businessman in his fifties, round face, gold
+watch, a smile that doesn't reach his eyes, small meeting room, two untouched
+teacups, cold window light, 50mm, 35mm grain, AR 9:16</pre>
+<p><b>S24</b> ｜1:31–1:35｜4.0s｜桌面高度／35mm｜固定</p>
+<p>畫面：一份資料從桌面推過來。紙上的字<b>不可讀</b>。</p>
+<p>音效：紙張摩擦、茶杯底磕桌</p>
+<p>P：</p>
+<pre class=code>table-level shot, a document being pushed across a tea table towards camera,
+two men's hands in frame, paper texture, cold light, no readable text,
+35mm, shallow DOF, AR 9:16</pre>
+<p><b>S25</b> ｜1:35–1:40｜5.0s｜過肩／50mm｜固定</p>
+<p>畫面：王红军低頭掃資料，手指停在其中一行。</p>
+<p>台詞（1:36.5 起）：「籌碼結構我看過。浮籌很亂，散戶扎堆。」</p>
+<p>P：</p>
+<pre class=code>over-the-shoulder shot, man in suit reading a document, index finger stopping
+on a line, cold light, neutral expression, 50mm, 35mm grain, AR 9:16</pre>
+<p><b>S26</b> ｜1:40–1:45｜5.0s｜特寫／85mm｜固定</p>
+<p>畫面：出資方的笑。他往椅背一靠。</p>
+<p>台詞（1:40.5 起）：「正好。洗盤、拉升、派發，老路子。」</p>
+<p>P：</p>
+<pre class=code>close-up of a businessman leaning back in his chair with a slight smile, gold
+watch catching light, cold meeting room, 85mm f/2, 35mm grain, AR 9:16</pre>
+<hr>
+<h3>段 9｜刀與規矩｜1:45–2:05</h3>
+<p><b>S27</b> ｜1:45–1:51｜6.0s｜眼部落特寫／85mm｜極緩推</p>
+<p>畫面：王红军抬眼。瞳孔裡有螢幕的反光。</p>
+<p>台詞（1:46.0 起）：「我可以做。資金博弈我熟，該擠壓對手盤的時候，我不會手軟。」</p>
+<p>P：</p>
+<pre class=code>extreme close-up of a man's eyes lifting, monitor reflections moving inside
+the pupils, absolutely no expression, 85mm f/1.4, slow push in, low key,
+35mm grain, AR 9:16</pre>
+<p><b>S28</b> ｜1:51–1:56｜5.0s｜中景／50mm｜固定</p>
+<p>畫面：他身体不動，只說下一句。<b>停 1.5 秒</b>。</p>
+<p>台詞（1:51.0 起）：「但我不做趕盡殺絕的局。」（1:53.5）「我會留離場窗口。」</p>
+<p>P：</p>
+<pre class=code>medium shot, man sitting completely still while speaking, cold light from the
+side, no gesture at all, 50mm, 35mm grain, AR 9:16</pre>
+<p><b>S29</b> ｜1:56–2:01｜5.0s｜反打中景／50mm｜固定</p>
+<p>畫面：出資方皺眉，身體前傾。</p>
+<p>台詞（1:56.0 起）：「你是機構操盤手，不是慈善家。」</p>
+<p>P：</p>
+<pre class=code>reverse shot, businessman frowning and leaning forward across the tea table,
+cold window light, 50mm, 35mm grain, AR 9:16</pre>
+<p><b>S30</b> ｜2:01–2:05｜4.0s｜中景／50mm｜焦點由臉轉到玻璃外</p>
+<p>畫面：王红军不回答。他轉頭，看向玻璃牆外的開放辦公區（有人在小跑、有人在打電話）。</p>
+<p>音效：<b>幾乎無聲</b>，只有空調</p>
+<p>P：</p>
+<pre class=code>medium shot, man turns his head away from the conversation and looks through
+a glass wall at a distant open office, focus racks from his face to the people
+beyond, cold light, 50mm, 35mm grain, AR 9:16</pre>
+<hr>
+<h3>段 10｜散戶大廳｜2:05–2:20</h3>
+<p><b>S31</b> ｜2:05–2:10｜5.0s｜高角度全景／24mm｜固定（監控視角）</p>
+<p>畫面：日光燈、塑料椅、密密麻麻的人頭仰著看大屏。大屏<b>虛化、無字</b>，只有一片紅。</p>
+<p>音效：大廳嗡鳴、叫號機</p>
+<p>P：</p>
+<pre class=code>high angle surveillance-style shot of a crowded Chinese brokerage hall,
+fluorescent lights, plastic chairs, a dense crowd of heads tilted up towards
+a blurred red board, desaturated, 24mm, AR 9:16</pre>
+<p><b>S32</b> ｜2:10–2:16｜6.0s｜中景／50mm｜手持</p>
+<p>畫面：陳老太坐在塑料椅上，攥著存摺，側頭跟老姐妹說話。她笑了一下，笑得很輕。</p>
+<p>台詞（環境聲）：「……真的能賺啊？」「人家都賺了。」</p>
+<p>P：</p>
+<pre class=code>medium handheld shot of an elderly Chinese woman sitting on a plastic chair in
+a brokerage hall, clutching a bankbook, talking to another old woman beside
+her, a faint hopeful smile, fluorescent light, 50mm, 35mm grain, AR 9:16</pre>
+<p><b>S33</b> ｜2:16–2:20｜4.0s｜微距／100mm｜固定</p>
+<p>畫面：存摺在她手裡被捏出一道折痕。指節泛白。</p>
+<p>P：</p>
+<pre class=code>macro shot of an elderly woman's hand gripping a bankbook, knuckles white,
+crease in the cover, fluorescent light, 100mm macro, shallow DOF, AR 9:16</pre>
+<hr>
+<h3>段 11｜刀落在哪裡｜2:20–2:45</h3>
+<p><b>S34</b> ｜2:20–2:25｜5.0s｜中景／85mm｜固定</p>
+<p>畫面：王红军站在玻璃牆前。玻璃上只有他自己與背後螢幕的倒影，看不見大廳。</p>
+<p>P：</p>
+<pre class=code>medium shot, man standing in front of a glass wall at night, only his own
+reflection and monitor glow in the glass, nothing visible beyond, low key,
+85mm, 35mm grain, AR 9:16</pre>
+<p><b>S35</b> ｜2:25–2:29｜4.0s｜特寫／85mm｜0.3 秒閃回疊</p>
+<p>畫面：眼底極快掠過一絲鬆動（插入 0.3 秒 S32 陳老太笑的畫面，半透明），隨即消失。</p>
+<p>P：</p>
+<pre class=code>extreme close-up of a man's eye, a brief flicker of softening, then hardening
+again within a fraction of a second, monitor glow, 85mm f/1.4, AR 9:16</pre>
+<p><b>S36</b> ｜2:29–2:37｜8.0s｜中近景／85mm｜緩推（雙段拼接：29–33 + 33–37）</p>
+<p>畫面：他低頭，聲音很低。說的時候沒有表情。</p>
+<p>台詞（2:30.0 起）：「戰場規則我遵守。」（2:32.5）「但我有權劃定——刀落在哪裡。」</p>
+<p>音效：一聲極輕的鋼琴單音（只有一個音）</p>
+<p>P：</p>
+<pre class=code>medium close-up, man looking down, speaking quietly, no expression, cold
+monitor glow on one side of his face, slow push in, 85mm, 35mm grain, AR 9:16</pre>
+<p><b>S37</b> ｜2:37–2:45｜8.0s｜中景／50mm｜固定（雙段拼接）</p>
+<p>畫面：他站著不動，很久。螢幕的光在他背後慢慢變化。最後他伸手，關掉一盞檯燈。</p>
+<p>P：</p>
+<pre class=code>medium shot, man standing motionless in a dark trading room, monitor glow
+shifting slowly behind him, then he reaches out and switches off a desk lamp,
+room falling darker, 50mm, 35mm grain, AR 9:16</pre>
+<hr>
+<h3>段 12｜收尾懸念｜2:45–3:00</h3>
+<p><b>S38</b> ｜2:45–2:50｜5.0s｜微距／100mm｜固定</p>
+<p>畫面：舊手機屏幕在黑暗中亮起。一條訊息。</p>
+<p>後期層：<code>UI_03</code>「帳戶已激活。權限：全額。」</p>
+<p>音效：訊息提示音（乾、短）</p>
+<p>P：</p>
+<pre class=code>macro shot of an old phone screen lighting up in complete darkness, glow on
+the man's fingers, no readable text on screen, 100mm macro, 35mm grain, AR 9:16</pre>
+<p><b>S39</b> ｜2:50–2:56｜6.0s｜特寫／85mm｜極緩推</p>
+<p>畫面：他的拇指懸在螢幕上方。<b>沒有落下。</b>指節微微收緊，又鬆開。</p>
+<p>音效：心跳（極低、慢）</p>
+<p>P：</p>
+<pre class=code>close-up of a thumb hovering above a phone screen, never pressing down,
+tendon tightening slightly then relaxing, dark room, screen glow from below,
+85mm f/2, slow push in, AR 9:16</pre>
+<p><b>S40</b> ｜2:56–3:00｜4.0s｜全景／35mm｜後拉</p>
+<p>畫面：鏡頭後拉。他變成黑房間裡的一個剪影，四周是幾十塊螢幕的光。畫面漸暗至黑。</p>
+<p>台詞（2:56.5 起）：「刀已經拿到手裡了。」（2:58.0）「接下來，看我用。」</p>
+<p>音效：全靜 → 黑場 → 一聲極遠的風（接第 2 集）</p>
+<p>P：</p>
+<pre class=code>camera pulls back from a silhouetted man in a dark room surrounded by dozens
+of glowing monitors, figure shrinking into shadow, slow fade to black,
+35mm, film grain, AR 9:16</pre>
+<hr>
+<h2>三、負面提示詞（全局共用，逐鏡都要帶）</h2>
+<pre class=code>readable text, Chinese characters, subtitles, logos, watermarks, numbers,
+letters, distorted faces, extra fingers, deformed hands, plastic skin,
+oversaturated, HDR, lens flare, cartoon, 3D render, video game look,
+vertical stretch, warped geometry, fast morphing, flicker</pre>
+<hr>
+<h2>四、對白稿（可直接貼字幕工具）</h2>
+<div class=tablewrap><table><thead><tr><th>#</th><th>時間碼</th><th>角色</th><th>台詞</th></tr></thead><tbody><tr><td>1</td><td>00:02.4–00:03.4</td><td>王红军（畫外／低）</td><td>資金進場，戰場開啟。</td></tr><tr><td>2</td><td>00:16.5–00:20.0</td><td>王老实</td><td>小軍，記牢。</td></tr><tr><td>3</td><td>00:20.0–00:26.0</td><td>王老实</td><td>一袋錢搭在肩膀上，人長錢短。做人，義永遠在錢前面。</td></tr><tr><td>4</td><td>00:31.0–00:36.0</td><td>王秀蓮</td><td>身子弱，長大別跟人拼命。</td></tr><tr><td>5</td><td>00:51.0–00:54.0</td><td>（字幕卡）</td><td>一九九八年・陝西古豳</td></tr><tr><td>6</td><td>01:26.0–01:31.0</td><td>出資方</td><td>這隻票，交給你操盤。我們要目標價位。</td></tr><tr><td>7</td><td>01:36.5–01:40.0</td><td>王红军</td><td>籌碼結構我看過。浮籌很亂，散戶扎堆。</td></tr><tr><td>8</td><td>01:40.5–01:45.0</td><td>出資方</td><td>正好。洗盤、拉升、派發，老路子。</td></tr><tr><td>9</td><td>01:46.0–01:51.0</td><td>王红军</td><td>我可以做。資金博弈我熟，該擠壓對手盤的時候，我不會手軟。</td></tr><tr><td>10</td><td>01:51.0–01:56.0</td><td>王红军</td><td>但我不做趕盡殺絕的局。我會留離場窗口。</td></tr><tr><td>11</td><td>01:56.0–02:01.0</td><td>出資方</td><td>你是機構操盤手，不是慈善家。</td></tr><tr><td>12</td><td>02:11.0–02:14.0</td><td>陳老太（環境聲）</td><td>……真的能賺啊？</td></tr><tr><td>13</td><td>02:14.0–02:16.0</td><td>老姐妹（環境聲）</td><td>人家都賺了。</td></tr><tr><td>14</td><td>02:30.0–02:37.0</td><td>王红军（低）</td><td>戰場規則我遵守。但我有權劃定——刀落在哪裡。</td></tr><tr><td>15</td><td>02:56.5–03:00.0</td><td>王红军（低）</td><td>刀已經拿到手裡了。接下來，看我用。</td></tr></tbody></table></div>
+<p><b>全片台詞總字數：約 210 字。</b> 180 秒只說 210 字——留白是設計，不是省事。</p>
+<hr>
+<h2>五、音樂設計（克制到近乎沒有）</h2>
+<div class=tablewrap><table><thead><tr><th>位置</th><th>內容</th><th>說明</th></tr></thead><tbody><tr><td>0:00–0:03</td><td>一個低頻 pulse（無旋律）</td><td>只為鉤子加壓，切點即斷</td></tr><tr><td>0:03–0:12</td><td>低頻環境床（-30dB）</td><td>幾乎聽不見</td></tr><tr><td>0:12–0:55</td><td><b>無音樂</b></td><td>只有環境音。全片最安靜的 43 秒</td></tr><tr><td>0:55–1:25</td><td>極淡弦樂單音（無和聲）</td><td>音量低於環境音</td></tr><tr><td>1:25–2:05</td><td>無音樂</td><td>全靠對白與空白</td></tr><tr><td>2:05–2:20</td><td>大廳底噪代替音樂</td><td>人聲就是配樂</td></tr><tr><td>2:20–2:45</td><td><b>一個鋼琴單音</b>（S36 起點）</td><td>全片只有這一個音</td></tr><tr><td>2:45–3:00</td><td>心跳 → 全靜 → 遠風</td><td>黑場留白</td></tr></tbody></table></div>
+<hr>
+<h2>六、投喂批次建議</h2>
+<div class=tablewrap><table><thead><tr><th>批次</th><th>內容</th><th>鏡數</th><th>說明</th></tr></thead><tbody><tr><td>批 0</td><td>5 張角色定妝 + 6 張場景空鏡</td><td>11</td><td><b>不通過不往下走</b></td></tr><tr><td>批 1</td><td>S01–S13（窯洞段）</td><td>13</td><td>暖光，需嚴格鎖定色溫 2800K</td></tr><tr><td>批 2</td><td>S14–S22（時間流逝＋歸國＋進場）</td><td>9</td><td>冷暖轉換，注意同一張臉</td></tr><tr><td>批 3</td><td>S23–S33（會議＋散戶大廳）</td><td>11</td><td>對白戲，口型僅要求「大致對得上」，成片用配音覆蓋</td></tr><tr><td>批 4</td><td>S34–S40（收尾）</td><td>7</td><td>特寫為主，最容易崩臉，多備版</td></tr></tbody></table></div>
+<p>每鏡生成 <b>3 版</b>，共 120 次；選版標準只有一條：<b>臉是不是同一張臉</b>。達不到就重跑，不要修。</p>
+<hr>
+<h2>七、驗收（12 條，全過才交付）</h2>
+<ol><li>0–3 秒是否「靜→響→靜」三段式？</li><li>除後期字幕外，畫面有沒有一個可讀漢字？</li><li>S07 與 S19 的照片，是否同一個門框、同一盞燈的位置？</li><li>S28 的「停 1.5 秒」是否真的留了？</li><li>S35 的「鬆動」是否 ≤ 0.3 秒？</li><li>S39 的拇指，是否<b>沒有</b>按下？</li><li>王红军的臉在 40 鏡裡是否同一張？（抽 6 幀並排比對）</li><li>有沒有一顆 AI 生成鏡頭超過 6 秒？（雙段拼接的除外）</li><li>字幕是否都在底部 18% 安全區內？</li><li>全片台詞是否 ≤ 250 字？</li><li>燈芯熄滅那 3 秒，是否真的只剩風聲？</li><li>交付是否 1080×1920、≥ 8 Mbps、−16 LUFS？</li></ol>
+</article></main>
+<footer>
+  <p>原著：王新平　·　整理：南嗥</p>
+  <p>免責與合規：本內容為對王新平《股路不归》《股道》的解讀與教學整理，非投資建議；劇本與分鏡為藝術虛構，所有交易情節不構成任何投資建議，請勿模仿。投資有風險，入市須謹慎。</p>
+</footer>
+</body>
+</html>

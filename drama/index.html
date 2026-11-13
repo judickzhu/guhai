@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>《股路不歸》短劇改編 · 分鏡與逐鏡腳本</title>
+<meta name="description" content="《股路不歸》180 集豎屏短劇改編：六大篇結構、第 1 集 40 鏡逐鏡腳本、生成提示詞與驗收指標。">
+<meta property="og:title" content="《股路不歸》短劇改編 · 分鏡與逐鏡腳本">
+<meta property="og:description" content="《股路不歸》180 集豎屏短劇改編：六大篇結構、第 1 集 40 鏡逐鏡腳本、生成提示詞與驗收指標。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://judickzhu.github.io/guhai/og.png">
+<meta property="og:url" content="https://judickzhu.github.io/guhai/drama/index.html">
+<meta name="twitter:card" content="summary_large_image">
+<script>var PREFIX = "../";</script>
+<link rel="stylesheet" href="../style.css?v=3">
+<script src="../search-data.js?v=3" defer></script>
+<script src="../auth.js?v=3"></script>
+<script src="../app.js?v=3" defer></script>
+<link rel="stylesheet" href="../dc-sister/dc-sister.css">
+<script src="../dc-sister/iconify-icon.min.js"></script>
+<script src="../dc-sister/kb-data.js?v=22"></script>
+<script src="../dc-sister/zh-map.js"></script>
+<script src="../dc-sister/kb-books.js"></script>
+<script src="../dc-sister/dc-sister.js?v=85"></script>
+<style>
+ main{max-width:920px;margin:0 auto;padding:0 18px 80px}
+ article h1{margin:.6em 0 .3em}
+ article h2{margin-top:1.8em;border-bottom:1px solid var(--line,#e5e5e5);padding-bottom:.3em}
+ article h3{margin-top:1.6em}
+ .tablewrap{overflow-x:auto;margin:1em 0}
+ table{border-collapse:collapse;width:100%;font-size:.92em}
+ th,td{border:1px solid var(--line,#e0e0e0);padding:.5em .6em;vertical-align:top;text-align:left}
+ th{background:rgba(128,128,128,.10);white-space:nowrap}
+ pre.code{background:#14161a;color:#d7e2e8;padding:14px 16px;border-radius:10px;overflow-x:auto;font-size:.85em;line-height:1.5}
+ code{background:rgba(128,128,128,.16);padding:.12em .35em;border-radius:4px;font-size:.92em}
+ blockquote{margin:1em 0;padding:.6em 1em;border-left:3px solid rgba(190,160,70,.8);background:rgba(190,160,70,.08);border-radius:0 8px 8px 0}
+ .video{width:100%;max-width:420px;display:block;margin:1.2em auto;border-radius:12px;background:#000}
+ .kpi{display:flex;flex-wrap:wrap;gap:10px;margin:1.2em 0}
+ .kpi div{flex:1 1 130px;border:1px solid var(--line,#e0e0e0);border-radius:10px;padding:.7em .9em}
+ .kpi b{display:block;font-size:1.35em;line-height:1.2}
+ .kpi span{color:#888;font-size:.85em}
+ .epdone{color:#2e7d32;font-weight:600}
+ .eptodo{color:#999}
+ .dl{line-height:2}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand"><a href="../index.html">股海雙書</a></div>
+  <nav><a href="../index.html">首頁</a><a href="../chapters/000.html">股路不归問答</a><a href="../phenomena.html">現象索引</a><a href="../checklist.html">自檢表</a><a href="../framework.html">框架</a><a href="../mapping.html">三層映射</a><a href="../acts.html">六幕</a><a href="../gudao/000.html">股道問答</a><a href="../drama/index.html" class=active>短劇改編</a><a href="../dc-kb.html">DC知識庫</a><a href="../kb.html">知識庫檢索</a></nav>
+  <div class="search">
+    <input type="search" id="q" placeholder="搜尋 252 篇問答…" oninput="searchSite(this.value)" autocomplete="off">
+    <div id="search-results"></div>
+  </div>
+  <div class="tools">
+    <button onclick="setSize('s')" title="小字">A-</button>
+    <button onclick="setSize('m')" title="中字">A</button>
+    <button onclick="setSize('l')" title="大字">A+</button>
+    <button onclick="toggleTheme()" title="夜間模式">◐</button>
+  </div>
+</header>
+<main><article>
+<h1>《股路不歸》短劇改編</h1>
+<p class="sub">原著：王新平　·　改編：DCOGAI 研發團隊　·　180 集 × 3 分鐘豎屏短劇</p>
+
+<blockquote>本頁存檔的是「可拍攝的東西」：分鏡、逐鏡腳本、對白時間碼、生成提示詞、驗收指標。
+不是觀後感，也不是大綱——是能直接投喂給生成器、或直接交給剪輯師的東西。</blockquote>
+
+<div class="kpi">
+  <div><b>180</b><span>集（六篇）</span></div>
+  <div><b>180 秒</b><span>單集硬時長</span></div>
+  <div><b>9:16</b><span>豎屏畫幅</span></div>
+  <div><b>40</b><span>第 1 集鏡頭數</span></div>
+</div>
+
+<h2>已完成</h2>
+<div class=tablewrap><table><thead><tr><th>集</th><th>標題</th><th>規格</th><th>狀態</th></tr></thead><tbody><tr><td>1</td><td><a href="ep001.html">刀已入手</a></td><td>40 鏡 / 180 秒</td><td class="epdone">逐鏡腳本完成</td></tr><tr><td>2</td><td>授權與四人入組</td><td>—</td><td class="eptodo">待製作</td></tr><tr><td>3</td><td>第一筆試單</td><td>—</td><td class="eptodo">待製作</td></tr><tr><td>4</td><td>山子的虧損一課</td><td>—</td><td class="eptodo">待製作</td></tr><tr><td>5</td><td>稽查上門前</td><td>—</td><td class="eptodo">待製作</td></tr></tbody></table></div>
+
+<h2>六大篇結構</h2>
+<div class=tablewrap><table><thead><tr><th>篇</th><th>名稱</th><th>集數</th><th>主線</th><th>收尾金句</th></tr></thead><tbody><tr><td>第一篇</td><td>黃土歸城・人工坐莊</td><td>1–30</td><td>人工盤感、組隊、內鬼埋線、遇小周</td><td>「一袋錢搭在肩膀上，人長錢短。」</td></tr><tr><td>第二篇</td><td>數智啟元・代碼刀鋒</td><td>31–60</td><td>DCOGAI 立項、數據污染攻防、反釣收證</td><td>「刀是代碼，握刀的，永遠是人。」</td></tr><tr><td>第三篇</td><td>跨市狂瀾</td><td>61–90</td><td>商品、外盤、匯率；基差、流動性、槓桿</td><td>「股票比的是人心，期貨比的是命。」</td></tr><tr><td>第四篇</td><td>混沌荒原</td><td>91–120</td><td>加密合約、插針、金錢豹立項、不下場</td><td>「這裡沒有規則，只有獵手和獵物。」</td></tr><tr><td>第五篇</td><td>暗莊潛行</td><td>121–150</td><td>偽市值管理、研報、龍虎榜、大宗過橋</td><td>「當莊家藏進量化黑箱，連盤口都不再說真話。」</td></tr><tr><td>第六篇</td><td>黑箱高頻</td><td>151–180</td><td>量化殼矩陣、訂單切片、ETF 聯動、陳默源碼</td><td>「市場永不落幕，股路，不歸。」</td></tr></tbody></table></div>
+
+<h2>方法：先把節奏做出來，再花錢生成畫面</h2>
+<p>每一集都走同一條流水線，順序不能顛倒：</p>
+<ol>
+<li><b>分段</b>——把 180 秒切成 12 個敘事單元（快慢有別，不是平均切）。</li>
+<li><b>逐鏡</b>——每單元 1–3 個機位，全片約 40 個鏡頭，單鏡不超過 6 秒（超過 AI 會漂移變形）。</li>
+<li><b>定妝</b>——角色先出四視定妝圖，之後所有鏡頭用圖生視頻，固定 seed，同一張臉。</li>
+<li><b>合成</b>——AI 只生成畫面；所有文字、數字、K 線刻度、UI、字幕，全部後期合成。</li>
+<li><b>驗收</b>——每集 12 條硬指標，過不了就重做，不修。</li>
+</ol>
+
+<h2>素材下載</h2>
+<p class="dl">
+<a href="src/ep01-shotlist.md">第 1 集逐鏡腳本（Markdown，22 KB）</a>　·　
+<a href="src/ep01-storyboard.md">第 1 集分段分鏡（Markdown，18 KB）</a>　·　
+</p>
+
+<h2>為什麼不做「一句話生成 15 秒」</h2>
+<ul>
+<li><b>文字會爛掉。</b>生成模型畫出來的字是形狀不是字——盤口、金額、K 線刻度全部不可讀。所以文字必須後期疊。</li>
+<li><b>臉會變。</b>180 集要同一張臉；每鏡重捏一次，2700 個鏡頭就是 2700 張不同的臉。</li>
+<li><b>節奏會失控。</b>15 秒切 25 刀是把「鉤子」拉滿全片；180 秒要的是快慢有別，前面三秒狠，中間敢慢 40 秒。</li>
+</ul>
+<p>這三件事決定了 pipeline，而不是決定了畫質。</p>
+</article></main>
+<footer>
+  <p>原著：王新平　·　整理：南嗥</p>
+  <p>免責與合規：本內容為對王新平《股路不归》《股道》的解讀與教學整理，非投資建議；劇本與分鏡為藝術虛構，所有交易情節不構成任何投資建議，請勿模仿。投資有風險，入市須謹慎。</p>
+</footer>
+</body>
+</html>
