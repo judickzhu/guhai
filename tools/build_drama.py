@@ -285,6 +285,11 @@ def build_index() -> str:
 <h2>已完成</h2>
 {ep_table}
 
+<h2>特別場：第 178 集〈會見〉</h2>
+<p>全劇唯一一場純對話戲，兩頁紙，把 180 集的主題收在這裡：玻璃兩側，兩種資本哲學正面交鋒。
+18 鏡、180 秒、無音樂、無動作場面。</p>
+<p class="dl"><a href="ep178.html">→ 進入第 178 集〈會見〉逐鏡腳本</a>　·　<a href="src/ep178-shotlist.md">Markdown</a></p>
+
 <h2>六大篇結構</h2>
 {act_table}
 
@@ -337,9 +342,27 @@ def build_ep001() -> str:
                 "ep001.html", body, "短劇改編")
 
 
+MD_PAGES = [
+    ("ep178-shotlist.md", "ep178.html",
+     "第 178 集〈會見〉逐鏡腳本 · 《股路不歸》短劇改編",
+     "第六篇倒數第三集：全劇唯一純對話場。18 鏡、180 秒，兩種資本哲學在玻璃兩側正面交鋒。"),
+]
+
+
+def build_md_page(md_name: str, slug: str, title: str, desc: str) -> str:
+    md = (SRC / md_name).read_text(encoding="utf-8")
+    body = f"""<article>
+<p class="dl"><a href="index.html">← 回短劇改編</a>　·　<a href="src/{md_name}" download>下載 Markdown 原檔</a></p>
+{md_to_html(md)}
+</article>"""
+    return page(title, desc, slug, body, "短劇改編")
+
+
 def main() -> None:
     (OUT / "index.html").write_text(build_index(), encoding="utf-8")
     (OUT / "ep001.html").write_text(build_ep001(), encoding="utf-8")
+    for md_name, slug, title, desc in MD_PAGES:
+        (OUT / slug).write_text(build_md_page(md_name, slug, title, desc), encoding="utf-8")
     print("wrote drama/index.html, drama/ep001.html")
 
 

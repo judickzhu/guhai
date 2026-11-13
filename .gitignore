@@ -2,3 +2,6 @@ honglou.bak.*/
 honglou/*.epub
 honglou/*.zip
 honglou/甲戌本_*
+
+# 本地專用（立場文件、內部備忘、未定稿）——不得入庫
+/local-only/
